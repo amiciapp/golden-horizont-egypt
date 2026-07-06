@@ -1,0 +1,305 @@
+import type { Metadata, Viewport } from 'next'
+import { Playfair_Display, Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
+import './globals.css'
+
+const playfair = Playfair_Display({ 
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  display: 'swap'
+})
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap'
+})
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://goldenhorizontegypt.com'),
+  title: {
+    default: 'Golden Horizont Egypt | Premium Egypt Tours & Excursions',
+    template: '%s | Golden Horizont Egypt'
+  },
+  description: 'Discover the magic of Egypt with Golden Horizont Egypt. Premium tours to Cairo, Luxor, Aswan, and the Red Sea. Snorkeling, diving, desert safaris, historical tours, and exclusive excursions across Egypt. Book your adventure today!',
+  keywords: [
+    'Hurghada tours', 'Red Sea excursions', 'Egypt tours', 'snorkeling Hurghada', 
+    'diving Red Sea', 'Giftun Island', 'Orange Bay', 'Mahmya Island', 'dolphin watching',
+    'desert safari Egypt', 'quad bike Hurghada', 'Luxor day trip', 'Cairo pyramids tour',
+    'boat trips Hurghada', 'water sports Egypt', 'submarine Hurghada', 'parasailing',
+    'Bedouin dinner', 'sunset cruise', 'private yacht Hurghada', 'fishing trip Red Sea',
+    'Хургада туры', 'экскурсии Египет', 'Красное море', 'Hurghada Ausflüge', 
+    'wycieczki Hurghada', 'رحلات الغردقة', '洪加达旅游'
+  ],
+  authors: [{ name: 'Golden Horizont Egypt' }],
+  creator: 'Golden Horizont Egypt',
+  publisher: 'Golden Horizont Egypt',
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    alternateLocale: ['ru_RU', 'de_DE', 'pl_PL', 'ar_EG', 'fr_FR', 'es_ES', 'it_IT', 'zh_CN', 'tr_TR'],
+    url: 'https://goldenhorizontegypt.com',
+    siteName: 'Golden Horizont Egypt',
+    title: 'Golden Horizont Egypt - Premium Egypt Tours & Adventures',
+    description: 'Book unforgettable tours and excursions across Egypt. Cairo pyramids, Luxor temples, Red Sea snorkeling, desert safaris, and more. Best prices guaranteed!',
+    images: [
+      {
+        url: '/placeholder-logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Golden Horizont Egypt - Egypt Tours & Adventures'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Golden Horizont Egypt | Premium Egypt Tours',
+    description: 'Discover the magic of Egypt. Book historical tours, Red Sea trips, desert safaris & more across Egypt!',
+    images: ['/placeholder-logo.png']
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1
+    }
+  },
+  alternates: {
+    languages: {
+      'en': 'https://goldenhorizontegypt.com',
+      'ru': 'https://goldenhorizontegypt.com',
+      'de': 'https://goldenhorizontegypt.com',
+      'ar': 'https://goldenhorizontegypt.com',
+      'ro': 'https://goldenhorizontegypt.com'
+    }
+  },
+  verification: {
+    google: 'your-google-verification-code',
+    yandex: 'your-yandex-verification-code',
+    other: {
+      'msvalidate.01': 'your-bing-verification-code'
+    }
+  },
+  category: 'travel',
+  icons: {
+    icon: [
+      { url: '/icon-dark-32x32.png', type: 'image/png' },
+      { url: '/icon.svg', type: 'image/svg+xml' }
+    ],
+    apple: '/apple-icon.png'
+  }
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#0a0a0a' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' }
+  ]
+}
+
+// JSON-LD Structured Data for SEO
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'TravelAgency',
+      '@id': 'https://goldenhorizontegypt.com/#organization',
+      name: 'Golden Horizont Egypt',
+      description: 'Premium tours and excursions across Egypt. Historical tours to Cairo, Luxor, Aswan, and Red Sea adventures including snorkeling, diving, desert safaris, and more.',
+      url: 'https://goldenhorizontegypt.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://goldenhorizontegypt.com/placeholder-logo.png',
+      },
+      image: 'https://goldenhorizontegypt.com/placeholder-logo.png',
+      telephone: '+201220951483',
+      email: 'info@goldenhorizontegypt.com',
+      areaServed: [
+        { '@type': 'City', name: 'Hurghada' },
+        { '@type': 'City', name: 'Cairo' },
+        { '@type': 'City', name: 'Luxor' },
+        { '@type': 'City', name: 'Aswan' },
+        { '@type': 'City', name: 'Marsa Alam' },
+        { '@type': 'City', name: 'Sharm El Sheikh' },
+        { '@type': 'City', name: 'Giza' },
+        { '@type': 'Country', name: 'Egypt' }
+      ],
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Sheraton Street',
+        addressLocality: 'Hurghada',
+        addressRegion: 'Red Sea Governorate',
+        postalCode: '84511',
+        addressCountry: 'EG'
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 27.216944,
+        longitude: 33.838472
+      },
+      openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: '08:00',
+        closes: '22:00'
+      },
+      sameAs: [
+        'https://www.facebook.com/share/1CiQNoNdgf/?mibextid=wwXIfr',
+        'https://www.instagram.com/gold.enhorizont',
+        'https://www.tiktok.com/@goldenhorizontegypt8',
+        'https://t.me/GoldenHorizontEgypt'
+      ],
+      priceRange: '€€',
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        reviewCount: '500',
+        bestRating: '5'
+      },
+      makesOffer: [
+        { '@type': 'Offer', itemOffered: { '@type': 'TouristTrip', name: 'Cairo Pyramids Tours' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'TouristTrip', name: 'Luxor Day Trips' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'TouristTrip', name: 'Aswan Tours' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'TouristTrip', name: 'Snorkeling Tours' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'TouristTrip', name: 'Diving Excursions' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'TouristTrip', name: 'Desert Safari' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'TouristTrip', name: 'Boat Trips' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'TouristTrip', name: 'Cultural Tours' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'TouristTrip', name: 'Entertainment & Water Sports' } }
+      ]
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://goldenhorizontegypt.com/#website',
+      url: 'https://goldenhorizontegypt.com',
+      name: 'Golden Horizont Egypt',
+      description: 'Premium tours and excursions across Egypt. Book unforgettable experiences including Cairo pyramids, Luxor temples, Red Sea snorkeling, desert safaris, and more.',
+      publisher: { '@id': 'https://goldenhorizontegypt.com/#organization' },
+      inLanguage: ['en', 'ru', 'de', 'ar', 'ro', 'pl', 'fr', 'es', 'it', 'pt'],
+      potentialAction: [
+        {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: 'https://goldenhorizontegypt.com/?q={search_term_string}'
+          },
+          'query-input': 'required name=search_term_string'
+        }
+      ]
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://goldenhorizontegypt.com/#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://goldenhorizontegypt.com' },
+        { '@type': 'ListItem', position: 2, name: 'Trips', item: 'https://goldenhorizontegypt.com/#trips' },
+        { '@type': 'ListItem', position: 3, name: 'About', item: 'https://goldenhorizontegypt.com/about' }
+      ]
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://goldenhorizontegypt.com/#faq',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What types of tours does Golden Horizont Egypt offer?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Golden Horizont Egypt offers 69+ unique experiences including Red Sea snorkeling trips, scuba diving courses, desert safaris with quad bikes, historical tours to Cairo and Luxor, cultural excursions, boat trips to Giftun Island and Orange Bay, dolphin watching, parasailing, submarine adventures, and private yacht charters across Egypt.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How can I book a tour with Golden Horizont Egypt?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'You can book any tour directly through our website by browsing trips and clicking "Book via WhatsApp" or by sending a WhatsApp message to +201220951483. Our team responds within minutes to confirm your booking.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Does Golden Horizont Egypt offer hotel pickup and drop-off?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes, all our tours include complimentary hotel pickup and drop-off from Hurghada hotels. For tours to Cairo and Luxor, we arrange transportation from your hotel to the airport and provide guided services throughout.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What is the cancellation policy?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'We offer free cancellation up to 24 hours before your scheduled tour. For last-minute cancellations, please contact us via WhatsApp at +201220951483 and we will do our best to accommodate changes.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Are meals included in the tours?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Most of our full-day tours include lunch, snacks, and beverages. Snorkeling and boat trips typically include an open buffet lunch on board or on the island. Desert safaris include a Bedouin dinner under the stars. Check individual trip descriptions for specific inclusions.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What languages do your tour guides speak?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Our guides speak English, Russian, German, Arabic, and Romanian. When booking, let us know your preferred language and we will assign the appropriate guide.'
+          }
+        }
+      ]
+    }
+  ]
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="en" className="dark scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
+      <body className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-transparent text-foreground relative`}>
+        {/* Global Background Video */}
+        <div className="fixed inset-0 -z-50 pointer-events-none">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/api/video" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-background/80" />
+        </div>
+        
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  )
+}
