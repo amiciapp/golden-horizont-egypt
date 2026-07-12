@@ -223,7 +223,7 @@ export default function WeatherExchangeWidget({ t }: WeatherExchangeWidgetProps)
 
           {/* Refresh Button */}
           <button
-            onClick={refreshData}
+            onClick={() => refreshData()}
             disabled={isLoading}
             className={cn(
               "p-3 rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-300",

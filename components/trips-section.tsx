@@ -18,8 +18,8 @@ const WHATSAPP_NUMBER = "201220951483";
 
 export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [failedImages, setFailedImages] = useState<Set<number>>(new Set());
-  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
+  const [visibleCards, setVisibleCards] = useState<Set<string>>(new Set());
   const sectionRef = useRef<HTMLElement>(null);
 
   const filteredTrips =
@@ -33,7 +33,7 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const id = Number((entry.target as HTMLElement).dataset.tripId);
+          const id = (entry.target as HTMLElement).dataset.tripId || "";
           setVisibleCards(prev => { const next = new Set(prev); next.add(id); return next; });
           observer.unobserve(entry.target);
         }
@@ -46,7 +46,7 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
     return () => observer.disconnect();
   }, [activeCategory]);
 
-  const handleImageError = useCallback((tripId: number) => {
+  const handleImageError = useCallback((tripId: string) => {
     setFailedImages(prev => new Set(prev).add(tripId));
   }, []);
 
@@ -102,7 +102,7 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
                   : "bg-muted text-foreground/70 hover:bg-muted/80 hover:text-foreground"
               )}
             >
-              {category.name[lang] || category.name.en}
+              {(category.name as Record<string, string>)[lang] || category.name.en}
             </button>
           ))}
         </Reveal>
@@ -113,14 +113,14 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
             const tripName = trip.name[lang] || trip.name.en;
             const tripDescription = trip.description[lang] || trip.description.en;
             const tripDuration = trip.duration[lang] || trip.duration.en;
-            const isVisible = visibleCards.has(Number(trip.id));
+            const isVisible = visibleCards.has(trip.id);
             
             return (
               <div
                 key={trip.id}
                 data-trip-id={trip.id}
                 className="trip-card group relative bg-background/40 backdrop-blur-md rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-500 card-shine hover-lift"
-                style={visibleCards.has(Number(trip.id)) ? {} : { minHeight: "420px" }}
+                style={visibleCards.has(trip.id) ? {} : { minHeight: "420px" }}
               >
                 {isVisible ? (
                   <>

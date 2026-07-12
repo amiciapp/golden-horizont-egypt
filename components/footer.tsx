@@ -223,13 +223,13 @@ export default function Footer({ t }: FooterProps) {
           </p>
           <div className="flex items-center gap-6 text-sm">
             <Link
-              href="/"
+              href="/privacy-policy"
               className="text-foreground/40 hover:text-primary transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              href="/"
+              href="/terms"
               className="text-foreground/40 hover:text-primary transition-colors"
             >
               Terms of Service

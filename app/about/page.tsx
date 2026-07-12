@@ -87,11 +87,11 @@ export default function AboutPage() {
     { year: "2015", title: "Founded", desc: "Golden Horizont Egypt was established with a vision to showcase Egypt's wonders." },
     { year: "2018", title: "Expanded", desc: "Grew from Hurghada to cover Cairo, Luxor, Aswan, and Marsa Alam." },
     { year: "2021", title: "1000+ Guests", desc: "Celebrated serving over 1000 happy travelers from 40+ countries." },
-    { year: "2024", title: "32+ Trips", desc: "Launched our largest collection of curated experiences across all of Egypt." }
+    { year: "2024", title: "31+ Trips", desc: "Launched our largest collection of curated experiences across all of Egypt." }
   ]
 
   const stats = [
-    { value: "32", suffix: "+", label: "Unique Trips" },
+    { value: "31", suffix: "+", label: "Unique Trips" },
     { value: "5000", suffix: "+", label: "Happy Tourists" },
     { value: "10", suffix: "+", label: "Years Experience" },
     { value: "4.9", suffix: "", label: "Average Rating" }
@@ -119,7 +119,7 @@ export default function AboutPage() {
             '@type': 'AboutPage',
             '@id': 'https://goldenhorizontegypt.com/about',
             name: 'About Golden Horizont Egypt',
-            description: 'Golden Horizont Egypt is a premier travel agency in Hurghada offering 32+ unique tours across Egypt since 2015. Specializing in Red Sea snorkeling, diving, desert safaris, and historical tours.',
+            description: 'Golden Horizont Egypt is a premier travel agency in Hurghada offering 31+ unique tours across Egypt since 2015. Specializing in Red Sea snorkeling, diving, desert safaris, and historical tours.',
             mainEntity: {
               '@type': 'Organization',
               name: 'Golden Horizont Egypt',
@@ -369,7 +369,7 @@ export default function AboutPage() {
                   Ready for Your<br />Egypt Adventure?
                 </h2>
                 <p className="text-foreground/60 mb-10 text-lg max-w-lg mx-auto">
-                  Browse our collection of 32+ handcrafted trips and find your perfect experience
+                  Browse our collection of 31+ handcrafted trips and find your perfect experience
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link

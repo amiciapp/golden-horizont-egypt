@@ -34,9 +34,9 @@ export default function TripPageClient() {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-serif text-primary mb-4">Trip Not Found</h1>
+          <h1 className="text-4xl font-serif text-primary mb-4">{t.tripDetail.notFound}</h1>
           <Button onClick={() => router.push("/")} className="gold-gradient text-background">
-            Go Home
+            {t.tripDetail.goHome}
           </Button>
         </div>
       </div>
@@ -103,7 +103,7 @@ export default function TripPageClient() {
           className="text-muted-foreground hover:text-primary transition-colors"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Trips
+          {t.tripDetail.backToTrips}
         </Button>
       </div>
 
@@ -121,19 +121,19 @@ export default function TripPageClient() {
               </div>
               <div className="p-6 rounded-2xl border border-border bg-card text-center group hover:border-primary/50 transition-all duration-300">
                 <Users className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
-                <p className="text-sm text-muted-foreground mb-1">Group Size</p>
+                <p className="text-sm text-muted-foreground mb-1">{t.tripDetail.groupSize}</p>
                 <p className="text-lg font-semibold text-foreground">2-15</p>
               </div>
               <div className="p-6 rounded-2xl border border-border bg-card text-center group hover:border-primary/50 transition-all duration-300">
                 <MapPin className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
-                <p className="text-sm text-muted-foreground mb-1">Location</p>
+                <p className="text-sm text-muted-foreground mb-1">{t.tripDetail.location}</p>
                 <p className="text-lg font-semibold text-foreground">Egypt</p>
               </div>
             </div>
 
             {/* Description */}
             <div className="p-8 rounded-3xl border border-border bg-card">
-              <h2 className="text-2xl font-serif text-foreground mb-6">About This Trip</h2>
+              <h2 className="text-2xl font-serif text-foreground mb-6">{t.tripDetail.aboutTrip}</h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
                 {tripDescription}
               </p>
@@ -141,7 +141,7 @@ export default function TripPageClient() {
 
             {/* Highlights */}
             <div className="p-8 rounded-3xl border border-border bg-card">
-              <h2 className="text-2xl font-serif text-foreground mb-6">Highlights</h2>
+              <h2 className="text-2xl font-serif text-foreground mb-6">{t.tripDetail.highlights}</h2>
               <ul className="grid md:grid-cols-2 gap-4">
                 {trip.highlights.map((highlight, index) => (
                   <li key={index} className="flex items-start gap-3 group">
@@ -156,7 +156,7 @@ export default function TripPageClient() {
 
             {/* What's Included */}
             <div className="p-8 rounded-3xl border border-border bg-card">
-              <h2 className="text-2xl font-serif text-foreground mb-6">What&apos;s Included</h2>
+              <h2 className="text-2xl font-serif text-foreground mb-6">{t.tripDetail.whatsIncluded}</h2>
               <ul className="space-y-3">
                 {trip.included.map((item, index) => (
                   <li key={index} className="flex items-center gap-3">
@@ -194,7 +194,7 @@ export default function TripPageClient() {
                 ))}
               </div>
               <p className="text-sm text-muted-foreground text-center mt-4">
-                More photos coming soon...
+                {t.tripDetail.morePhotosSoon}
               </p>
             </div>
           </div>
@@ -206,7 +206,7 @@ export default function TripPageClient() {
                 <p className="text-sm text-muted-foreground mb-2">{t.trips.price}</p>
                 <div className="flex items-baseline justify-center gap-2">
                   <span className="text-4xl font-bold text-primary">€{trip.price}</span>
-                  <span className="text-muted-foreground">/ person</span>
+                  <span className="text-muted-foreground">{t.tripDetail.perPerson}</span>
                 </div>
               </div>
 
@@ -216,11 +216,11 @@ export default function TripPageClient() {
                   <span className="text-foreground font-medium">{tripDuration}</span>
                 </div>
                 <div className="flex justify-between py-3 border-b border-border">
-                  <span className="text-muted-foreground">Category</span>
+                  <span className="text-muted-foreground">{t.tripDetail.category}</span>
                   <span className="text-foreground font-medium">{trip.category}</span>
                 </div>
                 <div className="flex justify-between py-3 border-b border-border">
-                  <span className="text-muted-foreground">Rating</span>
+                  <span className="text-muted-foreground">{t.tripDetail.rating}</span>
                   <span className="text-foreground font-medium flex items-center gap-1">
                     <Star className="w-4 h-4 fill-primary text-primary" />
                     {trip.rating}
@@ -243,7 +243,7 @@ export default function TripPageClient() {
               </a>
 
               <p className="text-xs text-muted-foreground text-center mt-4">
-                Instant confirmation via WhatsApp
+                {t.tripDetail.instantConfirmation}
               </p>
             </div>
           </div>

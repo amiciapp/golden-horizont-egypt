@@ -55,6 +55,21 @@ export const translations = {
     whatsapp: {
       greeting: "Hello! I am interested in booking",
       trip: "Trip"
+    },
+    tripDetail: {
+      notFound: "Trip Not Found",
+      goHome: "Go Home",
+      backToTrips: "Back to Trips",
+      groupSize: "Group Size",
+      location: "Location",
+      aboutTrip: "About This Trip",
+      highlights: "Highlights",
+      whatsIncluded: "What's Included",
+      perPerson: "/ person",
+      category: "Category",
+      rating: "Rating",
+      instantConfirmation: "Instant confirmation via WhatsApp",
+      morePhotosSoon: "More photos coming soon..."
     }
   },
   ru: {
@@ -110,6 +125,21 @@ export const translations = {
     whatsapp: {
       greeting: "Здравствуйте! Я заинтересован в бронировании",
       trip: "Экскурсия"
+    },
+    tripDetail: {
+      notFound: "Экскурсия не найдена",
+      goHome: "На главную",
+      backToTrips: "Назад к экскурсиям",
+      groupSize: "Размер группы",
+      location: "Местоположение",
+      aboutTrip: "Об экскурсии",
+      highlights: "Преимущества",
+      whatsIncluded: "Что включено",
+      perPerson: "/ человека",
+      category: "Категория",
+      rating: "Рейтинг",
+      instantConfirmation: "Мгновенное подтверждение через WhatsApp",
+      morePhotosSoon: "Фото скоро..."
     }
   },
   de: {
@@ -165,6 +195,21 @@ export const translations = {
     whatsapp: {
       greeting: "Hallo! Ich bin an einer Buchung interessiert",
       trip: "Ausflug"
+    },
+    tripDetail: {
+      notFound: "Reise nicht gefunden",
+      goHome: "Zur Startseite",
+      backToTrips: "Zurück zu Reisen",
+      groupSize: "Gruppengröße",
+      location: "Standort",
+      aboutTrip: "Über diese Reise",
+      highlights: "Höhepunkte",
+      whatsIncluded: "Was ist inklusive",
+      perPerson: "/ Person",
+      category: "Kategorie",
+      rating: "Bewertung",
+      instantConfirmation: "Sofortige Bestätigung via WhatsApp",
+      morePhotosSoon: "Fotos folgen bald..."
     }
   },
   pl: {
@@ -220,6 +265,21 @@ export const translations = {
     whatsapp: {
       greeting: "Cześć! Jestem zainteresowany rezerwacją",
       trip: "Wycieczka"
+    },
+    tripDetail: {
+      notFound: "Wycieczka nie znaleziona",
+      goHome: "Na stronę główną",
+      backToTrips: "Powrót do wycieczek",
+      groupSize: "Wielkość grupy",
+      location: "Lokalizacja",
+      aboutTrip: "O tej wycieczce",
+      highlights: "Najważniejsze punkty",
+      whatsIncluded: "Co jest wliczone",
+      perPerson: "/ osobę",
+      category: "Kategoria",
+      rating: "Ocena",
+      instantConfirmation: "Natychmiastowe potwierdzenie przez WhatsApp",
+      morePhotosSoon: "Wkrótce więcej zdjęć..."
     }
   },
   uk: {
@@ -275,6 +335,21 @@ export const translations = {
     whatsapp: {
       greeting: "Привіт! Мене цікавить бронювання",
       trip: "Екскурсія"
+    },
+    tripDetail: {
+      notFound: "Екскурсію не знайдено",
+      goHome: "На головну",
+      backToTrips: "Назад до екскурсій",
+      groupSize: "Розмір групи",
+      location: "Місцезнаходження",
+      aboutTrip: "Про цю екскурсію",
+      highlights: "Переваги",
+      whatsIncluded: "Що включено",
+      perPerson: "/ людину",
+      category: "Категорія",
+      rating: "Рейтинг",
+      instantConfirmation: "Миттєве підтвердження через WhatsApp",
+      morePhotosSoon: "Фото незабаром..."
     }
   },
   cs: {
@@ -330,6 +405,21 @@ export const translations = {
     whatsapp: {
       greeting: "Dobrý den! Mám zájem o rezervaci",
       trip: "Výlet"
+    },
+    tripDetail: {
+      notFound: "Výlet nenalezen",
+      goHome: "Na úvodní stránku",
+      backToTrips: "Zpět na výlety",
+      groupSize: "Velikost skupiny",
+      location: "Lokalita",
+      aboutTrip: "O tomto výletu",
+      highlights: "Hlavní body",
+      whatsIncluded: "Co je zahrnuto",
+      perPerson: "/ osobu",
+      category: "Kategorie",
+      rating: "Hodnocení",
+      instantConfirmation: "Okamžité potvrzení přes WhatsApp",
+      morePhotosSoon: "Fotky brzy..."
     }
   },
   nl: {
@@ -385,6 +475,21 @@ export const translations = {
     whatsapp: {
       greeting: "Hallo! Ik ben geïnteresseerd in het boeken van",
       trip: "Uitstapje"
+    },
+    tripDetail: {
+      notFound: "Excursie niet gevonden",
+      goHome: "Naar de startpagina",
+      backToTrips: "Terug naar excursies",
+      groupSize: "Groepsgrootte",
+      location: "Locatie",
+      aboutTrip: "Over deze excursie",
+      highlights: "Hoogtepunten",
+      whatsIncluded: "Wat is inbegrepen",
+      perPerson: "/ persoon",
+      category: "Categorie",
+      rating: "Beoordeling",
+      instantConfirmation: "Onmiddellijke bevestiging via WhatsApp",
+      morePhotosSoon: "Foto's volgen binnenkort..."
     }
   },
   it: {
@@ -440,6 +545,21 @@ export const translations = {
     whatsapp: {
       greeting: "Ciao! Sono interessato a prenotare",
       trip: "Escursione"
+    },
+    tripDetail: {
+      notFound: "Escursione non trovata",
+      goHome: "Alla pagina iniziale",
+      backToTrips: "Torna alle escursioni",
+      groupSize: "Dimensione gruppo",
+      location: "Località",
+      aboutTrip: "Su questa escursione",
+      highlights: "Punti salienti",
+      whatsIncluded: "Cosa è incluso",
+      perPerson: "/ persona",
+      category: "Categoria",
+      rating: "Valutazione",
+      instantConfirmation: "Conferma istantanea via WhatsApp",
+      morePhotosSoon: "Foto in arrivo..."
     }
   },
   fr: {
@@ -495,6 +615,21 @@ export const translations = {
     whatsapp: {
       greeting: "Bonjour! Je suis intéressé par la réservation",
       trip: "Excursion"
+    },
+    tripDetail: {
+      notFound: "Excursion non trouvée",
+      goHome: "À l'accueil",
+      backToTrips: "Retour aux excursions",
+      groupSize: "Taille du groupe",
+      location: "Lieu",
+      aboutTrip: "À propos de cette excursion",
+      highlights: "Points forts",
+      whatsIncluded: "Ce qui est inclus",
+      perPerson: "/ personne",
+      category: "Catégorie",
+      rating: "Note",
+      instantConfirmation: "Confirmation instantanée via WhatsApp",
+      morePhotosSoon: "Photos bientôt..."
     }
   },
   es: {
@@ -550,6 +685,21 @@ export const translations = {
     whatsapp: {
       greeting: "¡Hola! Estoy interesado en reservar",
       trip: "Excursión"
+    },
+    tripDetail: {
+      notFound: "Excursión no encontrada",
+      goHome: "A la página principal",
+      backToTrips: "Volver a excursiones",
+      groupSize: "Tamaño del grupo",
+      location: "Ubicación",
+      aboutTrip: "Sobre esta excursión",
+      highlights: "Puntos destacados",
+      whatsIncluded: "Qué está incluido",
+      perPerson: "/ persona",
+      category: "Categoría",
+      rating: "Valoración",
+      instantConfirmation: "Confirmación instantánea por WhatsApp",
+      morePhotosSoon: "Fotos próximamente..."
     }
   },
   ar: {
@@ -605,6 +755,21 @@ export const translations = {
     whatsapp: {
       greeting: "مرحباً! أنا مهتم بحجز",
       trip: "رحلة"
+    },
+    tripDetail: {
+      notFound: "الرحلة غير موجودة",
+      goHome: "الصفحة الرئيسية",
+      backToTrips: "العودة للرحلات",
+      groupSize: "حجم المجموعة",
+      location: "الموقع",
+      aboutTrip: "عن هذه الرحلة",
+      highlights: "أبرز المميزات",
+      whatsIncluded: "ما هو مشمول",
+      perPerson: "/ شخص",
+      category: "الفئة",
+      rating: "التقييم",
+      instantConfirmation: "تأكيد فوري عبر واتساب",
+      morePhotosSoon: "صور قادمة قريبا..."
     }
   },
   zh: {
@@ -660,6 +825,21 @@ export const translations = {
     whatsapp: {
       greeting: "您好！我有兴趣预订",
       trip: "旅行"
+    },
+    tripDetail: {
+      notFound: "未找到旅行",
+      goHome: "返回首页",
+      backToTrips: "返回旅行列表",
+      groupSize: "团队规模",
+      location: "地点",
+      aboutTrip: "关于此旅行",
+      highlights: "亮点",
+      whatsIncluded: "包含内容",
+      perPerson: "/ 人",
+      category: "类别",
+      rating: "评分",
+      instantConfirmation: "通过WhatsApp即时确认",
+      morePhotosSoon: "更多照片即将推出..."
     }
   },
   pt: {
@@ -715,6 +895,21 @@ export const translations = {
     whatsapp: {
       greeting: "Olá! Estou interessado em reservar",
       trip: "Passeio"
+    },
+    tripDetail: {
+      notFound: "Passeio não encontrado",
+      goHome: "Página inicial",
+      backToTrips: "Voltar aos passeios",
+      groupSize: "Tamanho do grupo",
+      location: "Localização",
+      aboutTrip: "Sobre este passeio",
+      highlights: "Destaques",
+      whatsIncluded: "O que está incluído",
+      perPerson: "/ pessoa",
+      category: "Categoria",
+      rating: "Avaliação",
+      instantConfirmation: "Confirmação instantânea via WhatsApp",
+      morePhotosSoon: "Mais fotos em breve..."
     }
   },
   sv: {
@@ -770,6 +965,21 @@ export const translations = {
     whatsapp: {
       greeting: "Hej! Jag är intresserad av att boka",
       trip: "Utflykt"
+    },
+    tripDetail: {
+      notFound: "Utflykt hittades inte",
+      goHome: "Till startsidan",
+      backToTrips: "Tillbaka till utflykter",
+      groupSize: "Gruppstorlek",
+      location: "Plats",
+      aboutTrip: "Om denna utflykt",
+      highlights: "Höjdpunkter",
+      whatsIncluded: "Vad ingår",
+      perPerson: "/ person",
+      category: "Kategori",
+      rating: "Betyg",
+      instantConfirmation: "Omedelbar bekräftelse via WhatsApp",
+      morePhotosSoon: "Foton kommer snart..."
     }
   },
   da: {
@@ -825,6 +1035,21 @@ export const translations = {
     whatsapp: {
       greeting: "Hej! Jeg er interesseret i at booke",
       trip: "Udflugt"
+    },
+    tripDetail: {
+      notFound: "Udflugt ikke fundet",
+      goHome: "Til forsiden",
+      backToTrips: "Tilbage til udflugter",
+      groupSize: "Gruppestørrelse",
+      location: "Sted",
+      aboutTrip: "Om denne udflugt",
+      highlights: "Højdepunkter",
+      whatsIncluded: "Hvad er inkluderet",
+      perPerson: "/ person",
+      category: "Kategori",
+      rating: "Bedømmelse",
+      instantConfirmation: "Øjeblikkelig bekræftelse via WhatsApp",
+      morePhotosSoon: "Flere fotos kommer snart..."
     }
   },
   fi: {
@@ -880,6 +1105,21 @@ export const translations = {
     whatsapp: {
       greeting: "Hei! Olen kiinnostunut varaamaan",
       trip: "Retki"
+    },
+    tripDetail: {
+      notFound: "Retkeä ei löytynyt",
+      goHome: "Etusivulle",
+      backToTrips: "Takaisin retkiin",
+      groupSize: "Ryhmän koko",
+      location: "Sijainti",
+      aboutTrip: "Tästä retkestä",
+      highlights: "Kohokohdat",
+      whatsIncluded: "Mukaan kuuluu",
+      perPerson: "/ henkilö",
+      category: "Luokka",
+      rating: "Arvosana",
+      instantConfirmation: "Välitön vahvistus WhatsAppin kautta",
+      morePhotosSoon: "Lisää kuvia tulossa pian..."
     }
   },
   no: {
@@ -935,6 +1175,21 @@ export const translations = {
     whatsapp: {
       greeting: "Hei! Jeg er interessert i å bestille",
       trip: "Utflukt"
+    },
+    tripDetail: {
+      notFound: "Utflukt ikke funnet",
+      goHome: "Til startsiden",
+      backToTrips: "Tilbake til utflukter",
+      groupSize: "Gruppestørrelse",
+      location: "Sted",
+      aboutTrip: "Om denne utflukten",
+      highlights: "Høydepunkter",
+      whatsIncluded: "Hva er inkludert",
+      perPerson: "/ person",
+      category: "Kategori",
+      rating: "Vurdering",
+      instantConfirmation: "Øyeblikkelig bekreftelse via WhatsApp",
+      morePhotosSoon: "Flere bilder kommer snart..."
     }
   },
   hu: {
@@ -990,6 +1245,21 @@ export const translations = {
     whatsapp: {
       greeting: "Üdvözlöm! Érdeklődöm a foglalás iránt",
       trip: "Kirándulás"
+    },
+    tripDetail: {
+      notFound: "Kirándulás nem található",
+      goHome: "A kezdőlapra",
+      backToTrips: "Vissza a kirándulásokhoz",
+      groupSize: "Csoport mérete",
+      location: "Helyszín",
+      aboutTrip: "Erről a kirándulásról",
+      highlights: "Legfontosabb látnivalók",
+      whatsIncluded: "Mi tartalmazza",
+      perPerson: "/ fő",
+      category: "Kategória",
+      rating: "Értékelés",
+      instantConfirmation: "Azonnali visszaigazolás WhatsAppon",
+      morePhotosSoon: "Fotók hamarosan..."
     }
   },
   ro: {
@@ -1045,6 +1315,21 @@ export const translations = {
     whatsapp: {
       greeting: "Bună ziua! Aș dori să rezerv",
       trip: "Excursia"
+    },
+    tripDetail: {
+      notFound: "Excursie negăsită",
+      goHome: "La pagina principală",
+      backToTrips: "Înapoi la excursii",
+      groupSize: "Dimensiunea grupului",
+      location: "Locație",
+      aboutTrip: "Despre această excursie",
+      highlights: "Puncte de interes",
+      whatsIncluded: "Ce este inclus",
+      perPerson: "/ persoană",
+      category: "Categorie",
+      rating: "Evaluare",
+      instantConfirmation: "Confirmare instantanee prin WhatsApp",
+      morePhotosSoon: "Mai multe fotografii în curând..."
     }
   },
   tr: {
@@ -1100,6 +1385,21 @@ export const translations = {
     whatsapp: {
       greeting: "Merhaba! Rezervasyon yapmak istiyorum",
       trip: "Tur"
+    },
+    tripDetail: {
+      notFound: "Turu bulunamadı",
+      goHome: "Ana sayfaya",
+      backToTrips: "Turlara geri dön",
+      groupSize: "Grup boyutu",
+      location: "Konum",
+      aboutTrip: "Bu tur hakkında",
+      highlights: "Öne çıkanlar",
+      whatsIncluded: "Dahil olanlar",
+      perPerson: "/ kişi",
+      category: "Kategori",
+      rating: "Değerlendirme",
+      instantConfirmation: "WhatsApp ile anında onay",
+      morePhotosSoon: "Fotoğraflar yakında..."
     }
   }
 };

@@ -9,12 +9,12 @@ import LoadingScreen from "@/components/loading-screen";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 
-const GallerySection = dynamic(() => import("@/components/gallery-section"), { ssr: false });
-const TripsSection = dynamic(() => import("@/components/trips-section"), { ssr: false });
-const ReviewsSection = dynamic(() => import("@/components/reviews-section"), { ssr: false });
+const GallerySection = dynamic(() => import("@/components/gallery-section"), { ssr: true });
+const TripsSection = dynamic(() => import("@/components/trips-section"), { ssr: true });
+const ReviewsSection = dynamic(() => import("@/components/reviews-section"), { ssr: true });
 const WeatherExchangeWidget = dynamic(() => import("@/components/weather-exchange-widget"), { ssr: false });
-const MapSection = dynamic(() => import("@/components/map-section"), { ssr: false });
-const Footer = dynamic(() => import("@/components/footer"), { ssr: false });
+const MapSection = dynamic(() => import("@/components/map-section"), { ssr: true });
+const Footer = dynamic(() => import("@/components/footer"), { ssr: true });
 
 export default function Home() {
   const [lang, setLang] = useState<Language>("en");
