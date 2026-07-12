@@ -74,9 +74,6 @@ export const metadata: Metadata = {
       'max-snippet': -1
     }
   },
-  alternates: {
-    canonical: 'https://goldenhorizontegypt.com',
-  },
   verification: {},
   category: 'travel',
   icons: {
@@ -111,9 +108,9 @@ const jsonLd = {
       url: 'https://goldenhorizontegypt.com',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://goldenhorizontegypt.com/placeholder-logo.png',
+        url: 'https://goldenhorizontegypt.com/logo.png',
       },
-      image: 'https://goldenhorizontegypt.com/placeholder-logo.png',
+      image: 'https://goldenhorizontegypt.com/logo.png',
       telephone: '+201220951483',
       email: 'info@goldenhorizontegypt.com',
       areaServed: [

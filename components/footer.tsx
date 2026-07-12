@@ -24,12 +24,12 @@ export default function Footer({ t }: FooterProps) {
   ];
 
   const trips = [
-    { name: "Giftun Island Snorkeling", slug: "/trip/giftun-island-snorkeling" },
-    { name: "Orange Bay Island", slug: "/trip/orange-bay-island" },
-    { name: "Dolphin House Reef", slug: "/trip/dolphin-house-reef" },
-    { name: "Desert Safari", slug: "/trip/super-safari-adventure" },
-    { name: "Luxor Day Trip", slug: "/trip/luxor-day-trip" },
-    { name: "Cairo & Pyramids", slug: "/trip/cairo-pyramids-tour" },
+    { name: "Paradise Island Snorkeling", slug: "/trip/paradise-island-snorkeling" },
+    { name: "Super Safari Adventure", slug: "/trip/super-safari" },
+    { name: "Dolphin Watching Tour", slug: "/trip/dolphin-watching-tour" },
+    { name: "Luxor Day Trip", slug: "/trip/luxor-bus-trip" },
+    { name: "Cairo & Pyramids", slug: "/trip/cairo-bus-trip" },
+    { name: "Diving Adventure", slug: "/trip/diving-trip" },
   ];
 
   const socialLinks = [

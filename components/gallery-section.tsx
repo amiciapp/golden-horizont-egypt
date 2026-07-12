@@ -185,13 +185,6 @@ export default function GallerySection({ t }: GallerySectionProps) {
             </div>
           ))}
         </div>
-
-        {/* View More Button */}
-        <div className="text-center mt-12">
-          <button className="px-8 py-3 border border-primary/50 text-primary rounded-full uppercase tracking-wider text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
-            View All Photos
-          </button>
-        </div>
       </div>
 
       {/* Lightbox */}

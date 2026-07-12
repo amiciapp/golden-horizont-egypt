@@ -236,7 +236,7 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
         {/* Stats */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {[
-            { value: "69+", label: "Unique Trips" },
+            { value: `${trips.length}+`, label: "Unique Trips" },
             { value: "5000+", label: "Happy Tourists" },
             { value: "10+", label: "Years Experience" },
             { value: "4.9", label: "Average Rating" },
