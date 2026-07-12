@@ -40,7 +40,7 @@ export default function MapSection({ t }: MapSectionProps) {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+353 83 095 1168 — Ireland", "+373 62 076 98 — Moldova", "+201 22 095 1483 — Egypt (Russian)", "+201 01 372 5824 — Egypt (English)"],
+      details: ["+353 83 095 1168 — Ireland", "+373 62 076 98 — Moldova", "+201 22 095 1483 — Egypt (Russian + Romanian)", "+201 01 372 5824 — Egypt (English)"],
     },
     {
       icon: Mail,
@@ -84,7 +84,7 @@ export default function MapSection({ t }: MapSectionProps) {
             Our Location
           </h2>
           <p className="text-foreground/60 max-w-2xl mx-auto">
-            Visit us at Hurghada Marina or contact us anytime
+            HURGHADA - SHERATON STREET
           </p>
         </Reveal>
 

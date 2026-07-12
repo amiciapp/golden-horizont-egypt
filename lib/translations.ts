@@ -46,6 +46,7 @@ export const translations = {
     footer: {
       tagline: "Your Gateway to Egypt Adventures",
       quickLinks: "Quick Links",
+      popularTrips: "Popular Trips",
       contact: "Contact Us",
       followUs: "Follow Us",
       rights: "All rights reserved",
@@ -100,6 +101,7 @@ export const translations = {
     footer: {
       tagline: "Ваш путь к приключениям в Египте",
       quickLinks: "Быстрые ссылки",
+      popularTrips: "Популярные туры",
       contact: "Связаться с нами",
       followUs: "Подписывайтесь",
       rights: "Все права защищены",
@@ -154,6 +156,7 @@ export const translations = {
     footer: {
       tagline: "Ihr Tor zu Abenteuern in Ägypten",
       quickLinks: "Schnelllinks",
+      popularTrips: "Beliebte Ausflüge",
       contact: "Kontaktieren Sie uns",
       followUs: "Folgen Sie uns",
       rights: "Alle Rechte vorbehalten",
@@ -208,6 +211,7 @@ export const translations = {
     footer: {
       tagline: "Twoja brama do przygód Morza Czerwonego",
       quickLinks: "Szybkie linki",
+      popularTrips: "Popularne wycieczki",
       contact: "Skontaktuj się",
       followUs: "Obserwuj nas",
       rights: "Wszelkie prawa zastrzeżone",
@@ -262,6 +266,7 @@ export const translations = {
     footer: {
       tagline: "Ваш шлях до пригод Червоного моря",
       quickLinks: "Швидкі посилання",
+      popularTrips: "Популярні екскурсії",
       contact: "Зв'яжіться з нами",
       followUs: "Слідкуйте за нами",
       rights: "Всі права захищені",
@@ -316,6 +321,7 @@ export const translations = {
     footer: {
       tagline: "Vaše brána k dobrodružstvím Rudého moře",
       quickLinks: "Rychlé odkazy",
+      popularTrips: "Oblíbené výlety",
       contact: "Kontaktujte nás",
       followUs: "Sledujte nás",
       rights: "Všechna práva vyhrazena",
@@ -370,6 +376,7 @@ export const translations = {
     footer: {
       tagline: "Jouw poort naar Rode Zee avonturen",
       quickLinks: "Snelle links",
+      popularTrips: "Populaire uitjes",
       contact: "Neem contact op",
       followUs: "Volg ons",
       rights: "Alle rechten voorbehouden",
@@ -424,6 +431,7 @@ export const translations = {
     footer: {
       tagline: "La tua porta per le avventure del Mar Rosso",
       quickLinks: "Link rapidi",
+      popularTrips: "Escursioni popolari",
       contact: "Contattaci",
       followUs: "Seguici",
       rights: "Tutti i diritti riservati",
@@ -478,6 +486,7 @@ export const translations = {
     footer: {
       tagline: "Votre porte vers les aventures de la Mer Rouge",
       quickLinks: "Liens rapides",
+      popularTrips: "Excursions populaires",
       contact: "Contactez-nous",
       followUs: "Suivez-nous",
       rights: "Tous droits réservés",
@@ -532,6 +541,7 @@ export const translations = {
     footer: {
       tagline: "Tu puerta a las aventuras del Mar Rojo",
       quickLinks: "Enlaces rápidos",
+      popularTrips: "Excursiones populares",
       contact: "Contáctanos",
       followUs: "Síguenos",
       rights: "Todos los derechos reservados",
@@ -586,6 +596,7 @@ export const translations = {
     footer: {
       tagline: "بوابتك لمغامرات مصر",
       quickLinks: "روابط سريعة",
+      popularTrips: "رحلات شائعة",
       contact: "اتصل بنا",
       followUs: "تابعنا",
       rights: "جميع الحقوق محفوظة",
@@ -640,6 +651,7 @@ export const translations = {
     footer: {
       tagline: "您通往红海冒险的门户",
       quickLinks: "快速链接",
+      popularTrips: "热门旅行",
       contact: "联系我们",
       followUs: "关注我们",
       rights: "版权所有",
@@ -694,6 +706,7 @@ export const translations = {
     footer: {
       tagline: "Seu portal para aventuras no Mar Vermelho",
       quickLinks: "Links rápidos",
+      popularTrips: "Passeios populares",
       contact: "Entre em contato",
       followUs: "Siga-nos",
       rights: "Todos os direitos reservados",
@@ -748,6 +761,7 @@ export const translations = {
     footer: {
       tagline: "Din port till Röda havets äventyr",
       quickLinks: "Snabblänkar",
+      popularTrips: "Populära utflykter",
       contact: "Kontakta oss",
       followUs: "Följ oss",
       rights: "Alla rättigheter förbehållna",
@@ -800,8 +814,9 @@ export const translations = {
       eurToEgp: "EUR til EGP"
     },
     footer: {
-      tagline: "Din port til Det Røde Havs eventyr",
+      tagline: "Din port til Det Røde Hav's eventyr",
       quickLinks: "Hurtige links",
+      popularTrips: "Populære udflugter",
       contact: "Kontakt os",
       followUs: "Følg os",
       rights: "Alle rettigheder forbeholdes",
@@ -856,6 +871,7 @@ export const translations = {
     footer: {
       tagline: "Porttisi Punaisen meren seikkailuihin",
       quickLinks: "Pikalinkit",
+      popularTrips: "Suositut retket",
       contact: "Ota yhteyttä",
       followUs: "Seuraa meitä",
       rights: "Kaikki oikeudet pidätetään",
@@ -910,6 +926,7 @@ export const translations = {
     footer: {
       tagline: "Din port til Rødehavets eventyr",
       quickLinks: "Hurtiglenker",
+      popularTrips: "Populære utflukter",
       contact: "Kontakt oss",
       followUs: "Følg oss",
       rights: "Alle rettigheter forbeholdt",
@@ -964,6 +981,7 @@ export const translations = {
     footer: {
       tagline: "Kapuja a Vörös-tengeri kalandokhoz",
       quickLinks: "Gyors linkek",
+      popularTrips: "Népszerű kirándulások",
       contact: "Kapcsolat",
       followUs: "Kövessen minket",
       rights: "Minden jog fenntartva",
@@ -1018,6 +1036,7 @@ export const translations = {
     footer: {
       tagline: "Poarta dumneavoastră către aventurile Egiptului",
       quickLinks: "Linkuri rapide",
+      popularTrips: "Excursii populare",
       contact: "Contactați-ne",
       followUs: "Urmăriți-ne",
       rights: "Toate drepturile rezervate",
@@ -1072,6 +1091,7 @@ export const translations = {
     footer: {
       tagline: "Kızıldeniz maceralarına açılan kapınız",
       quickLinks: "Hızlı Linkler",
+      popularTrips: "Popüler turlar",
       contact: "Bize Ulaşın",
       followUs: "Bizi Takip Edin",
       rights: "Tüm hakları saklıdır",

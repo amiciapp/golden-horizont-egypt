@@ -87,11 +87,11 @@ export default function AboutPage() {
     { year: "2015", title: "Founded", desc: "Golden Horizont Egypt was established with a vision to showcase Egypt's wonders." },
     { year: "2018", title: "Expanded", desc: "Grew from Hurghada to cover Cairo, Luxor, Aswan, and Marsa Alam." },
     { year: "2021", title: "1000+ Guests", desc: "Celebrated serving over 1000 happy travelers from 40+ countries." },
-    { year: "2024", title: "69+ Trips", desc: "Launched our largest collection of curated experiences across all of Egypt." }
+    { year: "2024", title: "32+ Trips", desc: "Launched our largest collection of curated experiences across all of Egypt." }
   ]
 
   const stats = [
-    { value: "69", suffix: "+", label: "Unique Trips" },
+    { value: "32", suffix: "+", label: "Unique Trips" },
     { value: "5000", suffix: "+", label: "Happy Tourists" },
     { value: "10", suffix: "+", label: "Years Experience" },
     { value: "4.9", suffix: "", label: "Average Rating" }
@@ -119,7 +119,7 @@ export default function AboutPage() {
             '@type': 'AboutPage',
             '@id': 'https://goldenhorizontegypt.com/about',
             name: 'About Golden Horizont Egypt',
-            description: 'Golden Horizont Egypt is a premier travel agency in Hurghada offering 69+ unique tours across Egypt since 2015. Specializing in Red Sea snorkeling, diving, desert safaris, and historical tours.',
+            description: 'Golden Horizont Egypt is a premier travel agency in Hurghada offering 32+ unique tours across Egypt since 2015. Specializing in Red Sea snorkeling, diving, desert safaris, and historical tours.',
             mainEntity: {
               '@type': 'Organization',
               name: 'Golden Horizont Egypt',
@@ -220,7 +220,7 @@ export default function AboutPage() {
                 <div className="aspect-square rounded-3xl overflow-hidden">
                   <img src="/about-hero.webp" alt="Golden Horizont Egypt" className="w-full h-full object-cover" />
                 </div>
-                <div className="absolute -bottom-6 -right-6 w-40 h-40 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center backdrop-blur-xl p-4 animate-logo-glow">
+                <div className="absolute -bottom-6 -right-6 w-40 h-40 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center backdrop-blur-xl p-4 animate-logo-glow">
                   <img src="/logo.png" alt="Golden Horizont Egypt" className="w-full h-full object-contain" />
                 </div>
                 <div className="absolute -top-4 -left-4 w-24 h-24 rounded-full border border-primary/20 flex items-center justify-center bg-background/50 backdrop-blur-sm">
@@ -369,7 +369,7 @@ export default function AboutPage() {
                   Ready for Your<br />Egypt Adventure?
                 </h2>
                 <p className="text-foreground/60 mb-10 text-lg max-w-lg mx-auto">
-                  Browse our collection of 69+ handcrafted trips and find your perfect experience
+                  Browse our collection of 32+ handcrafted trips and find your perfect experience
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link

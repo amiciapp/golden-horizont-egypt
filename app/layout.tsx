@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     description: 'Book unforgettable tours and excursions across Egypt. Cairo pyramids, Luxor temples, Red Sea snorkeling, desert safaris, and more. Best prices guaranteed!',
     images: [
       {
-        url: '/placeholder-logo.png',
+        url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'Golden Horizont Egypt - Egypt Tours & Adventures'
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Golden Horizont Egypt | Premium Egypt Tours',
     description: 'Discover the magic of Egypt. Book historical tours, Red Sea trips, desert safaris & more across Egypt!',
-    images: ['/placeholder-logo.png']
+    images: ['/logo.png']
   },
   robots: {
     index: true,
@@ -75,21 +75,9 @@ export const metadata: Metadata = {
     }
   },
   alternates: {
-    languages: {
-      'en': 'https://goldenhorizontegypt.com',
-      'ru': 'https://goldenhorizontegypt.com',
-      'de': 'https://goldenhorizontegypt.com',
-      'ar': 'https://goldenhorizontegypt.com',
-      'ro': 'https://goldenhorizontegypt.com'
-    }
+    canonical: 'https://goldenhorizontegypt.com',
   },
-  verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    other: {
-      'msvalidate.01': 'your-bing-verification-code'
-    }
-  },
+  verification: {},
   category: 'travel',
   icons: {
     icon: [
@@ -219,7 +207,7 @@ const jsonLd = {
           name: 'What types of tours does Golden Horizont Egypt offer?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Golden Horizont Egypt offers 69+ unique experiences including Red Sea snorkeling trips, scuba diving courses, desert safaris with quad bikes, historical tours to Cairo and Luxor, cultural excursions, boat trips to Giftun Island and Orange Bay, dolphin watching, parasailing, submarine adventures, and private yacht charters across Egypt.'
+            text: 'Golden Horizont Egypt offers 32+ unique experiences including Red Sea snorkeling trips, scuba diving courses, desert safaris with quad bikes, historical tours to Cairo and Luxor, cultural excursions, boat trips to Giftun Island and Orange Bay, dolphin watching, parasailing, submarine adventures, and private yacht charters across Egypt.'
           }
         },
         {

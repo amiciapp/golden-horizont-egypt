@@ -156,7 +156,7 @@ export default function Footer({ t }: FooterProps) {
           {/* Popular Trips */}
           <Reveal delay={200}>
             <h4 className="text-foreground font-semibold mb-6 uppercase tracking-wider text-sm">
-              Popular Trips
+              {t.footer.popularTrips}
             </h4>
             <ul className="space-y-3">
               {trips.map((trip) => (
@@ -189,7 +189,7 @@ export default function Footer({ t }: FooterProps) {
                 <div className="flex flex-col gap-1">
                   <a href="tel:+353830951168" className="text-foreground/60 hover:text-primary transition-colors text-sm">+353 83 095 1168 — Ireland</a>
                   <a href="tel:+3736207698" className="text-foreground/60 hover:text-primary transition-colors text-sm">+373 62 076 98 — Moldova</a>
-                  <a href="tel:+201220951483" className="text-foreground/60 hover:text-primary transition-colors text-sm">+20 122 095 1483 — Egypt (Russian)</a>
+                  <a href="tel:+201220951483" className="text-foreground/60 hover:text-primary transition-colors text-sm">+20 122 095 1483 — Egypt (Russian + Romanian)</a>
                   <a href="tel:+201013725824" className="text-foreground/60 hover:text-primary transition-colors text-sm">+20 101 372 5824 — Egypt (English)</a>
                 </div>
               </li>

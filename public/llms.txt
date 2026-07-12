@@ -2,7 +2,7 @@
 > Premium tours and excursions across Egypt. Snorkeling, diving, desert safaris, historical tours to Cairo, Luxor, Aswan, and exclusive Red Sea adventures since 2015.
 
 ## About
-- [About Golden Horizont Egypt](https://goldenhorizontegypt.com/about): Egypt-wide travel agency with 69+ unique trips, 5000+ happy travelers, 10+ years of experience, and 4.9 average rating.
+- [About Golden Horizont Egypt](https://goldenhorizontegypt.com/about): Egypt-wide travel agency with 32+ unique trips, 5000+ happy travelers, 10+ years of experience, and 4.9 average rating.
 
 ## Popular Trips
 - [Giftun Island Snorkeling](https://goldenhorizontegypt.com/trip/giftun-island-snorkeling): Full-day snorkeling trip to Giftun Island National Park, coral reefs, lunch, transfers from Hurghada.
@@ -14,6 +14,15 @@
 - [Introduction to Diving](https://goldenhorizontegypt.com/trip/introduction-to-diving): Beginner scuba diving course in the Red Sea, certified instructors, all equipment.
 - [Mahmya Island](https://goldenhorizontegypt.com/trip/mahmya-island): Exclusive island beach day, snorkeling, BBQ lunch, relaxing at Mahmya Reserve.
 
+## Trip Categories
+- **Snorkeling & Beach**: Giftun Island, Orange Bay, Mahmya Island, Paradise Island, Snorkeling with Turtles
+- **Diving**: Introductory dives, SSI certification courses, night dives, reef exploration
+- **Desert Adventures**: Quad biking, buggy safaris, Bedouin dinners, camel rides, stargazing
+- **Historical Tours**: Cairo Pyramids, Luxor temples, Aswan attractions, museum visits
+- **Boat Trips**: Yacht charters, sunset cruises, fishing trips, submarine adventures
+- **Water Sports**: Parasailing, jet skiing, banana boat, flyboarding, wakeboarding
+- **Cultural Experiences**: City tours, shopping trips, Nubian village visits, cooking classes
+
 ## Key Facts
 - Location: Sheraton Street, Hurghada, Egypt (27°13'01.0"N 33°50'18.5"E)
 - Contact: +201220951483 (WhatsApp), info@goldenhorizontegypt.com
@@ -22,7 +31,13 @@
 - Established: 2015
 - Services: Boat trips, snorkeling, diving, desert safaris, historical tours, airport transfers
 - Coverage: Hurghada, Cairo, Luxor, Aswan, Marsa Alam, Sharm El Sheikh
+- Features: Free hotel pickup/drop-off, licensed guides, instant WhatsApp booking, free cancellation 24h
 
 ## Booking
-- [All Trips](https://goldenhorizontegypt.com/#trips): Browse all 69+ exclusive experiences
+- [All Trips](https://goldenhorizontegypt.com/#trips): Browse all 32+ exclusive experiences
 - WhatsApp Booking: https://wa.me/201220951483
+
+## FAQ
+- Can I book in languages other than English? Yes — guides available in English, Russian, German, Arabic, and Romanian.
+- Is hotel pickup included? Yes, all tours include complimentary pickup/drop-off from Hurghada hotels.
+- What is the cancellation policy? Free cancellation up to 24 hours before your tour.
