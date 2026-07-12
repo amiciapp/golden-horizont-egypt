@@ -157,7 +157,7 @@ export default function AboutPage() {
         <div className="absolute top-1/3 right-1/3 w-48 h-48 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute bottom-1/3 left-1/3 w-56 h-56 rounded-full bg-secondary/5 blur-3xl" />
 
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center pt-24">
           <FadeInSection delay={0.1}>
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary" />
