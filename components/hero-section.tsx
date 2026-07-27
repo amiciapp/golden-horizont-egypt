@@ -1,16 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { type TranslationKeys } from "@/lib/translations";
+import { WHATSAPP_LINK } from "@/lib/constants";
 
 interface HeroSectionProps {
   t: TranslationKeys;
 }
 
 export default function HeroSection({ t }: HeroSectionProps) {
-  const [isLoaded] = useState(true);
-
   return (
     <section id="home" className="relative h-screen min-h-[700px] overflow-hidden">
       {/* Gradient Overlay for bottom transition */}
@@ -24,9 +22,7 @@ export default function HeroSection({ t }: HeroSectionProps) {
 
         {/* Main Content */}
         <div
-          className={`max-w-4xl mx-auto transition-all duration-1000 ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className="max-w-4xl mx-auto transition-all duration-1000 opacity-100 translate-y-0"
         >
           {/* Pre-title */}
           <div className="flex items-center justify-center gap-4 mb-6">
@@ -60,7 +56,7 @@ export default function HeroSection({ t }: HeroSectionProps) {
             </a>
             
             <a
-              href="https://wa.me/201220951483"
+              href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-8 py-4 border border-secondary/50 text-secondary rounded-full font-medium uppercase tracking-wider hover:bg-secondary/10 hover:border-secondary transition-all duration-300"

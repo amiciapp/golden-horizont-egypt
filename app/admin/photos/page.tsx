@@ -28,7 +28,7 @@ export default function AdminPhotosPage() {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) setAssignments(JSON.parse(stored));
-    } catch {}
+    } catch (e) { console.error("Error:", e); }
   }, []);
 
   const photoIds = useMemo(() => {
@@ -43,7 +43,7 @@ export default function AdminPhotosPage() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
       setSaved(true);
       setTimeout(() => setSaved(false), 2000);
-    } catch {}
+    } catch (e) { console.error("Error:", e); }
   }, []);
 
   const togglePhoto = (photoId: string) => {

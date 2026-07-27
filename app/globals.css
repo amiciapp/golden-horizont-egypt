@@ -1,10 +1,12 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@plugin '@tailwindcss/typography';
+
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Golden Horizont Egypt - Black, Gold & Silver Luxury Theme */
+  /* Golden Horizont Egypt - Liquid Glass Luxury Theme */
   --background: oklch(0.08 0 0);
   --foreground: oklch(0.95 0 0);
   --card: oklch(0.12 0 0);
@@ -16,7 +18,7 @@
   --secondary: oklch(0.75 0.02 250);
   --secondary-foreground: oklch(0.08 0 0);
   --muted: oklch(0.2 0 0);
-  --muted-foreground: oklch(0.65 0 0);
+  --muted-foreground: oklch(0.72 0 0);
   --accent: oklch(0.78 0.12 85);
   --accent-foreground: oklch(0.08 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -31,7 +33,7 @@
   --chart-5: oklch(0.85 0.08 85);
   --radius: 0.5rem;
   
-  /* Custom Golden Horizont Egypt Colors */
+  /* Brand Colors - Golden Horizont Egypt */
   --gold: oklch(0.78 0.12 85);
   --gold-light: oklch(0.85 0.1 85);
   --gold-dark: oklch(0.65 0.12 85);
@@ -40,6 +42,16 @@
   --silver-dark: oklch(0.6 0.02 250);
   --black-deep: oklch(0.05 0 0);
   --black-soft: oklch(0.12 0 0);
+  
+  /* Liquid Glass Tokens */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-blur: 20px;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  
+  /* Adventure Accent */
+  --accent-orange: #EA580C;
+  --accent-blue: #0EA5E9;
 }
 
 .dark {
@@ -54,7 +66,7 @@
   --secondary: oklch(0.75 0.02 250);
   --secondary-foreground: oklch(0.08 0 0);
   --muted: oklch(0.2 0 0);
-  --muted-foreground: oklch(0.65 0 0);
+  --muted-foreground: oklch(0.72 0 0);
   --accent: oklch(0.78 0.12 85);
   --accent-foreground: oklch(0.08 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -66,6 +78,7 @@
 
 @theme inline {
   --font-sans: 'Playfair Display', 'Inter', sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -96,7 +109,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   
-  /* Custom Colors */
+  /* Brand Colors */
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-gold-dark: var(--gold-dark);
@@ -105,6 +118,14 @@
   --color-silver-dark: var(--silver-dark);
   --color-black-deep: var(--black-deep);
   --color-black-soft: var(--black-soft);
+  
+  /* Liquid Glass Tokens */
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  
+  /* Adventure Accents */
+  --color-accent-orange: var(--accent-orange);
+  --color-accent-blue: var(--accent-blue);
 }
 
 @layer base {
@@ -332,6 +353,52 @@
   to { opacity: 1; }
 }
 
+/* Weather Widget Animations */
+@keyframes sun-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes sun-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.6); opacity: 0; }
+}
+
+@keyframes moon-glow {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.3)); transform: translateY(0); }
+  50% { filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.6)); transform: translateY(-3px); }
+}
+
+@keyframes cloud-drift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+.animate-sun-spin {
+  animation: sun-spin 20s linear infinite;
+}
+
+.animate-sun-pulse {
+  animation: sun-pulse 3s ease-in-out infinite;
+}
+
+.animate-moon-glow {
+  animation: moon-glow 4s ease-in-out infinite;
+}
+
+.animate-cloud-drift {
+  animation: cloud-drift 5s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
 /* RTL Support for Arabic */
 [dir="rtl"] .text-gradient-gold,
 [dir="rtl"] .text-gradient-silver {
@@ -445,8 +512,8 @@
     #D4AF37 100%
   );
   background-size: 300% 100%;
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: goldShimmerSweep 2s linear infinite;
 }
@@ -673,6 +740,35 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: var(--gold);
+  color: var(--black-deep);
+  font-weight: 600;
+  border-radius: 0 0 0.5rem 0.5rem;
+  transition: top 0.2s;
+}
+.skip-to-content:focus {
+  top: 0;
+}
+
 /* Line draw animation for section dividers */
 @keyframes line-draw {
   0% {
@@ -690,6 +786,139 @@ html {
   transform-origin: center;
 }
 
+/* ==============================
+   Liquid Glass Effects
+   ============================== */
+
+/* Glass Card */
+.glass-card {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--glass-shadow);
+}
+
+/* Glass Card Hover */
+.glass-card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
+}
+
+/* Glass Button */
+.glass-button {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.9) 0%, rgba(212, 175, 55, 0.7) 100%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px 32px;
+  font-weight: 600;
+  color: #0a0a0a;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+}
+.glass-button:hover {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 1) 0%, rgba(212, 175, 55, 0.85) 100%);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Glass Navigation */
+.glass-nav {
+  background: rgba(10, 10, 10, 0.7);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Morphing Border Animation */
+@keyframes morphBorder {
+  0%, 100% {
+    border-radius: 16px;
+  }
+  25% {
+    border-radius: 20px 12px 20px 12px;
+  }
+  50% {
+    border-radius: 12px 20px 12px 20px;
+  }
+  75% {
+    border-radius: 18px 14px 18px 14px;
+  }
+}
+
+.morph-border {
+  animation: morphBorder 8s ease-in-out infinite;
+}
+
+/* Fluid Gradient Background */
+@keyframes fluidGradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.fluid-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.1) 0%,
+    rgba(14, 165, 233, 0.05) 50%,
+    rgba(212, 175, 55, 0.1) 100%
+  );
+  background-size: 200% 200%;
+  animation: fluidGradient 15s ease infinite;
+}
+
+/* Iridescent Shimmer */
+@keyframes iridescent {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.iridescent {
+  animation: iridescent 20s linear infinite;
+}
+
+/* Chromatic Aberration Effect */
+.chromatic-text {
+  position: relative;
+}
+.chromatic-text::before,
+.chromatic-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.chromatic-text::before {
+  color: rgba(255, 0, 0, 0.5);
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-2px, -1px);
+  opacity: 0.5;
+}
+.chromatic-text::after {
+  color: rgba(0, 255, 255, 0.5);
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  transform: translate(2px, 1px);
+  opacity: 0.5;
+}
+
 /* Logo golden glow pulse */
 @keyframes logo-glow {
   0%, 100% {
@@ -705,4 +934,119 @@ html {
 .animate-logo-glow {
   animation: logo-glow 3s ease-in-out infinite;
 }
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+[dir="rtl"] .ml-2 {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+[dir="rtl"] .mr-2 {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+[dir="rtl"] .ml-4 {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+[dir="rtl"] .mr-4 {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+[dir="rtl"] .pl-2 {
+  padding-left: 0;
+  padding-right: 0.5rem;
+}
+
+[dir="rtl"] .pr-2 {
+  padding-right: 0;
+  padding-left: 0.5rem;
+}
+
+[dir="rtl"] .gap-3 {
+  gap: 0.75rem;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+[dir="rtl"] .left-0 {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .right-0 {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .-translate-x-1\/2 {
+  transform: translateX(50%);
+}
+
+[dir="rtl"] .border-l {
+  border-left: none;
+  border-right: var(--tw-border-style, solid) 1px var(--tw-border-opacity, 1);
+}
+
+[dir="rtl"] .border-r {
+  border-right: none;
+  border-left: var(--tw-border-style, solid) 1px var(--tw-border-opacity, 1);
+}
+
+/* ============================================================
+   ACCESSIBILITY: prefers-reduced-motion
+   Disables decorative animations for users who enabled
+   "Reduce motion" in OS accessibility settings.
+   WCAG 2.1 - Success Criterion 2.3.3 (AAA)
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-float,
+  .animate-pulse-gold,
+  .animate-logo-glow,
+  .animate-shimmer,
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-slide-up,
+  .animate-line-draw,
+  .hover-lift {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
 

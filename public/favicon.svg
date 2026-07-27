@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8B84A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C9922E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A67B1F;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pyramidGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C9922E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A67B1F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="32" height="32" fill="#141414" rx="6"/>
+  
+  <!-- Sun -->
+  <circle cx="16" cy="8" r="5" fill="url(#goldGradient)"/>
+  
+  <!-- Horizon Line -->
+  <line x1="4" y1="20" x2="28" y2="20" stroke="url(#goldGradient)" stroke-width="1"/>
+  
+  <!-- Pyramid Left -->
+  <polygon points="16,20 4,20 10,8" fill="url(#pyramidGradient)" opacity="0.9"/>
+  
+  <!-- Pyramid Right -->
+  <polygon points="16,20 28,20 22,8" fill="url(#pyramidGradient)" opacity="0.7"/>
+</svg>

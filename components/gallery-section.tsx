@@ -16,61 +16,18 @@ interface GalleryImage {
   alt: string;
 }
 
-const fallbackImages = [
-  {
-    src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
-    alt: "Red Sea Coral Reef"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80",
-    alt: "Snorkeling Adventure"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=600&q=80",
-    alt: "Dolphin Encounter"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=600&q=80",
-    alt: "Desert Safari"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=600&q=80",
-    alt: "Paradise Island"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=600&q=80",
-    alt: "Luxury Yacht"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80",
-    alt: "Beach Sunset"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=600&q=80",
-    alt: "Underwater World"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1518182170546-0766de6b6aad?w=600&q=80",
-    alt: "Pyramids"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?w=600&q=80",
-    alt: "Nile River"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=600&q=80",
-    alt: "Luxor Temple"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1600521605613-3b10b0e5138a?w=600&q=80",
-    alt: "Camel Ride"
-  }
+const GALLERY_ALTS = [
+  "Hurghada Coral Reef", "Snorkeling Adventure", "Dolphin Encounter", "Desert Safari",
+  "Paradise Island", "Luxury Yacht", "Beach Sunset", "Underwater World",
+  "Pyramids of Giza", "Nile River", "Luxor Temple", "Camel Ride",
+  "Red Sea Diving", "Giftun Island", "Orange Bay", "Quad Biking",
+  "Traditional Felucca", "Karnak Temple", "Valley of the Kings", "Mahmya Beach",
+  "Submarine Tour", "Fish Aquarium", "Desert Camp", "Sunset Cruise",
 ];
 
 export default function GallerySection({ t }: GallerySectionProps) {
-  const [galleryImages, setGalleryImages] = useState<GalleryImage[]>(fallbackImages);
+  const [galleryImages, setGalleryImages] = useState<GalleryImage[]>([]);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -81,46 +38,70 @@ export default function GallerySection({ t }: GallerySectionProps) {
         if (!res.ok) throw new Error('API route not ready');
         const data = await res.json();
         if (data.photos && data.photos.length > 0) {
-          const images = data.photos.map((filename: string) => ({
-            src: `/api/photo/${encodeURIComponent(filename)}`,
-            alt: filename.replace(/\.[^/.]+$/, "").replace(/-/g, " ")
+          const images = data.photos.map((filePath: string, i: number) => ({
+            // Encode each segment separately so slashes are preserved
+            src: `/photos/${filePath.split('/').map(encodeURIComponent).join('/')}`,
+            alt: GALLERY_ALTS[i % GALLERY_ALTS.length],
           }));
           setGalleryImages(images);
         }
       } catch (err) {
         if (err instanceof DOMException && err.name === 'AbortError') return;
-        console.error("Failed to load gallery photos, using fallbacks:", err);
+        console.error("Failed to load gallery photos:", err);
       }
     }
     loadPhotos();
     return () => abortController.abort();
   }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
+  const lightboxRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  const openLightbox = (index: number) => {
+  const openLightbox = (index: number, triggerElement?: HTMLDivElement | null) => {
+    if (triggerElement) triggerRef.current = triggerElement;
     setSelectedImage(index);
     document.body.style.overflow = "hidden";
+    setTimeout(() => lightboxRef.current?.focus(), 0);
   };
 
   const closeLightbox = () => {
     setSelectedImage(null);
     document.body.style.overflow = "auto";
+    setTimeout(() => triggerRef.current?.focus(), 0);
+  };
+
+  const focusableSelector = 'button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+  const handleLightboxKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Escape") {
+      closeLightbox();
+      return;
+    }
+    if (e.key === "ArrowLeft") {
+      navigateImage("prev");
+      return;
+    }
+    if (e.key === "ArrowRight") {
+      navigateImage("next");
+      return;
+    }
+    if (e.key === "Tab" && lightboxRef.current) {
+      const focusables = lightboxRef.current.querySelectorAll(focusableSelector);
+      if (focusables.length === 0) return;
+      const first = focusables[0] as HTMLElement;
+      const last = focusables[focusables.length - 1] as HTMLElement;
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
   };
 
   const navigateImage = (direction: "prev" | "next") => {
@@ -148,7 +129,7 @@ export default function GallerySection({ t }: GallerySectionProps) {
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary animate-line-draw" />
             <span className="text-primary text-sm uppercase tracking-[0.3em]">
-              Gallery
+              {t.gallery.preTitle}
             </span>
             <div className="w-16 h-px bg-gradient-to-l from-transparent to-primary animate-line-draw" />
           </div>
@@ -167,10 +148,10 @@ export default function GallerySection({ t }: GallerySectionProps) {
               key={index}
               className={cn(
                 "relative overflow-hidden rounded-lg cursor-pointer group card-shine aspect-square",
-                isVisible ? "animate-scale-in" : "opacity-0"
+                "animate-scale-in"
               )}
               style={{ animationDelay: `${index * 0.1}s` }}
-              onClick={() => openLightbox(index)}
+              onClick={(e) => openLightbox(index, e.currentTarget as HTMLDivElement)}
             >
               <Image
                 src={image.src}
@@ -179,9 +160,6 @@ export default function GallerySection({ t }: GallerySectionProps) {
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <p className="text-foreground font-medium text-sm">{image.alt}</p>
-              </div>
             </div>
           ))}
         </div>
@@ -190,16 +168,14 @@ export default function GallerySection({ t }: GallerySectionProps) {
       {/* Lightbox */}
       {selectedImage !== null && (
         <div
+          ref={lightboxRef}
           className="fixed inset-0 z-50 bg-background/95 backdrop-blur-lg flex items-center justify-center p-4"
           onClick={closeLightbox}
-          onKeyDown={(e) => {
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') navigateImage('prev');
-            if (e.key === 'ArrowRight') navigateImage('next');
-          }}
-          tabIndex={0}
+          onKeyDown={handleLightboxKeyDown}
+          tabIndex={-1}
           role="dialog"
           aria-label="Image lightbox"
+          aria-modal="true"
         >
           <button
             onClick={closeLightbox}

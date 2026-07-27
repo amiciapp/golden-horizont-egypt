@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail, ChevronUp } from "lucide-react";
 import { type TranslationKeys } from "@/lib/translations";
+import { WHATSAPP_LINK, WHATSAPP_NUMBER } from "@/lib/constants";
 import Reveal from "@/components/reveal";
 
 interface FooterProps {
@@ -18,18 +20,20 @@ export default function Footer({ t }: FooterProps) {
     { href: "/", label: t.nav.home },
     { href: "/#trips", label: t.nav.trips },
     { href: "/#gallery", label: t.nav.gallery },
+    { href: "/blog", label: (t.footer as any).blog || "Blog" },
     { href: "/about", label: t.nav.about },
     { href: "/#reviews", label: t.nav.reviews },
     { href: "/#contact", label: t.nav.contact },
   ];
 
+  const ft = t.footer as any;
   const trips = [
-    { name: "Paradise Island Snorkeling", slug: "/trip/paradise-island-snorkeling" },
-    { name: "Super Safari Adventure", slug: "/trip/super-safari" },
-    { name: "Dolphin Watching Tour", slug: "/trip/dolphin-watching-tour" },
-    { name: "Luxor Day Trip", slug: "/trip/luxor-bus-trip" },
-    { name: "Cairo & Pyramids", slug: "/trip/cairo-bus-trip" },
-    { name: "Diving Adventure", slug: "/trip/diving-trip" },
+    { name: ft.paradiseIsland || "Paradise Island Snorkeling", slug: "/trip/paradise-island-snorkeling" },
+    { name: ft.superSafari || "Super Safari Adventure", slug: "/trip/super-safari" },
+    { name: ft.dolphinWatching || "Dolphin Watching Tour", slug: "/trip/dolphin-world-trip" },
+    { name: ft.luxorTrip || "Luxor Day Trip", slug: "/trip/luxor-bus-trip" },
+    { name: ft.cairoPyramids || "Cairo & Pyramids", slug: "/trip/cairo-bus-trip" },
+    { name: ft.divingAdventure || "Diving Adventure", slug: "/trip/diving-trip" },
   ];
 
   const socialLinks = [
@@ -71,7 +75,7 @@ export default function Footer({ t }: FooterProps) {
     },
     {
       name: "WhatsApp",
-      href: "https://wa.me/201220951483",
+      href: WHATSAPP_LINK,
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
@@ -101,7 +105,7 @@ export default function Footer({ t }: FooterProps) {
           <Reveal delay={0} className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6 group">
               <div className="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center overflow-hidden group-hover:border-primary/80 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/20 animate-logo-glow">
-                <img src="/logo.png" alt="Golden Horizont Egypt" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                <Image src="/logo.png" alt="Golden Horizont Egypt" width={48} height={48} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-gradient-gold tracking-wider font-serif leading-tight">
@@ -188,9 +192,8 @@ export default function Footer({ t }: FooterProps) {
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
                 <div className="flex flex-col gap-1">
                   <a href="tel:+353830951168" className="text-foreground/60 hover:text-primary transition-colors text-sm">+353 83 095 1168 — Ireland</a>
-                  <a href="tel:+3736207698" className="text-foreground/60 hover:text-primary transition-colors text-sm">+373 62 076 98 — Moldova</a>
-                  <a href="tel:+201220951483" className="text-foreground/60 hover:text-primary transition-colors text-sm">+20 122 095 1483 — Egypt (Russian + Romanian)</a>
-                  <a href="tel:+201013725824" className="text-foreground/60 hover:text-primary transition-colors text-sm">+20 101 372 5824 — Egypt (English)</a>
+                  <a href="tel:+37369207698" className="text-foreground/60 hover:text-primary transition-colors text-sm">+373 69 207 698 — Moldova</a>
+                  <a href={`tel:+${WHATSAPP_NUMBER}`} className="text-foreground/60 hover:text-primary transition-colors text-sm">+20 122 095 1483 — Egypt (Russian + Romanian)</a>
                 </div>
               </li>
               <li className="flex items-center gap-3">
@@ -212,7 +215,7 @@ export default function Footer({ t }: FooterProps) {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-foreground/40 text-sm flex flex-wrap items-center gap-1">
-            &copy; 2026 Golden Horizont Egypt. All rights reserved. <span className="hidden sm:inline mx-1">|</span> designed by
+            &copy; 2026 Golden Horizont Egypt — {t.footer.rights} <span className="hidden sm:inline mx-1">|</span> designed by
             <span className="group relative inline-block cursor-pointer font-bold text-primary hover:text-primary-foreground hover:bg-primary px-1 rounded transition-colors duration-300">
               ROMERO&apos;S STUDIOS
               <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:-translate-y-1 bg-black/90 backdrop-blur-md text-white px-3 py-1.5 rounded-md text-xs shadow-xl border border-primary/50 z-50 whitespace-nowrap">
@@ -226,13 +229,13 @@ export default function Footer({ t }: FooterProps) {
               href="/privacy-policy"
               className="text-foreground/40 hover:text-primary transition-colors"
             >
-              Privacy Policy
+              {(t.footer as any).privacyPolicy || "Privacy Policy"}
             </Link>
             <Link
               href="/terms"
               className="text-foreground/40 hover:text-primary transition-colors"
             >
-              Terms of Service
+              {(t.footer as any).termsOfService || "Terms of Service"}
             </Link>
           </div>
         </div>

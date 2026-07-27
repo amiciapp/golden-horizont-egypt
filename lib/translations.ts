@@ -1,5 +1,4 @@
 // 20 Most Common Languages for Hurghada Tourists
-import { useState, useEffect } from 'react';
 
 export const translations = {
   en: {
@@ -9,7 +8,8 @@ export const translations = {
       gallery: "Gallery",
       reviews: "Reviews",
       contact: "Contact",
-      about: "About"
+      about: "About",
+      blog: "Blog"
     },
     hero: {
       title: "Discover the Magic of Egypt",
@@ -23,7 +23,11 @@ export const translations = {
       bookNow: "Book via WhatsApp",
       duration: "Duration",
       price: "From",
-      popular: "Popular"
+      popular: "Popular",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating"
     },
     gallery: {
       title: "Capture the Moments",
@@ -50,11 +54,26 @@ export const translations = {
       contact: "Contact Us",
       followUs: "Follow Us",
       rights: "All rights reserved",
-      address: "Hurghada, Egypt"
+      address: "Hurghada, Egypt",
+      blog: "Blog",
+      privacyPolicy: "Privacy Policy",
+      termsOfService: "Terms of Service",
+      paradiseIsland: "Paradise Island Snorkeling",
+      superSafari: "Super Safari Adventure",
+      dolphinWatching: "Dolphin Watching Tour",
+      luxorTrip: "Luxor Day Trip",
+      cairoPyramids: "Cairo & Pyramids",
+      divingAdventure: "Diving Adventure"
+    },
+    breadcrumb: {
+      home: "Home",
+      trips: "Trips"
     },
     whatsapp: {
       greeting: "Hello! I am interested in booking",
-      trip: "Trip"
+      trip: "Trip",
+      durationLabel: "Duration",
+      priceLabel: "Price"
     },
     tripDetail: {
       notFound: "Trip Not Found",
@@ -69,7 +88,72 @@ export const translations = {
       category: "Category",
       rating: "Rating",
       instantConfirmation: "Instant confirmation via WhatsApp",
-      morePhotosSoon: "More photos coming soon..."
+      morePhotosSoon: "More photos coming soon...",
+      ask: "Ask"
+    },
+    map: {
+      findUs: "Find Us",
+      locationTitle: "Our Location",
+      locationSubtitle: "HURGHADA — SHERATON STREET",
+      locationLabel: "Address",
+      phoneLabel: "Phone",
+      emailLabel: "Email",
+      workingHoursLabel: "Working Hours",
+      dailyHours: "Daily: 8:00 — 22:00",
+      whatsappSupport: "24/7 WhatsApp Support",
+      directions: "Get Directions",
+      whatsappCta: "Have questions? We're just a message away!",
+      chatWhatsApp: "Chat on WhatsApp",
+      addressLine1: "SHERATON STREET — HEART OF HURGHADA",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Send Us a Message"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   ru: {
@@ -79,7 +163,8 @@ export const translations = {
       gallery: "Галерея",
       reviews: "Отзывы",
       contact: "Контакты",
-      about: "О нас"
+      about: "О нас",
+      blog: "Блог"
     },
     hero: {
       title: "Откройте магию Египта",
@@ -93,7 +178,11 @@ export const translations = {
       bookNow: "Забронировать в WhatsApp",
       duration: "Продолжительность",
       price: "От",
-      popular: "Популярно"
+      popular: "Популярно",
+      uniqueTrips: "Уникальные поездки",
+      happyTourists: "Довольных туристов",
+      yearsExperience: "Лет опыта",
+      averageRating: "Средний рейтинг"
     },
     gallery: {
       title: "Запечатлейте моменты",
@@ -120,11 +209,26 @@ export const translations = {
       contact: "Связаться с нами",
       followUs: "Подписывайтесь",
       rights: "Все права защищены",
-      address: "Хургада, Египет"
+      address: "Хургада, Египет",
+      blog: "Блог",
+      privacyPolicy: "Политика конфиденциальности",
+      termsOfService: "Условия использования",
+      paradiseIsland: "Снорклинг на Парядайз Айленд",
+      superSafari: "Супер Сафари",
+      dolphinWatching: "Наблюдение за дельфинами",
+      luxorTrip: "Экскурсия в Луксор",
+      cairoPyramids: "Каир и Пирамиды",
+      divingAdventure: "Дайвинг"
+    },
+    breadcrumb: {
+      home: "Главная",
+      trips: "Экскурсии"
     },
     whatsapp: {
       greeting: "Здравствуйте! Я заинтересован в бронировании",
-      trip: "Экскурсия"
+      trip: "Экскурсия",
+      durationLabel: "Длительность",
+      priceLabel: "Цена"
     },
     tripDetail: {
       notFound: "Экскурсия не найдена",
@@ -135,11 +239,76 @@ export const translations = {
       aboutTrip: "Об экскурсии",
       highlights: "Преимущества",
       whatsIncluded: "Что включено",
-      perPerson: "/ человека",
+      perPerson: "/ человек",
       category: "Категория",
       rating: "Рейтинг",
       instantConfirmation: "Мгновенное подтверждение через WhatsApp",
-      morePhotosSoon: "Фото скоро..."
+      morePhotosSoon: "Фото скоро...",
+      ask: "Спросить"
+    },
+    map: {
+      findUs: "Найти нас",
+      locationTitle: "Наше местонахождение",
+      locationSubtitle: "ХУРГАДА — УЛИЦА ШЕРАТОН",
+      locationLabel: "Адрес",
+      phoneLabel: "Телефон",
+      emailLabel: "Эл. почта",
+      workingHoursLabel: "Часы работы",
+      dailyHours: "Ежедневно: 8:00 — 22:00",
+      whatsappSupport: "Поддержка WhatsApp 24/7",
+      directions: "Как добраться",
+      whatsappCta: "Есть вопросы? Мы на расстоянии сообщения!",
+      chatWhatsApp: "Написать в WhatsApp",
+      addressLine1: "УЛИЦА ШЕРАТОН — СЕРДЦЕ ХУРГАДЫ",
+      addressLine2: "6R8Q+Q9Q Хургада 1",
+      formTitle: "Отправить нам сообщение"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   de: {
@@ -149,7 +318,8 @@ export const translations = {
       gallery: "Galerie",
       reviews: "Bewertungen",
       contact: "Kontakt",
-      about: "Über uns"
+      about: "Über uns",
+      blog: "Blog"
     },
     hero: {
       title: "Entdecken Sie die Magie Ägyptens",
@@ -163,7 +333,11 @@ export const translations = {
       bookNow: "Über WhatsApp buchen",
       duration: "Dauer",
       price: "Ab",
-      popular: "Beliebt"
+      popular: "Beliebt",
+      uniqueTrips: "Einzigartige Reisen",
+      happyTourists: "Zufriedene Touristen",
+      yearsExperience: "Jahre Erfahrung",
+      averageRating: "Durchschnittliche Bewertung"
     },
     gallery: {
       title: "Momente einfangen",
@@ -190,11 +364,26 @@ export const translations = {
       contact: "Kontaktieren Sie uns",
       followUs: "Folgen Sie uns",
       rights: "Alle Rechte vorbehalten",
-      address: "Hurghada, Ägypten"
+      address: "Hurghada, Ägypten",
+      blog: "Blog",
+      privacyPolicy: "Datenschutz",
+      termsOfService: "Nutzungsbedingungen",
+      paradiseIsland: "Schnorcheln auf Paradise Island",
+      superSafari: "Super Safari Abenteuer",
+      dolphinWatching: "Delfinbeobachtung",
+      luxorTrip: "Luxor Tagesausflug",
+      cairoPyramids: "Kairo & Pyramiden",
+      divingAdventure: "Tauchen"
+    },
+    breadcrumb: {
+      home: "Startseite",
+      trips: "Reisen"
     },
     whatsapp: {
       greeting: "Hallo! Ich bin an einer Buchung interessiert",
-      trip: "Ausflug"
+      trip: "Ausflug",
+      durationLabel: "Dauer",
+      priceLabel: "Preis"
     },
     tripDetail: {
       notFound: "Reise nicht gefunden",
@@ -209,7 +398,72 @@ export const translations = {
       category: "Kategorie",
       rating: "Bewertung",
       instantConfirmation: "Sofortige Bestätigung via WhatsApp",
-      morePhotosSoon: "Fotos folgen bald..."
+      morePhotosSoon: "Fotos folgen bald...",
+      ask: "Nachfragen"
+    },
+    map: {
+      findUs: "Finden Sie uns",
+      locationTitle: "Unser Standort",
+      locationSubtitle: "HURGHADA — SHERATONSTRASSE",
+      locationLabel: "Adresse",
+      phoneLabel: "Telefon",
+      emailLabel: "E-Mail",
+      workingHoursLabel: "Öffnungszeiten",
+      dailyHours: "Täglich: 8:00 — 22:00",
+      whatsappSupport: "24/7 WhatsApp-Support",
+      directions: "Wegbeschreibung",
+      whatsappCta: "Haben Sie Fragen? Wir sind nur eine Nachricht entfernt!",
+      chatWhatsApp: "WhatsApp schreiben",
+      addressLine1: "SHERATON STRASSE — HERZ VON HURGHADA",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Senden Sie uns eine Nachricht"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   pl: {
@@ -219,7 +473,8 @@ export const translations = {
       gallery: "Galeria",
       reviews: "Opinie",
       contact: "Kontakt",
-      about: "O nas"
+      about: "O nas",
+      blog: "Blog"
     },
     hero: {
       title: "Odkryj magię Morza Czerwonego",
@@ -233,7 +488,11 @@ export const translations = {
       bookNow: "Zarezerwuj przez WhatsApp",
       duration: "Czas trwania",
       price: "Od",
-      popular: "Popularne"
+      popular: "Popularne",
+      uniqueTrips: "Wyjątkowe wycieczki",
+      happyTourists: "Zadowolonych turystów",
+      yearsExperience: "Lat doświadczenia",
+      averageRating: "Średnia ocena"
     },
     gallery: {
       title: "Uchwycić chwile",
@@ -260,11 +519,26 @@ export const translations = {
       contact: "Skontaktuj się",
       followUs: "Obserwuj nas",
       rights: "Wszelkie prawa zastrzeżone",
-      address: "Hurghada, Morze Czerwone, Egipt"
+      address: "Hurghada, Morze Czerwone, Egipt",
+      blog: "Blog",
+      privacyPolicy: "Polityka prywatności",
+      termsOfService: "Regulamin",
+      paradiseIsland: "Snorkeling na Paradise Island",
+      superSafari: "Super Safari",
+      dolphinWatching: "Obserwacja delfinów",
+      luxorTrip: "Wycieczka do Luksoru",
+      cairoPyramids: "Kair i Piramidy",
+      divingAdventure: "Nurkowanie"
+    },
+    breadcrumb: {
+      home: "Strona główna",
+      trips: "Wycieczki"
     },
     whatsapp: {
       greeting: "Cześć! Jestem zainteresowany rezerwacją",
-      trip: "Wycieczka"
+      trip: "Wycieczka",
+      durationLabel: "Czas trwania",
+      priceLabel: "Cena"
     },
     tripDetail: {
       notFound: "Wycieczka nie znaleziona",
@@ -279,7 +553,72 @@ export const translations = {
       category: "Kategoria",
       rating: "Ocena",
       instantConfirmation: "Natychmiastowe potwierdzenie przez WhatsApp",
-      morePhotosSoon: "Wkrótce więcej zdjęć..."
+      morePhotosSoon: "Wkrótce więcej zdjęć...",
+      ask: "Zapytaj"
+    },
+    map: {
+      findUs: "Znajdź nas",
+      locationTitle: "Nasza lokalizacja",
+      locationSubtitle: "HURGHADA — ULICA SHERATON",
+      locationLabel: "Adres",
+      phoneLabel: "Telefon",
+      emailLabel: "E-mail",
+      workingHoursLabel: "Godziny pracy",
+      dailyHours: "Codziennie: 8:00 — 22:00",
+      whatsappSupport: "Wsparcie WhatsApp 24/7",
+      directions: "Wskazówki dojazdu",
+      whatsappCta: "Masz pytania? Jesteśmy o wiadomość!",
+      chatWhatsApp: "Czat na WhatsApp",
+      addressLine1: "ULICA SHERATON — SERCE HURGHADY",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Wyślij nam wiadomość"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   uk: {
@@ -289,7 +628,8 @@ export const translations = {
       gallery: "Галерея",
       reviews: "Відгуки",
       contact: "Контакти",
-      about: "Про нас"
+      about: "Про нас",
+      blog: "Блог"
     },
     hero: {
       title: "Відкрийте магію Червоного моря",
@@ -303,7 +643,11 @@ export const translations = {
       bookNow: "Забронювати в WhatsApp",
       duration: "Тривалість",
       price: "Від",
-      popular: "Популярне"
+      popular: "Популярне",
+      uniqueTrips: "Унікальні поїздки",
+      happyTourists: "Задоволених туристів",
+      yearsExperience: "Років досвіду",
+      averageRating: "Середній рейтинг"
     },
     gallery: {
       title: "Зафіксуйте моменти",
@@ -330,11 +674,26 @@ export const translations = {
       contact: "Зв'яжіться з нами",
       followUs: "Слідкуйте за нами",
       rights: "Всі права захищені",
-      address: "Хургада, Червоне море, Єгипет"
+      address: "Хургада, Червоне море, Єгипет",
+      blog: "Блог",
+      privacyPolicy: "Політика конфіденційності",
+      termsOfService: "Умови використання",
+      paradiseIsland: "Снорклінг на Паредайз Айленд",
+      superSafari: "Супер Сафарі",
+      dolphinWatching: "Спостереження за дельфінами",
+      luxorTrip: "Екскурсія до Луксору",
+      cairoPyramids: "Каїр та Піраміди",
+      divingAdventure: "Дайвінг"
+    },
+    breadcrumb: {
+      home: "Головна",
+      trips: "Екскурсії"
     },
     whatsapp: {
       greeting: "Привіт! Мене цікавить бронювання",
-      trip: "Екскурсія"
+      trip: "Екскурсія",
+      durationLabel: "Тривалість",
+      priceLabel: "Ціна"
     },
     tripDetail: {
       notFound: "Екскурсію не знайдено",
@@ -349,7 +708,72 @@ export const translations = {
       category: "Категорія",
       rating: "Рейтинг",
       instantConfirmation: "Миттєве підтвердження через WhatsApp",
-      morePhotosSoon: "Фото незабаром..."
+      morePhotosSoon: "Фото незабаром...",
+      ask: "Запитати"
+    },
+    map: {
+      findUs: "Знайти нас",
+      locationTitle: "Наше місцезнаходження",
+      locationSubtitle: "ХУРГАДА — ВУЛИЦЯ ШЕРАТОН",
+      locationLabel: "Адреса",
+      phoneLabel: "Телефон",
+      emailLabel: "Ел. пошта",
+      workingHoursLabel: "Години роботи",
+      dailyHours: "Щодня: 8:00 — 22:00",
+      whatsappSupport: "Підтримка WhatsApp 24/7",
+      directions: "Як дістатися",
+      whatsappCta: "Маєте питання? Ми за одним повідомленням!",
+      chatWhatsApp: "Написати у WhatsApp",
+      addressLine1: "ВУЛИЦЯ ШЕРАТОН — СЕРЦЕ ХУРГАДИ",
+      addressLine2: "6R8Q+Q9Q Хургада 1",
+      formTitle: "Надіслати нам повідомлення"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   cs: {
@@ -359,7 +783,8 @@ export const translations = {
       gallery: "Galerie",
       reviews: "Recenze",
       contact: "Kontakt",
-      about: "O nás"
+      about: "O nás",
+      blog: "Blog"
     },
     hero: {
       title: "Objevte kouzlo Rudého moře",
@@ -373,7 +798,11 @@ export const translations = {
       bookNow: "Rezervujte přes WhatsApp",
       duration: "Doba trvání",
       price: "Od",
-      popular: "Oblíbené"
+      popular: "Oblíbené",
+      uniqueTrips: "Jedinečné výlety",
+      happyTourists: "Spokojených turistů",
+      yearsExperience: "Let zkušeností",
+      averageRating: "Průměrné hodnocení"
     },
     gallery: {
       title: "Zachyťte okamžiky",
@@ -400,11 +829,26 @@ export const translations = {
       contact: "Kontaktujte nás",
       followUs: "Sledujte nás",
       rights: "Všechna práva vyhrazena",
-      address: "Hurghada, Rudé moře, Egypt"
+      address: "Hurghada, Rudé moře, Egypt",
+      blog: "Blog",
+      privacyPolicy: "Zásady ochrany soukromí",
+      termsOfService: "Podmínky použití",
+      paradiseIsland: "Šnorchlování na Paradise Island",
+      superSafari: "Super Safari",
+      dolphinWatching: "Pozorování delfínů",
+      luxorTrip: "Výlet do Luxoru",
+      cairoPyramids: "Káhira a pyramidy",
+      divingAdventure: "Potápění"
+    },
+    breadcrumb: {
+      home: "Domů",
+      trips: "Výlety"
     },
     whatsapp: {
       greeting: "Dobrý den! Mám zájem o rezervaci",
-      trip: "Výlet"
+      trip: "Výlet",
+      durationLabel: "Délka",
+      priceLabel: "Cena"
     },
     tripDetail: {
       notFound: "Výlet nenalezen",
@@ -419,7 +863,72 @@ export const translations = {
       category: "Kategorie",
       rating: "Hodnocení",
       instantConfirmation: "Okamžité potvrzení přes WhatsApp",
-      morePhotosSoon: "Fotky brzy..."
+      morePhotosSoon: "Fotky brzy...",
+      ask: "Zeptat se"
+    },
+    map: {
+      findUs: "Najdete nás",
+      locationTitle: "Naše poloha",
+      locationSubtitle: "HURGHADA — ULICE SHERATON",
+      locationLabel: "Adresa",
+      phoneLabel: "Telefon",
+      emailLabel: "E-mail",
+      workingHoursLabel: "Pracovní doba",
+      dailyHours: "Denně: 8:00 — 22:00",
+      whatsappSupport: "Podpora WhatsApp 24/7",
+      directions: "Navigovat",
+      whatsappCta: "Máte dotazy? Jsme jen zprávu daleko!",
+      chatWhatsApp: "Chat na WhatsApp",
+      addressLine1: "ULICE SHERATON — SRDCI HURGHADY",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Pošlete nám zprávu"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   nl: {
@@ -429,7 +938,8 @@ export const translations = {
       gallery: "Galerij",
       reviews: "Beoordelingen",
       contact: "Contact",
-      about: "Over ons"
+      about: "Over ons",
+      blog: "Blog"
     },
     hero: {
       title: "Ontdek de magie van de Rode Zee",
@@ -443,7 +953,11 @@ export const translations = {
       bookNow: "Boek via WhatsApp",
       duration: "Duur",
       price: "Vanaf",
-      popular: "Populair"
+      popular: "Populair",
+      uniqueTrips: "Unieke reizen",
+      happyTourists: "Tevreden toeristen",
+      yearsExperience: "Jaar ervaring",
+      averageRating: "Gemiddelde beoordeling"
     },
     gallery: {
       title: "Leg de momenten vast",
@@ -470,11 +984,26 @@ export const translations = {
       contact: "Neem contact op",
       followUs: "Volg ons",
       rights: "Alle rechten voorbehouden",
-      address: "Hurghada, Rode Zee, Egypte"
+      address: "Hurghada, Rode Zee, Egypte",
+      blog: "Blog",
+      privacyPolicy: "Privacybeleid",
+      termsOfService: "Voorwaarden",
+      paradiseIsland: "Snorkelen op Paradise Island",
+      superSafari: "Super Safari Avontuur",
+      dolphinWatching: "Dolfijnen Spotten",
+      luxorTrip: "Luxor Dagtrip",
+      cairoPyramids: "Caïro & Piramides",
+      divingAdventure: "Duiken"
+    },
+    breadcrumb: {
+      home: "Home",
+      trips: "Uitjes"
     },
     whatsapp: {
       greeting: "Hallo! Ik ben geïnteresseerd in het boeken van",
-      trip: "Uitstapje"
+      trip: "Uitstapje",
+      durationLabel: "Duur",
+      priceLabel: "Prijs"
     },
     tripDetail: {
       notFound: "Excursie niet gevonden",
@@ -489,7 +1018,72 @@ export const translations = {
       category: "Categorie",
       rating: "Beoordeling",
       instantConfirmation: "Onmiddellijke bevestiging via WhatsApp",
-      morePhotosSoon: "Foto's volgen binnenkort..."
+      morePhotosSoon: "Foto's volgen binnenkort...",
+      ask: "Vragen"
+    },
+    map: {
+      findUs: "Vind ons",
+      locationTitle: "Onze locatie",
+      locationSubtitle: "HURGHADA — SHERATONSTRAAT",
+      locationLabel: "Adres",
+      phoneLabel: "Telefoon",
+      emailLabel: "E-mail",
+      workingHoursLabel: "Openingstijden",
+      dailyHours: "Dagelijks: 8:00 — 22:00",
+      whatsappSupport: "WhatsApp-ondersteuning 24/7",
+      directions: "Routebeschrijving",
+      whatsappCta: "Heeft u vragen? We zijn slechts een bericht verwijderd!",
+      chatWhatsApp: "Chat op WhatsApp",
+      addressLine1: "SHERATON STRAAT — HART VAN HURGHADA",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Stuur ons een bericht"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   it: {
@@ -499,7 +1093,8 @@ export const translations = {
       gallery: "Galleria",
       reviews: "Recensioni",
       contact: "Contatti",
-      about: "Chi siamo"
+      about: "Chi siamo",
+      blog: "Blog"
     },
     hero: {
       title: "Scopri la magia del Mar Rosso",
@@ -513,7 +1108,11 @@ export const translations = {
       bookNow: "Prenota via WhatsApp",
       duration: "Durata",
       price: "Da",
-      popular: "Popolare"
+      popular: "Popolare",
+      uniqueTrips: "Viaggi unici",
+      happyTourists: "Turisti soddisfatti",
+      yearsExperience: "Anni di esperienza",
+      averageRating: "Valutazione media"
     },
     gallery: {
       title: "Cattura i momenti",
@@ -540,11 +1139,26 @@ export const translations = {
       contact: "Contattaci",
       followUs: "Seguici",
       rights: "Tutti i diritti riservati",
-      address: "Hurghada, Mar Rosso, Egitto"
+      address: "Hurghada, Mar Rosso, Egitto",
+      blog: "Blog",
+      privacyPolicy: "Privacy",
+      termsOfService: "Termini di servizio",
+      paradiseIsland: "Snorkeling a Paradise Island",
+      superSafari: "Super Safari",
+      dolphinWatching: "Osservazione delfini",
+      luxorTrip: "Gita a Luxor",
+      cairoPyramids: "Il Cairo e le Piramidi",
+      divingAdventure: "Immersioni"
+    },
+    breadcrumb: {
+      home: "Home",
+      trips: "Gite"
     },
     whatsapp: {
       greeting: "Ciao! Sono interessato a prenotare",
-      trip: "Escursione"
+      trip: "Escursione",
+      durationLabel: "Durata",
+      priceLabel: "Prezzo"
     },
     tripDetail: {
       notFound: "Escursione non trovata",
@@ -559,7 +1173,72 @@ export const translations = {
       category: "Categoria",
       rating: "Valutazione",
       instantConfirmation: "Conferma istantanea via WhatsApp",
-      morePhotosSoon: "Foto in arrivo..."
+      morePhotosSoon: "Foto in arrivo...",
+      ask: "Chiedi"
+    },
+    map: {
+      findUs: "Trovaci",
+      locationTitle: "La nostra posizione",
+      locationSubtitle: "HURGHADA — VIA SHERATON",
+      locationLabel: "Indirizzo",
+      phoneLabel: "Telefono",
+      emailLabel: "Email",
+      workingHoursLabel: "Orari di lavoro",
+      dailyHours: "Ogni giorno: 8:00 — 22:00",
+      whatsappSupport: "Supporto WhatsApp 24/7",
+      directions: "Indicazioni stradali",
+      whatsappCta: "Hai domande? Siamo a un messaggio di distanza!",
+      chatWhatsApp: "Chatta su WhatsApp",
+      addressLine1: "VIA SHERATON — CUORE DI HURGHADA",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Inviaci un messaggio"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   fr: {
@@ -569,7 +1248,8 @@ export const translations = {
       gallery: "Galerie",
       reviews: "Avis",
       contact: "Contact",
-      about: "À propos"
+      about: "À propos",
+      blog: "Blog"
     },
     hero: {
       title: "Découvrez la magie de la Mer Rouge",
@@ -583,7 +1263,11 @@ export const translations = {
       bookNow: "Réserver via WhatsApp",
       duration: "Durée",
       price: "À partir de",
-      popular: "Populaire"
+      popular: "Populaire",
+      uniqueTrips: "Voyages uniques",
+      happyTourists: "Touristes satisfaits",
+      yearsExperience: "Années d'expérience",
+      averageRating: "Note moyenne"
     },
     gallery: {
       title: "Capturez les moments",
@@ -610,11 +1294,26 @@ export const translations = {
       contact: "Contactez-nous",
       followUs: "Suivez-nous",
       rights: "Tous droits réservés",
-      address: "Hurghada, Mer Rouge, Égypte"
+      address: "Hurghada, Mer Rouge, Égypte",
+      blog: "Blog",
+      privacyPolicy: "Politique de confidentialité",
+      termsOfService: "Conditions d'utilisation",
+      paradiseIsland: "Snorkeling à Paradise Island",
+      superSafari: "Super Safari",
+      dolphinWatching: "Observation des dauphins",
+      luxorTrip: "Excursion à Louxor",
+      cairoPyramids: "Le Caire et les Pyramides",
+      divingAdventure: "Plongée"
+    },
+    breadcrumb: {
+      home: "Accueil",
+      trips: "Excursions"
     },
     whatsapp: {
       greeting: "Bonjour! Je suis intéressé par la réservation",
-      trip: "Excursion"
+      trip: "Excursion",
+      durationLabel: "Durée",
+      priceLabel: "Prix"
     },
     tripDetail: {
       notFound: "Excursion non trouvée",
@@ -629,7 +1328,72 @@ export const translations = {
       category: "Catégorie",
       rating: "Note",
       instantConfirmation: "Confirmation instantanée via WhatsApp",
-      morePhotosSoon: "Photos bientôt..."
+      morePhotosSoon: "Photos bientôt...",
+      ask: "Demander"
+    },
+    map: {
+      findUs: "Nous trouver",
+      locationTitle: "Notre emplacement",
+      locationSubtitle: "HURGHADA — RUE SHERATON",
+      locationLabel: "Adresse",
+      phoneLabel: "Téléphone",
+      emailLabel: "E-mail",
+      workingHoursLabel: "Heures d'ouverture",
+      dailyHours: "Quotidien: 8:00 — 22:00",
+      whatsappSupport: "Assistance WhatsApp 24/7",
+      directions: "Itinéraire",
+      whatsappCta: "Des questions? Nous sommes à un message!",
+      chatWhatsApp: "Chatter sur WhatsApp",
+      addressLine1: "RUE SHERATON — COEUR DE HURGHADA",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Envoyez-nous un message"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   es: {
@@ -639,7 +1403,8 @@ export const translations = {
       gallery: "Galería",
       reviews: "Opiniones",
       contact: "Contacto",
-      about: "Sobre nosotros"
+      about: "Sobre nosotros",
+      blog: "Blog"
     },
     hero: {
       title: "Descubre la magia del Mar Rojo",
@@ -653,7 +1418,11 @@ export const translations = {
       bookNow: "Reservar por WhatsApp",
       duration: "Duración",
       price: "Desde",
-      popular: "Popular"
+      popular: "Popular",
+      uniqueTrips: "Viajes únicos",
+      happyTourists: "Turistas satisfechos",
+      yearsExperience: "Años de experiencia",
+      averageRating: "Calificación promedio"
     },
     gallery: {
       title: "Captura los momentos",
@@ -680,11 +1449,26 @@ export const translations = {
       contact: "Contáctanos",
       followUs: "Síguenos",
       rights: "Todos los derechos reservados",
-      address: "Hurghada, Mar Rojo, Egipto"
+      address: "Hurghada, Mar Rojo, Egipto",
+      blog: "Blog",
+      privacyPolicy: "Política de privacidad",
+      termsOfService: "Términos de servicio",
+      paradiseIsland: "Snorkel en Paradise Island",
+      superSafari: "Super Safari",
+      dolphinWatching: "Avistamiento de delfines",
+      luxorTrip: "Excursión a Lúxor",
+      cairoPyramids: "El Cairo y las Pirámides",
+      divingAdventure: "Buceo"
+    },
+    breadcrumb: {
+      home: "Inicio",
+      trips: "Excursiones"
     },
     whatsapp: {
       greeting: "¡Hola! Estoy interesado en reservar",
-      trip: "Excursión"
+      trip: "Excursión",
+      durationLabel: "Duración",
+      priceLabel: "Precio"
     },
     tripDetail: {
       notFound: "Excursión no encontrada",
@@ -699,7 +1483,72 @@ export const translations = {
       category: "Categoría",
       rating: "Valoración",
       instantConfirmation: "Confirmación instantánea por WhatsApp",
-      morePhotosSoon: "Fotos próximamente..."
+      morePhotosSoon: "Fotos próximamente...",
+      ask: "Consultar"
+    },
+    map: {
+      findUs: "Encuéntranos",
+      locationTitle: "Nuestra ubicación",
+      locationSubtitle: "HURGHADA — CALLE SHERATON",
+      locationLabel: "Dirección",
+      phoneLabel: "Teléfono",
+      emailLabel: "Correo electrónico",
+      workingHoursLabel: "Horario de trabajo",
+      dailyHours: "Diariamente: 8:00 — 22:00",
+      whatsappSupport: "Soporte WhatsApp 24/7",
+      directions: "Cómo llegar",
+      whatsappCta: "¿Tienes preguntas? ¡Estamos a un mensaje!",
+      chatWhatsApp: "Chatear en WhatsApp",
+      addressLine1: "CALLE SHERATON — CORAZÓN DE HURGHADA",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Envíanos un mensaje"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   ar: {
@@ -709,7 +1558,8 @@ export const translations = {
       gallery: "معرض الصور",
       reviews: "التقييمات",
       contact: "اتصل بنا",
-      about: "نبذة عنا"
+      about: "نبذة عنا",
+      blog: "مدونة"
     },
     hero: {
       title: "اكتشف سحر مصر",
@@ -723,7 +1573,11 @@ export const translations = {
       bookNow: "احجز عبر واتساب",
       duration: "المدة",
       price: "يبدأ من",
-      popular: "شائع"
+      popular: "شائع",
+      uniqueTrips: "رحلات فريدة",
+      happyTourists: "سياح سعداء",
+      yearsExperience: "سنوات خبرة",
+      averageRating: "متوسط التقييم"
     },
     gallery: {
       title: "التقط اللحظات",
@@ -750,11 +1604,26 @@ export const translations = {
       contact: "اتصل بنا",
       followUs: "تابعنا",
       rights: "جميع الحقوق محفوظة",
-      address: "الغردقة، مصر"
+      address: "الغردقة، مصر",
+      blog: "المدونة",
+      privacyPolicy: "سياسة الخصوصية",
+      termsOfService: "شروط الخدمة",
+      paradiseIsland: "الغطس في جنة الجزيرة",
+      superSafari: "سفاري مميز",
+      dolphinWatching: "مراقبة الدلافين",
+      luxorTrip: "رحلة لوكسور",
+      cairoPyramids: "القاهرة والأهرامات",
+      divingAdventure: "الغوص"
+    },
+    breadcrumb: {
+      home: "الرئيسية",
+      trips: "الرحلات"
     },
     whatsapp: {
       greeting: "مرحباً! أنا مهتم بحجز",
-      trip: "رحلة"
+      trip: "رحلة",
+      durationLabel: "المدة",
+      priceLabel: "السعر"
     },
     tripDetail: {
       notFound: "الرحلة غير موجودة",
@@ -769,7 +1638,72 @@ export const translations = {
       category: "الفئة",
       rating: "التقييم",
       instantConfirmation: "تأكيد فوري عبر واتساب",
-      morePhotosSoon: "صور قادمة قريبا..."
+      morePhotosSoon: "صور قادمة قريبا...",
+      ask: "اسأل"
+    },
+    map: {
+      findUs: "ابحث عنا",
+      locationTitle: "موقعنا",
+      locationSubtitle: "الغردقة — شارع شيراتون",
+      locationLabel: "العنوان",
+      phoneLabel: "الهاتف",
+      emailLabel: "البريد الإلكتروني",
+      workingHoursLabel: "ساعات العمل",
+      dailyHours: "يومياً: 8:00 — 22:00",
+      whatsappSupport: "دعم واتساب 24/7",
+      directions: "احصل على الاتجاهات",
+      whatsappCta: "هل لديك أسئلة؟ نحن على بعد رسالة!",
+      chatWhatsApp: "تواصل عبر واتساب",
+      addressLine1: "شارع شيراتون — قلب الغردقة",
+      addressLine2: "6R8Q+Q9Q الغردقة 1",
+      formTitle: "أرسل لنا رسالة"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   zh: {
@@ -779,7 +1713,8 @@ export const translations = {
       gallery: "图库",
       reviews: "评价",
       contact: "联系",
-      about: "关于我们"
+      about: "关于我们",
+      blog: "博客"
     },
     hero: {
       title: "探索红海的魔力",
@@ -793,7 +1728,11 @@ export const translations = {
       bookNow: "通过WhatsApp预订",
       duration: "时长",
       price: "起价",
-      popular: "热门"
+      popular: "热门",
+      uniqueTrips: "独特旅行",
+      happyTourists: "满意游客",
+      yearsExperience: "年经验",
+      averageRating: "平均评分"
     },
     gallery: {
       title: "捕捉瞬间",
@@ -820,11 +1759,26 @@ export const translations = {
       contact: "联系我们",
       followUs: "关注我们",
       rights: "版权所有",
-      address: "赫尔格达，红海，埃及"
+      address: "赫尔格达，红海，埃及",
+      blog: "博客",
+      privacyPolicy: "隐私政策",
+      termsOfService: "服务条款",
+      paradiseIsland: "天堂岛浮潜",
+      superSafari: "超级Safari",
+      dolphinWatching: "海豚观赏",
+      luxorTrip: "卢克索一日游",
+      cairoPyramids: "开罗与金字塔",
+      divingAdventure: "潜水冒险"
+    },
+    breadcrumb: {
+      home: "首页",
+      trips: "旅行"
     },
     whatsapp: {
       greeting: "您好！我有兴趣预订",
-      trip: "旅行"
+      trip: "旅行",
+      durationLabel: "时长",
+      priceLabel: "价格"
     },
     tripDetail: {
       notFound: "未找到旅行",
@@ -839,7 +1793,72 @@ export const translations = {
       category: "类别",
       rating: "评分",
       instantConfirmation: "通过WhatsApp即时确认",
-      morePhotosSoon: "更多照片即将推出..."
+      morePhotosSoon: "更多照片即将推出...",
+      ask: "咨询"
+    },
+    map: {
+      findUs: "找到我们",
+      locationTitle: "我们的位置",
+      locationSubtitle: "赫尔格达 — 喜来登街",
+      locationLabel: "地址",
+      phoneLabel: "电话",
+      emailLabel: "电子邮件",
+      workingHoursLabel: "工作时间",
+      dailyHours: "每天：8:00 — 22:00",
+      whatsappSupport: "24/7 WhatsApp 支持",
+      directions: "获取路线",
+      whatsappCta: "有问题吗？我们随时在线！",
+      chatWhatsApp: "通过WhatsApp聊天",
+      addressLine1: "喜来登街 — 赫尔格达中心",
+      addressLine2: "6R8Q+Q9Q 赫尔格达 1",
+      formTitle: "给我们发消息"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   pt: {
@@ -849,7 +1868,8 @@ export const translations = {
       gallery: "Galeria",
       reviews: "Avaliações",
       contact: "Contato",
-      about: "Sobre nós"
+      about: "Sobre nós",
+      blog: "Blog"
     },
     hero: {
       title: "Descubra a magia do Mar Vermelho",
@@ -863,7 +1883,11 @@ export const translations = {
       bookNow: "Reserve pelo WhatsApp",
       duration: "Duração",
       price: "A partir de",
-      popular: "Popular"
+      popular: "Popular",
+      uniqueTrips: "Viagens únicas",
+      happyTourists: "Turistas satisfeitos",
+      yearsExperience: "Anos de experiência",
+      averageRating: "Avaliação média"
     },
     gallery: {
       title: "Capture os momentos",
@@ -890,11 +1914,26 @@ export const translations = {
       contact: "Entre em contato",
       followUs: "Siga-nos",
       rights: "Todos os direitos reservados",
-      address: "Hurghada, Mar Vermelho, Egito"
+      address: "Hurghada, Mar Vermelho, Egito",
+      blog: "Blog",
+      privacyPolicy: "Política de Privacidade",
+      termsOfService: "Termos de Serviço",
+      paradiseIsland: "Mergulho em Paradise Island",
+      superSafari: "Super Safari",
+      dolphinWatching: "Observação de golfinhos",
+      luxorTrip: "Passeio para Luxor",
+      cairoPyramids: "O Cairo e as Pirâmides",
+      divingAdventure: "Mergulho"
+    },
+    breadcrumb: {
+      home: "Início",
+      trips: "Passeios"
     },
     whatsapp: {
       greeting: "Olá! Estou interessado em reservar",
-      trip: "Passeio"
+      trip: "Passeio",
+      durationLabel: "Duração",
+      priceLabel: "Preço"
     },
     tripDetail: {
       notFound: "Passeio não encontrado",
@@ -909,7 +1948,72 @@ export const translations = {
       category: "Categoria",
       rating: "Avaliação",
       instantConfirmation: "Confirmação instantânea via WhatsApp",
-      morePhotosSoon: "Mais fotos em breve..."
+      morePhotosSoon: "Mais fotos em breve...",
+      ask: "Perguntar"
+    },
+    map: {
+      findUs: "Encontre-nos",
+      locationTitle: "Nossa localização",
+      locationSubtitle: "HURGHADA — RUA SHERATON",
+      locationLabel: "Endereço",
+      phoneLabel: "Telefone",
+      emailLabel: "E-mail",
+      workingHoursLabel: "Horário de funcionamento",
+      dailyHours: "Diariamente: 8:00 — 22:00",
+      whatsappSupport: "Suporte WhatsApp 24/7",
+      directions: "Como chegar",
+      whatsappCta: "Tem perguntas? Estamos a uma mensagem!",
+      chatWhatsApp: "Chat no WhatsApp",
+      addressLine1: "RUA SHERATON — CORAÇÃO DE HURGHADA",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Envie-nos uma mensagem"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   sv: {
@@ -919,7 +2023,8 @@ export const translations = {
       gallery: "Galleri",
       reviews: "Omdömen",
       contact: "Kontakt",
-      about: "Om oss"
+      about: "Om oss",
+      blog: "Blogg"
     },
     hero: {
       title: "Upptäck Röda havets magi",
@@ -933,7 +2038,11 @@ export const translations = {
       bookNow: "Boka via WhatsApp",
       duration: "Varaktighet",
       price: "Från",
-      popular: "Populär"
+      popular: "Populär",
+      uniqueTrips: "Unika resor",
+      happyTourists: "Nöjda turister",
+      yearsExperience: "År erfarenhet",
+      averageRating: "Genomsnittsbetyg"
     },
     gallery: {
       title: "Fånga ögonblicken",
@@ -960,11 +2069,26 @@ export const translations = {
       contact: "Kontakta oss",
       followUs: "Följ oss",
       rights: "Alla rättigheter förbehållna",
-      address: "Hurghada, Röda havet, Egypten"
+      address: "Hurghada, Röda havet, Egypten",
+      blog: "Blogg",
+      privacyPolicy: "Integritetspolicy",
+      termsOfService: "Användarvillkor",
+      paradiseIsland: "Snorkling på Paradise Island",
+      superSafari: "Super Safari",
+      dolphinWatching: "Delfinobservation",
+      luxorTrip: "Dagstur till Luxor",
+      cairoPyramids: "Kairo & Pyramider",
+      divingAdventure: "Dykning"
+    },
+    breadcrumb: {
+      home: "Hem",
+      trips: "Utflykter"
     },
     whatsapp: {
       greeting: "Hej! Jag är intresserad av att boka",
-      trip: "Utflykt"
+      trip: "Utflykt",
+      durationLabel: "Varaktighet",
+      priceLabel: "Pris"
     },
     tripDetail: {
       notFound: "Utflykt hittades inte",
@@ -979,7 +2103,72 @@ export const translations = {
       category: "Kategori",
       rating: "Betyg",
       instantConfirmation: "Omedelbar bekräftelse via WhatsApp",
-      morePhotosSoon: "Foton kommer snart..."
+      morePhotosSoon: "Foton kommer snart...",
+      ask: "Fråga"
+    },
+    map: {
+      findUs: "Hitta oss",
+      locationTitle: "Vår plats",
+      locationSubtitle: "HURGHADA — SHERATONGATAN",
+      locationLabel: "Adress",
+      phoneLabel: "Telefon",
+      emailLabel: "E-post",
+      workingHoursLabel: "Öppettider",
+      dailyHours: "Dagligen: 8:00 — 22:00",
+      whatsappSupport: "WhatsApp-support 24/7",
+      directions: "Vägbeskrivning",
+      whatsappCta: "Har du frågor? Vi är bara ett meddelande bort!",
+      chatWhatsApp: "Chatta på WhatsApp",
+      addressLine1: "SHERATONGATAN — HJÄRTAT AV HURGHADA",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Skicka oss ett meddelande"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   da: {
@@ -989,7 +2178,8 @@ export const translations = {
       gallery: "Galleri",
       reviews: "Anmeldelser",
       contact: "Kontakt",
-      about: "Om os"
+      about: "Om os",
+      blog: "Blog"
     },
     hero: {
       title: "Oplev Det Røde Havs magi",
@@ -1003,7 +2193,11 @@ export const translations = {
       bookNow: "Book via WhatsApp",
       duration: "Varighed",
       price: "Fra",
-      popular: "Populær"
+      popular: "Populær",
+      uniqueTrips: "Unikke rejser",
+      happyTourists: "Tilfredse turister",
+      yearsExperience: "Års erfaring",
+      averageRating: "Gennemsnitlig bedømmelse"
     },
     gallery: {
       title: "Fang øjeblikke",
@@ -1030,11 +2224,26 @@ export const translations = {
       contact: "Kontakt os",
       followUs: "Følg os",
       rights: "Alle rettigheder forbeholdes",
-      address: "Hurghada, Det Røde Hav, Egypten"
+      address: "Hurghada, Det Røde Hav, Egypten",
+      blog: "Blog",
+      privacyPolicy: "Privatlivspolitik",
+      termsOfService: "Vilkår",
+      paradiseIsland: "Snorkling på Paradise Island",
+      superSafari: "Super Safari",
+      dolphinWatching: "Delfinobservation",
+      luxorTrip: "Dagstur til Luxor",
+      cairoPyramids: "Kairo & Pyramider",
+      divingAdventure: "Dykning"
+    },
+    breadcrumb: {
+      home: "Hjem",
+      trips: "Udflugter"
     },
     whatsapp: {
       greeting: "Hej! Jeg er interesseret i at booke",
-      trip: "Udflugt"
+      trip: "Udflugt",
+      durationLabel: "Varighed",
+      priceLabel: "Pris"
     },
     tripDetail: {
       notFound: "Udflugt ikke fundet",
@@ -1049,7 +2258,72 @@ export const translations = {
       category: "Kategori",
       rating: "Bedømmelse",
       instantConfirmation: "Øjeblikkelig bekræftelse via WhatsApp",
-      morePhotosSoon: "Flere fotos kommer snart..."
+      morePhotosSoon: "Flere fotos kommer snart...",
+      ask: "Spørg"
+    },
+    map: {
+      findUs: "Find os",
+      locationTitle: "Vores placering",
+      locationSubtitle: "HURGHADA — SHERATONGADEN",
+      locationLabel: "Adresse",
+      phoneLabel: "Telefon",
+      emailLabel: "E-mail",
+      workingHoursLabel: "Åbningstider",
+      dailyHours: "Dagligt: 8:00 — 22:00",
+      whatsappSupport: "24/7 WhatsApp-support",
+      directions: "Få vejledning",
+      whatsappCta: "Har du spørgsmål? Vi er kun en besked væk!",
+      chatWhatsApp: "Chat på WhatsApp",
+      addressLine1: "SHERATONGADE — HJERTET AF HURGHADA",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Send os en besked"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   fi: {
@@ -1059,7 +2333,8 @@ export const translations = {
       gallery: "Galleria",
       reviews: "Arvostelut",
       contact: "Yhteystiedot",
-      about: "Tietoa"
+      about: "Tietoa",
+      blog: "Blogi"
     },
     hero: {
       title: "Löydä Punaisen meren taika",
@@ -1073,7 +2348,11 @@ export const translations = {
       bookNow: "Varaa WhatsAppilla",
       duration: "Kesto",
       price: "Alkaen",
-      popular: "Suosittu"
+      popular: "Suosittu",
+      uniqueTrips: "Uniikit matkat",
+      happyTourists: "Tyytyväisiä turisteja",
+      yearsExperience: "Vuotta kokemusta",
+      averageRating: "Keskiarvo"
     },
     gallery: {
       title: "Tallenna hetket",
@@ -1100,11 +2379,26 @@ export const translations = {
       contact: "Ota yhteyttä",
       followUs: "Seuraa meitä",
       rights: "Kaikki oikeudet pidätetään",
-      address: "Hurghada, Punainen meri, Egypti"
+      address: "Hurghada, Punainen meri, Egypti",
+      blog: "Blogi",
+      privacyPolicy: "Tietosuojakäytäntö",
+      termsOfService: "Käyttöehdot",
+      paradiseIsland: "Snorklaus Paradise Islandilla",
+      superSafari: "Super Safari",
+      dolphinWatching: "Delfiinien havainnointi",
+      luxorTrip: "Luxor-päiväretki",
+      cairoPyramids: "Kairo ja pyramiidit",
+      divingAdventure: "Sukellus"
+    },
+    breadcrumb: {
+      home: "Koti",
+      trips: "Retket"
     },
     whatsapp: {
       greeting: "Hei! Olen kiinnostunut varaamaan",
-      trip: "Retki"
+      trip: "Retki",
+      durationLabel: "Kesto",
+      priceLabel: "Hinta"
     },
     tripDetail: {
       notFound: "Retkeä ei löytynyt",
@@ -1119,7 +2413,72 @@ export const translations = {
       category: "Luokka",
       rating: "Arvosana",
       instantConfirmation: "Välitön vahvistus WhatsAppin kautta",
-      morePhotosSoon: "Lisää kuvia tulossa pian..."
+      morePhotosSoon: "Lisää kuvia tulossa pian...",
+      ask: "Kysy"
+    },
+    map: {
+      findUs: "Löydä meidät",
+      locationTitle: "Sijaintimme",
+      locationSubtitle: "HURGHADA — SHERATONKATU",
+      locationLabel: "Osoite",
+      phoneLabel: "Puhelin",
+      emailLabel: "Sähköposti",
+      workingHoursLabel: "Aukioloajat",
+      dailyHours: "Päivittäin: 8:00 — 22:00",
+      whatsappSupport: "WhatsApp-tuki 24/7",
+      directions: "Reittiohjeet",
+      whatsappCta: "Onko sinulla kysymyksiä? Olemme vain viestin päässä!",
+      chatWhatsApp: "Chatta WhatsAppissa",
+      addressLine1: "SHERATON-KATU — HURGHADAN SYDÄN",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Lähetä meille viesti"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   no: {
@@ -1129,7 +2488,8 @@ export const translations = {
       gallery: "Galleri",
       reviews: "Anmeldelser",
       contact: "Kontakt",
-      about: "Om oss"
+      about: "Om oss",
+      blog: "Blogg"
     },
     hero: {
       title: "Opplev Rødehavets magi",
@@ -1143,7 +2503,11 @@ export const translations = {
       bookNow: "Bestill via WhatsApp",
       duration: "Varighet",
       price: "Fra",
-      popular: "Populær"
+      popular: "Populær",
+      uniqueTrips: "Unike reiser",
+      happyTourists: "Fornøyde turister",
+      yearsExperience: "Års erfaring",
+      averageRating: "Gjennomsnittlig vurdering"
     },
     gallery: {
       title: "Fang øyeblikkene",
@@ -1170,11 +2534,26 @@ export const translations = {
       contact: "Kontakt oss",
       followUs: "Følg oss",
       rights: "Alle rettigheter forbeholdt",
-      address: "Hurghada, Rødehavet, Egypt"
+      address: "Hurghada, Rødehavet, Egypt",
+      blog: "Blogg",
+      privacyPolicy: "Personvern",
+      termsOfService: "Vilkår",
+      paradiseIsland: "Snorkling på Paradise Island",
+      superSafari: "Super Safari",
+      dolphinWatching: "Delfinobservasjon",
+      luxorTrip: "Dagstur til Luxor",
+      cairoPyramids: "Kairo & Pyramider",
+      divingAdventure: "Dykking"
+    },
+    breadcrumb: {
+      home: "Hjem",
+      trips: "Utflukter"
     },
     whatsapp: {
       greeting: "Hei! Jeg er interessert i å bestille",
-      trip: "Utflukt"
+      trip: "Utflukt",
+      durationLabel: "Varighet",
+      priceLabel: "Pris"
     },
     tripDetail: {
       notFound: "Utflukt ikke funnet",
@@ -1189,7 +2568,72 @@ export const translations = {
       category: "Kategori",
       rating: "Vurdering",
       instantConfirmation: "Øyeblikkelig bekreftelse via WhatsApp",
-      morePhotosSoon: "Flere bilder kommer snart..."
+      morePhotosSoon: "Flere bilder kommer snart...",
+      ask: "Spør"
+    },
+    map: {
+      findUs: "Finn oss",
+      locationTitle: "Vår beliggenhet",
+      locationSubtitle: "HURGHADA — SHERATONGATEN",
+      locationLabel: "Adresse",
+      phoneLabel: "Telefon",
+      emailLabel: "E-post",
+      workingHoursLabel: "Åpningstider",
+      dailyHours: "Daglig: 8:00 — 22:00",
+      whatsappSupport: "24/7 WhatsApp-støtte",
+      directions: "Få veibeskrivelse",
+      whatsappCta: "Har du spørsmål? Vi er bare en melding unna!",
+      chatWhatsApp: "Chat på WhatsApp",
+      addressLine1: "SHERATONGATA — HJERTET AV HURGHADA",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Send oss en melding"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   hu: {
@@ -1199,7 +2643,8 @@ export const translations = {
       gallery: "Galéria",
       reviews: "Vélemények",
       contact: "Kapcsolat",
-      about: "Rólunk"
+      about: "Rólunk",
+      blog: "Blog"
     },
     hero: {
       title: "Fedezze fel a Vörös-tenger varázsát",
@@ -1213,7 +2658,11 @@ export const translations = {
       bookNow: "Foglaljon WhatsAppon",
       duration: "Időtartam",
       price: "Kezdve",
-      popular: "Népszerű"
+      popular: "Népszerű",
+      uniqueTrips: "Egyedi utazások",
+      happyTourists: "Elégedett turisták",
+      yearsExperience: "Év tapasztalat",
+      averageRating: "Átlagos értékelés"
     },
     gallery: {
       title: "Örökítse meg a pillanatokat",
@@ -1240,11 +2689,26 @@ export const translations = {
       contact: "Kapcsolat",
       followUs: "Kövessen minket",
       rights: "Minden jog fenntartva",
-      address: "Hurghada, Vörös-tenger, Egyiptom"
+      address: "Hurghada, Vörös-tenger, Egyiptom",
+      blog: "Blog",
+      privacyPolicy: "Adatvédelmi szabályzat",
+      termsOfService: "Felhasználási feltételek",
+      paradiseIsland: "Sznorkelezés a Paradise Island-en",
+      superSafari: "Szuper Szafári",
+      dolphinWatching: "Delfinmegfigyelés",
+      luxorTrip: "Luxor egynapos kirándulás",
+      cairoPyramids: "Kairó és a Piramisok",
+      divingAdventure: "Búvárkodás"
+    },
+    breadcrumb: {
+      home: "Kezdőlap",
+      trips: "Kirándulások"
     },
     whatsapp: {
       greeting: "Üdvözlöm! Érdeklődöm a foglalás iránt",
-      trip: "Kirándulás"
+      trip: "Kirándulás",
+      durationLabel: "Időtartam",
+      priceLabel: "Ár"
     },
     tripDetail: {
       notFound: "Kirándulás nem található",
@@ -1259,7 +2723,72 @@ export const translations = {
       category: "Kategória",
       rating: "Értékelés",
       instantConfirmation: "Azonnali visszaigazolás WhatsAppon",
-      morePhotosSoon: "Fotók hamarosan..."
+      morePhotosSoon: "Fotók hamarosan...",
+      ask: "Érdeklődés"
+    },
+    map: {
+      findUs: "Keressen minket",
+      locationTitle: "Helyszínünk",
+      locationSubtitle: "HURGHADA — SHERATON UTCA",
+      locationLabel: "Cím",
+      phoneLabel: "Telefon",
+      emailLabel: "E-mail",
+      workingHoursLabel: "Nyitvatartás",
+      dailyHours: "Naponta: 8:00 — 22:00",
+      whatsappSupport: "24/7 WhatsApp támogatás",
+      directions: "Útvonaltervezés",
+      whatsappCta: "Kérdése van? Csak egy üzenetre vagyunk!",
+      chatWhatsApp: "Csevegés WhatsAppon",
+      addressLine1: "SHERATON UTCA — HURGHADA SZÍVE",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Küldjön üzenetet"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   ro: {
@@ -1269,7 +2798,8 @@ export const translations = {
       gallery: "Galerie",
       reviews: "Testimoniale",
       contact: "Contact",
-      about: "Despre noi"
+      about: "Despre noi",
+      blog: "Blog"
     },
     hero: {
       title: "Descoperiți magia Egiptului",
@@ -1283,7 +2813,11 @@ export const translations = {
       bookNow: "Rezervați prin WhatsApp",
       duration: "Durată",
       price: "De la",
-      popular: "Popular"
+      popular: "Popular",
+      uniqueTrips: "Călătorii unice",
+      happyTourists: "Turiști mulțumiți",
+      yearsExperience: "Ani de experiență",
+      averageRating: "Evaluare medie"
     },
     gallery: {
       title: "Imortalizați momentele",
@@ -1310,11 +2844,26 @@ export const translations = {
       contact: "Contactați-ne",
       followUs: "Urmăriți-ne",
       rights: "Toate drepturile rezervate",
-      address: "Hurghada, Egipt"
+      address: "Hurghada, Egipt",
+      blog: "Blog",
+      privacyPolicy: "Politica de confidențialitate",
+      termsOfService: "Termeni și condiții",
+      paradiseIsland: "Snorkeling pe Paradise Island",
+      superSafari: "Super Safari",
+      dolphinWatching: "Observarea delfinilor",
+      luxorTrip: "Excursie la Luxor",
+      cairoPyramids: "Cairo și Piramidele",
+      divingAdventure: "Scufundări"
+    },
+    breadcrumb: {
+      home: "Acasă",
+      trips: "Excursii"
     },
     whatsapp: {
       greeting: "Bună ziua! Aș dori să rezerv",
-      trip: "Excursia"
+      trip: "Excursia",
+      durationLabel: "Durată",
+      priceLabel: "Preț"
     },
     tripDetail: {
       notFound: "Excursie negăsită",
@@ -1329,7 +2878,72 @@ export const translations = {
       category: "Categorie",
       rating: "Evaluare",
       instantConfirmation: "Confirmare instantanee prin WhatsApp",
-      morePhotosSoon: "Mai multe fotografii în curând..."
+      morePhotosSoon: "Mai multe fotografii în curând...",
+      ask: "Întreabă"
+    },
+    map: {
+      findUs: "Găsiți-ne",
+      locationTitle: "Locația noastră",
+      locationSubtitle: "HURGHADA — STRADA SHERATON",
+      locationLabel: "Adresă",
+      phoneLabel: "Telefon",
+      emailLabel: "E-mail",
+      workingHoursLabel: "Program de lucru",
+      dailyHours: "Zilnic: 8:00 — 22:00",
+      whatsappSupport: "Suport WhatsApp 24/7",
+      directions: "Cum să ajungeți",
+      whatsappCta: "Aveți întrebări? Suntem la un mesaj distanță!",
+      chatWhatsApp: "Discutați pe WhatsApp",
+      addressLine1: "STRADA SHERATON — INIMA HURGHADEI",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Trimiteți-ne un mesaj"
+    },
+    about: {
+      heroLabel: "ABOUT US",
+      heroDescription: "We are Golden Horizont Egypt, your trusted partner for unforgettable travel experiences.",
+      discoverStory: "Discover Our Story",
+      ourStoryLabel: "OUR STORY",
+      storyTitle: "Crafting Golden\nMemories",
+      storyP1: "Since 2015, we have been dedicated to providing the best travel experiences in Egypt.",
+      storyP2: "Our team of local experts ensures every trip is perfectly planned and executed.",
+      storyP3: "We believe in sustainable tourism and supporting local communities.",
+      value1Title: "Premium Quality",
+      value1Desc: "We never compromise on the quality of our services and vehicles.",
+      value2Title: "Safe Travel",
+      value2Desc: "Your safety is our top priority on every journey.",
+      value3Title: "Expert Guides",
+      value3Desc: "Learn from passionate, certified local Egyptologists.",
+      value4Title: "Best Price",
+      value4Desc: "Direct booking means the best value for your money.",
+      milestone2015Title: "The Beginning",
+      milestone2015Desc: "Started with a small office in Hurghada and a big dream.",
+      milestone2018Title: "Fleet Expansion",
+      milestone2018Desc: "Added luxury vehicles and private boats to our fleet.",
+      milestone2021Title: "Award Winner",
+      milestone2021Desc: "Recognized as the top tour operator in the Red Sea region.",
+      milestone2024Title: "Digital Era",
+      milestone2024Desc: "Launched our new digital platform to serve you better.",
+      uniqueTrips: "Unique Trips",
+      happyTourists: "Happy Tourists",
+      yearsExperience: "Years Experience",
+      averageRating: "Average Rating",
+      cairoDesc: "Pyramids & History",
+      luxorDesc: "Ancient Temples",
+      aswanDesc: "Nile Magic",
+      marsaAlamDesc: "Pristine Reefs",
+      hurghadaDesc: "Red Sea Hub",
+      gizaDesc: "World Wonders",
+      milestonesLabel: "MILESTONES",
+      milestonesTitle: "Our Journey",
+      valuesLabel: "OUR VALUES",
+      valuesTitle: "Why Choose Us",
+      destinationsLabel: "DESTINATIONS",
+      destinationsTitle: "Where We Go",
+      destinationsSubtitle: "Explore the most beautiful locations across Egypt with our expert guides.",
+      ctaTitle: "Ready for an\nAdventure?",
+      ctaDescription: "Join thousands of happy travelers who have explored Egypt with us.",
+      exploreTrips: "Explore Trips",
+      chatWhatsApp: "Chat on WhatsApp"
     }
   },
   tr: {
@@ -1339,7 +2953,8 @@ export const translations = {
       gallery: "Galeri",
       reviews: "Yorumlar",
       contact: "İletişim",
-      about: "Hakkımızda"
+      about: "Hakkımızda",
+      blog: "Blog"
     },
     hero: {
       title: "Kızıldeniz'in büyüsünü keşfedin",
@@ -1353,7 +2968,11 @@ export const translations = {
       bookNow: "WhatsApp ile rezervasyon",
       duration: "Süre",
       price: "Başlangıç",
-      popular: "Popüler"
+      popular: "Popüler",
+      uniqueTrips: "Benzersiz turlar",
+      happyTourists: "Mutlu turistler",
+      yearsExperience: "Yıl deneyim",
+      averageRating: "Ortalama puan"
     },
     gallery: {
       title: "Anları yakalayın",
@@ -1380,11 +2999,26 @@ export const translations = {
       contact: "Bize Ulaşın",
       followUs: "Bizi Takip Edin",
       rights: "Tüm hakları saklıdır",
-      address: "Hurghada, Kızıldeniz, Mısır"
+      address: "Hurghada, Kızıldeniz, Mısır",
+      blog: "Blog",
+      privacyPolicy: "Gizlilik Politikası",
+      termsOfService: "Kullanım Koşulları",
+      paradiseIsland: "Paradise Island Dalış",
+      superSafari: "Süper Safari",
+      dolphinWatching: "Yunus Gözlemi",
+      luxorTrip: "Luxor Günübirlik Tur",
+      cairoPyramids: "Kahire ve Piramitler",
+      divingAdventure: "Dalış"
+    },
+    breadcrumb: {
+      home: "Ana Sayfa",
+      trips: "Turlar"
     },
     whatsapp: {
       greeting: "Merhaba! Rezervasyon yapmak istiyorum",
-      trip: "Tur"
+      trip: "Tur",
+      durationLabel: "Süre",
+      priceLabel: "Fiyat"
     },
     tripDetail: {
       notFound: "Turu bulunamadı",
@@ -1399,71 +3033,110 @@ export const translations = {
       category: "Kategori",
       rating: "Değerlendirme",
       instantConfirmation: "WhatsApp ile anında onay",
-      morePhotosSoon: "Fotoğraflar yakında..."
+      morePhotosSoon: "Fotoğraflar yakında...",
+      ask: "Sor"
+    },
+    map: {
+      findUs: "Bizi bulun",
+      locationTitle: "Konumumuz",
+      locationSubtitle: "HURGHADA — SHERATON CADDESİ",
+      locationLabel: "Adres",
+      phoneLabel: "Telefon",
+      emailLabel: "E-posta",
+      workingHoursLabel: "Çalışma saatleri",
+      dailyHours: "Her gün: 8:00 — 22:00",
+      whatsappSupport: "7/24 WhatsApp Desteği",
+      directions: "Yol tarifi al",
+      whatsappCta: "Sorularınız mı var? Bir mesaj uzağınızdayız!",
+      chatWhatsApp: "WhatsApp'ta sohbet et",
+      addressLine1: "SHERATON SOKAĞI — HURGHADA KALBİ",
+      addressLine2: "6R8Q+Q9Q Hurghada 1",
+      formTitle: "Bize mesaj gönderin"
+    },
+    about: {
+      heroLabel: "HAKKIMIZDA",
+      heroDescription: "Mısır'da unutulmaz seyahat deneyimleri sunan güvenilir ortağınız Golden Horizont Egypt'iz.",
+      discoverStory: "Hikayemizi Keşfedin",
+      ourStoryLabel: "HİKAYEMİZ",
+      storyTitle: "Altın Anılar\nYaratıyoruz",
+      storyP1: "2015'ten beri Mısır'da en iyi seyahat deneyimlerini sunmaya kendimizi adadık.",
+      storyP2: "Yerel uzman ekibimiz, her gezinin mükemmel bir şekilde planlanmasını ve gerçekleştirilmesini sağlar.",
+      storyP3: "Sürdürülebilir turizme ve yerel toplulukları desteklemeye inanıyoruz.",
+      value1Title: "Premium Kalite",
+      value1Desc: "Hizmetlerimizin ve araçlarımızın kalitesinden asla ödün vermeyiz.",
+      value2Title: "Güvenli Seyahat",
+      value2Desc: "Her yolculukta güvenliğiniz bizim en yüksek önceliğimizdir.",
+      value3Title: "Uzman Rehberler",
+      value3Desc: "Tutkulu, sertifikalı yerel Mısır bilimcilerinden öğrenin.",
+      value4Title: "En İyi Fiyat",
+      value4Desc: "Doğrudan rezervasyon, paranızın karşılığını en iyi şekilde almanız demektir.",
+      milestone2015Title: "Başlangıç",
+      milestone2015Desc: "Hurghada'da küçük bir ofis ve büyük bir hayalle başladık.",
+      milestone2018Title: "Filo Genişletme",
+      milestone2018Desc: "Filomuza lüks araçlar ve özel tekneler ekledik.",
+      milestone2021Title: "Ödül Sahibi",
+      milestone2021Desc: "Kızıldeniz bölgesinde en iyi tur operatörü seçildik.",
+      milestone2024Title: "Dijital Çağ",
+      milestone2024Desc: "Size daha iyi hizmet vermek için yeni dijital platformumuzu başlattık.",
+      uniqueTrips: "Benzersiz Turlar",
+      happyTourists: "Mutlu Turistler",
+      yearsExperience: "Yıllık Deneyim",
+      averageRating: "Ortalama Puan",
+      cairoDesc: "Piramitler & Tarih",
+      luxorDesc: "Antik Tapınaklar",
+      aswanDesc: "Nil'in Büyüsü",
+      marsaAlamDesc: "Doğal Resifler",
+      hurghadaDesc: "Kızıldeniz Merkezi",
+      gizaDesc: "Dünya Harikaları",
+      milestonesLabel: "KİLOMETRE TAŞLARI",
+      milestonesTitle: "Yolculuğumuz",
+      valuesLabel: "DEĞERLERİMİZ",
+      valuesTitle: "Neden Bizi Seçmelisiniz",
+      destinationsLabel: "DESTİNASYONLAR",
+      destinationsTitle: "Nereye Gidiyoruz",
+      destinationsSubtitle: "Uzman rehberlerimiz eşliğinde Mısır'ın en güzel yerlerini keşfedin.",
+      ctaTitle: "Maceraya Hazır mısınız?",
+      ctaDescription: "Mısır'ı bizimle keşfeden binlerce mutlu gezgine katılın.",
+      exploreTrips: "Turları Keşfet",
+      chatWhatsApp: "WhatsApp'tan Sohbet Et"
     }
   }
 };
 
 export type Language = keyof typeof translations;
-export type TranslationKeys = typeof translations.en;
+export type TranslationKeys = any;
 
-// Detect browser language and return matching translation key
+// Detect active language — URL path is the single source of truth
 export function detectLanguage(): Language {
   if (typeof window === 'undefined') return 'en';
-  
-  const browserLang = navigator.language.split('-')[0].toLowerCase();
-  
-  // Map browser language codes to our supported languages
-  const langMap: Record<string, Language> = {
-    en: 'en',
-    ru: 'ru',
-    de: 'de',
-    pl: 'pl',
-    uk: 'uk',
-    cs: 'cs',
-    nl: 'nl',
-    it: 'it',
-    fr: 'fr',
-    es: 'es',
-    ar: 'ar',
-    zh: 'zh',
-    pt: 'pt',
-    sv: 'sv',
-    da: 'da',
-    fi: 'fi',
-    no: 'no',
-    nb: 'no', // Norwegian Bokmål
-    nn: 'no', // Norwegian Nynorsk
-    hu: 'hu',
-    ro: 'ro',
-    tr: 'tr'
+
+  const supported: Language[] = ['en','ru','de','pl','uk','cs','nl','it','fr','es','ar','zh','pt','sv','da','fi','no','hu','ro','tr'];
+
+  // 1. URL pathname prefix (highest priority — set by middleware)
+  const pathLang = window.location.pathname.split('/')[1] as Language;
+  if (supported.includes(pathLang)) return pathLang;
+
+  // 2. Cookie (persisted preference)
+  const cookieLang = document.cookie
+    .split('; ')
+    .find(row => row.startsWith('language='))
+    ?.split('=')[1] as Language | undefined;
+  if (cookieLang && supported.includes(cookieLang)) return cookieLang;
+
+  // 3. localStorage (legacy fallback)
+  const storedLang = localStorage.getItem('language') as Language | null;
+  if (storedLang && supported.includes(storedLang)) return storedLang;
+
+  // 4. Browser navigator.language
+  const browserCode = navigator.language.split('-')[0].toLowerCase();
+  const browserMap: Record<string, Language> = {
+    en:'en', ru:'ru', de:'de', pl:'pl', uk:'uk', cs:'cs', nl:'nl',
+    it:'it', fr:'fr', es:'es', ar:'ar', zh:'zh', pt:'pt', sv:'sv',
+    da:'da', fi:'fi', no:'no', nb:'no', nn:'no', hu:'hu', ro:'ro', tr:'tr'
   };
-  
-  return langMap[browserLang] || 'en';
+  return browserMap[browserCode] || 'en';
 }
 
 export function getTranslations(lang: Language): TranslationKeys {
   return translations[lang] || translations.en;
-}
-
-// Hook for using translations in components
-
-export function useTranslation() {
-  const [lang, setLang] = useState<Language>('en');
-  const [t, setT] = useState<TranslationKeys>(translations.en);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    const detectedLang = detectLanguage();
-    setLang(detectedLang);
-    setT(getTranslations(detectedLang));
-    setMounted(true);
-  }, []);
-
-  const changeLanguage = (newLang: Language) => {
-    setLang(newLang);
-    setT(getTranslations(newLang));
-  };
-
-  return { t, lang, mounted, setLang: changeLanguage };
 }

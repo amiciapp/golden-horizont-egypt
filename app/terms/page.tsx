@@ -1,25 +1,18 @@
-"use client"
-
+import { headers } from "next/headers"
+import { getTranslations, type Language } from "@/lib/translations"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import { useTranslation } from "@/lib/translations"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 
-export default function TermsPage() {
-  const { t, lang, mounted, setLang } = useTranslation()
-
-  if (!mounted) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="animate-pulse-gold w-16 h-16 rounded-full border-2 border-primary" />
-      </div>
-    )
-  }
+export default async function TermsPage() {
+  const headersList = await headers()
+  const lang = (headersList.get('x-next-locale') || 'en') as Language
+  const t = getTranslations(lang)
 
   return (
     <main className="min-h-screen bg-background">
-      <Header t={t} lang={lang} onLanguageChange={setLang} />
+      <Header t={t} />
       
       <section className="container mx-auto px-4 py-32 max-w-4xl">
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-8">Terms of Service</h1>
@@ -27,7 +20,7 @@ export default function TermsPage() {
         
         <div className="space-y-8 text-muted-foreground leading-relaxed">
           <div>
-            <h2 className="text-2xl font-serif text-foreground mb-4">1. Booking & Payment</h2>
+            <h2 className="text-2xl font-serif text-foreground mb-4">1. Booking &amp; Payment</h2>
             <p>Tours can be booked via WhatsApp or our website. A deposit may be required to confirm your booking. Full payment is due before or on the day of the tour, unless otherwise agreed.</p>
           </div>
 
@@ -67,7 +60,7 @@ export default function TermsPage() {
             Golden Horizont Egypt<br />
             Sheraton Street, Hurghada, Egypt<br />
             Email: info@goldenhorizontegypt.com<br />
-            WhatsApp: +201 22 095 1483</p>
+            WhatsApp: +20 122 095 1483</p>
           </div>
         </div>
       </section>

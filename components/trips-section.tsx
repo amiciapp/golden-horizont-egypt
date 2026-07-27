@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Clock, Euro, Star, Image as ImageIcon } from "lucide-react";
 import { type TranslationKeys, type Language } from "@/lib/translations";
 import { trips, categories, generateWhatsAppLink, type Trip } from "@/lib/trips";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import Reveal from "@/components/reveal";
 
@@ -14,12 +15,10 @@ interface TripsSectionProps {
   lang?: Language;
 }
 
-const WHATSAPP_NUMBER = "201220951483";
-
 export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
-  const [visibleCards, setVisibleCards] = useState<Set<string>>(new Set());
+  const [slideIndex, setSlideIndex] = useState<Record<string, number>>({});
   const sectionRef = useRef<HTMLElement>(null);
 
   const filteredTrips =
@@ -27,24 +26,21 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
       ? trips
       : trips.filter((trip) => trip.category === activeCategory);
 
-  // Observe trip card elements as they enter the viewport
   useEffect(() => {
-    setVisibleCards(new Set());
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = (entry.target as HTMLElement).dataset.tripId || "";
-          setVisibleCards(prev => { const next = new Set(prev); next.add(id); return next; });
-          observer.unobserve(entry.target);
+    const interval = setInterval(() => {
+      setSlideIndex(prev => {
+        const next = { ...prev };
+        for (const trip of trips) {
+          if (trip.gallery && trip.gallery.length > 1) {
+            const current = next[trip.id] || 0;
+            next[trip.id] = (current + 1) % trip.gallery.length;
+          }
         }
+        return next;
       });
-    }, { rootMargin: "300px" });
-
-    const cards = sectionRef.current?.querySelectorAll<HTMLElement>(".trip-card");
-    cards?.forEach(card => observer.observe(card));
-
-    return () => observer.disconnect();
-  }, [activeCategory]);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleImageError = useCallback((tripId: string) => {
     setFailedImages(prev => new Set(prev).add(tripId));
@@ -77,7 +73,7 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary animate-line-draw" />
             <span className="text-primary text-sm uppercase tracking-[0.3em]">
-              Excursions
+              {t.trips.preTitle}
             </span>
             <div className="w-16 h-px bg-gradient-to-l from-transparent to-primary animate-line-draw" />
           </div>
@@ -113,17 +109,13 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
             const tripName = trip.name[lang] || trip.name.en;
             const tripDescription = trip.description[lang] || trip.description.en;
             const tripDuration = trip.duration[lang] || trip.duration.en;
-            const isVisible = visibleCards.has(trip.id);
             
             return (
               <div
                 key={trip.id}
                 data-trip-id={trip.id}
                 className="trip-card group relative bg-background/40 backdrop-blur-md rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-500 card-shine hover-lift"
-                style={visibleCards.has(trip.id) ? {} : { minHeight: "420px" }}
               >
-                {isVisible ? (
-                  <>
                 {/* Image */}
                 <Link href={`/trip/${trip.slug}`} className="block">
                   <div className="relative h-48 overflow-hidden bg-muted">
@@ -132,12 +124,10 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
                         <ImageIcon className="w-12 h-12" />
                       </div>
                     ) : (
-                      <Image
-                        src={trip.image}
-                        alt={tripName}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      <SlideshowImages
+                        trip={trip}
+                        tripName={tripName}
+                        slideIndex={slideIndex}
                         onError={() => handleImageError(trip.id)}
                       />
                     )}
@@ -189,10 +179,18 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
                     </div>
                     <div className="flex items-center gap-1">
                       <span className="text-xs text-foreground/50">{t.trips.price}</span>
-                      <Euro className="w-4 h-4 text-primary" />
-                      <span className="text-xl font-bold text-gradient-gold">
-                        {trip.price}
-                      </span>
+                      {trip.price > 0 ? (
+                        <>
+                          <Euro className="w-4 h-4 text-primary" />
+                          <span className="text-xl font-bold text-gradient-gold">
+                            {trip.price}
+                          </span>
+                        </>
+                      ) : (
+                        <span className="text-xl font-bold text-gradient-gold">
+                          {trip.priceLabel?.[lang] || "Ask"}
+                        </span>
+                      )}
                     </div>
                   </div>
 
@@ -210,24 +208,6 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
 
                 {/* Hover Border Effect */}
                 <div className="absolute inset-0 rounded-xl border-2 border-primary/0 group-hover:border-primary/30 transition-colors duration-500 pointer-events-none" />
-                  </>
-                ) : (
-                  <div className="animate-pulse p-5 space-y-4">
-                    <div className="h-48 bg-muted rounded-lg" />
-                    <div className="h-5 bg-muted rounded w-3/4" />
-                    <div className="h-4 bg-muted rounded w-full" />
-                    <div className="h-4 bg-muted rounded w-1/2" />
-                    <div className="flex gap-2">
-                      <div className="h-6 bg-muted rounded w-16" />
-                      <div className="h-6 bg-muted rounded w-20" />
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <div className="h-4 bg-muted rounded w-24" />
-                      <div className="h-4 bg-muted rounded w-16" />
-                    </div>
-                    <div className="h-10 bg-muted rounded-lg w-full" />
-                  </div>
-                )}
               </div>
             );
           })}
@@ -236,10 +216,10 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
         {/* Stats */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {[
-            { value: `${trips.length}+`, label: "Unique Trips" },
-            { value: "5000+", label: "Happy Tourists" },
-            { value: "10+", label: "Years Experience" },
-            { value: "4.9", label: "Average Rating" },
+            { value: `${trips.length}+`, label: t.trips.uniqueTrips || "Unique Trips" },
+            { value: "5000+", label: t.trips.happyTourists || "Happy Tourists" },
+            { value: "10+", label: t.trips.yearsExperience || "Years Experience" },
+            { value: "4.9", label: t.trips.averageRating || "Average Rating" },
           ].map((stat, index) => (
             <div
               key={index}
@@ -256,5 +236,45 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
         </div>
       </div>
     </section>
+  );
+}
+
+function SlideshowImages({ trip, tripName, slideIndex, onError }: {
+  trip: Trip;
+  tripName: string;
+  slideIndex: Record<string, number>;
+  onError: () => void;
+}) {
+  const images = trip.gallery && trip.gallery.length > 1 ? trip.gallery : [trip.image];
+  const currentIdx = slideIndex[trip.id] || 0;
+
+  return (
+    <div className="absolute inset-0 bg-muted">
+      {images.length > 1 ? (
+        images.map((img, idx) => (
+          <Image
+            key={`${img}-${idx}`}
+            src={img}
+            alt={`${tripName} - ${idx + 1}`}
+            fill
+            className={cn(
+              "object-cover transition-opacity duration-1000",
+              idx === currentIdx ? "opacity-100 z-10 group-hover:scale-110 transition-transform" : "opacity-0 z-0"
+            )}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+            onError={onError}
+          />
+        ))
+      ) : (
+        <Image
+          src={trip.image}
+          alt={tripName}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          onError={onError}
+        />
+      )}
+    </div>
   );
 }

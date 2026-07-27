@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Horizont Egypt Logo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #141414;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .logo-variant {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 80px;
+      background: #1F1F1F;
+      border-radius: 16px;
+      border: 1px solid #3A3A3A;
+    }
+
+    .logo-variant.light {
+      background: #F2F0ED;
+      border-color: #E8E8E8;
+    }
+
+    .variant-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #7A7A7A;
+      margin-bottom: 40px;
+    }
+
+    .logo-variant.light .variant-label {
+      color: #3A3A3A;
+    }
+
+    /* Main Logo Mark - Pyramid + Sun */
+    .logo-mark {
+      position: relative;
+      width: 120px;
+      height: 100px;
+      margin-bottom: 32px;
+    }
+
+    /* Sun/Circle */
+    .sun {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #E8B84A 0%, #C9922E 50%, #A67B1F 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 40px rgba(201, 146, 46, 0.4),
+                  0 0 80px rgba(201, 146, 46, 0.2);
+    }
+
+    /* Pyramid */
+    .pyramid {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 52px solid transparent;
+      border-right: 52px solid transparent;
+      border-bottom: 64px solid #C9922E;
+      filter: drop-shadow(0 4px 20px rgba(201, 146, 46, 0.3));
+    }
+
+    .pyramid::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: -48px;
+      width: 0;
+      height: 0;
+      border-left: 48px solid transparent;
+      border-right: 48px solid transparent;
+      border-bottom: 56px solid #A67B1F;
+      opacity: 0.6;
+    }
+
+    /* Horizon Line */
+    .horizon {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 160px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, #C9922E 20%, #E8B84A 50%, #C9922E 80%, transparent 100%);
+    }
+
+    /* Logo Typography */
+    .logo-text {
+      text-align: center;
+    }
+
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .logo-variant.light .logo-name {
+      color: #141414;
+    }
+
+    .logo-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #C9922E;
+    }
+
+    /* Horizontal Logo */
+    .logo-horizontal {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo-horizontal .logo-mark {
+      width: 64px;
+      height: 54px;
+      margin-bottom: 0;
+    }
+
+    .logo-horizontal .sun {
+      width: 26px;
+      height: 26px;
+    }
+
+    .logo-horizontal .pyramid {
+      border-left-width: 28px;
+      border-right-width: 28px;
+      border-bottom-width: 34px;
+      bottom: 0;
+    }
+
+    .logo-horizontal .pyramid::before {
+      top: 10px;
+      left: -25px;
+      border-left-width: 25px;
+      border-right-width: 25px;
+      border-bottom-width: 28px;
+    }
+
+    .logo-horizontal .horizon {
+      width: 80px;
+      bottom: 32px;
+    }
+
+    .logo-horizontal .logo-text {
+      text-align: left;
+    }
+
+    .logo-horizontal .logo-name {
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+
+    .logo-horizontal .logo-tagline {
+      font-size: 10px;
+    }
+
+    /* Icon Only */
+    .logo-icon {
+      width: 64px;
+      height: 54px;
+      position: relative;
+    }
+
+    .logo-icon .sun {
+      width: 26px;
+      height: 26px;
+    }
+
+    .logo-icon .pyramid {
+      border-left-width: 28px;
+      border-right-width: 28px;
+      border-bottom-width: 34px;
+      bottom: 0;
+    }
+
+    .logo-icon .pyramid::before {
+      top: 10px;
+      left: -25px;
+      border-left-width: 25px;
+      border-right-width: 25px;
+      border-bottom-width: 28px;
+    }
+
+    .logo-icon .horizon {
+      width: 80px;
+      bottom: 32px;
+    }
+
+    /* Monogram */
+    .monogram {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #C9922E;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .monogram-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: #C9922E;
+      letter-spacing: 2px;
+    }
+
+    .monogram::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 12px;
+      background: #C9922E;
+      border-radius: 50%;
+    }
+
+    /* Dark on Light */
+    .logo-variant.light .pyramid {
+      border-bottom-color: #1A2E3B;
+    }
+
+    .logo-variant.light .pyramid::before {
+      border-bottom-color: #2A5F7A;
+    }
+
+    .logo-variant.light .horizon {
+      background: linear-gradient(90deg, transparent 0%, #1A2E3B 20%, #2A5F7A 50%, #1A2E3B 80%, transparent 100%);
+    }
+
+    .logo-variant.light .sun {
+      box-shadow: 0 0 40px rgba(201, 146, 46, 0.3),
+                  0 0 80px rgba(201, 146, 46, 0.15);
+    }
+
+    .logo-variant.light .monogram {
+      border-color: #1A2E3B;
+    }
+
+    .logo-variant.light .monogram-text {
+      color: #1A2E3B;
+    }
+
+    .logo-variant.light .monogram::before {
+      background: #1A2E3B;
+    }
+
+    /* Variants Grid */
+    .variants-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      max-width: 900px;
+    }
+
+    .section-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #7A7A7A;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <h1 class="section-title">Golden Horizont Egypt — Logo System</h1>
+
+    <div class="variants-grid">
+      <!-- Primary Logo (Vertical) - Dark -->
+      <div class="logo-variant">
+        <span class="variant-label">Primary — Dark</span>
+        <div class="logo-mark">
+          <div class="sun"></div>
+          <div class="horizon"></div>
+          <div class="pyramid"></div>
+        </div>
+        <div class="logo-text">
+          <div class="logo-name">GOLDEN HORIZONT</div>
+          <div class="logo-tagline">Egypt</div>
+        </div>
+      </div>
+
+      <!-- Primary Logo (Vertical) - Light -->
+      <div class="logo-variant light">
+        <span class="variant-label">Primary — Light</span>
+        <div class="logo-mark">
+          <div class="sun"></div>
+          <div class="horizon"></div>
+          <div class="pyramid"></div>
+        </div>
+        <div class="logo-text">
+          <div class="logo-name">GOLDEN HORIZONT</div>
+          <div class="logo-tagline">Egypt</div>
+        </div>
+      </div>
+
+      <!-- Horizontal Logo - Dark -->
+      <div class="logo-variant">
+        <span class="variant-label">Horizontal — Dark</span>
+        <div class="logo-horizontal">
+          <div class="logo-mark">
+            <div class="sun"></div>
+            <div class="horizon"></div>
+            <div class="pyramid"></div>
+          </div>
+          <div class="logo-text">
+            <div class="logo-name">GOLDEN HORIZONT</div>
+            <div class="logo-tagline">Egypt</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Horizontal Logo - Light -->
+      <div class="logo-variant light">
+        <span class="variant-label">Horizontal — Light</span>
+        <div class="logo-horizontal">
+          <div class="logo-mark">
+            <div class="sun"></div>
+            <div class="horizon"></div>
+            <div class="pyramid"></div>
+          </div>
+          <div class="logo-text">
+            <div class="logo-name">GOLDEN HORIZONT</div>
+            <div class="logo-tagline">Egypt</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Icon Only - Dark -->
+      <div class="logo-variant">
+        <span class="variant-label">Icon — Dark</span>
+        <div class="logo-icon">
+          <div class="sun"></div>
+          <div class="horizon"></div>
+          <div class="pyramid"></div>
+        </div>
+      </div>
+
+      <!-- Icon Only - Light -->
+      <div class="logo-variant light">
+        <span class="variant-label">Icon — Light</span>
+        <div class="logo-icon">
+          <div class="sun"></div>
+          <div class="horizon"></div>
+          <div class="pyramid"></div>
+        </div>
+      </div>
+
+      <!-- Monogram - Dark -->
+      <div class="logo-variant">
+        <span class="variant-label">Monogram — Dark</span>
+        <div class="monogram">
+          <span class="monogram-text">GHE</span>
+        </div>
+      </div>
+
+      <!-- Monogram - Light -->
+      <div class="logo-variant light">
+        <span class="variant-label">Monogram — Light</span>
+        <div class="monogram">
+          <span class="monogram-text">GHE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

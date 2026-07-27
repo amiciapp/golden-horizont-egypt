@@ -8,50 +8,17 @@ export interface Trip {
   duration: Record<string, string>;
   price: number;
   currency: string;
+  priceLabel?: Record<string, string>;
   category: string;
   popular: boolean;
   image: string;
   rating: number;
   highlights: Record<string, string>[];
   included: Record<string, string>[];
+  gallery?: string[];
 }
 
 export const trips: Trip[] = [
-  {
-    id: "1",
-    slug: "golden-crown-of-the-nile-aswan-royal-escape",
-    name: {
-      en: "Golden Crown of the Nile - Aswan Royal Escape",
-      ru: "Золотая корона Нила - Королевский отдых в Асуане",
-      de: "Goldene Krone des Nils - Königlicher Aufenthalt in Assuan",
-      ar: "التاج الذهبي للنيل - رحلة أسوان الملكية"
-    },
-    description: {
-      en: "Escape to the magical south of Egypt, where the sun shines warmer, the Nile flows calmer, and history feels closer than ever. An Aswan journey blending breathtaking landscapes, timeless temples, and authentic Egyptian culture.",
-      ru: "Откройте для себя волшебный юг Египта, где солнце светит ярче, Нил течет спокойнее, а история ощущается ближе.",
-      de: "Entfliehen Sie in den magischen Süden Ägyptens, wo die Sonne wärmer scheint, der Nil ruhiger fließt und die Geschichte näher ist.",
-      ar: "اهرب إلى جنوب مصر السحري، حيث تشرق الشمس أكثر دفئًا، ويتدفق النيل بهدوء، ويشعرك التاريخ بالقرب"
-    },
-    duration: { en: "3 days / 2 nights", ru: "3 дня / 2 ночи", de: "3 Tage / 2 Nächte", ar: "3 أيام / ليلتان" },
-    price: 280,
-    currency: "EUR",
-    category: "Aswan",
-    popular: false,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2026/02/IMG-20260212-WA0029-e1770908632870.jpg",
-    rating: 4.9,
-    highlights: [
-      { en: "Nile Felucca Ride", ru: "Прогулка на фелуке по Нилу", de: "Nil-Feluke-Fahrt", ar: "ركوب الفلوكة في النيل" },
-      { en: "Temple of Philae", ru: "Храм Филе", de: "Philae-Tempel", ar: "معبد فيلة" },
-      { en: "Aswan High Dam", ru: "Высотная плотина Асуана", de: "Assuan-Staudamm", ar: "السد العالي" },
-      { en: "Nubian Village", ru: "Нубийская деревня", de: "Nubisches Dorf", ar: "القرية النوبية" }
-    ],
-    included: [
-      { en: "Hotel Accommodation", ru: "Проживание в отеле", de: "Hotelunterkunft", ar: "الإقامة في الفندق" },
-      { en: "Professional Guide", ru: "Профессиональный гид", de: "Professioneller Führer", ar: "مرشد محترف" },
-      { en: "All Transfers", ru: "Все трансферы", de: "Alle Transfers", ar: "جميع وسائل النقل" },
-      { en: "Breakfast & Lunch", ru: "Завтрак и обед", de: "Frühstück & Mittagessen", ar: "الإفطار والغداء" }
-    ]
-  },
   {
     id: "2",
     slug: "nefertari-makadi-hurghada",
@@ -62,139 +29,226 @@ export const trips: Trip[] = [
       ar: "رحلة نفرتاري البحرية الفاخرة: غواصة وغوص وعشاء"
     },
     description: {
-      en: "The Nefertari trip runs twice daily offering a unique and luxurious Red Sea experience with submarine views, snorkeling at coral reefs, and a delicious dinner buffet on board.",
-      ru: "Роскошная морская прогулка с подводной лодкой, снорклингом и ужином на борту.",
-      de: "Luxuriöse Seereise mit U-Boot-Besichtigung, Schnorcheln und Abendessen an Bord.",
-      ar: "رحلة بحرية فاخرة مع مشاهدة الغواصة والغوص وعشاء على متن القارب"
+      en: "The Nefertari Luxury Sea Trip is a magnificent Red Sea excursion combining a Pharaonic-themed boat experience with underwater exploration. Step aboard a stunning floating replica of Queen Nefertari’s tomb and descend into the air-conditioned submarine deck with panoramic windows to marvel at vibrant coral reefs and marine life without getting wet. The trip also includes stops at prime snorkeling spots, a unique Pharaonic photo session dressed as ancient Egyptian royalty, and a delicious set-menu dinner (seafood or chicken) served on board while you relax on the sun deck.",
+      ru: "Роскошная морская прогулка в фараоновском стиле с панорамной подводной лодкой, снорклингом на красивых рифах, фотосессией и ужином на борту.",
+      de: "Luxuriöse Seereise im pharaonischen Stil mit U-Boot-Besichtigung, Schnorcheln an Korallenriffen, Fotoshooting und Abendessen an Bord.",
+      ar: "رحلة بحرية فاخرة بأسلوب فرعوني مع مشاهدة بانورامية من غواصة، وغوص في الشعاب المرجانية، وجلسة تصوير، وعشاء على متن القارب."
     },
     duration: { en: "6 hours", ru: "6 часов", de: "6 Stunden", ar: "6 ساعات" },
-    price: 50,
+    price: 90,
     currency: "EUR",
     category: "Sea Adventures",
     popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/11/ae.jpg",
+    image: "/photos/Nefertari Luxury Sea Trip Submarine Snorkeling & Dinner.jpg",
     rating: 4.8,
     highlights: [
-      { en: "Submarine Underwater Views", ru: "Подводные виды", de: "Unterwasseransichten", ar: "مناظر تحت الماء" },
-      { en: "Snorkeling at Coral Reefs", ru: "Снорклинг на коралловых рифах", de: "Schnorcheln an Korallenriffen", ar: "الغوص في الشعاب المرجانية" },
-      { en: "Dinner Buffet on Board", ru: "Ужин на борту", de: "Abendessen an Bord", ar: "عشاء على متن القارب" },
-      { en: "Open Bar", ru: "Открытый бар", de: "Offene Bar", ar: "بار مفتوح" }
+      { en: "Air-Conditioned Submarine Deck", ru: "Подводная лодка с кондиционером", de: "Klimatisiertes U-Boot-Deck", ar: "سطح غواصة مكيف" },
+      { en: "Snorkeling at Prime Coral Reefs", ru: "Снорклинг на лучших рифах", de: "Schnorcheln an besten Riffen", ar: "الغوص في أفضل الشعاب المرجانية" },
+      { en: "Pharaonic Photo Session", ru: "Фараоновская фотосессия", de: "Pharaonisches Fotoshooting", ar: "جلسة تصوير فرعونية" },
+      { en: "Delicious Dinner on Board", ru: "Вкусный ужин на борту", de: "Köstliches Abendessen an Bord", ar: "عشاء لذيذ على متن القارب" }
     ],
     included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Submarine Ride", ru: "Поездка на подводной лодке", de: "U-Boot-Fahrt", ar: "ركوب الغواصة" },
-      { en: "Snorkeling Equipment", ru: "Снаряжение для снорклинга", de: "Schnorchelausrüstung", ar: "معدات الغوص" },
+      { en: "Hotel Transfer", ru: "Трансфер из отеля", de: "Hoteltransfer", ar: "التوصيل من الفندق" },
+      { en: "Submarine Viewing", ru: "Просмотр из подводной лодки", de: "U-Boot-Besichtigung", ar: "مشاهدة الغواصة" },
+      { en: "Snorkeling Gear", ru: "Снаряжение для снорклинга", de: "Schnorchelausrüstung", ar: "معدات الغوص" },
       { en: "Dinner & Drinks", ru: "Ужин и напитки", de: "Abendessen & Getränke", ar: "العشاء والمشروبات" }
+    ],
+    gallery: [
+      "/photos/Nefertari Luxury Sea Trip Submarine Snorkeling & Dinner.jpg",
+      "/photos/Nefertari Luxury Sea Trip Submarine Snorkeling & Dinner2.jpg",
+      "/photos/Nefertari Luxury Sea Trip Submarine Snorkeling & Dinner3.jpg",
+      "/photos/Nefertari Luxury Sea Trip Submarine Snorkeling & Dinner4.avif",
+      "/photos/Nefertari Luxury Sea Trip Submarine Snorkeling & Dinner5.jpg",
+      "/photos/Nefertari Luxury Sea Trip Submarine Snorkeling & Dinner6.jpg",
+      "/photos/Nefertari Luxury Sea Trip Submarine Snorkeling & Dinner7.webp",
+      "/photos/Nefertari Luxury Sea Trip Submarine Snorkeling & Dinner8.webp",
+      "/photos/Nefertari Luxury Sea Trip Submarine Snorkeling & Dinner9.jpg",
+      "/photos/Nefertari Luxury Sea Trip Submarine Snorkeling & Dinner10.jpg",
+      "/photos/Nefertari Luxury Sea Trip Submarine Snorkeling & Dinner11.webp",
+      "/photos/Nefertari Luxury Sea Trip Submarine Snorkeling & Dinner12.jpg"
     ]
   },
   {
     id: "4",
     slug: "cairo-emc-marsa-alam",
     name: {
-      en: "Cairo Bus Tour: Pyramids, Sphinx & Museum Adventure",
-      ru: "Автобусный тур в Каир: пирамиды, сфинкс и музей",
-      de: "Kairo Busreise: Pyramiden, Sphinx und Museum",
-      ar: "رحلة حافلة القاهرة: الأهرامات وأبو الهول والمتحف"
+      en: "Cairo Golden Bus Tour – Grand Egyptian Museum",
+      ru: "Золотой автобусный тур в Каир – Большой Египетский музей",
+      de: "Kairo Golden Bus Tour – Grand Egyptian Museum",
+      ar: "جولة الحافلة الذهبية القاهرة – المتحف المصري الكبير"
     },
     description: {
-      en: "Embark on an unforgettable journey to Cairo, the bustling capital where ancient wonders meet modern life. Visit the Pyramids of Giza, the Sphinx, and the Egyptian Museum.",
-      ru: "Отправьтесь в незабываемое путешествие в Каир, где древние чудеса встречаются с современной жизнью.",
-      de: "Begeben Sie sich auf eine unvergessliche Reise nach Kairo, wo antike Wunder auf das moderne Leben treffen.",
-      ar: "انطلق في رحلة لا تنسى إلى القاهرة، حيث تلتقي العجائب القديمة بالحياة العصرية"
+      en: "Cairo Golden Bus Tour – Grand Egyptian Museum (Large Group Bus, up to 50 seats). Embark on an unforgettable journey to Cairo with a modern luxury coach (air-conditioned, comfortable seats, WiFi). This large-group tour offers the best value way to discover the wonders of the Egyptian capital. Visit the iconic Pyramids of Giza and the Great Sphinx, explore the vibrant Khan el Khalili bazaar, and discover the Grand Egyptian Museum (GEM) – home to the treasures of Tutankhamun and thousands of ancient artifacts. Enjoy a delicious lunch at a renowned restaurant featuring authentic Egyptian cuisine. Hotel pickup: 01:00 AM | Return: by 11:00 PM. Return to your hotel filled with unforgettable memories, stunning photos, and stories that will stay with you forever.",
+      ru: "Золотой автобусный тур в Каир – Большой Египетский музей (большая групповая автобус, до 50 мест). Отправьтесь в незабываемое путешествие в Каир на современном роскошном автобусе (кондиционер, удобные кресла, WiFi). Посетите пирамиды Гизы и Великого Сфинкса, исследуйте базар Хан эль-Халили, и откройте для себя Большой Египетский музей – дом сокровищ Тутанхамона. Обед в известном ресторане. Выезд из отеля: 01:00 | Возврат: до 23:00.",
+      de: "Kairo Golden Bus Tour – Grand Egyptian Museum (Großgruppenbus, bis zu 50 Sitze). Begeben Sie sich mit einem modernen Luxusbus (klimatisiert, bequeme Sitze, WLAN) auf eine unvergessliche Reise nach Kairo. Besuchen Sie die Pyramiden von Gizeh und die Große Sphinx, erkunden Sie den Khan el-Khalili Basar und das Grand Egyptian Museum (GEM) – Heimat der Schätze des Tutanchamun. Genießen Sie ein köstliches Mittagessen. Abfahrt: 01:00 Uhr | Rückkehr: bis 23:00 Uhr.",
+      ar: "جولة الحافلة الذهبية القاهرة – المتحف المصري الكبير (حافلة مجموعة كبيرة، حتى 50 مقعداً). انطلق في رحلة لا تُنسى إلى القاهرة على متن حافلة فاخرة حديثة (مكيفة، مقاعد مريحة، واي فاي). زُر أهرامات الجيزة وأبو الهول العظيم، واستكشف سوق خان الخليلي، واكتشف المتحف المصري الكبير (GEM) – موطن كنوز توت عنخ آمون. غداء في مطعم شهير. الانطلاق من الفندق: 01:00 صباحاً | العودة: بحلول 11:00 مساءً."
     },
-    duration: { en: "2 days / 1 night", ru: "2 дня / 1 ночь", de: "2 Tage / 1 Nacht", ar: "يومان / ليلة واحدة" },
+    duration: { en: "1 day (01:00 AM – 11:00 PM)", ru: "1 день (01:00–23:00)", de: "1 Tag (01:00–23:00 Uhr)", ar: "يوم واحد (01:00 صباحاً – 11:00 مساءً)" },
     price: 80,
     currency: "EUR",
     category: "Cairo",
     popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/11/download-3.jpg",
+    image: "/photos/cairo-golden-bus/646025528.webp",
     rating: 4.8,
     highlights: [
+      { en: "Large Group Bus (Up to 50 Seats)", ru: "Большой автобус (до 50 мест)", de: "Großgruppenbus (bis 50 Sitze)", ar: "حافلة كبيرة للمجموعات (حتى 50 مقعداً)" },
       { en: "Pyramids of Giza", ru: "Пирамиды Гизы", de: "Pyramiden von Gizeh", ar: "أهرامات الجيزة" },
-      { en: "The Sphinx", ru: "Сфинкс", de: "Sphinx", ar: "أبو الهول" },
-      { en: "Egyptian Museum", ru: "Египетский музей", de: "Ägyptisches Museum", ar: "المتحف المصري" },
-      { en: "Old Cairo Bazaar", ru: "Старый Каирский базар", de: "Alt-Kairoer Basar", ar: "سوق القاهرة القديمة" }
+      { en: "The Great Sphinx", ru: "Великий Сфинкс", de: "Die Große Sphinx", ar: "أبو الهول العظيم" },
+      { en: "Grand Egyptian Museum (GEM)", ru: "Большой Египетский музей (GEM)", de: "Grand Egyptian Museum (GEM)", ar: "المتحف المصري الكبير (GEM)" },
+      { en: "Khan el Khalili Bazaar", ru: "Базар Хан эль-Халили", de: "Khan el-Khalili Basar", ar: "سوق خان الخليلي" }
     ],
     included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
+      { en: "Luxury Bus Transfer", ru: "Трансфер на люксовом автобусе", de: "Luxusbus-Transfer", ar: "نقل بالحافلة الفاخرة" },
       { en: "Entrance Fees", ru: "Входные билеты", de: "Eintrittsgebühren", ar: "رسوم الدخول" },
       { en: "Professional Guide", ru: "Гид", de: "Führer", ar: "مرشد" },
-      { en: "Lunch", ru: "Обед", de: "Mittagessen", ar: "غداء" }
+      { en: "Lunch at Restaurant", ru: "Обед в ресторане", de: "Mittagessen im Restaurant", ar: "غداء في مطعم" }
+    ],
+    gallery: [
+      "/photos/cairo-golden-bus/646025528.webp",
+      "/photos/cairo-golden-bus/646025535.webp",
+      "/photos/cairo-golden-bus/646025542.webp",
+      "/photos/cairo-golden-bus/650108942.webp",
+      "/photos/cairo-golden-bus/659049120.webp",
+      "/photos/cairo-golden-bus/659049125.webp",
+      "/photos/cairo-golden-bus/659049127.webp",
+      "/photos/cairo-golden-bus/659049136.webp",
+      "/photos/cairo-golden-bus/668646181.jpg",
+      "/photos/cairo-golden-bus/677511704.jpg",
+      "/photos/cairo-golden-bus/677511707.jpg",
+      "/photos/cairo-golden-bus/aaa9bcf4bd9a7e509f5dcbb47899fef6.jpg",
+      "/photos/cairo-golden-bus/ab281851a5ffef8b4b2c5cd220372433.jpg",
+      "/photos/cairo-golden-bus/b37d739e88d0886eff2d071c99149b11.jpg",
+      "/photos/cairo-golden-bus/cb6f92a77f29ef40f1fb388523870da1.jpg",
+      "/photos/cairo-golden-bus/d2a6332aa5e0e2a6ce59ce98e9b23d50.jpg",
+      "/photos/cairo-golden-bus/e477fdc2c60d39b29cc59b872997c9de.jpg",
+      "/photos/cairo-golden-bus/e1461da5f2119c1df39f6ee829598bc6.jpg",
+      "/photos/cairo-golden-bus/f3941e93963f2067173ca0bf0cb5cc23.jpg",
+      "/photos/cairo-golden-bus/616158507.webp",
+      "/photos/cairo-golden-bus/616158549.webp",
+      "/photos/cairo-golden-bus/646025509.webp",
+      "/photos/cairo-golden-bus/646025516.webp"
     ]
   },
   {
     id: "6",
     slug: "cairo-bus-gem",
     name: {
-      en: "Cairo & GEM (Bus): Pyramids, Sphinx & Museum Tour",
-      ru: "Каир и ГЭМ (автобус): пирамиды, сфинкс и музей",
-      de: "Kairo & GEM (Bus): Pyramiden, Sphinx und Museum",
-      ar: "القاهرة والمتحف المصري الكبير (حافلة): الأهرامات وأبو الهول والمتحف"
+      en: "Cairo Classic Bus Tour – National Museum of Egyptian Civilization",
+      ru: "Классический автобусный тур в Каир – Национальный музей египетской цивилизации",
+      de: "Kairo Classic Bus Tour – Nationalmuseum der ägyptischen Zivilisation",
+      ar: "جولة الحافلة الكلاسيكية القاهرة – المتحف القومي للحضارة المصرية"
     },
     description: {
-      en: "Discover the magic of Ancient Egypt in just one day! Visit the Pyramids of Giza, the Sphinx, and the Grand Egyptian Museum by comfortable bus.",
-      ru: "Откройте магию Древнего Египта всего за один день!",
-      de: "Entdecken Sie die Magie des Alten Ägypten an nur einem Tag!",
-      ar: "اكتشف سحر مصر القديمة في يوم واحد فقط!"
+      en: "Cairo Classic Bus Tour – National Museum of Egyptian Civilization (Large Group Bus, up to 50 seats). Travel comfortably aboard a premium modern coach to the heart of ancient Egypt. This tour takes you to the majestic Pyramids of Giza, the mysterious Great Sphinx, the lively Khan el Khalili market, and the impressive National Museum of Egyptian Civilization, which showcases the complete history of Egyptian civilization, including royal mummies. Savor a traditional Egyptian lunch at a famous local restaurant. Perfect for large groups seeking excellent value and comfort. Hotel pickup: 01:00 AM | Return: by 11:00 PM. Return to your hotel filled with unforgettable memories, stunning photos, and stories that will stay with you forever.",
+      ru: "Классический автобусный тур в Каир – Национальный музей египетской цивилизации (большая групповая автобус, до 50 мест). Отправьтесь в комфортабельное путешествие на современном автобусе к сердцу Древнего Египта. Посетите пирамиды Гизы, Сфинкса, базар Хан эль-Халили и Национальный музей египетской цивилизации с королевскими мумиями. Традиционный обед в местном ресторане. Выезд из отеля: 01:00 | Возврат: до 23:00.",
+      de: "Kairo Classic Bus Tour – Nationalmuseum der ägyptischen Zivilisation (Großgruppenbus, bis zu 50 Sitze). Reisen Sie bequem in einem modernen Luxusbus zu den Wundern von Kairo. Besuchen Sie die Pyramiden von Gizeh, die Große Sphinx, den Basar Khan el-Khalili und das Nationalmuseum der ägyptischen Zivilisation mit den königlichen Mumien. Genießen Sie ein traditionelles ägyptisches Mittagessen. Abfahrt: 01:00 Uhr | Rückkehr: bis 23:00 Uhr.",
+      ar: "جولة الحافلة الكلاسيكية القاهرة – المتحف القومي للحضارة المصرية (حافلة مجموعة كبيرة، حتى 50 مقعداً). سافر براحة على متن حافلة حديثة فاخرة إلى قلب مصر القديمة. زُر أهرامات الجيزة، وأبو الهول العظيم، وسوق خان الخليلي، والمتحف القومي للحضارة المصرية الذي يعرض المومياوات الملكية. استمتع بغداء مصري تقليدي في مطعم شهير. الانطلاق من الفندق: 01:00 صباحاً | العودة: بحلول 11:00 مساءً."
     },
-    duration: { en: "1 day", ru: "1 день", de: "1 Tag", ar: "يوم واحد" },
-    price: 70,
+    duration: { en: "1 day (01:00 AM – 11:00 PM)", ru: "1 день (01:00–23:00)", de: "1 Tag (01:00–23:00 Uhr)", ar: "يوم واحد (01:00 صباحاً – 11:00 مساءً)" },
+    price: 60,
     currency: "EUR",
     category: "Cairo",
     popular: false,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/11/b7f4e4fa-b2a0-4190-8333-0908f73c8ca7.jpg",
+    image: "/photos/Cairo Bus Tour Pyramids Sphinx & Museum Adventure.webp",
     rating: 4.7,
     highlights: [
       { en: "Pyramids of Giza", ru: "Пирамиды Гизы", de: "Pyramiden von Gizeh", ar: "أهرامات الجيزة" },
-      { en: "The Sphinx", ru: "Сфинкс", de: "Sphinx", ar: "أبو الهول" },
-      { en: "Grand Egyptian Museum", ru: "Большой Египетский музей", de: "Großes Ägyptisches Museum", ar: "المتحف المصري الكبير" },
-      { en: "Lunch Included", ru: "Обед включен", de: "Mittagessen inklusive", ar: "الغداء شامل" }
+      { en: "The Great Sphinx", ru: "Великий Сфинкс", de: "Die Große Sphinx", ar: "أبو الهول العظيم" },
+      { en: "National Museum of Egyptian Civilization (NMEC)", ru: "Национальный музей египетской цивилизации", de: "Nationalmuseum der ägyptischen Zivilisation", ar: "المتحف القومي للحضارة المصرية" },
+      { en: "Khan el Khalili Bazaar", ru: "Базар Хан эль-Халили", de: "Khan el-Khalili Basar", ar: "سوق خان الخليلي" },
+      { en: "Modern Coach with AC & WiFi (up to 50 seats)", ru: "Современный автобус с кондиционером и WiFi (до 50 мест)", de: "Moderner Bus mit Klima & WLAN (bis zu 50 Sitze)", ar: "حافلة حديثة مكيفة مع واي فاي (حتى 50 مقعداً)" }
     ],
     included: [
-      { en: "Bus Transfer", ru: "Трансфер на автобусе", de: "Bus-Transfer", ar: "النقل بالحافلة" },
+      { en: "Luxury Bus Transfer", ru: "Трансфер на автобусе", de: "Bus-Transfer", ar: "نقل بالحافلة" },
       { en: "Entrance Fees", ru: "Входные билеты", de: "Eintrittsgebühren", ar: "رسوم الدخول" },
-      { en: "Guide", ru: "Гид", de: "Führer", ar: "مرشد" },
-      { en: "Lunch", ru: "Обед", de: "Mittagessen", ar: "غداء" }
+      { en: "Professional Guide", ru: "Профессиональный гид", de: "Professioneller Führer", ar: "مرشد محترف" },
+      { en: "Lunch at Local Restaurant", ru: "Обед в ресторане", de: "Mittagessen im Restaurant", ar: "غداء في مطعم محلي" }
+    ],
+    gallery: [
+      "/photos/Cairo Bus Tour Pyramids Sphinx & Museum Adventure.webp",
+      "/photos/Cairo Bus Tour Pyramids Sphinx & Museum Adventure2.webp",
+      "/photos/Cairo Bus Tour Pyramids Sphinx & Museum Adventure3.jpg",
+      "/photos/Cairo Bus Tour Pyramids Sphinx & Museum Adventure4.jpg",
+      "/photos/Cairo Bus Tour Pyramids Sphinx & Museum Adventure5.jpg",
+      "/photos/Cairo Bus Tour Pyramids Sphinx & Museum Adventure6.jpg",
+      "/photos/Cairo Bus Tour Pyramids Sphinx & Museum Adventure7.avif",
+      "/photos/Cairo Bus Tour Pyramids Sphinx & Museum Adventure8.jpg",
+      "/photos/Cairo Bus Tour Pyramids Sphinx & Museum Adventure9.jpg",
+      "/photos/Cairo Bus Tour Pyramids Sphinx & Museum Adventure10.jpg",
+      "/photos/Cairo Bus Tour Pyramids Sphinx & Museum Adventure11.webp",
+      "/photos/Cairo Bus Tour Pyramids Sphinx & Museum Adventure12.webp",
+      "/photos/Cairo Bus Tour Pyramids Sphinx & Museum Adventure13.jpg",
+      "/photos/Cairo Bus Tour Pyramids, Sphinx & Museum Day.jpg",
+      "/photos/Cairo Bus Tour Pyramids, Sphinx & Museum Day2.jpg",
+      "/photos/Cairo Bus Tour Pyramids, Sphinx & Museum Day3.jpg",
+      "/photos/Cairo Bus Tour Pyramids, Sphinx & Museum Day4.webp",
+      "/photos/Cairo Bus Tour Pyramids, Sphinx & Museum Day5.jpg",
+      "/photos/Cairo Bus Tour Pyramids, Sphinx & Museum Day6.jpg",
+      "/photos/Cairo Bus Tour Pyramids, Sphinx & Museum Day7.jpg",
+      "/photos/Cairo Bus Tour Pyramids, Sphinx & Museum Day8.jpg"
     ]
   },
   {
     id: "7",
     slug: "cairo-van-gem",
     name: {
-      en: "Cairo Gem Van: Pyramids, Sphinx & Museum",
-      ru: "Каир ГЭМ (минивэн): пирамиды, сфинкс и музей",
-      de: "Kairo GEM Van: Pyramiden, Sphinx und Museum",
-      ar: "حافلة القاهرة الصغيرة: الأهرامات وأبو الهول والمتحف"
+      en: "Cairo Premium Minibus Tour – Grand Egyptian Museum",
+      ru: "Премиум минивэн тур в Каир – Большой Египетский музей",
+      de: "Kairo Premium Minibus Tour – Grand Egyptian Museum",
+      ar: "جولة الحافلة الصغيرة الفاخرة القاهرة – المتحف المصري الكبير"
     },
     description: {
-      en: "Enjoy a private van tour to Cairo with visits to the Pyramids of Giza, the Sphinx, and the Grand Egyptian Museum for a more exclusive experience.",
-      ru: "Насладитесь частным туром на минивэне в Каир с посещением пирамид Гизы, Сфинкса и Большого Египетского музея.",
-      de: "Genießen Sie eine private Van-Tour nach Kairo mit Besuchen der Pyramiden, der Sphinx und des GEM.",
-      ar: "استمتع بجولة خاصة بالحافلة الصغيرة إلى القاهرة لزيارة الأهرامات وأبو الهول والمتحف المصري الكبير"
+      en: "Enjoy a more intimate and comfortable experience with a premium minibus (maximum 8 passengers). You'll have extra space, flexibility, and more time at each site. The tour includes the Pyramids of Giza, Great Sphinx, a walk through Khan el Khalili bazaar, and an in-depth visit to the Grand Egyptian Museum (GEM). Delight in a special lunch at a top-rated restaurant with authentic Egyptian dishes. Hotel pickup: 01:00 AM | Return: by 11:00 PM. Return to your hotel filled with unforgettable memories, stunning photos, and stories that will stay with you forever.",
+      ru: "Насладитесь более интимным и комфортным опытом с премиальным минивэном (максимум 8 пассажиров). Больше пространства, гибкости и времени на каждой остановке. Тур включает пирамиды Гизы, Великого Сфинкса, прогулку по базару Хан эль-Халили и подробное посещение Большого Египетского музея (GEM). Специальный обед в ресторане с аутентичными египетскими блюдами. Выезд из отеля: 01:00 | Возврат: к 23:00.",
+      de: "Genießen Sie ein intimères und komfortableres Erlebnis mit einem Premium-Minibus (maximal 8 Fahrgäste). Mehr Platz, Flexibilität und mehr Zeit an jedem Ort. Die Tour umfasst die Pyramiden von Gizeh, die Große Sphinx, einen Spaziergang durch den Khan el-Khalili Basar und einen ausführlichen Besuch des Grand Egyptian Museum (GEM). Spezielles Mittagessen in einem erstklassigen Restaurant mit authentischen ägyptischen Gerichten. Abfahrt: 01:00 Uhr | Rückkehr: bis 23:00 Uhr.",
+      ar: "استمتع بتجربة أكثر حميمية وراحة مع حافلة صغيرة فاخرة (حد أقصى 8 ركاب). مساحة إضافية ومرونة ووقت أكثر في كل م site. تشمل الجولة أهرامات الجيزة، وأبو الهول العظيم، ومشي في سوق خان الخليلي، وزيارة معمقة للمتحف المصري الكبير (GEM). غداء خاص في مطعم ممتاز مع أطباق مصرية أصيلة. الانطلاق من الفندق: 01:00 صباحاً | العودة: بحلول 11:00 مساءً."
     },
-    duration: { en: "1 day", ru: "1 день", de: "1 Tag", ar: "يوم واحد" },
-    price: 100,
+    duration: { en: "1 day (01:00 AM – 11:00 PM)", ru: "1 день (01:00–23:00)", de: "1 Tag (01:00–23:00 Uhr)", ar: "يوم واحد (01:00 ص – 11:00 م)" },
+    price: 85,
     currency: "EUR",
+    priceLabel: {
+      en: "/ person",
+      ru: "/ человек",
+      de: "/ Person",
+      ar: "/ شخص"
+    },
     category: "Cairo",
     popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/11/9904d6be-f2b3-462d-b501-41f73074bb0b.jpg",
+    image: "/photos/cairo-premium-minibus/5e724b8c17a405eda7719229d8b26178.jpg",
     rating: 4.8,
     highlights: [
-      { en: "Private Van Transfer", ru: "Частный трансфер на минивэне", de: "Privater Van-Transfer", ar: "نقل خاص بحافلة صغيرة" },
+      { en: "Premium Minibus (Up to 8 Seats)", ru: "Премиальный минивэн (до 8 мест)", de: "Premium-Minibus (bis 8 Sitze)", ar: "حافلة صغيرة فاخرة (حتى 8 مقاعد)" },
       { en: "Pyramids of Giza", ru: "Пирамиды Гизы", de: "Pyramiden von Gizeh", ar: "أهرامات الجيزة" },
-      { en: "Grand Egyptian Museum", ru: "Большой Египетский музей", de: "Großes Ägyptisches Museum", ar: "المتحف المصري الكبير" },
-      { en: "Lunch at Restaurant", ru: "Обед в ресторане", de: "Mittagessen im Restaurant", ar: "غداء في مطعم" }
+      { en: "The Great Sphinx", ru: "Великий Сфинкс", de: "Die Große Sphinx", ar: "أبو الهول العظيم" },
+      { en: "Grand Egyptian Museum (GEM)", ru: "Большой Египетский музей (GEM)", de: "Grand Egyptian Museum (GEM)", ar: "المتحف المصري الكبير (GEM)" },
+      { en: "Khan el Khalili Bazaar", ru: "Базар Хан эль-Халили", de: "Khan el-Khalili Basar", ar: "سوق خان الخليلي" }
     ],
     included: [
-      { en: "Private Van", ru: "Частный минивэн", de: "Privater Van", ar: "حافلة صغيرة خاصة" },
+      { en: "Premium Minibus Transfer", ru: "Трансфер на премиальном минивэне", de: "Premium-Minibus-Transfer", ar: "نقل بالحافلة الصغيرة الفاخرة" },
       { en: "Entrance Fees", ru: "Входные билеты", de: "Eintrittsgebühren", ar: "رسوم الدخول" },
       { en: "Professional Guide", ru: "Гид", de: "Führer", ar: "مرشد" },
-      { en: "Lunch", ru: "Обед", de: "Mittagessen", ar: "غداء" }
+      { en: "Lunch at Restaurant", ru: "Обед в ресторане", de: "Mittagessen im Restaurant", ar: "غداء في مطعم" }
+    ],
+    gallery: [
+      "/photos/cairo-premium-minibus/5e724b8c17a405eda7719229d8b26178.jpg",
+      "/photos/cairo-premium-minibus/48d7b836b54d594a579781b18850a6a0.jpg",
+      "/photos/cairo-premium-minibus/295a474fc8e595c441be083c40d2c5f3.jpg",
+      "/photos/cairo-premium-minibus/675bc4cd2f8e0118d4b3c7dd52e4fdb2.jpg",
+      "/photos/cairo-premium-minibus/1260566.jpeg.webp",
+      "/photos/cairo-premium-minibus/Khan-El-Khalili-Bazaar (1).jpg",
+      "/photos/cairo-premium-minibus/Khan-El-Khalili-Bazaar.jpg",
+      "/photos/cairo-premium-minibus/pressemitteilung_auf_website_tutankhamun_golden-mask_ckenneth-garrett_300dpi.webp",
+      "/photos/cairo-premium-minibus/videoframe_779.png",
+      "/photos/cairo-premium-minibus/videoframe_2558.png",
+      "/photos/cairo-premium-minibus/videoframe_2842.png",
+      "/photos/cairo-premium-minibus/videoframe_4988.png",
+      "/photos/cairo-premium-minibus/videoframe_5461.png",
+      "/photos/cairo-premium-minibus/videoframe_6387.png"
     ]
   },
   {
     id: "13",
-    slug: "elite-vip-marsa-alam",
+    slug: "elite-vip-yacht",
     name: {
       en: "Elite VIP Yacht: Luxury Red Sea Experience",
       ru: "Элитная VIP яхта: роскошный отдых на Красном море",
@@ -202,820 +256,2247 @@ export const trips: Trip[] = [
       ar: "اليخت الفاخر VIP: تجربة البحر الأحمر الفاخرة"
     },
     description: {
-      en: "Experience the ultimate luxury on a private VIP yacht along the Red Sea coast. Enjoy premium service, gourmet dining, and exclusive access to pristine beaches and snorkeling spots.",
-      ru: "Испытайте предельную роскошь на частной VIP яхте вдоль побережья Красного моря.",
-      de: "Erleben Sie den ultimativen Luxus auf einer privaten VIP-Yacht entlang der Küste des Roten Meeres.",
-      ar: "اختبر الفخامة المطلقة على يخت VIP خاص على طول ساحل البحر الأحمر"
+      en: "Step aboard our private Elite VIP Yacht for an exclusive and sophisticated Red Sea journey. This premium experience is designed for those who seek privacy, comfort, and unforgettable moments at sea.",
+      ru: "Поднимитесь на борт нашей частной элитной VIP яхты для эксклюзивного и изысканного путешествия по Красному морю. Этот премиум- опыт создан для тех, кто ищет приватность, комфорт и незабываемые моменты в море.",
+      de: "Steigen Sie an Bord unserer privaten Elite VIP-Yacht für eine exklusive und anspruchsvolle Reise auf dem Roten Meeres. Dieses Premium-Erlebnis wurde für alle entwickelt, die Privatsphäre, Komfort und unvergessliche Momente auf dem Meer suchen.",
+      ar: "استقل يختنا الخاص الفاخر VIP لرحلة حصرية وراقيه على البحر الأحمر. هذه التجربة المميزة مصممة لمن يبحث عن الخصوصية والراحة واللحظات التي لا تُنسى في البحر."
     },
-    duration: { en: "8 hours", ru: "8 часов", de: "8 Stunden", ar: "8 ساعات" },
-    price: 150,
+    duration: { en: "4-6 hours", ru: "4-6 часов", de: "4-6 Stunden", ar: "4-6 ساعات" },
+    price: 200,
     currency: "EUR",
     category: "Sea Adventures",
-    popular: false,
+    popular: true,
     image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/10/ELITE8-scaled.jpg",
     rating: 4.9,
     highlights: [
-      { en: "Private VIP Yacht", ru: "Частная VIP яхта", de: "Private VIP-Yacht", ar: "يخت VIP خاص" },
-      { en: "Gourmet Dining on Board", ru: "Ресторанное питание на борту", de: "Gourmet-Essen an Bord", ar: "تناول الطعام الفاخر على متن اليخت" },
-      { en: "Snorkeling at Private Spots", ru: "Снорклинг в частных местах", de: "Schnorcheln an privaten Orten", ar: "الغوص في أماكن خاصة" },
-      { en: "Sunset Cruise", ru: "Круиз на закате", de: "Sonnenuntergangsfahrt", ar: "رحلة غروب الشمس" }
+      { en: "Private cruise along the stunning coastline", ru: "Частный круиз вдоль живописного побережья", de: "Private Kreuzfahrt entlang der atemberaubenden Küste", ar: "رحلة خاصة على طول الساحل الخلاب" },
+      { en: "Snorkeling at exclusive coral reef locations", ru: "Снорклинг на эксклюзивных коралловых рифах", de: "Schnorcheln an exklusiven Korallenriffstandorten", ar: "الغوص في مواقع الحطام الحصرية" },
+      { en: "Spacious sun deck with premium loungers", ru: "Просторная солнечная палуба с премиум шезлонгами", de: "Großzügiges Sonnendeck mit Premium-Liegestühlen", ar: "deck مشمس واسع مع كراسي استرخاء فاخرة" },
+      { en: "Gourmet lunch or dinner on board", ru: "Гурме обед или ужин на борту", de: "Gourmet-Mittagessen oder Abendessen an Bord", ar: "غداء أو عشاء فاخر على متن اليخت" },
+      { en: "Open bar with premium drinks and cocktails", ru: "Отрытый бар с премиальными напитками и коктейлями", de: "Offene Bar mit Premiumgetränken und Cocktails", ar: "بار مفتوح مع مشروبات فاخرة وكوكتيلات" },
+      { en: "Sunset views and romantic atmosphere", ru: "Виды на закат и романтическая атмосфера", de: "Sonnenuntergangsblick und romantische Atmosphäre", ar: "مناظر غروب الشمس والأجواء الرومانسية" }
     ],
     included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Private Yacht Charter", ru: "Аренда частной яхты", de: "Private Yacht-Charter", ar: "استئجار يخت خاص" },
-      { en: "Gourmet Lunch & Drinks", ru: "Ресторанный обед и напитки", de: "Gourmet-Mittagessen & Getränke", ar: "غداء فاخر ومشروبات" },
-      { en: "Snorkeling Equipment", ru: "Снаряжение для снорклинга", de: "Schnorchelausrüstung", ar: "معدات الغوص" }
-    ]
-  },
-  {
-    id: "14",
-    slug: "mini-safari",
-    name: {
-      en: "Quad Adventure: Mini Desert Safari",
-      ru: "Квадроциклы: Мини сафари по пустыне",
-      de: "Quad-Abenteuer: Mini-Wüstensafari",
-      ar: "مغامرة الدراجات الرباعية: سفاري صحراوي مصغر"
-    },
-    description: {
-      en: "Enjoy a quick but thrilling desert adventure on quads. Ride through the golden sands and experience the beauty of the Egyptian desert.",
-      ru: "Насладитесь коротким, но захватывающим приключением в пустыне на квадроциклах.",
-      de: "Genießen Sie ein kurzes, aber aufregendes Wüstenabenteuer auf Quads.",
-      ar: "استمتع بمغامرة صحراوية سريعة ولكنها مثيرة على الدراجات الرباعية"
-    },
-    duration: { en: "2 hours", ru: "2 часа", de: "2 Stunden", ar: "ساعتان" },
-    price: 30,
-    currency: "EUR",
-    category: "Desert Safari",
-    popular: false,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/3-9-870x555-1.jpg",
-    rating: 4.6,
-    highlights: [
-      { en: "Quad Biking", ru: "Квадроциклы", de: "Quad-Fahren", ar: "ركوب الدراجات الرباعية" },
-      { en: "Desert Landscape", ru: "Пустынный ландшафт", de: "Wüstenlandschaft", ar: "مناظر الصحراء" },
-      { en: "Photo Stops", ru: "Фото-остановки", de: "Fotostopps", ar: "توقف للتصوير" },
-      { en: "Adrenaline Rush", ru: "Прилив адреналина", de: "Adrenalinkick", ar: "جرعة الأدرينالين" }
+      { en: "Private hotel pickup and drop-off", ru: "Частный трансфер из отеля и обратно", de: "Privater Hotel-Transfer hin und zurück", ar: "نقل خاص من الفندق وإليه" },
+      { en: "Exclusive use of the luxury yacht", ru: "Исключительное использование роскошной яхты", de: "Exklusive Nutzung der Luxusyacht", ar: "الاستخدام الحصري لليخت الفاخر" },
+      { en: "Snorkeling equipment and professional guide", ru: "Снаряжение для снорклинга и профессиональный гид", de: "Schnorchelausrüstung und professioneller Guide", ar: "معدات الغوص ودليل محترف" },
+      { en: "Gourmet meal + premium open bar", ru: "Гурме блюда + премиальный открытый бар", de: "Gourmet-Mahlzeit + Premium-Open-Bar", ar: "وجبة فاخرة + بار مفتوح ممتاز" },
+      { en: "Dedicated crew and safety equipment", ru: "Персональный экипаж и средства безопасности", de: "Dedicated Besatzung und Sicherheitsausrüstung", ar: "طاقم مخصص ومعدات السلامة" }
     ],
-    included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Quad Bike", ru: "Квадроцикл", de: "Quad", ar: "دراجة رباعية" },
-      { en: "Safety Gear", ru: "Защитное снаряжение", de: "Sicherheitsausrüstung", ar: "معدات السلامة" }
+    gallery: [
+      "/photos/elite-vip-yacht/1.jpg",
+      "/photos/elite-vip-yacht/2.webp",
+      "/photos/elite-vip-yacht/3.webp",
+      "/photos/elite-vip-yacht/4.webp",
+      "/photos/elite-vip-yacht/5.webp",
+      "/photos/elite-vip-yacht/6.webp",
+      "/photos/elite-vip-yacht/7.webp",
+      "/photos/elite-vip-yacht/8.webp",
+      "/photos/elite-vip-yacht/9.jpg",
+      "/photos/elite-vip-yacht/10.webp",
+      "/photos/elite-vip-yacht/11.jpg",
+      "/photos/elite-vip-yacht/12.jpg",
+      "/photos/elite-vip-yacht/13.jpg",
+      "/photos/elite-vip-yacht/14.webp",
+      "/photos/elite-vip-yacht/15.webp",
+      "/photos/elite-vip-yacht/16.jpg",
+      "/photos/elite-vip-yacht/17.webp"
     ]
   },
   {
     id: "15",
     slug: "super-safari",
     name: {
-      en: "Super Safari: Quads, Bedouin Life & Sunset",
-      ru: "Супер Сафари: квадроциклы, бедуинская жизнь и закат",
-      de: "Super Safari: Quads, Beduinenleben & Sonnenuntergang",
-      ar: "السفاري الفائق: دراجات رباعية وحياة بدوية وغروب"
+      en: "Super Safari – Full Desert Adventure",
+      ru: "Супер Сафари – полное приключение в пустыне",
+      de: "Super Safari – Vollständiges Wüstenabenteuer",
+      ar: "السفاري الفائق – مغامرة صحراوية كاملة"
     },
     description: {
-      en: "An extended desert adventure combining quad biking, camel rides, Bedouin village visits, and a stunning sunset over the desert.",
-      ru: "Расширенное приключение в пустыне с квадроциклами, верблюдами и посещением бедуинской деревни.",
-      de: "Ein erweitertes Wüstenabenteuer mit Quadfahren, Kamelritten und Beduinendorf-Besichtigung.",
-      ar: "مغامرة صحراوية موسعة تجمع بين ركوب الدراجات الرباعية والجمال وزيارة القرية البدوية"
+      en: "Get ready for the ultimate desert thrill with this action-packed Super Safari! This popular excursion combines excitement and authentic Bedouin culture in the Egyptian Eastern Desert. Dune bashing, quad bike adventure, camel ride, Bedouin village visit, oriental folk show with belly dancing and live music, delicious Bedouin dinner with barbecue, tea, shisha, and stargazing.",
+      ru: "Приготовьтесь к идеальному адреналину в пустыне! Эта популярная экскурсия сочетает острые ощущения и подлинную бедуинскую культуру в Восточной пустыне Египта. Драйв по дюнам, квадроциклы, поездка на верблюде, посещение бедуинской деревни, восточный шоу с танцем живота и живой музыкой, восхитительный бедуинский ужин с барбекю, чай, кальян и звёздное небо.",
+      de: "Bereiten Sie sich auf das ultimative Wüstenabenteuer mit dieser aktionsreichen Super Safari vor! Diese beliebte Ausflug kombiniert Nervenkitzel und authentische Beduinenkultur in der östlichen Wüste Ägyptens. Dünenbashing, Quad-Abenteuer, Kamelritt, Besuch eines Beduinen Dorfs, orientalisches Folkloreshow mit Bauchtanz und Live-Musik, köstliches Beduinen-Dinner mit Barbecue, Tee, Shisha und Sternenbestaunung.",
+      ar: "استعد لأقصى إثارة في الصحراء مع هذه السفاري المليئة بالفعل! هذه الجولة المشهورة تجمع بين الإثارة والثقافة البدوية الأصيلة في الصحراء الشرقية المصرية. قيادة عبر الكثبان، مغامرة الدراجات الرباعية، ركوب الجمل، زيارة القرية البدوية، عرض فلكلوري شرقي مع رقص البطون وموسيقى حية، عشاء بدوي لذيذ مع مشاوي وشاي وكالياح ومراقبة النجوم."
     },
-    duration: { en: "5 hours", ru: "5 часов", de: "5 Stunden", ar: "5 ساعات" },
+    duration: { en: "5 – 6 hours (afternoon / evening)", ru: "5 – 6 часов (вечер)", de: "5 – 6 Stunden (Nachmittag / Abend)", ar: "5 – 6 ساعات (بعد الظهر / مساءً)" },
     price: 50,
+    priceLabel: {
+      en: "/ person",
+      ru: "/ чел.",
+      de: "/ Person",
+      ar: "/ شخص"
+    },
     currency: "EUR",
     category: "Desert Safari",
     popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/1-8-870x555-1.jpg",
+    image: "/photos/super-safari/12.jpg",
     rating: 4.8,
     highlights: [
-      { en: "Quad Biking", ru: "Квадроциклы", de: "Quad-Fahren", ar: "ركوب الدراجات الرباعية" },
-      { en: "Camel Ride", ru: "Прогулка на верблюде", de: "Kamelritt", ar: "ركوب الجمل" },
-      { en: "Bedouin Village", ru: "Бедуинская деревня", de: "Beduinendorf", ar: "القرية البدوية" },
-      { en: "Sunset in Desert", ru: "Закат в пустыне", de: "Sonnenuntergang in der Wüste", ar: "الغروب في الصحراء" }
+      { en: "Dune Bashing & 4x4 Jeep Ride", ru: "Драйв по дюнам и джип 4x4", de: "Dünenbashing & 4x4 Jeep-Fahrt", ar: "قيادة عبر الكثبان وسطوة 4x4" },
+      { en: "Camel Ride in the Desert", ru: "Поездка на верблюде в пустыне", de: "Kamelritt in der Wüste", ar: "ركوب الجمل في الصحراء" },
+      { en: "Visit to Traditional Bedouin Village", ru: "Посещение традиционного бедуинского посёлка", de: "Besuch eines traditionellen Beduinen Dorfs", ar: "زيارة قرية بدوية تقليدية" },
+      { en: "Oriental Folk Show & Belly Dancing", ru: "Восточный шоу и танец живота", de: "Orientalisches Folkloreshow & Bauchtanz", ar: "عرض فلكلوري شرقي ورقص البطون" },
+      { en: "Bedouin Dinner with Barbecue", ru: "Бедуинский ужин с барбекю", de: "Beduinen-Dinner mit Barbecue", ar: "عشاء بدوي مع مشاوي" },
+      { en: "Shisha & Stargazing", ru: "Кальян и звёздное небо", de: "Shisha & Sternenbestaunung", ar: "كالياح ومراقبة النجوم" }
     ],
     included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Quad & Camel Ride", ru: "Квадроцикл и верблюд", de: "Quad & Kamelritt", ar: "الدراجة الرباعية وركوب الجمل" },
-      { en: "Dinner", ru: "Ужин", de: "Abendessen", ar: "العشاء" }
-    ]
-  },
-  {
-    id: "24",
-    slug: "paradise-island-snorkeling",
-    name: {
-      en: "Paradise Island Snorkeling: White Sands & Coral Reefs",
-      ru: "Снорклинг на райском острове: белые пески и кораллы",
-      de: "Paradies-Insel Schnorcheln: Weißer Sand & Korallenriffe",
-      ar: "جزيرة الجنة للغوص: الرمال البيضاء والشعاب المرجانية"
-    },
-    description: {
-      en: "Escape to Paradise Island, a slice of heaven with powdery white sand and turquoise waters. Snorkel among vibrant coral reefs teeming with colorful fish.",
-      ru: "Сбегите на райский остров с белоснежным песком и бирюзовой водой.",
-      de: "Fliehen Sie auf die Paradies-Insel mit puderweißem Sand und türkisfarbenem Wasser.",
-      ar: "اهرب إلى جزيرة الجنة ذات الرمال البيضاء الناعمة والمياه الفيروزية"
-    },
-    duration: { en: "7 hours", ru: "7 часов", de: "7 Stunden", ar: "7 ساعات" },
-    price: 45,
-    currency: "EUR",
-    category: "Sea Adventures",
-    popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/10/ELITE8-scaled.jpg",
-    rating: 4.7,
-    highlights: [
-      { en: "Paradise Island Beach", ru: "Пляж райского острова", de: "Paradies-Insel Strand", ar: "شاطئ جزيرة الجنة" },
-      { en: "Snorkeling at Coral Reefs", ru: "Снорклинг на коралловых рифах", de: "Schnorcheln an Korallenriffen", ar: "الغوص في الشعاب المرجانية" },
-      { en: "Lunch on the Beach", ru: "Обед на пляже", de: "Mittagessen am Strand", ar: "غداء على الشاطئ" },
-      { en: "Relaxation & Swimming", ru: "Отдых и плавание", de: "Entspannung & Schwimmen", ar: "استرخاء وسباحة" }
+      { en: "Modern 4x4 transportation", ru: "Современный трансфер 4x4", de: "Moderne 4x4-Transport", ar: "نقل حديث 4x4" },
+      { en: "Professional guide and drivers", ru: "Профессиональный гид и водители", de: "Professioneller Führer und Fahrer", ar: "مرشد وسائقون محترفون" },
+      { en: "All activities (jeep safari, camel ride, show)", ru: "Все активности (джип-сафари, верблюд, шоу)", de: "Alle Aktivitäten (Jeep-Safari, Kamelritt, Show)", ar: "جميع الأنشطة (سفاري بالسيارة، ركوب الجمل، العرض)" },
+      { en: "Full Bedouin dinner + soft drinks", ru: "Полноценный бедуинский ужин + напитки", de: "Vollständiges Beduinen-Dinner + Softdrinks", ar: "عشاء بدوي كامل + مشروبات خفيفة" },
+      { en: "Hotel pickup and drop-off", ru: "Трансфер от отеля и обратно", de: "Hotelabholung und Rückfahrt", ar: "pickup من وإلى الفندق" }
     ],
-    included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Snorkeling Equipment", ru: "Снаряжение для снорклинга", de: "Schnorchelausrüstung", ar: "معدات الغوص" },
-      { en: "Lunch & Drinks", ru: "Обед и напитки", de: "Mittagessen & Getränke", ar: "الغداء والمشروبات" }
+    gallery: [
+      "/photos/super-safari/12.jpg",
+      "/photos/super-safari/14.jpg",
+      "/photos/super-safari/1b.jpg",
+      "/photos/super-safari/a8.jpg",
+      "/photos/super-safari/a9.jpg",
+      "/photos/super-safari/af.jpg",
+      "/photos/super-safari/b0.jpg",
+      "/photos/super-safari/b1.jpg",
+      "/photos/super-safari/b2.jpg",
+      "/photos/super-safari/b4.jpg",
+      "/photos/super-safari/b6.jpg",
+      "/photos/super-safari/cd.jpg",
+      "/photos/super-safari/f1.jpg",
+      "/photos/super-safari/f4.jpg",
+      "/photos/super-safari/f9.jpg",
+      "/photos/super-safari/fe.jpg"
     ]
   },
-  {
-    id: "25",
-    slug: "dolphin-watching-tour",
-    name: {
-      en: "Dolphin Watching Tour: Encounters in the Wild",
-      ru: "Наблюдение за дельфинами: встреча в дикой природе",
-      de: "Delfinbeobachtungstour: Begegnungen in der Wildnis",
-      ar: "جولة مشاهدة الدلافين: لقاءات في البرية"
-    },
-    description: {
-      en: "Set out on an unforgettable dolphin watching adventure in the open sea. Watch pods of dolphins play and leap in their natural habitat.",
-      ru: "Отправьтесь в незабываемое приключение по наблюдению за дельфинами в открытом море.",
-      de: "Begeben Sie sich auf ein unvergessliches Delfinbeobachtungsabenteuer auf dem offenen Meer.",
-      ar: "انطلق في مغامرة لا تُنسى لمشاهدة الدلافين في البحر المفتوح"
-    },
-    duration: { en: "4 hours", ru: "4 часа", de: "4 Stunden", ar: "4 ساعات" },
-    price: 35,
-    currency: "EUR",
-    category: "Sea Adventures",
-    popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/96a29fd2-0b31-4717-85e5-06f3f9f98463.webp",
-    rating: 4.8,
-    highlights: [
-      { en: "Dolphin Watching", ru: "Наблюдение за дельфинами", de: "Delfinbeobachtung", ar: "مشاهدة الدلافين" },
-      { en: "Open Sea Boat Ride", ru: "Прогулка в открытом море", de: "Bootsfahrt auf offener See", ar: "رحلة بالقارب في البحر المفتوح" },
-      { en: "Photo Opportunities", ru: "Фотосессия", de: "Fotomöglichkeiten", ar: "فرص التصوير" },
-      { en: "Snorkeling Stop", ru: "Остановка для снорклинга", de: "Schnorchelstopp", ar: "توقف للغوص" }
-    ],
-    included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Boat Trip", ru: "Поездка на лодке", de: "Bootsausflug", ar: "رحلة بالقارب" },
-      { en: "Snorkeling Gear", ru: "Снаряжение", de: "Schnorchelausrüstung", ar: "معدات الغوص" }
-    ]
-  },
-  {
-    id: "32",
-    slug: "glass-bottom-boat-tour",
-    name: {
-      en: "Glass Bottom Boat: Coral Views Without Getting Wet",
-      ru: "Лодка с прозрачным дном: кораллы не замочив ног",
-      de: "Glasbodenboot: Korallen ohne nass zu werden",
-      ar: "قاع الزجاج: مشاهدة المرجان دون بلل"
-    },
-    description: {
-      en: "Explore the underwater world from the comfort of a glass-bottom boat. Perfect for families with young children or non-swimmers.",
-      ru: "Исследуйте подводный мир с комфортом лодки с прозрачным дном.",
-      de: "Erkunden Sie die Unterwasserwelt bequem von einem Glasbodenboot aus.",
-      ar: "استكشف العالم تحت الماء من راحة قارب ذو قاع زجاجي"
-    },
-    duration: { en: "2 hours", ru: "2 часа", de: "2 Stunden", ar: "ساعتان" },
-    price: 25,
-    currency: "EUR",
-    category: "Sea Adventures",
-    popular: false,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/900x600-1-50-c322de4c47adb1105ffc87ddcb85e30e.jpg",
-    rating: 4.5,
-    highlights: [
-      { en: "Glass Bottom Views", ru: "Вид через прозрачное дно", de: "Blick durch Glasboden", ar: "مناظر من القاع الزجاجي" },
-      { en: "Coral Reef Observation", ru: "Наблюдение за рифами", de: "Korallenriffbeobachtung", ar: "مشاهدة الشعاب المرجانية" },
-      { en: "Family Friendly", ru: "Для всей семьи", de: "Familienfreundlich", ar: "مناسب للعائلة" },
-      { en: "Short & Sweet", ru: "Коротко и сладко", de: "Kurz & Süß", ar: "قصيرة ولطيفة" }
-    ],
-    included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Boat Ride", ru: "Поездка на лодке", de: "Bootsfahrt", ar: "رحلة بالقارب" },
-      { en: "Guide Commentary", ru: "Комментарий гида", de: "Führer-Kommentar", ar: "تعليق المرشد" }
-    ]
-  },
-  {
-    id: "33",
-    slug: "evening-desert-safari-bbq",
-    name: {
-      en: "Evening Desert Safari: BBQ & Bedouin Stars",
-      ru: "Вечернее сафари: барбекю и бедуинские звезды",
-      de: "Abendliche Wüstensafari: BBQ & Beduinensterne",
-      ar: "سفاري صحراء مسائي: شواء ونجوم بدوية"
-    },
-    description: {
-      en: "Experience the magic of the desert at night. Ride quads, enjoy a BBQ dinner under the stars, and watch traditional Bedouin performances.",
-      ru: "Испытайте магию пустыни ночью. Квадроциклы, ужин под звездами и бедуинские представления.",
-      de: "Erleben Sie die Magie der Wüste bei Nacht. Quadfahren, BBQ-Dinner unter den Sternen und Beduinenvorführungen.",
-      ar: "اختبر سحر الصحراء ليلاً. ركوب الدراجات الرباعية وعشاء شواء تحت النجوم"
-    },
-    duration: { en: "5 hours", ru: "5 часов", de: "5 Stunden", ar: "5 ساعات" },
-    price: 45,
-    currency: "EUR",
-    category: "Desert Safari",
-    popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/10/download-17.jpg",
-    rating: 4.7,
-    highlights: [
-      { en: "Quad Biking at Sunset", ru: "Квадроциклы на закате", de: "Quadfahren bei Sonnenuntergang", ar: "ركوب الدراجات الرباعية عند الغروب" },
-      { en: "BBQ Dinner", ru: "Ужин барбекю", de: "BBQ-Abendessen", ar: "عشاء شواء" },
-      { en: "Bedouin Show", ru: "Бедуинское шоу", de: "Beduinen-Show", ar: "عرض بدوي" },
-      { en: "Stargazing", ru: "Наблюдение за звездами", de: "Sternenbeobachtung", ar: "مراقبة النجوم" }
-    ],
-    included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Quad Bike", ru: "Квадроцикл", de: "Quad", ar: "دراجة رباعية" },
-      { en: "BBQ Dinner & Drinks", ru: "Ужин и напитки", de: "BBQ-Abendessen & Getränke", ar: "عشاء شواء ومشروبات" }
-    ]
-  },
-  {
-    id: "39",
-    slug: "wadi-el-gemal-national-park",
-    name: {
-      en: "Wadi El Gemal National Park: Nature & Wildlife",
-      ru: "Национальный парк Вади-эль-Гемаль: природа и дикая жизнь",
-      de: "Wadi-El-Gemal-Nationalpark: Natur & Tierwelt",
-      ar: "محمية وادي الجمال: الطبيعة والحياة البرية"
-    },
-    description: {
-      en: "Explore the breathtaking Wadi El Gemal National Park with its diverse ecosystems, from desert mountains to mangrove forests and pristine beaches.",
-      ru: "Исследуйте захватывающий парк Вади-эль-Гемаль с его разнообразными экосистемами.",
-      de: "Erkunden Sie den atemberaubenden Wadi-El-Gemal-Nationalpark mit seinen vielfältigen Ökosystemen.",
-      ar: "استكشف محمية وادي الجمال الخلابة بنظمها البيئية المتنوعة"
-    },
-    duration: { en: "6 hours", ru: "6 часов", de: "6 Stunden", ar: "6 ساعات" },
-    price: 50,
-    currency: "EUR",
-    category: "Marsa Alam",
-    popular: false,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-08-26-at-02.24.38_b2ee4396.jpg",
-    rating: 4.8,
-    highlights: [
-      { en: "National Park Tour", ru: "Тур по парку", de: "Nationalpark-Tour", ar: "جولة في المحمية" },
-      { en: "Mangrove Forest", ru: "Мангровый лес", de: "Mangrovenwald", ar: "غابة المانجروف" },
-      { en: "Wildlife Spotting", ru: "Наблюдение за животными", de: "Wildtierbeobachtung", ar: "مشاهدة الحياة البرية" },
-      { en: "Beach Time", ru: "Время на пляже", de: "Strandzeit", ar: "وقت الشاطئ" }
-    ],
-    included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Park Entrance Fee", ru: "Входной билет", de: "Parkeintritt", ar: "رسوم دخول المحمية" },
-      { en: "Guide", ru: "Гид", de: "Führer", ar: "مرشد" },
-      { en: "Lunch", ru: "Обед", de: "Mittagessen", ar: "غداء" }
-    ]
-  },
-  {
-    id: "40",
-    slug: "abu-dabbab-beach-turtles",
-    name: {
-      en: "Abu Dabbab Beach: Turtles & Seagrass Paradise",
-      ru: "Пляж Абу Даббаб: черепахи и рай морских трав",
-      de: "Abu-Dabbab-Strand: Schildkröten & Seegras-Paradies",
-      ar: "شاطئ أبو دباب: السلاحف وجنة الأعشاب البحرية"
-    },
-    description: {
-      en: "Visit the famous Abu Dabbab Bay, home to gentle dugongs and sea turtles. Snorkel in the crystal clear waters and relax on the pristine beach.",
-      ru: "Посетите знаменитую бухту Абу Даббаб с дюгонями и черепахами.",
-      de: "Besuchen Sie die berühmte Abu-Dabbab-Bucht mit Dugongs und Schildkröten.",
-      ar: "قم بزيارة خليج أبو دباب الشهير موطن أبقار البحر والسلاحف البحرية"
-    },
-    duration: { en: "5 hours", ru: "5 часов", de: "5 Stunden", ar: "5 ساعات" },
-    price: 35,
-    currency: "EUR",
-    category: "Marsa Alam",
-    popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/10/download-19.jpg",
-    rating: 4.7,
-    highlights: [
-      { en: "Sea Turtle Snorkeling", ru: "Снорклинг с черепахами", de: "Schnorcheln mit Schildkröten", ar: "الغوص مع السلاحف" },
-      { en: "Dugong Spotting", ru: "Наблюдение за дюгонями", de: "Dugong-Beobachtung", ar: "مشاهدة أبقار البحر" },
-      { en: "Pristine Beach", ru: "Девственный пляж", de: "Unberührter Strand", ar: "شاطئ بكر" },
-      { en: "Snorkeling Gear", ru: "Снаряжение", de: "Schnorchelausrüstung", ar: "معدات الغوص" }
-    ],
-    included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Beach Entry", ru: "Вход на пляж", de: "Strandeintritt", ar: "دخول الشاطئ" },
-      { en: "Snorkeling Equipment", ru: "Снаряжение", de: "Schnorchelausrüstung", ar: "معدات الغوص" },
-      { en: "Lunch", ru: "Обед", de: "Mittagessen", ar: "غداء" }
-    ]
-  },
-  {
-    id: "41",
-    slug: "dolphin-house-marsa-alam",
-    name: {
-      en: "Dolphin House Marsa Alam: Wild Dolphin Encounter",
-      ru: "Дом дельфинов Марса-Алам: встреча с дикими дельфинами",
-      de: "Delfinhaus Marsa Alam: Wilde Delfinbegegnung",
-      ar: "بيت الدلافين مرسى علم: لقاء الدلافين البرية"
-    },
-    description: {
-      en: "Visit the famous Dolphin House near Marsa Alam where pods of spinner dolphins reside year-round. Snorkel in their crystal clear lagoon.",
-      ru: "Посетите знаменитый Дом дельфинов возле Марса-Алам.",
-      de: "Besuchen Sie das berühmte Delfinhaus in der Nähe von Marsa Alam.",
-      ar: "زر بيت الدلافين الشهير بالقرب من مرسى علم"
-    },
-    duration: { en: "7 hours", ru: "7 часов", de: "7 Stunden", ar: "7 ساعات" },
-    price: 50,
-    currency: "EUR",
-    category: "Marsa Alam",
-    popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-08-26-at-02.24.38_b2ee4396.jpg",
-    rating: 4.8,
-    highlights: [
-      { en: "Dolphin Snorkeling", ru: "Снорклинг с дельфинами", de: "Schnorcheln mit Delfinen", ar: "الغوص مع الدلافين" },
-      { en: "Lagoon Exploration", ru: "Исследование лагуны", de: "Lagunenerkundung", ar: "استكشاف البحيرة" },
-      { en: "Coral Reefs", ru: "Коралловые рифы", de: "Korallenriffe", ar: "الشعاب المرجانية" },
-      { en: "Boat Trip", ru: "Прогулка на лодке", de: "Bootsausflug", ar: "رحلة بالقارب" }
-    ],
-    included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Snorkeling Gear", ru: "Снаряжение", de: "Schnorchelausrüstung", ar: "معدات الغوص" },
-      { en: "Lunch", ru: "Обед", de: "Mittagessen", ar: "غداء" }
-    ]
-  },
+
   {
     id: "43",
     slug: "cairo-private-pyramids-museum",
     name: {
-      en: "Cairo Private Tour: Pyramids, Sphinx & Museum",
-      ru: "Частный тур в Каир: пирамиды, сфинкс и музей",
-      de: "Private Kairo-Tour: Pyramiden, Sphinx & Museum",
-      ar: "جولة خاصة في القاهرة: الأهرامات وأبو الهول والمتحف"
+      en: "Cairo Private VIP Tour – National Museum of Egyptian Civilization",
+      ru: "Частный VIP тур в Каир – Национальный музей египетской цивилизации",
+      de: "Kairo Private VIP-Tour – Nationalmuseum der ägyptischen Zivilisation",
+      ar: "جولة القاهرة الخاصة VIP – المتحف القومي للحضارة المصرية"
     },
     description: {
-      en: "Enjoy a private guided tour of Cairo's greatest wonders with your own vehicle and guide. Visit the Pyramids, Sphinx, and Egyptian Museum at your own pace.",
-      ru: "Насладитесь частным туром по величайшим чудесам Каира с личным транспортом и гидом.",
-      de: "Genießen Sie eine private Führung zu den größten Wundern Kairos mit eigenem Fahrzeug und Führer.",
-      ar: "استمتع بجولة خاصة لأعظم عجائب القاهرة مع مركبتك ومرشدك الخاص"
+      en: "The most exclusive and luxurious option with a private car (dedicated driver + guide, max. 3 passengers). Visit the majestic Pyramids of Giza, Great Sphinx, explore Khan el Khalili at your own pace, and discover the National Museum of Egyptian Civilization. Savor a refined lunch at a top traditional restaurant. Perfect for couples or small families seeking complete privacy and maximum comfort. Hotel pickup: 01:00 AM | Return: by 11:00 PM. Price: approx. 300 euro per car (total for 1-3 persons). Return to your hotel filled with unforgettable memories, stunning photos, and stories that will stay with you forever.",
+      ru: "Самый эксклюзивный и роскошный вариант с частным автомобилем (выделенный водитель + гид, макс. 3 пассажира). Посетите величественные пирамиды Гизы, Великого Сфинкса, исследуйте базар Хан эль-Халили в своем темпе и откройте для себя Национальный музей египетской цивилизации. Насладитесь изысканным обедом в традиционном ресторане. Идеально для пар или небольших семей, ищущих полную конфиденциальность и максимальный комфорт. Выезд из отеля: 01:00 | Возврат: к 23:00. Цена: ок. 300 евро за автомобиль (всего для 1-3 человек).",
+      de: "Die exklusivste und luxuriöste Option mit einem privaten Auto (zugewiesener Fahrer + Guide, max. 3 Personen). Besuchen Sie die majestätischen Pyramiden von Gizeh, die Große Sphinx, erkunden Sie Khan el Khalili in Ihrem eigenen Tempo und entdecken Sie das Nationalmuseum der ägyptischen Zivilisation. Genießen Sie ein raffiniertes Mittagessen in einem erstklassigen traditionellen Restaurant. Perfekt für Paare oder kleine Familien, die vollständige Privatsphäre und maximalen Komfort suchen. Abholung: 01:00 Uhr | Rückkehr: bis 23:00 Uhr. Preis: ca. 300 Euro pro Auto (gesamt für 1-3 Personen).",
+      ar: "الخيار الأ exclusivist والأكثر فخامة مع سيارة خاصة (سائق مخصص + مرشد، الحد الأقصى 3 ركاب). قم بزيارة أهرامات الجيزة المهيبة، وأبو الهول العظيم، واستكشف سوق خان الخليلي بنفسك، واكتشف المتحف القومي للحضارة المصرية. استمتع بغداء راقي في مطعم تقليدي عالي المستوى. مثالي للأزواج أو العائلات الصغيرة الباحثة عن الخصوصية التامة والراحة القصيلة. الانطلاق من الفندق: 01:00 صباحاً | العودة: بحلول 11:00 مساءً. السعر: حوالي 300 يورو للسيارة (المجموع لـ 1-3 أشخاص)."
     },
-    duration: { en: "1 day", ru: "1 день", de: "1 Tag", ar: "يوم واحد" },
-    price: 120,
+    duration: { en: "1 day (01:00 AM – 11:00 PM)", ru: "1 день (01:00–23:00)", de: "1 Tag (01:00–23:00 Uhr)", ar: "يوم واحد (01:00 ص – 11:00 م)" },
+    price: 300,
     currency: "EUR",
+    priceLabel: {
+      en: "/ car (1-3 persons)",
+      ru: "/ автомобиль (1-3 человека)",
+      de: "/ Auto (1-3 Personen)",
+      ar: "/ سيارة (1-3 أشخاص)"
+    },
     category: "Cairo",
-    popular: false,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/11/download-3.jpg",
+    popular: true,
+    image: "/photos/cairo-private-vip/689691961.webp",
     rating: 4.9,
     highlights: [
-      { en: "Private Vehicle & Guide", ru: "Частный автомобиль и гид", de: "Privatfahrzeug & Führer", ar: "مركبة ومرشد خاص" },
+      { en: "Private Car (Up to 3 Persons)", ru: "Частный автомобиль (до 3 человек)", de: "Privates Auto (bis 3 Personen)", ar: "سيارة خاصة (حتى 3 أشخاص)" },
       { en: "Pyramids of Giza", ru: "Пирамиды Гизы", de: "Pyramiden von Gizeh", ar: "أهرامات الجيزة" },
-      { en: "The Egyptian Museum", ru: "Египетский музей", de: "Ägyptisches Museum", ar: "المتحف المصري" },
-      { en: "Lunch at Local Restaurant", ru: "Обед", de: "Mittagessen", ar: "غداء" }
+      { en: "The Great Sphinx", ru: "Великий Сфинкс", de: "Die Große Sphinx", ar: "أبو الهول العظيم" },
+      { en: "National Museum of Egyptian Civilization", ru: "Национальный музей египетской цивилизации", de: "Nationalmuseum der ägyptischen Zivilisation", ar: "المتحف القومي للحضارة المصرية" },
+      { en: "Khan el Khalili Bazaar", ru: "Базар Хан эль-Халили", de: "Khan el-Khalili Basar", ar: "سوق خان الخليلي" }
     ],
     included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Private Vehicle", ru: "Частный автомобиль", de: "Privatfahrzeug", ar: "مركبة خاصة" },
+      { en: "Private Car Transfer", ru: "Трансфер на частном автомобиле", de: "Privater Auto-Transfer", ar: "نقل بالسيارة الخاصة" },
+      { en: "Dedicated Driver + Guide", ru: "Выделенный водитель + гид", de: "Zugewiesener Fahrer + Guide", ar: "سائق مخصص + مرشد" },
       { en: "Entrance Fees", ru: "Входные билеты", de: "Eintrittsgebühren", ar: "رسوم الدخول" },
-      { en: "Guide & Lunch", ru: "Гид и обед", de: "Führer & Mittagessen", ar: "مرشد وغداء" }
+      { en: "Lunch at Restaurant", ru: "Обед в ресторане", de: "Mittagessen im Restaurant", ar: "غداء في مطعم" }
+    ],
+    gallery: [
+      "/photos/cairo-private-vip/689691961.webp",
+      "/photos/cairo-private-vip/0d43109e17898f6086b42050eec59f5f.jpg",
+      "/photos/cairo-private-vip/7ea5ff7cef9649b713bf8484e3113232.jpg",
+      "/photos/cairo-private-vip/332c53bea53db182da15760fe926a7ef.jpg",
+      "/photos/cairo-private-vip/3457de3cccba8c604630e5b9db50c78b.jpg",
+      "/photos/cairo-private-vip/472999aa63ffac63140d9212ae64cfab.jpg",
+      "/photos/cairo-private-vip/811532e08d252079fe2166a3ca46fbd5.jpg",
+      "/photos/cairo-private-vip/166744703.webp",
+      "/photos/cairo-private-vip/166744777.webp",
+      "/photos/cairo-private-vip/437019978.jpg",
+      "/photos/cairo-private-vip/613799415.webp",
+      "/photos/cairo-private-vip/613799423.webp",
+      "/photos/cairo-private-vip/613799430.webp",
+      "/photos/cairo-private-vip/613799488.webp",
+      "/photos/cairo-private-vip/613799493.webp",
+      "/photos/cairo-private-vip/613799574.webp",
+      "/photos/cairo-private-vip/613799594.webp",
+      "/photos/cairo-private-vip/616157994.webp",
+      "/photos/cairo-private-vip/623195691.jpg"
     ]
   },
   {
     id: "47",
-    slug: "luxor-hot-air-balloon",
+    slug: "luxor-hot-air-balloon-premium-minibus",
     name: {
-      en: "Luxor Hot Air Balloon: Sunrise Over the Nile",
-      ru: "Воздушный шар в Луксоре: рассвет над Нилом",
-      de: "Luxor-Heißluftballon: Sonnenaufgang über dem Nil",
-      ar: "بالون الهواء الساخن في الأقصر: شروق الشمس فوق النيل"
+      en: "Luxor Hot Air Balloon Premium Minibus Tour – 1 Day & 1 Night",
+      ru: "Луксор: Полёт на воздушном шаре + минибус премиум — 1 день и 1 ночь",
+      de: "Luxor Heißluftballon Premium Minibus Tour – 1 Tag & 1 Nacht",
+      ar: "جولة بالون الهواء الساخن في الأقصر بالباص المميز — يوم وليلة"
     },
     description: {
-      en: "Float above the ancient city of Luxor in a hot air balloon at sunrise. See the Valley of the Kings, Karnak Temple, and the Nile from a bird's eye view.",
-      ru: "Парите над древним Луксором на воздушном шаре на рассвете.",
-      de: "Schweben Sie bei Sonnenaufgang im Heißluftballon über der antiken Stadt Luxor.",
-      ar: "حلق فوق مدينة الأقصر القديمة في بالون هواء ساخن عند شروق الشمس"
+      en: "Experience the magic of Luxor from above and explore its ancient wonders in complete comfort. This exclusive 1 Day & 1 Night tour combines the breathtaking sunrise Hot Air Balloon flight over the Valley of the Kings with a full guided exploration of Luxor's most iconic sites.",
+      ru: "Испытайте волшебство Луксора с высоты и исследуйте его древние чудеса в полном комфорте. Этот эксклюзивный тур на 1 день и 1 ночь сочетает захватывающий рассветный полёт на воздушном шаре над Долиной Царей с полноценной экскурсией по самым знаковым местам Луксора.",
+      de: "Erleben Sie den Zauber Luxors von oben und erkunden Sie seine antiken Wunder in vollem Komfort. Diese exklusive 1-Tages- & 1-Nacht-Tour verbindet den atemberaubenden Sonnenaufgangs-Heißluftballonflug über das Tal der Könige mit einer vollständigen geführten Erkundung der ikonischsten Stätten Luxors.",
+      ar: "استمتع بسحر الأقصر من الأعلى واستكشف عجائبها القديمة بأقصى راحة. تجمع هذه الجولة الحصرية ليوم وليلة بين رحلة بالون الهواء الساخن المذهلة عند شروق الشمس فوق وادي الملوك واستكشاف كامل لأكثر معالم الأقصر شهرة."
     },
-    duration: { en: "3 hours", ru: "3 часа", de: "3 Stunden", ar: "3 ساعات" },
-    price: 100,
+    duration: { en: "2 Days / 1 Night", ru: "2 дня / 1 ночь", de: "2 Tage / 1 Nacht", ar: "يومان / ليلة واحدة" },
+    price: 150,
+    priceLabel: {
+      en: "/ person (minibus up to 8)",
+      ru: "/ человек (минибус до 8 чел.)",
+      de: "/ Person (Minibus bis 8 Pers.)",
+      ar: "/ شخص (باص حتى 8 أشخاص)"
+    },
     currency: "EUR",
     category: "Luxor",
     popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/11/Ramses_II_in_Luxor_Temple.jpg",
+    image: "/photos/luxor-hot-air-balloon-premium-minibus/339793097.webp",
     rating: 4.9,
     highlights: [
-      { en: "Hot Air Balloon Ride", ru: "Полет на воздушном шаре", de: "Heißluftballonfahrt", ar: "ركوب بالون الهواء الساخن" },
-      { en: "Sunrise Over Luxor", ru: "Рассвет над Луксором", de: "Sonnenaufgang über Luxor", ar: "شروق الشمس فوق الأقصر" },
-      { en: "Valley of the Kings View", ru: "Вид на Долину Царей", de: "Blick auf das Tal der Könige", ar: "إطلالة على وادي الملوك" },
-      { en: "Nile Panorama", ru: "Панорама Нила", de: "Nil-Panorama", ar: "بانوراما النيل" }
+      { en: "Sunrise Hot Air Balloon Flight", ru: "Рассветный полёт на воздушном шаре", de: "Sonnenaufgangs-Heißluftballonflug", ar: "رحلة بالون الهواء الساخن عند شروق الشمس" },
+      { en: "Valley of the Kings & Karnak Temple", ru: "Долина Царей и храм Карнак", de: "Tal der Könige & Karnak-Tempel", ar: "وادي الملوك ومعبد الكرنك" },
+      { en: "Luxor Temple & Hatshepsut", ru: "Храм Луксора и Хатшепсут", de: "Luxor-Tempel & Hatschepsut", ar: "معبد الأقصر وحتشبسوت" },
+      { en: "Professional Egyptologist Guide", ru: "Профессиональный гид-египтолог", de: "Professioneller Ägyptologe", ar: "مرشد مصري محترف" },
+      { en: "Overnight 4-5* Hotel", ru: "Ночёвка в отеле 4-5*", de: "Übernachtung im 4-5* Hotel", ar: "إقامة في فندق 4-5 نجوم" }
     ],
     included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Balloon Ride", ru: "Полет на шаре", de: "Ballonfahrt", ar: "ركوب البالون" },
-      { en: "Safety Briefing", ru: "Инструктаж", de: "Sicherheitseinweisung", ar: "إرشادات السلامة" },
-      { en: "Light Breakfast", ru: "Легкий завтрак", de: "Leichtes Frühstück", ar: "فطور خفيف" }
+      { en: "Round-trip premium minibus transfer", ru: "Туда и обратно премиум минибус", de: " Hin und zurück Premium-Minibus", ar: "انتقال بالباص المميز ذهاباً وإياباً" },
+      { en: "Sunrise Hot Air Balloon flight with breakfast & certificate", ru: "Рассветный полёт на шаре с завтраком и сертификатом", de: "Sonnenaufgangsballonflug mit Frühstück & Zertifikat", ar: "رحلة بالون الهواء الساخن مع فطور وشهادة" },
+      { en: "Full guided tour of Luxor highlights with professional Egyptologist", ru: "Полная экскурсия по Луксору с профессиональным гидом", de: "Geführte Tour der Luxor-Highlights mit Ägyptologen", ar: "جولة إرشادية كاملة لمعالم الأقصر مع مرشد مصري محترف" },
+      { en: "Lunch on Day 1 + hotel accommodation with breakfast", ru: "Обед первого дня + проживание в отеле с завтраком", de: "Mittagessen am Tag 1 + Hotelunterkunft mit Frühstück", ar: "غداء اليوم الأول + إقامة في الفندق مع فطور" },
+      { en: "All entrance fees (main sites)", ru: "Все входные билеты", de: "Alle Eintrittskarten", ar: "جميع رسوم الدخول للمواقع الرئيسية" },
+      { en: "Professional assistance", ru: "Профессиональная помощь", de: "Professionelle Hilfe", ar: "مساعدة مهنية" }
+    ],
+    gallery: [
+      "/photos/luxor-hot-air-balloon-premium-minibus/339793097.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092430.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092518.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092585.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092615.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092643.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092673.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092768.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092809.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/395369523.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/395369751.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/395369956.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/395370026.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/395370087.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/432237747.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/432237748.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/432237750.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/432237752.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/432237756.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/432237760.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/432237761.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/432237763.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/432237766.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/432237769.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125194.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125235.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125282.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125330.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125372.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125426.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125471.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125515.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125560.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125605.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125654.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125693.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125755.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125812.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125870.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125924.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125984.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473126042.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473126115.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473126185.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473126264.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473126329.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473126402.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473126457.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473126507.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473126551.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473126596.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473126650.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/505032883.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/505033084.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/505033160.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/533747363.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/533747407.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/533747465.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/561173531.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/561173544.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/561173552.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/561173560.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/561173577.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/613799384.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/618272165.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/618272180.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/618272192.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/625731928.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/634180336.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/634180339.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/636078531.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/641453994.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/641618078.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/646506312.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/646506313.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/646506315.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/647256238.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/647256239.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075380.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075408.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075421.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075463.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075475.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075487.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075497.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075519.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075526.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075534.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075547.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075555.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075569.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075590.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075601.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075605.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075614.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/654075619.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/662350161.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/663208187.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/663208205.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/663208227.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/663208240.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/663208258.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/663208274.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/663208293.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/663208308.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/663208318.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/666728630.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/666728635.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/666728649.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/669989581.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/671897729.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/671897730.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/677940817.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/677940834.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/677940854.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/677940891.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/677940902.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/677940909.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/677940960.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/694315528.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/694315550.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/694315593.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/694315618.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/694315653.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/694315664.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/694315685.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/694315707.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/694315719.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/694315738.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/694315778.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/b8a2f23eaafd37c068d751ceda151a03.jpg",
+      "/photos/luxor-hot-air-balloon-premium-minibus/c31a308ac3c5eaadae66065a1c9025ff.jpg"
     ]
   },
   {
     id: "50",
-    slug: "luxor-private-guided-tour",
+    slug: "luxor-private-vip",
     name: {
-      en: "Luxor Private Guided Tour: Tailored Experience",
-      ru: "Частный тур в Луксор: индивидуальный опыт",
-      de: "Private Luxor-Führung: Maßgeschneidertes Erlebnis",
-      ar: "جولة خاصة في الأقصر: تجربة مخصصة"
+      en: "Luxor Private VIP Tour (Private Car, up to 3 persons)",
+      ru: "Луксор: Частный VIP-тур (автомобиль до 3 чел.)",
+      de: "Luxor Private VIP Tour (Privatwagen, bis 3 Pers.)",
+      ar: "جولة VIP خاصة في الأقصر (سيارة خاصة حتى 3 أشخاص)"
     },
     description: {
-      en: "Design your own Luxor itinerary with a private Egyptologist guide. Choose which temples and tombs to visit and go at your own pace.",
-      ru: "Составьте свой маршрут по Луксору с частным гидом-египтологом.",
-      de: "Gestalten Sie Ihr eigenes Luxor-Programm mit einem privaten Ägyptologen.",
-      ar: "صمم جدول رحلتك الخاص في الأقصر مع مرشد مصري خاص"
+      en: "Enjoy the ultimate luxury and personalized experience on this private VIP tour to Luxor with a dedicated car and guide (maximum 3 passengers). Discover at your own peace the highlights of ancient Thebes: Karnak Temple, Luxor Temple, Valley of the Kings, Temple of Hatshepsut, and the Colossi of Memnon. Savor a premium lunch at one of Luxor's best traditional restaurants. Perfect for couples or small families who want exclusivity and maximum comfort.",
+      ru: "Наслаждайтесь роскошью и персональным вниманием в этом частном VIP-туре в Луксор с выделенным автомобилем и гидом (максимум 3 пассажира). Откройте для себя в своём темпе главные достопримечательности древних Фив: храм Карнак, храм Луксора, Долину Царей, храм Хатшепсут и Колоссы Мемнона. Насладитесь премиальным обедом в одном из лучших традиционных ресторанов Луксора.",
+      de: "Genießen Sie den ultimativen Luxus und ein personalisiertes Erlebnis auf dieser privaten VIP-Tour nach Luxor mit einem eigenen Wagen und Führer (maximale 3 Passagiere). Entdecken Sie in Ihrem eigenen Tempo die Höhepunkte des antiken Theben: Karnak-Tempel, Luxor-Tempel, Tal der Könige, Hatschepsut-Tempel und die Kolosse des Memnon. Genießen Sie ein Premium-Mittagessen in einem der besten traditionellen Restaurants Luxors.",
+      ar: "استمتع بالفخامة المطلقة والتجربة الشخصية في جولة VIP خاصة إلى الأقصر بسيارة ومرشد مخصصين (3 ركاب كحد أقصى). اكتشف بالקצב الخاص بك معالم طيبة القديمة: معبد الكرنك، معبد الأقصر، وادي الملوك، معبد حتشبسوت، وأعمدة ممنون. تذوق غداء فاخراً في أحد أفضل مطاعم الأقصر التقليدية."
     },
-    duration: { en: "8 hours", ru: "8 часов", de: "8 Stunden", ar: "8 ساعات" },
-    price: 150,
+    duration: { en: "18 hours (01:00 AM – 11:00 PM)", ru: "18 часов (01:00 – 23:00)", de: "18 Stunden (01:00 – 23:00)", ar: "18 ساعة (01:00 – 23:00)" },
+    price: 350,
+    priceLabel: {
+      en: "/ car (1-3 persons)",
+      ru: "/ автомобиль (1-3 чел.)",
+      de: "/ Wagen (1-3 Pers.)",
+      ar: "/ سيارة (1-3 أشخاص)"
+    },
     currency: "EUR",
     category: "Luxor",
-    popular: false,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/6-2.jpg",
+    popular: true,
+    image: "/photos/luxor-private-vip/473125693.webp",
     rating: 4.9,
     highlights: [
-      { en: "Private Egyptologist", ru: "Частный египтолог", de: "Privater Ägyptologe", ar: "مرشد مصري خاص" },
-      { en: "Custom Itinerary", ru: "Индивидуальный маршрут", de: "Individueller Reiseplan", ar: "جدول مخصص" },
-      { en: "Private Vehicle", ru: "Частный автомобиль", de: "Privatfahrzeug", ar: "مركبة خاصة" },
-      { en: "Flexible Schedule", ru: "Гибкий график", de: "Flexibler Zeitplan", ar: "جدول مرن" }
+      { en: "Private Car & Guide", ru: "Частный автомобиль и гид", de: "Privatwagen & Führer", ar: "سيارة ومرشد خاص" },
+      { en: "Valley of the Kings", ru: "Долина Царей", de: "Tal der Könige", ar: "وادي الملوك" },
+      { en: "Karnak & Luxor Temples", ru: "Храмы Карнак и Луксор", de: "Karnak- & Luxor-Tempel", ar: "معابد الكرنك والأقصر" },
+      { en: "Premium Lunch", ru: "Премиальный обед", de: "Premium-Mittagessen", ar: "غداء فاخر" },
+      { en: "Temple of Hatshepsut & Colossi of Memnon", ru: "Храм Хатшепсут и Колоссы Мемнона", de: "Hatschepsut-Tempel & Kolosse des Memnon", ar: "معبد حتشبسوت وأعمدة ممنون" }
     ],
     included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Private Guide", ru: "Частный гид", de: "Privater Führer", ar: "مرشد خاص" },
-      { en: "Private Vehicle", ru: "Частный автомобиль", de: "Privatfahrzeug", ar: "مركبة خاصة" },
-      { en: "Entrance Fees & Lunch", ru: "Билеты и обед", de: "Eintritt & Mittagessen", ar: "رسوم الدخول والغداء" }
+      { en: "Hotel pickup & return (01:00 AM – 11:00 PM)", ru: "Трансфер от отеля и обратно (01:00 – 23:00)", de: "Hotelaufholung & Rückfahrt (01:00 – 23:00)", ar: "pickup وإعادة من الفندق (01:00 – 23:00)" },
+      { en: "Private car & professional driver", ru: "Частный автомобиль и профессиональный водитель", de: "Privatwagen & professioneller Fahrer", ar: "سيارة خاصة وسائق محترف" },
+      { en: "Licensed Egyptologist guide", ru: "Лицензированный гид-египтолог", de: "Lizenzierter Ägyptologe", ar: "مرشد مصري مرخص" },
+      { en: "Premium lunch at a traditional restaurant", ru: "Премиальный обед в традиционном ресторане", de: "Premium-Mittagessen in einem traditionellen Restaurant", ar: "غداء فاخر في مطعم تقليدي" },
+      { en: "All entrance fees (main sites)", ru: "Все входные билеты", de: "Alle Eintrittskarten", ar: "جميع رسوم الدخول" },
+      { en: "Bottled water during the tour", ru: "Бутилированная вода", de: "Flaschenwasser während der Tour", ar: "مياه معبأة أثناء الجولة" }
+    ],
+    gallery: [
+      "/photos/luxor-private-vip/473125693.webp",
+      "/photos/luxor-private-vip/473125755.webp",
+      "/photos/luxor-private-vip/473125812.webp",
+      "/photos/luxor-private-vip/473125870.webp",
+      "/photos/luxor-private-vip/473125924.webp",
+      "/photos/luxor-private-vip/473125984.webp",
+      "/photos/luxor-private-vip/473126042.webp",
+      "/photos/luxor-private-vip/473126115.webp",
+      "/photos/luxor-private-vip/473126185.webp",
+      "/photos/luxor-private-vip/473126264.webp",
+      "/photos/luxor-private-vip/473126329.webp",
+      "/photos/luxor-private-vip/473126402.webp",
+      "/photos/luxor-private-vip/473126457.webp",
+      "/photos/luxor-private-vip/473126507.webp",
+      "/photos/luxor-private-vip/473126551.webp",
+      "/photos/luxor-private-vip/473126596.webp",
+      "/photos/luxor-private-vip/473126650.webp",
+      "/photos/luxor-private-vip/505032883.webp",
+      "/photos/luxor-private-vip/505033084.webp",
+      "/photos/luxor-private-vip/505033160.webp",
+      "/photos/luxor-private-vip/533747363.webp",
+      "/photos/luxor-private-vip/533747407.webp",
+      "/photos/luxor-private-vip/533747465.webp",
+      "/photos/luxor-private-vip/561173531.webp",
+      "/photos/luxor-private-vip/561173544.webp"
     ]
   },
   {
     id: "51",
-    slug: "abydos-dendera-temples",
+    slug: "abydos-dendera-premium-minibus",
     name: {
-      en: "Abydos & Dendera Temples: Off the Beaten Path",
-      ru: "Храмы Абидоса и Дендеры: в стороне от туристов",
-      de: "Abydos- & Dendera-Tempel: Abseits der Touristenpfade",
-      ar: "معابد أبيدوس ودندرة: طريق غير مألوف"
+      en: "Abydos & Dendera Premium Minibus Tour (Minibus, up to 8 persons)",
+      ru: "Абидос и Дендеры: премиум минибус (до 8 чел.)",
+      de: "Abydos & Dendera Premium Minibus Tour (Minibus, bis 8 Pers.)",
+      ar: "جولة أبيدوس ودندرة بالباص المميز (باص حتى 8 أشخاص)"
     },
     description: {
-      en: "Venture off the beaten path to the incredible temples of Abydos and Dendera. Marvel at the well-preserved reliefs and stunning astronomical ceiling at Dendera.",
-      ru: "Отправляйтесь в сторону от туристических троп к храмам Абидоса и Дендеры.",
-      de: "Begeben Sie sich abseits der Touristenpfade zu den unglaublichen Tempeln von Abydos und Dendera.",
-      ar: "انطلق خارج المسارات المألوفة إلى معابد أبيدوس ودندرة المذهلة"
+      en: "Enjoy a comfortable and affordable journey to some of Egypt's hidden gems. Traveling in a premium minibus (max. 8 passengers), you will explore the impressive Abydos Temple and the breathtaking Dendera Temple. Professional Egyptologist guide and a delicious traditional Egyptian lunch at a well-known restaurant are included.",
+      ru: "Наслаждайтесь комфортной и доступной поездкой к жемчужинам Египта. Премиум минибус (макс. 8 пассажиров) доставит вас к впечатляющему храму Абидоса и великолепному храму Дендеры. Профессиональный гид-египтолог и вкусный традиционный обед включены.",
+      de: "Genießen Sie eine komfortable und erschwingliche Reise zu einigen Ägyptens versteckten Schätzen. Mit einem Premium-Minibus (max. 8 Fahrgäste) erkunden Sie den beeindruckenden Abydos-Tempel und den atemberaubenden Dendera-Tempel. Professioneller Ägyptologe und köstliches ägyptisches Mittagessen sind inklusive.",
+      ar: "استمتع برحلة مريحة وبأسعار معقولة إلى بعض جواهر مصر المخفية. بالباص المميز (8 ركاب كحد أقصى) ستستكشف معبد أبيدوس المبهر ومعبد دندرة الآسر. مرشد مصري محترف وغداء مصري تقليدي لذيذ م Included."
     },
-    duration: { en: "1 day", ru: "1 день", de: "1 Tag", ar: "يوم واحد" },
+    duration: { en: "12 hours (01:00 AM – 11:00 PM)", ru: "12 часов (01:00 – 23:00)", de: "12 Stunden (01:00 – 23:00)", ar: "12 ساعة (01:00 – 23:00)" },
     price: 80,
     currency: "EUR",
     category: "Luxor",
     popular: false,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/Best-Time-to-Visit-Luxor-and-Thebes.webp",
+    image: "/photos/abydos-dendera-premium-minibus/1.jpg",
     rating: 4.8,
     highlights: [
       { en: "Abydos Temple", ru: "Храм Абидоса", de: "Abydos-Tempel", ar: "معبد أبيدوس" },
       { en: "Dendera Temple", ru: "Храм Дендеры", de: "Dendera-Tempel", ar: "معبد دندرة" },
-      { en: "Astronomical Ceiling", ru: "Астрономический потолок", de: "Astronomische Decke", ar: "السقف الفلكي" },
-      { en: "Ancient Reliefs", ru: "Древние рельефы", de: "Alte Reliefs", ar: "نقوش قديمة" }
+      { en: "Professional Egyptologist Guide", ru: "Профессиональный гид-египтолог", de: "Professioneller Ägyptologe", ar: "مرشد مصري محترف" },
+      { en: "Traditional Egyptian Lunch", ru: "Традиционный египетский обед", de: "Traditionelles ägyptisches Mittagessen", ar: "غداء مصري تقليدي" }
     ],
     included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Entrance Fees", ru: "Входные билеты", de: "Eintrittsgebühren", ar: "رسوم الدخول" },
-      { en: "Guide", ru: "Гид", de: "Führer", ar: "مرشد" },
-      { en: "Lunch", ru: "Обед", de: "Mittagessen", ar: "غداء" }
+      { en: "Hotel pickup & return (01:00 AM – 11:00 PM)", ru: "Трансфер от отеля и обратно (01:00 – 23:00)", de: "Hotelaufholung & Rückfahrt (01:00 – 23:00)", ar: "pickup وإعادة من الفندق (01:00 – 23:00)" },
+      { en: "Comfortable premium minibus transportation", ru: "Комфортный премиум минибус", de: "Komfortabler Premium-Minibus", ar: "نقل بالباص المميز المريح" },
+      { en: "Professional Egyptologist guide", ru: "Профессиональный гид-египтолог", de: "Professioneller Ägyptologe", ar: "مرشد مصري محترف" },
+      { en: "Traditional Egyptian lunch at a renowned restaurant", ru: "Традиционный обед в известном ресторане", de: "Traditionelles Mittagessen in einem bekannten Restaurant", ar: "غداء مصري تقليدي في مطعم مشهور" },
+      { en: "All entrance fees", ru: "Все входные билеты", de: "Alle Eintrittskarten", ar: "جميع رسوم الدخول" },
+      { en: "Water and full assistance", ru: "Вода и полная помощь", de: "Wasser und vollständige Hilfe", ar: "مياه ومساعدة كاملة" }
+    ],
+    gallery: [
+      "/photos/abydos-dendera-premium-minibus/1.jpg",
+      "/photos/abydos-dendera-premium-minibus/1890a4883044e85df337c2c80fbd5798.jpg",
+      "/photos/abydos-dendera-premium-minibus/19c70c2a42bc213e294324b2c1f7c40b89ebfedbb6685e7a29b2521248923659.avif",
+      "/photos/abydos-dendera-premium-minibus/2.jpg",
+      "/photos/abydos-dendera-premium-minibus/3.jpg",
+      "/photos/abydos-dendera-premium-minibus/4.jpg",
+      "/photos/abydos-dendera-premium-minibus/404c35ca20b8b966686d831622b8ea35c405f98a78d01b3e815e1c1c83f6289b.avif",
+      "/photos/abydos-dendera-premium-minibus/4212cc10b2b12df37a17e37e58041983b613bb7f5e6c5b3be3f999d629b6fd55.avif",
+      "/photos/abydos-dendera-premium-minibus/4df8c0d9fa6fa7c24c562c26a2cd667f4e3fb2c6f4b7eb175ebb38725cbc07a7.avif",
+      "/photos/abydos-dendera-premium-minibus/4e280fae2d4d207882ebeac1d7adf2fac98d8af5eba1fb303965f17849af66f5.avif",
+      "/photos/abydos-dendera-premium-minibus/5.webp",
+      "/photos/abydos-dendera-premium-minibus/6.jpg",
+      "/photos/abydos-dendera-premium-minibus/7.jpg",
+      "/photos/abydos-dendera-premium-minibus/8.jpg",
+      "/photos/abydos-dendera-premium-minibus/8661a67dfd8ad81efdec200df0f94b8d6a2bf6ae1e823ecb639459be0ccb396f.avif",
+      "/photos/abydos-dendera-premium-minibus/895a39f6807dd91dc12d8b3286f1c1a43b8bf190ef9d4e39cc54e819975b8e36.avif",
+      "/photos/abydos-dendera-premium-minibus/9.jpg",
+      "/photos/abydos-dendera-premium-minibus/90d07b1675ab0913b01ac96cd16f212f58c6aa67ae74524c6247f04aae503830.avif",
+      "/photos/abydos-dendera-premium-minibus/9dc06cf3680472db8f0db6e2874c17ecdc5749d350ac782a5044f594ec40d117.avif",
+      "/photos/abydos-dendera-premium-minibus/b75416e8be2e9c4ced57b155334d8b96910cffe9cc05d94c6b481700727dcc33.avif",
+      "/photos/abydos-dendera-premium-minibus/ebdb16df27dd167cc3851bcf6e50fa4926cf9c2325e8c7e0736bf0c0a2c7841d.avif"
     ]
   },
   {
-    id: "52",
-    slug: "aswan-city-market-tour",
+    id: "74",
+    slug: "abydos-dendera-private-car",
     name: {
-      en: "Aswan City & Market Tour: Nubian Culture",
-      ru: "Городской тур Асуан: нубийская культура",
-      de: "Assuan Stadt- & Markttour: Nubische Kultur",
-      ar: "جولة مدينة أسوان والسوق: الثقافة النوبية"
+      en: "Abydos & Dendera Private Car Tour (Private Car, up to 3 persons)",
+      ru: "Абидос и Дендеры: частный автомобиль (до 3 чел.)",
+      de: "Abydos & Dendera Privatwagen-Tour (Privatwagen, bis 3 Pers.)",
+      ar: "جولة أبيدوس ودندرة بسيارة خاصة (سيارة خاصة حتى 3 أشخاص)"
     },
     description: {
-      en: "Explore the beautiful city of Aswan with its colorful Nubian market, visit the Unfinished Obelisk, and stroll along the Nile Corniche.",
-      ru: "Исследуйте прекрасный Асуан с его красочным нубийским рынком.",
-      de: "Erkunden Sie die schöne Stadt Assuan mit ihrem farbenfrohen nubischen Markt.",
-      ar: "استكشف مدينة أسوان الجميلة بسوقها النوبي الملون"
+      en: "Discover two of the most beautifully preserved and spiritually significant temples of Ancient Egypt on this exclusive excursion. With a private car and dedicated guide, you will visit the magnificent Abydos Temple (dedicated to Osiris, famous for its exquisite reliefs and the King List) and the stunning Dendera Temple (one of the best-preserved temples in Egypt, dedicated to Goddess Hathor, with the famous zodiac ceiling and hypostyle hall). Traditional Egyptian lunch at a renowned restaurant is included.",
+      ru: "Откройте для себя два красивейших и духовно значимых храма Древнего Египта в этой эксклюзивной экскурсии. С частным автомобилем и персональным гидом вы посетите великолепный храм Абидоса (посвящён Осирису, славится изысканными рельефами и Царским списком) и потрясающий храм Дендеры (один из лучших по сохранности храмов Египта, посвящён богине Хатхор, с известным зодиакальным потолком и гипостильным залом). Традиционный египетский обед в ресторане включён.",
+      de: "Entdecken Sie zwei der schönsten und spirituell bedeutsamsten Tempel des alten Ägyptens auf dieser exklusiven Reise. Mit einem privaten Wagen und einem Führer besuchen Sie den prächtigen Abydos-Tempel (gewidmet Osiris, berühmt für seine kunstvollen Reliefs und den Königsmann) und den atemberaubenden Dendera-Tempel (einer der besterhaltenen Tempel Ägyptens, gewidmet der Göttin Hathor, mit dem berühmten Tierkreis-Decke und Hypostyl-Saal). Traditionelles ägyptisches Mittagessen ist inklusive.",
+      ar: "اكتشف اثنين من أجمل المعابد وأكثرها أهمية روحية في مصر القديمة في هذه الجولة الحصرية. بسيارة خاصة ومرشد مخصص، ستزور معبد أبيدوس الرائع (مكرس لأوزيريس، مشهور بنقوشه الرائعة وقائمة الملوك) ومعبد دندرة الآسر (أحد أفضل المعابد حفظاً في مصر، مكرس للإلهة حتحور، بالسقف الفلكي الشهير والقاعة الأعمدة). غداء مصري تقليدي في مطعم مشهور مشمول."
     },
-    duration: { en: "4 hours", ru: "4 часа", de: "4 Stunden", ar: "4 ساعات" },
-    price: 25,
+    duration: { en: "12 hours (01:00 AM – 11:00 PM)", ru: "12 часов (01:00 – 23:00)", de: "12 Stunden (01:00 – 23:00)", ar: "12 ساعة (01:00 – 23:00)" },
+    price: 300,
+    priceLabel: {
+      en: "/ car (1-3 persons)",
+      ru: "/ автомобиль (1-3 чел.)",
+      de: "/ Wagen (1-3 Pers.)",
+      ar: "/ سيارة (1-3 أشخاص)"
+    },
     currency: "EUR",
-    category: "Aswan",
-    popular: false,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2026/02/IMG-20260212-WA0029-e1770908632870.jpg",
-    rating: 4.5,
-    highlights: [
-      { en: "Nubian Market", ru: "Нубийский рынок", de: "Nubischer Markt", ar: "السوق النوبي" },
-      { en: "Unfinished Obelisk", ru: "Незаконченный обелиск", de: "Unvollendeter Obelisk", ar: "المسلة غير المكتملة" },
-      { en: "Nile Corniche", ru: "Набережная Нила", de: "Nil-Corniche", ar: "كورنيش النيل" },
-      { en: "Local Guide", ru: "Местный гид", de: "Lokaler Führer", ar: "مرشد محلي" }
-    ],
-    included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Guide", ru: "Гид", de: "Führer", ar: "مرشد" },
-      { en: "Entrance Fees", ru: "Входные билеты", de: "Eintrittsgebühren", ar: "رسوم الدخول" }
-    ]
-  },
-  {
-    id: "53",
-    slug: "abu-simbel-bus-tour",
-    name: {
-      en: "Abu Simbel Bus Tour: Temples of Ramesses",
-      ru: "Автобусный тур в Абу-Симбел: храмы Рамзеса",
-      de: "Abu-Simbel-Busreise: Tempel von Ramses",
-      ar: "رحلة حافلة أبو سمبل: معابد رمسيس"
-    },
-    description: {
-      en: "Travel to the magnificent Abu Simbel temples, carved into the mountainside by Ramesses II. A true testament to ancient Egyptian engineering and artistry.",
-      ru: "Отправляйтесь к величественным храмам Абу-Симбела, высеченным в скале.",
-      de: "Reisen Sie zu den magnifichen Abu-Simbel-Tempeln, die Ramses II. in den Berg hauen ließ.",
-      ar: "سافر إلى معابد أبو سمبل الرائعة المنحوتة في الجبل"
-    },
-    duration: { en: "1 day", ru: "1 день", de: "1 Tag", ar: "يوم واحد" },
-    price: 65,
-    currency: "EUR",
-    category: "Aswan",
+    category: "Luxor",
     popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2026/02/IMG-20260212-WA0029-e1770908632870.jpg",
+    image: "/photos/abydos-dendera-private-car/abydos-lake-with-egypt-tour-magic.webp",
     rating: 4.9,
     highlights: [
-      { en: "Abu Simbel Temples", ru: "Храмы Абу-Симбела", de: "Abu-Simbel-Tempel", ar: "معابد أبو سمبل" },
-      { en: "Colossal Statues", ru: "Колоссальные статуи", de: "Kolossale Statuen", ar: "التماثيل العملاقة" },
-      { en: "Lake Nasser Views", ru: "Вид на озеро Насер", de: "Blick auf den Nasser-See", ar: "إطلالة على بحيرة ناصر" },
-      { en: "Photo Stops", ru: "Фото-остановки", de: "Fotostopps", ar: "توقف للتصوير" }
+      { en: "Abydos Temple (Osiris, King List)", ru: "Храм Абидоса (Осирис, Царский список)", de: "Abydos-Tempel (Osiris, Königsmann)", ar: "معبد أبيدوس (أوزيريس، قائمة الملوك)" },
+      { en: "Dendera Temple (Hathor, Zodiac Ceiling)", ru: "Храм Дендеры (Хатхор, зодиакальный потолок)", de: "Dendera-Tempel (Hathor, Tierkreis-Decke)", ar: "معبد دندرة (حتحور، السقف الفلكي)" },
+      { en: "Private Car & Dedicated Guide", ru: "Частный автомобиль и персональный гид", de: "Privatwagen & Führer", ar: "سيارة خاصة ومرشد مخصص" },
+      { en: "Exquisite Reliefs & Hypostyle Hall", ru: "Изысканные рельефы и гипостильный зал", de: "Kunstvolle Reliefs & Hypostyl-Saal", ar: "نقوش رائعة والقاعة الأعمدة" },
+      { en: "Traditional Egyptian Lunch", ru: "Традиционный египетский обед", de: "Traditionelles ägyptisches Mittagessen", ar: "غداء مصري تقليدي" }
     ],
     included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Bus Transport", ru: "Автобус", de: "Bustransport", ar: "النقل بالحافلة" },
-      { en: "Entrance Fees", ru: "Входные билеты", de: "Eintrittsgebühren", ar: "رسوم الدخول" },
-      { en: "Guide & Lunch", ru: "Гид и обед", de: "Führer & Mittagessen", ar: "مرشد وغداء" }
-    ]
-  },
-  {
-    id: "54",
-    slug: "aswan-private-guided-tour",
-    name: {
-      en: "Aswan Private Guided Tour: Tailored Nile Experience",
-      ru: "Частный тур в Асуан: индивидуальный опыт",
-      de: "Private Assuan-Führung: Maßgeschneidertes Nil-Erlebnis",
-      ar: "جولة خاصة في أسوان: تجربة نيلية مخصصة"
-    },
-    description: {
-      en: "Create your perfect Aswan day with a private guide. Visit Philae Temple, the High Dam, a Nubian Village, and sail on a felucca at your own pace.",
-      ru: "Создайте идеальный день в Асуане с частным гидом.",
-      de: "Gestalten Sie Ihren perfekten Tag in Assuan mit einem privaten Führer.",
-      ar: "اصنع يومك المثالي في أسوان مع مرشد خاص"
-    },
-    duration: { en: "8 hours", ru: "8 часов", de: "8 Stunden", ar: "8 ساعات" },
-    price: 120,
-    currency: "EUR",
-    category: "Aswan",
-    popular: false,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2026/02/IMG-20260212-WA0029-e1770908632870.jpg",
-    rating: 4.8,
-    highlights: [
-      { en: "Private Guide", ru: "Частный гид", de: "Privater Führer", ar: "مرشد خاص" },
-      { en: "Philae Temple", ru: "Храм Филе", de: "Philae-Tempel", ar: "معبد فيلة" },
-      { en: "Nubian Village", ru: "Нубийская деревня", de: "Nubisches Dorf", ar: "القرية النوبية" },
-      { en: "Felucca Ride", ru: "Прогулка на фелуке", de: "Feluke-Fahrt", ar: "ركوب الفلوكة" }
+      { en: "Hotel pickup & return (01:00 AM – 11:00 PM)", ru: "Трансфер от отеля и обратно (01:00 – 23:00)", de: "Hotelaufholung & Rückfahrt (01:00 – 23:00)", ar: "pickup وإعادة من الفندق (01:00 – 23:00)" },
+      { en: "Private car & professional driver", ru: "Частный автомобиль и профессиональный водитель", de: "Privatwagen & professioneller Fahrer", ar: "سيارة خاصة وسائق محترف" },
+      { en: "Licensed Egyptologist guide", ru: "Лицензированный гид-египтолог", de: "Lizenzierter Ägyptologe", ar: "مرشد مصري مرخص" },
+      { en: "Traditional Egyptian lunch at a renowned restaurant", ru: "Традиционный обед в известном ресторане", de: "Traditionelles Mittagessen in einem bekannten Restaurant", ar: "غداء مصري تقليدي في مطعم مشهور" },
+      { en: "All entrance fees", ru: "Все входные билеты", de: "Alle Eintrittskarten", ar: "جميع رسوم الدخول" },
+      { en: "Water and full assistance", ru: "Вода и полная помощь", de: "Wasser und vollständige Hilfe", ar: "مياه ومساعدة كاملة" }
     ],
-    included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Private Vehicle & Guide", ru: "Автомобиль и гид", de: "Privatfahrzeug & Führer", ar: "مركبة ومرشد خاص" },
-      { en: "Entrance Fees", ru: "Входные билеты", de: "Eintrittsgebühren", ar: "رسوم الدخول" },
-      { en: "Lunch", ru: "Обед", de: "Mittagessen", ar: "غداء" }
-    ]
-  },
-  {
-    id: "57",
-    slug: "marina-shopping-tour",
-    name: {
-      en: "Marina & Shopping Tour: Port Ghalib Experience",
-      ru: "Марина и шопинг: Порт Галиб",
-      de: "Marina- & Shopping-Tour: Port-Ghalib-Erlebnis",
-      ar: "جولة المارينا والتسوق: تجربة بورت غالب"
-    },
-    description: {
-      en: "Spend a relaxing day at Port Ghalib Marina. Shop at boutique stores, dine at seaside restaurants, and enjoy the vibrant atmosphere of this luxury resort area.",
-      ru: "Проведите расслабляющий день в марине Порт Галиб.",
-      de: "Verbingen Sie einen entspannten Tag an der Port-Ghalib-Marina.",
-      ar: "اقضِ يوماً مريحاً في مارينا بورت غالب"
-    },
-    duration: { en: "4 hours", ru: "4 часа", de: "4 Stunden", ar: "4 ساعات" },
-    price: 20,
-    currency: "EUR",
-    category: "Entertainment",
-    popular: false,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/6-1.jpg",
-    rating: 4.4,
-    highlights: [
-      { en: "Port Ghalib Marina", ru: "Марина Порт Галиб", de: "Port-Ghalib-Marina", ar: "مارينا بورت غالب" },
-      { en: "Boutique Shopping", ru: "Бутики", de: "Boutique-Shopping", ar: "تسوق في البوتيكات" },
-      { en: "Seaside Dining", ru: "Рестораны у моря", de: "Restaurants am Meer", ar: "تناول الطعام على البحر" },
-      { en: "Scenic Walk", ru: "Прогулка", de: "Spaziergang", ar: "نزهة" }
-    ],
-    included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" }
-    ]
-  },
-  {
-    id: "58",
-    slug: "dolphin-show-aquarium",
-    name: {
-      en: "Dolphin Show & Aquarium: Family Fun Day",
-      ru: "Шоу дельфинов и аквариум: семейный день",
-      de: "Delfinshow & Aquarium: Familientag",
-      ar: "عرض الدلافين والأكواريوم: يوم عائلي ممتع"
-    },
-    description: {
-      en: "Enjoy a spectacular dolphin show and explore the aquarium with hundreds of marine species. A perfect family-friendly entertainment experience.",
-      ru: "Насладитесь зрелищным шоу дельфинов и аквариумом с сотнями морских видов.",
-      de: "Genießen Sie eine spektakuläre Delfinshow und erkunden Sie das Aquarium mit Hunderten von Meeresarten.",
-      ar: "استمتع بعرض الدلافين المذهل واستكشف الأكواريوم"
-    },
-    duration: { en: "3 hours", ru: "3 часа", de: "3 Stunden", ar: "3 ساعات" },
-    price: 30,
-    currency: "EUR",
-    category: "Entertainment",
-    popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/6-1.jpg",
-    rating: 4.6,
-    highlights: [
-      { en: "Dolphin Performance", ru: "Шоу дельфинов", de: "Delfinvorstellung", ar: "عرض الدلافين" },
-      { en: "Aquarium Exhibits", ru: "Аквариум", de: "Aquarium-Ausstellungen", ar: "معروضات الأكواريوم" },
-      { en: "Interactive Sessions", ru: "Интерактив", de: "Interaktive Sitzungen", ar: "جلسات تفاعلية" },
-      { en: "Children's Area", ru: "Детская зона", de: "Kinderbereich", ar: "منطقة الأطفال" }
-    ],
-    included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Show & Aquarium Entry", ru: "Входные билеты", de: "Show- & Aquarium-Eintritt", ar: "دخول العرض والأكواريوم" }
+    gallery: [
+      "/photos/abydos-dendera-private-car/00161367b8ad7e5a05579d853f97bf044a0af615c7c2c24b3fa35e66b3be8a10.avif",
+      "/photos/abydos-dendera-private-car/12.jpeg",
+      "/photos/abydos-dendera-private-car/1c.jpg",
+      "/photos/abydos-dendera-private-car/1e.jpg",
+      "/photos/abydos-dendera-private-car/23.jpg",
+      "/photos/abydos-dendera-private-car/32089670d7fa548b58fe63edbbddbdceac2849863bafb8cf7b8aa5c34dbf5d22.avif",
+      "/photos/abydos-dendera-private-car/62ad976d1f8d40da6d430b3e130df1d16e553295bcf405448f1756055ffc96dc.avif",
+      "/photos/abydos-dendera-private-car/6611bc8286eb4b235fc3f2b178d186b7c1ba3a8db017265f155aee2dbfa96f73.avif",
+      "/photos/abydos-dendera-private-car/68.jpg",
+      "/photos/abydos-dendera-private-car/9aa88601fafe6431ea682743607cfc5d9cd6d124a3a2508143bb1bb29958bfef.avif",
+      "/photos/abydos-dendera-private-car/9c.jpg",
+      "/photos/abydos-dendera-private-car/9c83dc2705990b360ecc4394c678bcae0dd48ef045fb722c8023b95c95c3d436.avif",
+      "/photos/abydos-dendera-private-car/9f702a679cc7aa2907e94efc4431a44a62ae55d60dc5e18bd24570c0329f81b5.avif",
+      "/photos/abydos-dendera-private-car/a032e9961de3973b4bef09e074614713814ab926c485b957e2a4762185f20aae.avif",
+      "/photos/abydos-dendera-private-car/abydos-lake-with-egypt-tour-magic.webp",
+      "/photos/abydos-dendera-private-car/c69dbd0ca3c479ca4360439d58e420d6ef0afccc2535d6f93db5f81f61031a00.avif",
+      "/photos/abydos-dendera-private-car/caption.jpg",
+      "/photos/abydos-dendera-private-car/dendera-and-abydos-temples-on-a-private-tour-from-hurghada-3.webp",
+      "/photos/abydos-dendera-private-car/e0.jpg",
+      "/photos/abydos-dendera-private-car/explore-abydos-temple-with-egypt-tour-magic.webp",
+      "/photos/abydos-dendera-private-car/f271e3cbeb3fbd2fe8af7351c04935dc6773ce65c76009464ffc68c558a430a3.avif",
+      "/photos/abydos-dendera-private-car/images (1).jpg",
+      "/photos/abydos-dendera-private-car/images (2).jpg",
+      "/photos/abydos-dendera-private-car/images (3).jpg",
+      "/photos/abydos-dendera-private-car/images (4).jpg",
+      "/photos/abydos-dendera-private-car/images (5).jpg",
+      "/photos/abydos-dendera-private-car/images.jpg",
+      "/photos/abydos-dendera-private-car/Luxor-Dendera-Abydos-Tour-1-webp.webp"
     ]
   },
   {
     id: "60",
     slug: "cairo-bus-trip",
-    name: { en: "Cairo Bus Tour: Pyramids, Sphinx & Museum Day", ru: "Автобусный тур в Каир: пирамиды, сфинкс и музей", de: "Kairo Busreise: Pyramiden, Sphinx und Museum", ar: "رحلة حافلة القاهرة: الأهرامات وأبو الهول والمتحف" },
-    description: { en: "Embark on an unforgettable journey to Cairo, the bustling capital where ancient wonders meet modern life. Visit the Pyramids of Giza, the Sphinx, and the Egyptian Museum.", ru: "Отправьтесь в незабываемое путешествие в Каир, где древние чудеса встречаются с современной жизнью.", de: "Begeben Sie sich auf eine unvergessliche Reise nach Kairo, wo antike Wunder auf das moderne Leben treffen.", ar: "انطلق في رحلة لا تنسى إلى القاهرة، حيث تلتقي العجائب القديمة بالحياة العصرية" },
-    duration: { en: "1 day", ru: "1 день", de: "1 Tag", ar: "يوم واحد" },
-    price: 70,
+    name: {
+      en: "Cairo Classic Bus Tour – National Museum of Egyptian Civilization",
+      ru: "Классический автобусный тур в Каир – Национальный музей египетской цивилизации",
+      de: "Kairo Klassische Bustour – Nationalmuseum der ägyptischen Zivilisation",
+      ar: "جولة حافلة القاهرة الكلاسيكية – المتحف القومي للحضارة المصرية"
+    },
+    description: {
+      en: "Travel comfortably aboard a premium modern coach (Large Group Bus, up to 50 seats) to the heart of ancient Egypt. This tour takes you to the majestic Pyramids of Giza, the mysterious Great Sphinx, the lively Khan el Khalili market, and the impressive National Museum of Egyptian Civilization, which showcases the complete history of Egyptian civilization, including royal mummies. Savor a traditional Egyptian lunch at a famous local restaurant. Perfect for large groups seeking excellent value and comfort. Hotel pickup: 01:00 AM | Return: by 11:00 PM. Return to your hotel filled with unforgettable memories, stunning photos, and stories that will stay with you forever.",
+      ru: "Отправьтесь в незабываемое путешествие в Каир на современном комфортабельном автобусе (большой группы, до 50 мест). Посетите пирамиды Гизы, Сфинкса, базар Хан эль-Халили и Национальный музей египетской цивилизации с королевскими мумиями. Обед в традиционном ресторане. Выезд из отеля: 01:00 | Возврат: к 23:00.",
+      de: "Begeben Sie sich auf eine unvergessliche Reise nach Kairo mit einem modernen Luxusbus (Großgruppenbus, bis 50 Sitze). Besuchen Sie die Pyramiden, die Sphinx, den Khan el-Khalili-Basar und das Nationalmuseum der ägyptischen Zivilisation (NMEC), einschließlich königlicher Mumien. Mittagessen in einem traditionellen Restaurant. Abfahrt: 01:00 Uhr | Rückkehr: bis 23:00 Uhr.",
+      ar: "سافر براحة على متن حافلة حديثة (حافلة كبيرة للمجموعات، حتى 50 مقعداً) إلى قلب مصر القديمة. تأخذك هذه الجولة إلى أهرامات الجيزة، وأبو الهول العظيم، وسوق خان الخليلي، والمتحف القومي للحضارة المصرية المثير للإعجاب بما في ذلك المومياوات الملكية. الانطلاق من الفندق: 01:00 صباحاً | العودة: بحلول 11:00 مساءً."
+    },
+    duration: { en: "1 day (01:00 AM – 11:00 PM)", ru: "1 день (01:00–23:00)", de: "1 Tag (01:00–23:00 Uhr)", ar: "يوم واحد (01:00 ص – 11:00 م)" },
+    price: 60,
     currency: "EUR",
     category: "Cairo",
-    popular: false,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/6f5ef5cdb9eb8091f6c44edae5f89f75.jpg",
-    rating: 4.6,
+    popular: true,
+    image: "/photos/cairo-classic-bus/efae4e06895ff55aea22b7c87c125525.jpg",
+    rating: 4.8,
     highlights: [
+      { en: "Large Group Bus (Up to 50 Seats)", ru: "Большой автобус (до 50 мест)", de: "Großgruppenbus (bis 50 Sitze)", ar: "حافلة كبيرة للمجموعات (حتى 50 مقعداً)" },
       { en: "Pyramids of Giza", ru: "Пирамиды Гизы", de: "Pyramiden von Gizeh", ar: "أهرامات الجيزة" },
-      { en: "The Sphinx", ru: "Сфинкс", de: "Sphinx", ar: "أبو الهول" },
-      { en: "Egyptian Museum", ru: "Египетский музей", de: "Ägyptisches Museum", ar: "المتحف المصري" },
-      { en: "Old Cairo", ru: "Старый Каир", de: "Alt-Kairo", ar: "القاهرة القديمة" }
+      { en: "The Great Sphinx", ru: "Великий Сфинкс", de: "Die Große Sphinx", ar: "أبو الهول العظيم" },
+      { en: "National Museum of Egyptian Civilization", ru: "Национальный музей египетской цивилизации", de: "Nationalmuseum der ägyptischen Zivilisation", ar: "المتحف القومي للحضارة المصرية" },
+      { en: "Khan el Khalili Bazaar", ru: "Базар Хан эль-Халили", de: "Khan el-Khalili Basar", ar: "سوق خان الخليلي" }
     ],
     included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
+      { en: "Premium Modern Coach Transfer", ru: "Трансфер на современном автобусе", de: "Premium-Luxusbus-Transfer", ar: "نقل بالحافلة الحديثة الفاخرة" },
       { en: "Entrance Fees", ru: "Входные билеты", de: "Eintrittsgebühren", ar: "رسوم الدخول" },
       { en: "Professional Guide", ru: "Гид", de: "Führer", ar: "مرشد" },
-      { en: "Lunch", ru: "Обед", de: "Mittagessen", ar: "غداء" }
+      { en: "Lunch at Restaurant", ru: "Обед в ресторане", de: "Mittagessen im Restaurant", ar: "غداء في مطعم" }
+    ],
+    gallery: [
+      "/photos/cairo-classic-bus/efae4e06895ff55aea22b7c87c125525.jpg",
+      "/photos/cairo-classic-bus/fb397ec49711478e26a45147161ff1e6.jpg",
+      "/photos/cairo-classic-bus/64361068501abe8f3e658f5d998dded5.jpg",
+      "/photos/cairo-classic-bus/675bc4cd2f8e0118d4b3c7dd52e4fdb2.jpg",
+      "/photos/cairo-classic-bus/8109a7683768b9b8fad4d6ccdaa5ed9b.jpg",
+      "/photos/cairo-classic-bus/a02172636e75f2566e9789f09da2ef56.jpg",
+      "/photos/cairo-classic-bus/aaa9bcf4bd9a7e509f5dcbb47899fef6.jpg",
+      "/photos/cairo-classic-bus/e1461da5f2119c1df39f6ee829598bc6.jpg",
+      "/photos/cairo-classic-bus/f3941e93963f2067173ca0bf0cb5cc23.jpg",
+      "/photos/cairo-classic-bus/download.png",
+      "/photos/cairo-classic-bus/download (1).png",
+      "/photos/cairo-classic-bus/unnamed.webp",
+      "/photos/cairo-classic-bus/unnamed (1).webp",
+      "/photos/cairo-classic-bus/unnamed (2).webp",
+      "/photos/cairo-classic-bus/unnamed (3).webp",
+      "/photos/cairo-classic-bus/unnamed (4).webp",
+      "/photos/cairo-classic-bus/unnamed (5).webp",
+      "/photos/cairo-classic-bus/unnamed (6).webp",
+      "/photos/cairo-classic-bus/unnamed (7).webp",
+      "/photos/cairo-classic-bus/unnamed (8).webp",
+      "/photos/cairo-classic-bus/unnamed (9).webp",
+      "/photos/cairo-classic-bus/unnamed (10).webp",
+      "/photos/cairo-classic-bus/unnamed (11).webp",
+      "/photos/cairo-classic-bus/unnamed (12).webp"
     ]
   },
   {
     id: "63",
-    slug: "luxor-vip-8-pax",
-    name: { en: "Luxor VIP Tour: Private Luxury for 8 Guests", ru: "VIP тур в Луксор: частная роскошь для 8 гостей", de: "Luxor VIP-Tour: Privater Luxus für 8 Gäste", ar: "جولة الأقصر VIP: فخامة خاصة لـ 8 ضيوف" },
-    description: { en: "Indulge in the ultimate luxury journey to Luxor with private transportation, expert guide, and premium service for up to 8 guests.", ru: "Насладитесь роскошным путешествием в Луксор с частным транспортом и гидом.", de: "Gönnen Sie sich die ultimative Luxusreise nach Luxor mit privatem Transport und Guide.", ar: "انغمس في رحلة فخمة إلى الأقصر مع وسائل نقل خاصة ومرشد خبير" },
-    duration: { en: "1 day", ru: "1 день", de: "1 Tag", ar: "يوم واحد" },
-    price: 280,
+    slug: "luxor-golden-bus",
+    name: {
+      en: "Luxor Golden Bus Tour (Large Group Bus, up to 50 seats)",
+      ru: "Луксор: Золотой автобус (большой автобус до 50 мест)",
+      de: "Luxor Golden Bus Tour (Großgruppenbus, bis 50 Sitzplätze)",
+      ar: "جولة الأقصر بالباص الذهبي (باص كبير حتى 50 مقعد)"
+    },
+    description: {
+      en: "Embark on an epic day trip to the world's greatest open-air museum — Luxor. Travel comfortably in a modern luxury coach (air-conditioned, WiFi) from Hurghada. Explore the magnificent Karnak Temple, the impressive Luxor Temple, the legendary Valley of the Kings (including Tutankhamun's tomb option), the beautiful Temple of Hatshepsut, and the Colossi of Memnon. Enjoy a delicious lunch at a renowned restaurant with traditional Egyptian cuisine.",
+      ru: "Отправьтесь в эпическое дневное путешествие к величайшему в мире музею под открытым небом — Луксор. Комфортно путешествуйте в современном лукс-автобусе (кондиционер, WiFi) из Хургады. Исследуйте великолепный храм Карнак, впечатляющий храм Луксора, легендарную Долину Царей (включая вариант с гробницей Тутанхамона), прекрасный храм Хатшепсут и Колоссы Мемнона. Наслаждайтесь вкусным обедом в ресторане с традиционной египетской кухней.",
+      de: "Begeben Sie sich auf eine epische Tagesreise zum größten Freilichtmuseum der Welt — Luxor. Reisen Sie bequem in einem modernen Luxusbus (klimatisiert, WLAN) von Hurghada. Erkunden Sie den prächtigen Karnak-Tempel, den eindrucksvollen Luxor-Tempel, das legendäre Tal der Könige (inklusive Tutanchamun-Grab-Option), den wunderschönen Hatschepsut-Tempel und die Kolosse des Memnon. Genießen Sie ein köstliches Mittagessen in einem renommierten Restaurant mit traditioneller ägyptischer Küche.",
+      ar: "انطلق في رحلة يومية ملحمية إلى أعظم متحف في الهواء الطلق في العالم — الأقصر. سافر براحة في حافلة فاخرة حديثة (مكيفة، واي فاي) من الغردقة. استكشف معبد الكرنك الرائع، معبد الأقصر المبهر، وادي الملوك الأسطوري (بما في ذلك خيار مقبرة توت عنخ آمون)، معبد حتشبسوت الجميل، وأعمدة ممنون. استمتع بغداء لذيذ في مطعم مشهور بمطبخه المصري التقليدي."
+    },
+    duration: { en: "12 hours (01:00 AM – 11:00 PM)", ru: "12 часов (01:00 – 23:00)", de: "12 Stunden (01:00 – 23:00)", ar: "12 ساعة (01:00 – 23:00)" },
+    price: 75,
     currency: "EUR",
     category: "Luxor",
-    popular: false,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/6-2.jpg",
-    rating: 4.9,
+    popular: true,
+    image: "/photos/luxor-golden-bus/129871954.webp",
+    rating: 4.8,
     highlights: [
-      { en: "Private Vehicle", ru: "Частный автомобиль", de: "Privatfahrzeug", ar: "مركبة خاصة" },
-      { en: "VIP Guide", ru: "VIP гид", de: "VIP-Führer", ar: "مرشد VIP" },
-      { en: "Karnak Temple", ru: "Храм Карнак", de: "Karnak-Tempel", ar: "معبد الكرنك" },
-      { en: "Valley of the Kings", ru: "Долина Царей", de: "Tal der Könige", ar: "وادي الملوك" }
+      { en: "Modern Luxury Coach (AC, WiFi)", ru: "Современный лукс-автобус (кондиционер, WiFi)", de: "Moderner Luxusbus (Klima, WLAN)", ar: "حافلة فاخرة حديثة (مكيفة، واي فاي)" },
+      { en: "Valley of the Kings (Tutankhamun option)", ru: "Долина Царей (вариант с Тутанхамоном)", de: "Tal der Könige (Tutanchamun-Option)", ar: "وادي الملوك (خيار مقبرة توت عنخ آمون)" },
+      { en: "Karnak & Luxor Temples", ru: "Храмы Карнак и Луксор", de: "Karnak- & Luxor-Tempel", ar: "معابد الكرنك والأقصر" },
+      { en: "Temple of Hatshepsut & Colossi of Memnon", ru: "Храм Хатшепсут и Колоссы Мемнона", de: "Hatschepsut-Tempel & Kolosse des Memnon", ar: "معبد حتشبسوت وأعمدة ممنون" },
+      { en: "Delicious Lunch at Renowned Restaurant", ru: "Вкусный обед в ресторане", de: "Köstliches Mittagessen in einem Restaurant", ar: "غداء لذيذ في مطعم مشهور" }
     ],
     included: [
-      { en: "Private Transfer", ru: "Частный трансфер", de: "Privater Transfer", ar: "نقل خاص" },
-      { en: "VIP Guide", ru: "VIP гид", de: "VIP-Führer", ar: "مرشد VIP" },
-      { en: "All Entrance Fees", ru: "Все билеты", de: "Alle Eintrittsgebühren", ar: "جميع رسوم الدخول" },
-      { en: "Lunch at Restaurant", ru: "Обед в ресторане", de: "Mittagessen im Restaurant", ar: "غداء في مطعم" }
+      { en: "Hotel pickup & return (01:00 AM – 11:00 PM)", ru: "Трансфер от отеля и обратно (01:00 – 23:00)", de: "Hotelaufholung & Rückfahrt (01:00 – 23:00)", ar: "pickup وإعادة من الفندق (01:00 – 23:00)" },
+      { en: "Modern luxury coach (air-conditioned, WiFi)", ru: "Современный лукс-автобус (кондиционер, WiFi)", de: "Moderner Luxusbus (klimatisiert, WLAN)", ar: "حافلة فاخرة حديثة (مكيفة، واي فاي)" },
+      { en: "Professional guide", ru: "Профессиональный гид", de: "Professioneller Führer", ar: "مرشد محترف" },
+      { en: "Delicious lunch at a renowned restaurant", ru: "Вкусный обед в ресторане", de: "Köstliches Mittagessen in einem Restaurant", ar: "غداء لذيذ في مطعم مشهور" },
+      { en: "All entrance fees", ru: "Все входные билеты", de: "Alle Eintrittskarten", ar: "جميع رسوم الدخول" },
+      { en: "Water and full assistance", ru: "Вода и полная помощь", de: "Wasser und vollständige Hilfe", ar: "مياه ومساعدة كاملة" }
+    ],
+    gallery: [
+      "/photos/luxor-golden-bus/129871954.webp",
+      "/photos/luxor-golden-bus/129871970.webp",
+      "/photos/luxor-golden-bus/129871986.webp",
+      "/photos/luxor-golden-bus/129872007.webp",
+      "/photos/luxor-golden-bus/129872024.webp",
+      "/photos/luxor-golden-bus/129872115.webp",
+      "/photos/luxor-golden-bus/129872187.webp",
+      "/photos/luxor-golden-bus/129872254.webp",
+      "/photos/luxor-golden-bus/129872351.webp",
+      "/photos/luxor-golden-bus/129872557.webp",
+      "/photos/luxor-golden-bus/129872643.webp",
+      "/photos/luxor-golden-bus/129873146.webp",
+      "/photos/luxor-golden-bus/129873214.webp",
+      "/photos/luxor-golden-bus/129873274.webp",
+      "/photos/luxor-golden-bus/129873338.webp",
+      "/photos/luxor-golden-bus/129873587.webp",
+      "/photos/luxor-golden-bus/129873671.webp",
+      "/photos/luxor-golden-bus/14e58388fbdcd211245033c1ec7f8d51.jpg",
+      "/photos/luxor-golden-bus/1d130b682a0222bb1c3e40327c753629.jpg",
+      "/photos/luxor-golden-bus/56cb0498784df06160aefad4d4599bb1.jpg"
     ]
   },
   {
     id: "64",
-    slug: "luxor-bus-trip",
-    name: { en: "Luxor Bus Tour: Kings' Valley, Karnak & Nile Day", ru: "Автобусный тур в Луксор: Долина Царей, Карнак и Нил", de: "Luxor Busreise: Tal der Könige, Karnak und Nil", ar: "رحلة حافلة الأقصر: وادي الملوك والكرنك ويوم النيل" },
-    description: { en: "Embark on an unforgettable journey from Hurghada to the timeless land of the pharaohs - Luxor. Visit the Valley of the Kings, Karnak Temple, and more.", ru: "Отправьтесь в незабываемое путешествие из Хургады в вечную землю фараонов - Луксор.", de: "Begeben Sie sich auf eine unvergessliche Reise von Hurghada in das zeitlose Land der Pharaonen - Luxor.", ar: "انطلق في رحلة لا تُنسى من الغردقة إلى أرض الفراعنة الخالدة - الأقصر" },
-    duration: { en: "1 day", ru: "1 день", de: "1 Tag", ar: "يوم واحد" },
-    price: 65,
+    slug: "luxor-premium-minibus",
+    name: {
+      en: "Luxor Premium Minibus Tour (Minibus, up to 8 seats)",
+      ru: "Луксор: Премиум минибус тур (минибус до 8 мест)",
+      de: "Luxor Premium Minibus Tour (Minibus, bis 8 Plätze)",
+      ar: "جولة الأقصر بالباص المميز (باص حتى 8 مقاعد)"
+    },
+    description: {
+      en: "Experience Luxor in greater comfort and with more personal attention on this premium minibus tour (maximum 8 passengers). Visit the colossal Karnak Temple, Luxor Temple, the famous Valley of the Kings, Hatshepsut Temple, and the Colossi of Memnon. A dedicated guide provides detailed explanations, and you will enjoy a special lunch at a high-quality restaurant serving authentic Egyptian dishes. Ideal for small groups seeking extra comfort and flexibility.",
+      ru: "Испытайте Луксор в большем комфорте и с персональным вниманием в этом премиум минибус туре (максимум 8 пассажиров). Посетите колоссальный храм Карнак, храм Луксора, знаменитую Долину Царей, храм Хатшепсут и Колоссы Мемнона. Персональный гид подробно расскажет обо всем, а вы насладитесь особым обедом в ресторане высокого класса с аутентичными египетскими блюдами.",
+      de: "Erleben Sie Luxor mit mehr Komfort und persönlicher Aufmerksamkeit auf dieser Premium-Minibus-Tour (maximal 8 Fahrgäste). Besuchen Sie den gewaltigen Karnak-Tempel, den Luxor-Tempel, das berühmte Tal der Könige, den Hatschepsut-Tempel und die Kolosse des Memnon. Ein ausgewiesener Führer bietet detaillierte Erklärungen genießen Sie ein besonderes Mittagessen in einem hochwertigen Restaurant mit authentischen ägyptischen Gerichten.",
+      ar: "استمتع بالأقصر بأعلى راحة واهتمام شخصي في جولة الباص المميز (8 ركاب كحد أقصى). زُر معبد الكرنك الضخم، معبد الأقصر، وادي الملوك الشهير، معبد حتشبسوت، وأعمدة ممنون. مرشد مخصص يقدم شروحات مفصلة، وستستمتع بغداء خاص في مطعم راقي يقدم أطباقاً مصرية أصيلة."
+    },
+    duration: { en: "12 hours (01:00 AM – 11:00 PM)", ru: "12 часов (01:00 – 23:00)", de: "12 Stunden (01:00 – 23:00)", ar: "12 ساعة (01:00 – 23:00)" },
+    price: 85,
     currency: "EUR",
     category: "Luxor",
     popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/Best-Time-to-Visit-Luxor-and-Thebes.webp",
-    rating: 4.7,
+    image: "/photos/luxor-premium-minibus/129873760.webp",
+    rating: 4.8,
     highlights: [
+      { en: "Karnak & Luxor Temples", ru: "Храмы Карнак и Луксор", de: "Karnak- & Luxor-Tempel", ar: "معابد الكرنك والأقصر" },
       { en: "Valley of the Kings", ru: "Долина Царей", de: "Tal der Könige", ar: "وادي الملوك" },
-      { en: "Karnak Temple", ru: "Храм Карнак", de: "Karnak-Tempel", ar: "معبد الكرنك" },
-      { en: "Nile River Views", ru: "Вид на Нил", de: "Nilblick", ar: "إطلالة على النيل" },
-      { en: "Colossi of Memnon", ru: "Колоссы Мемнона", de: "Kolosse von Memnon", ar: "تماثيل ممنون" }
+      { en: "Hatshepsut Temple & Colossi of Memnon", ru: "Храм Хатшепсут и Колоссы Мемнона", de: "Hatschepsut-Tempel & Kolosse des Memnon", ar: "معبد حتشبسوت وأعمدة ممنون" },
+      { en: "Premium Lunch at High-Quality Restaurant", ru: "Премиальный обед в ресторане высокого класса", de: "Premium-Mittagessen in einem hochwertigen Restaurant", ar: "غداء فاخر في مطعم راقي" },
+      { en: "Professional Egyptologist Guide", ru: "Профессиональный гид-египтолог", de: "Professioneller Ägyptologe", ar: "مرشد مصري محترف" }
     ],
     included: [
-      { en: "Bus Transfer", ru: "Трансфер на автобусе", de: "Bustransfer", ar: "نقل بالحافلة" },
-      { en: "Entrance Fees", ru: "Входные билеты", de: "Eintrittsgebühren", ar: "رسوم الدخول" },
-      { en: "Guide", ru: "Гид", de: "Führer", ar: "مرشد" },
-      { en: "Lunch", ru: "Обед", de: "Mittagessen", ar: "غداء" }
+      { en: "Hotel pickup & return (01:00 AM – 11:00 PM)", ru: "Трансфер от отеля и обратно (01:00 – 23:00)", de: "Hotelaufholung & Rückfahrt (01:00 – 23:00)", ar: "pickup وإعادة من الفندق (01:00 – 23:00)" },
+      { en: "Premium minibus transportation (up to 8 seats)", ru: "Премиум минибус (до 8 мест)", de: "Premium-Minibus (bis 8 Plätze)", ar: "نقل بالباص المميز (حتى 8 مقاعد)" },
+      { en: "Professional Egyptologist guide", ru: "Профессиональный гид-египтолог", de: "Professioneller Ägyptologe", ar: "مرشد مصري محترف" },
+      { en: "Special lunch at a high-quality restaurant", ru: "Особый обед в ресторане высокого класса", de: "Besonderes Mittagessen in einem hochwertigen Restaurant", ar: "غداء خاص في مطعم راقي" },
+      { en: "All entrance fees", ru: "Все входные билеты", de: "Alle Eintrittskarten", ar: "جميع رسوم الدخول" },
+      { en: "Water and full assistance", ru: "Вода и полная помощь", de: "Wasser und vollständige Hilfe", ar: "مياه ومساعدة كاملة" }
+    ],
+    gallery: [
+      "/photos/luxor-premium-minibus/129873760.webp",
+      "/photos/luxor-premium-minibus/129873832.webp",
+      "/photos/luxor-premium-minibus/129874042.webp",
+      "/photos/luxor-premium-minibus/131819874.webp",
+      "/photos/luxor-premium-minibus/131819904.webp",
+      "/photos/luxor-premium-minibus/131819935.webp",
+      "/photos/luxor-premium-minibus/131820022.webp",
+      "/photos/luxor-premium-minibus/131820048.webp",
+      "/photos/luxor-premium-minibus/131820073.webp",
+      "/photos/luxor-premium-minibus/131820094.webp",
+      "/photos/luxor-premium-minibus/131820117.webp",
+      "/photos/luxor-premium-minibus/131820141.webp",
+      "/photos/luxor-premium-minibus/131820190.webp",
+      "/photos/luxor-premium-minibus/131820216.webp",
+      "/photos/luxor-premium-minibus/131820239.webp",
+      "/photos/luxor-premium-minibus/131820279.webp",
+      "/photos/luxor-premium-minibus/131820297.webp",
+      "/photos/luxor-premium-minibus/134331068.webp",
+      "/photos/luxor-premium-minibus/134331086.webp",
+      "/photos/luxor-premium-minibus/134331104.webp",
+      "/photos/luxor-premium-minibus/134331123.webp",
+      "/photos/luxor-premium-minibus/134331139.webp",
+      "/photos/luxor-premium-minibus/134331158.webp",
+      "/photos/luxor-premium-minibus/134331177.webp",
+      "/photos/luxor-premium-minibus/134331200.webp",
+      "/photos/luxor-premium-minibus/134331228.webp",
+      "/photos/luxor-premium-minibus/134331253.webp",
+      "/photos/luxor-premium-minibus/134331276.webp",
+      "/photos/luxor-premium-minibus/134331352.webp",
+      "/photos/luxor-premium-minibus/134331403.webp",
+      "/photos/luxor-premium-minibus/395369751.webp",
+      "/photos/luxor-premium-minibus/395369956.webp",
+      "/photos/luxor-premium-minibus/395370026.webp",
+      "/photos/luxor-premium-minibus/395370087.webp",
+      "/photos/luxor-premium-minibus/432237747.jpg",
+      "/photos/luxor-premium-minibus/432237748.jpg",
+      "/photos/luxor-premium-minibus/432237750.jpg",
+      "/photos/luxor-premium-minibus/432237752.jpg",
+      "/photos/luxor-premium-minibus/432237756.jpg",
+      "/photos/luxor-premium-minibus/432237760.jpg",
+      "/photos/luxor-premium-minibus/432237761.jpg",
+      "/photos/luxor-premium-minibus/432237763.jpg",
+      "/photos/luxor-premium-minibus/432237766.jpg",
+      "/photos/luxor-premium-minibus/432237769.jpg",
+      "/photos/luxor-premium-minibus/473125194.webp",
+      "/photos/luxor-premium-minibus/473125235.webp",
+      "/photos/luxor-premium-minibus/473125282.webp",
+      "/photos/luxor-premium-minibus/473125330.webp",
+      "/photos/luxor-premium-minibus/473125372.webp",
+      "/photos/luxor-premium-minibus/473125426.webp",
+      "/photos/luxor-premium-minibus/473125471.webp",
+      "/photos/luxor-premium-minibus/473125515.webp",
+      "/photos/luxor-premium-minibus/473125560.webp",
+      "/photos/luxor-premium-minibus/473125605.webp",
+      "/photos/luxor-premium-minibus/473125654.webp"
     ]
   },
   {
     id: "65",
-    slug: "dolphin-world-trip",
-    name: { en: "Dolphin World Adventure Show", ru: "Шоу дельфинов", de: "Delfin-Welt-Abenteuershow", ar: "عرض عالم الدلافين" },
-    description: { en: "Experience one of the most modern delphiniums in the world with unforgettable dolphin and sea lion shows. Perfect for families and children.", ru: "Посетите один из самых современных дельфинариев с незабываемыми шоу дельфинов и морских львов.", de: "Erleben Sie eines der modernsten Delfinarien der Welt mit unvergesslichen Delfin- und Seelöwenshows.", ar: "استمتع بواحد من أحدث عروض الدلافين في العالم مع عروض لا تُنسى" },
-    duration: { en: "3 hours", ru: "3 часа", de: "3 Stunden", ar: "3 ساعات" },
+    slug: "dolphin-house-snorkeling",
+    name: {
+      en: "Dolphin House Snorkeling Tour from Hurghada",
+      ru: "Тур на Дельфиний дом снорклинг из Хургады",
+      de: "Dolphin House Schnorcheltour ab Hurghada",
+      ar: "جولة غوص دار الدلافين من الغردقة"
+    },
+    description: {
+      en: "The ultimate Red Sea adventure! Sail to the famous Dolphin House, one of the best places in Hurghada to meet wild dolphins in their natural environment.\n\nWhat you'll enjoy:\n• High chance to swim and play with friendly wild dolphins\n• Two excellent snorkeling stops on beautiful coral reefs\n• Fun boat ride with music and great atmosphere\n• Relaxing time on the boat\n\nThis is one of the most exciting and joyful tours in Hurghada — perfect for families, couples, and everyone who dreams of swimming with dolphins!\n\nReturn to your hotel filled with unforgettable memories, amazing dolphin photos, and stories that will stay with you forever.",
+      ru: "Абсолютное приключение в Красном море! Отправьтесь к знаменитому Дельфиньему дому — одному из лучших мест в Хургаде для встречи с дикими дельфинами в их естественной среде.\n\nЧто вас ждёт:\n• Высокий шанс поплавать и поиграть с дружелюбными дикими дельфинами\n• Отличные остановки для снорклинга на красивых коралловых рифах\n• Веселая поездка на лодке с музыкой и отличной атмосферой\n• Расслабляющее время на лодке\n\nЭто одно из самых захватывающих и радостных путешествий в Хургаде — идеально подходит для семей, пар и всех, кто мечтает поплавать с дельфинами!\n\nВернитесь в отель с незабываемыми воспоминаниями, потрясающими фотографиями дельфинов и историями, которые останутся с вами навсегда.",
+      de: "Das ultimative Rote Meer-Abenteuer! Segeln Sie zum berühmten Dolphin House, einem der besten Orte in Hurghada, um wilde Delfine in ihrer natürlichen Umgebung zu treffen.\n\nWas Sie erwartet:\n• Hohe Chance, mit freundlichen wilden Delfinen zu schwimmen und zu spielen\n• Zwei ausgezeichnete Schnorchelstopps an wunderschönen Korallenriffen\n• Spaß bei der Bootsfahrt mit Musik und toller Atmosphäre\n• Entspannte Zeit auf dem Boot\n\nDies ist eine der spannendsten und freudvollsten Touren in Hurghada — perfekt für Familien, Paare und alle, die davon träumen, mit Delfinen zu schwimmen!\n\nKehren Sie mit unvergesslichen Erinnerungen, tollen Delfinfotos und Geschichten, die Sie nie vergessen werden, in Ihr Hotel zurück.",
+      ar: "المغامرة النهائية في البحر الأحمر! انطلق إلى دار الدلافين الشهير، أحد أفضل الأماكن في الغردقة للقاء الدلافين البرية في بيئتها الطبيعية.\n\nما سيستمتع به:\n• فرصة كبيرة للسباح واللعب مع الدلافين البرية الودية\n• توقفان ممتازان للغوص في الشعاب المرجانية الجميلة\n• رحلة قارب ممتعة مع موسيقى وأجواء رائعة\n• وقت ممتع على متن القارب\n\nهذه واحدة من أكثر الرحلات إثارة ومتعة في الغردقة — مثالية للعائلات والأزواج وكل من يحلم بالسباح مع الدلافين!\n\n عُد إلى فندقك مليئاً بالذكريات التي لا تُنسى، وصور الدلافين المذهلة، والقصص التي ستبقى معك إلى الأبد."
+    },
+    duration: { en: "6–7 hours", ru: "6–7 часов", de: "6–7 Stunden", ar: "6–7 ساعات" },
     price: 25,
     currency: "EUR",
     category: "Entertainment",
     popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/6-1.jpg",
-    rating: 4.6,
-    highlights: [
-      { en: "Dolphin Show", ru: "Шоу дельфинов", de: "Delfinshow", ar: "عرض الدلافين" },
-      { en: "Sea Lion Show", ru: "Шоу морских львов", de: "Seelöwenshow", ar: "عرض أسد البحر" },
-      { en: "Swimming with Dolphins", ru: "Плавание с дельфинами", de: "Schwimmen mit Delfinen", ar: "السباحة مع الدلافين" },
-      { en: "Family Entertainment", ru: "Семейное развлечение", de: "Familienunterhaltung", ar: "ترفيه عائلي" }
-    ],
-    included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Show Entry", ru: "Вход на шоу", de: "Show-Eintritt", ar: "دخول العرض" },
-      { en: "Guide", ru: "Гид", de: "Führer", ar: "مرشد" }
-    ]
-  },
-  {
-    id: "67",
-    slug: "diving-trip",
-    name: { en: "Diving Adventure in Hurghada", ru: "Дайвинг приключение в Хургаде", de: "Tauchabenteuer in Hurghada", ar: "مغامرة الغوص في الغردقة" },
-    description: { en: "Dive into the crystal-clear waters of the Red Sea in Hurghada and experience a world of vibrant coral reefs and colorful marine life. Suitable for beginners and certified divers.", ru: "Погрузитесь в кристально чистые воды Красного моря и откройте мир ярких коралловых рифов.", de: "Tauchen Sie ein in das kristallklare Wasser des Roten Meeres und entdecken Sie eine Welt voller Korallenriffe.", ar: "اغوص في المياه الصافية للبحر الأحمر واستمتع بعالم من الشعاب المرجانية والحياة البحرية" },
-    duration: { en: "6 hours", ru: "6 часов", de: "6 Stunden", ar: "6 ساعات" },
-    price: 45,
-    currency: "EUR",
-    category: "Sea Adventures",
-    popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/900x600-1-50-c322de4c47adb1105ffc87ddcb85e30e.jpg",
+    image: "/photos/dolphin-house-snorkeling/dolphin-house-1.webp",
     rating: 4.8,
     highlights: [
-      { en: "2 Dives at Coral Reefs", ru: "2 погружения на рифах", de: "2 Tauchgänge an Korallenriffen", ar: "غطستان في الشعاب المرجانية" },
-      { en: "All Equipment Included", ru: "Всё оборудование", de: "Komplette Ausrüstung", ar: "جميع المعدات" },
-      { en: "Professional Instructor", ru: "Инструктор", de: "Professioneller Lehrer", ar: "مدرب محترف" },
-      { en: "Lunch on Board", ru: "Обед на борту", de: "Mittagessen an Bord", ar: "غداء على متن القارب" }
+      { en: "Swim with Wild Dolphins", ru: "Плавание с дикими дельфинами", de: "Mit wilden Delfinen schwimmen", ar: "السباحة مع الدلافين البرية" },
+      { en: "Two Snorkeling Stops on Coral Reefs", ru: "Две остановки для снорклинга на коралловых рифах", de: "Zwei Schnorchelstopps an Korallenriffen", ar: "توقفان للغوص على الشعاب المرجانية" },
+      { en: "Fun Boat Ride with Music", ru: "Веселая поездка на лодке с музыкой", de: "Spaßige Bootsfahrt mit Musik", ar: "رحلة قارب ممتعة مع موسيقى" },
+      { en: "Relaxing Time on the Boat", ru: "Расслабляющее время на лодке", de: "Entspannte Zeit auf dem Boot", ar: "وقت ممتع على متن القارب" }
     ],
     included: [
-      { en: "Hotel Transfer", ru: "Трансфер", de: "Transfer", ar: "التوصيل" },
-      { en: "Diving Equipment", ru: "Снаряжение для дайвинга", de: "Tauchausrüstung", ar: "معدات الغوص" },
-      { en: "Instructor", ru: "Инструктор", de: "Lehrer", ar: "مدرب" },
-      { en: "Lunch", ru: "Обед", de: "Mittagessen", ar: "غداء" }
-    ]
-  },
-  {
-    id: "68",
-    slug: "one-trip-to-luxor-private",
-    name: { en: "Luxor Full-Day Private Tour", ru: "Частный тур в Луксор на полный день", de: "Luxor Ganztägige Privattour", ar: "جولة الأقصر الخاصة ليوم كامل" },
-    description: { en: "Discover the wonders of ancient Egypt with a full-day private tour to Luxor. Visit the Valley of the Kings, Karnak Temple, and Hatshepsut Temple.", ru: "Откройте чудеса древнего Египта с частным туром в Луксор на полный день.", de: "Entdecken Sie die Wunder des alten Ägypten mit einer ganztägigen Privattour nach Luxor.", ar: "اكتشف عجائب مصر القديمة بجولة خاصة ليوم كامل إلى الأقصر" },
-    duration: { en: "1 day", ru: "1 день", de: "1 Tag", ar: "يوم واحد" },
-    price: 200,
-    currency: "EUR",
-    category: "Luxor",
-    popular: false,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/luxor_10835.jpg",
-    rating: 4.8,
-    highlights: [
-      { en: "Valley of the Kings", ru: "Долина Царей", de: "Tal der Könige", ar: "وادي الملوك" },
-      { en: "Karnak Temple", ru: "Храм Карнак", de: "Karnak-Tempel", ar: "معبد الكرنك" },
-      { en: "Hatshepsut Temple", ru: "Храм Хатшепсут", de: "Hatschepsut-Tempel", ar: "معبد حتشبسوت" },
-      { en: "Private Vehicle", ru: "Частный автомобиль", de: "Privatfahrzeug", ar: "سيارة خاصة" }
+      { en: "Hotel Pickup & Drop-off", ru: "Трансфер из отеля и обратно", de: "Hotel-Abholung & Rücktransfer", ar: "التوصيل من الفندق والعودة" },
+      { en: "Modern Boat Trip", ru: "Рыбалка на современной лодке", de: "Moderne Bootsfahrt", ar: "رحلة قارب حديثة" },
+      { en: "Snorkeling Equipment", ru: "Снаряжение для снорклинга", de: "Schnorchelausrüstung", ar: "معدات الغوص" },
+      { en: "Lunch + Soft Drinks", ru: "Обед + безалкогольные напитки", de: "Mittagessen + Erfrischungsgetränke", ar: "غداء + مشروبات خفيفة" },
+      { en: "Professional Guide", ru: "Профессиональный гид", de: "Professioneller Guide", ar: "مرشد محترف" }
     ],
-    included: [
-      { en: "Private Transfer", ru: "Частный трансфер", de: "Privater Transfer", ar: "نقل خاص" },
-      { en: "Entrance Fees", ru: "Входные билеты", de: "Eintrittsgebühren", ar: "رسوم الدخول" },
-      { en: "Professional Guide", ru: "Гид", de: "Führer", ar: "مرشد" },
-      { en: "Lunch", ru: "Обед", de: "Mittagessen", ar: "غداء" }
+    gallery: [
+      "/photos/dolphin-house-snorkeling/dolphin-house-1.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-2.png",
+      "/photos/dolphin-house-snorkeling/dolphin-house-3.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-4.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-5.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-6.jpg",
+      "/photos/dolphin-house-snorkeling/dolphin-house-7.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-8.jpg",
+      "/photos/dolphin-house-snorkeling/dolphin-house-9.jpg",
+      "/photos/dolphin-house-snorkeling/dolphin-house-10.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-11.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-12.webp"
     ]
   },
   {
     id: "69",
     slug: "one-way-cairo-private-trip",
-    name: { en: "Cairo Private Tour - Pyramids & Museum", ru: "Частный тур в Каир - пирамиды и музей", de: "Kairo Privattour - Pyramiden und Museum", ar: "جولة القاهرة الخاصة - الأهرامات والمتحف" },
-    description: { en: "Embark on an unforgettable journey with Cairo Private Tours. Visit the Pyramids of Giza, the Sphinx, and the Egyptian Museum with a private guide.", ru: "Отправьтесь в незабываемое путешествие с частным туром в Каир с посещением пирамид, сфинкса и музея.", de: "Begeben Sie sich auf eine unvergessliche Reise mit privaten Kairo-Touren.", ar: "انطلق في رحلة لا تُنسى مع جولات القاهرة الخاصة" },
-    duration: { en: "1 day", ru: "1 день", de: "1 Tag", ar: "يوم واحد" },
-    price: 250,
+    name: {
+      en: "Cairo Private Car Tour – Grand Egyptian Museum",
+      ru: "Частный автомобильный тур в Каир – Большой Египетский музей",
+      de: "Kairo Private Auto-Tour – Grand Egyptian Museum",
+      ar: "جولة القاهرة بالسيارة الخاصة – المتحف المصري الكبير"
+    },
+    description: {
+      en: "Cairo Private Car Tour – Grand Egyptian Museum (Private Car, up to 3 persons). The ultimate personalized luxury experience with a private car (sedan or small van, max. 3 passengers) and dedicated driver-guide. Enjoy maximum flexibility and extra time at the Pyramids of Giza, Great Sphinx, Khan el Khalili bazaar, and a detailed visit to the Grand Egyptian Museum (GEM). Enjoy a premium lunch at one of Cairo's finest traditional restaurants. Full VIP service from start to finish. Hotel pickup: 01:00 AM | Return: by 11:00 PM. Price: approx. 350 euro per car (total for 1-3 persons). Return to your hotel filled with unforgettable memories, stunning photos, and stories that will stay with you forever.",
+      ru: "Частный автомобильный тур в Каир – Большой Египетский музей (частный автомобиль, до 3 человек). Абсолютно персонализированный роскошный опыт с частным автомобилем (седан или небольшой минивэн, макс. 3 пассажира) и выделенным водителем-гидом. Насладитесь максимальной гибкостью и дополнительным временем на пирамидах Гизы, Великом Сфинксе, базаре Хан эль-Халили и подробным посещением Большого Египетского музея (GEM). Премиальный обед в одном из лучших традиционных ресторанов Каира. Полный VIP сервис от начала до конца. Выезд из отеля: 01:00 | Возврат: к 23:00. Цена: ок. 350 евро за автомобиль (всего для 1-3 человек).",
+      de: "Kairo Private Auto-Tour – Grand Egyptian Museum (Privates Auto, bis 3 Personen). Das ultimative personalisierte Luxuserlebnis mit einem privaten Auto (Limousine oder kleiner Van, max. 3 Personen) und einem zugewiesenen Fahrer-Guide. genießen Sie maximale Flexibilität und zusätzliche Zeit an den Pyramiden von Gizeh, der Großen Sphinx, dem Khan el-Khalili Basar und einen detaillierten Besuch des Grand Egyptian Museum (GEM). Premium-Mittagessen in einem der besten traditionellen Restaurants Kairos. VIP-Service von Anfang bis Ende. Abholung: 01:00 Uhr | Rückkehr: bis 23:00 Uhr. Preis: ca. 350 Euro pro Auto (gesamt für 1-3 Personen).",
+      ar: "جولة القاهرة بالسيارة الخاصة – المتحف المصري الكبير (سيارة خاصة، حتى 3 أشخاص). التجربة الفاخرة الشخصية المطلقة مع سيارة خاصة (سيدان أو حافلة صغيرة، الحد الأقصى 3 ركاب) ومرشد سائق مخصص. استمتع بأقصى قدر من المرونة والوقت الإضافي في أهرامات الجيزة، وأبو الهول العظيم، وسوق خان الخليلي، وزيارة معمقة للمتحف المصري الكبير (GEM). غداء فاخر في أحد أفضل المطاعم التقليدية في القاهرة. خدمة VIP كاملة من البداية إلى النهاية. الانطلاق من الفندق: 01:00 صباحاً | العودة: بحلول 11:00 مساءً. السعر: حوالي 350 يورو للسيارة (المجموع لـ 1-3 أشخاص)."
+    },
+    duration: { en: "1 day (01:00 AM – 11:00 PM)", ru: "1 день (01:00–23:00)", de: "1 Tag (01:00–23:00 Uhr)", ar: "يوم واحد (01:00 ص – 11:00 م)" },
+    price: 350,
     currency: "EUR",
+    priceLabel: {
+      en: "/ car (1-3 persons)",
+      ru: "/ автомобиль (1-3 человека)",
+      de: "/ Auto (1-3 Personen)",
+      ar: "/ سيارة (1-3 أشخاص)"
+    },
     category: "Cairo",
     popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/6f5ef5cdb9eb8091f6c44edae5f89f75.jpg",
+    image: "/photos/cairo-private-car-gem/616158145.webp",
     rating: 4.9,
     highlights: [
+      { en: "Private Car (Up to 3 Persons)", ru: "Частный автомобиль (до 3 человек)", de: "Privates Auto (bis 3 Personen)", ar: "سيارة خاصة (حتى 3 أشخاص)" },
       { en: "Pyramids of Giza", ru: "Пирамиды Гизы", de: "Pyramiden von Gizeh", ar: "أهرامات الجيزة" },
-      { en: "The Sphinx", ru: "Сфинкс", de: "Sphinx", ar: "أبو الهول" },
-      { en: "Egyptian Museum", ru: "Египетский музей", de: "Ägyptisches Museum", ar: "المتحف المصري" },
-      { en: "Private Guide", ru: "Частный гид", de: "Privater Führer", ar: "مرشد خاص" }
+      { en: "The Great Sphinx", ru: "Великий Сфинкс", de: "Die Große Sphinx", ar: "أبو الهول العظيم" },
+      { en: "Grand Egyptian Museum (GEM)", ru: "Большой Египетский музей (GEM)", de: "Grand Egyptian Museum (GEM)", ar: "المتحف المصري الكبير (GEM)" },
+      { en: "Khan el Khalili Bazaar", ru: "Базар Хан эль-Халили", de: "Khan el-Khalili Basar", ar: "سوق خان الخليلي" }
     ],
     included: [
-      { en: "Private Vehicle", ru: "Частный автомобиль", de: "Privatfahrzeug", ar: "سيارة خاصة" },
+      { en: "Private Car Transfer", ru: "Трансфер на частном автомобиле", de: "Privater Auto-Transfer", ar: "نقل بالسيارة الخاصة" },
+      { en: "Dedicated Driver-Guide", ru: "Выделенный водитель-гид", de: "Zugewiesener Fahrer-Guide", ar: "مرشد سائق مخصص" },
       { en: "Entrance Fees", ru: "Входные билеты", de: "Eintrittsgebühren", ar: "رسوم الدخول" },
-      { en: "Private Guide", ru: "Частный гид", de: "Privater Führer", ar: "مرشد خاص" },
-      { en: "Lunch", ru: "Обед", de: "Mittagessen", ar: "غداء" }
+      { en: "Premium Lunch at Restaurant", ru: "Премиальный обед в ресторане", de: "Premium-Mittagessen im Restaurant", ar: "غداء فاخر في مطعم" }
+    ],
+    gallery: [
+      "/photos/cairo-private-car-gem/616158145.webp",
+      "/photos/cairo-private-car-gem/616158507.webp",
+      "/photos/cairo-private-car-gem/616158549.webp",
+      "/photos/cairo-private-car-gem/7ea5ff7cef9649b713bf8484e3113232.jpg",
+      "/photos/cairo-private-car-gem/3457de3cccba8c604630e5b9db50c78b.jpg",
+      "/photos/cairo-private-car-gem/8109a7683768b9b8fad4d6ccdaa5ed9b.jpg",
+      "/photos/cairo-private-car-gem/472999aa63ffac63140d9212ae64cfab.jpg",
+      "/photos/cairo-private-car-gem/166744703.webp",
+      "/photos/cairo-private-car-gem/166744777.webp",
+      "/photos/cairo-private-car-gem/437019984.jpg",
+      "/photos/cairo-private-car-gem/437020000.jpg",
+      "/photos/cairo-private-car-gem/437020012.jpg",
+      "/photos/cairo-private-car-gem/610319779.jpg",
+      "/photos/cairo-private-car-gem/613799384.webp",
+      "/photos/cairo-private-car-gem/613799401.webp",
+      "/photos/cairo-private-car-gem/613799404.webp",
+      "/photos/cairo-private-car-gem/613799415.webp",
+      "/photos/cairo-private-car-gem/613799423.webp",
+      "/photos/cairo-private-car-gem/613799430.webp",
+      "/photos/cairo-private-car-gem/613799440.webp",
+      "/photos/cairo-private-car-gem/613799451.webp",
+      "/photos/cairo-private-car-gem/613799488.webp",
+      "/photos/cairo-private-car-gem/613799493.webp",
+      "/photos/cairo-private-car-gem/613799520.webp",
+      "/photos/cairo-private-car-gem/613799574.webp",
+      "/photos/cairo-private-car-gem/613799594.webp"
+    ]
+  },
+  {
+    id: "70",
+    slug: "abu-simbel-premium-minibus",
+    name: {
+      en: "Abu Simbel Premium Minibus Tour – 3 Days / 2 Nights",
+      ru: "Премиум минивэн тур к Абу-Симбелу – 3 дня / 2 ночи",
+      de: "Abu Simbel Premium Minibus Tour – 3 Tage / 2 Nächte",
+      ar: "جولة أبو سمبل بالحافلة الصغيرة الفاخرة – 3 أيام / 2 ليالي"
+    },
+    description: {
+      en: "Abu Simbel Premium Minibus Tour – 3 Days / 2 Nights (Minibus, up to 8 persons). Enjoy an unforgettable journey to one of Egypt's most spectacular monuments. This 3 Days & 2 Nights tour takes you to the majestic Abu Simbel Temples (Ramses II and Nefertari). Traveling in a premium minibus (max. 8 passengers), you will also visit key sites in Aswan such as the High Dam, Philae Temple, and enjoy a relaxing felucca ride on the Nile. Traditional Egyptian meals and comfortable accommodation are included. Hotel pickup: 01:00 AM (Day 1) | Return to Hurghada: Evening of Day 3. Price: 250 EUR per person. Both tours include: Comfortable transportation (premium minibus / private car), Professional Egyptologist guide, 2 nights accommodation in Aswan with breakfast, Traditional Egyptian meals (lunches/dinners as per program), All entrance fees to main sites, Full assistance throughout the trip. Return to your hotel filled with unforgettable memories, stunning photos of the colossal temples, and stories that will stay with you forever.",
+      ru: "Премиум минивэн тур к Абу-Симбелу – 3 дня / 2 ночи (минивэн, до 8 человек). Насладитесь незабываемым путешествием к одному из самых впечатляющих памятников Египта. Этот тур на 3 дня и 2 ночи带你 к величественным храмам Абу-Симбела (Рамзес II и Нефертари). Путешествуя в премиальном минивэне (макс. 8 пассажиров), вы также посетите ключевые объекты в Асуане, такие как Высотная плотина, храм Филе, и насладитесь расслабляющей прогулкой на фелюке по Нилу. Традиционные египетские блюда и комфортное проживание включены. Выезд из отеля: 01:00 (День 1) | Возврат в Хургаду: вечер Дня 3. Цена: 250 евро за человека.",
+      de: "Abu Simbel Premium Minibus Tour – 3 Tage / 2 Nächte (Minibus, bis 8 Personen). Genießen Sie eine unvergessliche Reise zu einem der spektakulärsten Monumente Ägyptens. Diese 3-Tage / 2-Nächte Tour führt Sie zu den majestätischen Tempeln von Abu Simbel (Ramses II. und Nefertari). Mit einem Premium-Minibus (max. 8 Fahrgäste) besuchen Sie auch wichtige Orte in Assuan wie den Hochdamm, den Tempel von Philae und genießen Sie eine entspannte Felucca-Fahrt auf dem Nil. Traditionelle ägyptische Mahlzeiten und komfortable Unterkunft sind inklusive. Abholung: 01:00 Uhr (Tag 1) | Rückkehr nach Hurghada: Abend des 3. Tages. Preis: 250 EUR pro Person.",
+      ar: "جولة أبو سمبل بالحافلة الصغيرة الفاخرة – 3 أيام / 2 ليالي (حافلة صغيرة، حتى 8 أشخاص). استمتع برحلة لا تُنسى إلى أحد أروع المعالم في مصر. تأخذك هذه الجولة لمدة 3 أيام و2 ليالي إلى معابد أبو سمبل المهيبة (رمسيس الثاني ونفرتاري). السفر في حافلة صغيرة فاخرة (حد أقصى 8 ركاب)، ستزور أيضاً مواقع رئيسية في أسوان مثل السد العالي ومعبد فيله، واستمتع ب رحلة مريحة على الفلكة على النيل. الوجبات المصرية التقليدية والإقامة المريحة مشمولة. الانطلاق من الفندق: 01:00 صباحاً (اليوم 1) | العودة إلى الغردقة: مساء اليوم 3. السعر: 250 يورو للشخص."
+    },
+    duration: { en: "3 Days / 2 Nights", ru: "3 дня / 2 ночи", de: "3 Tage / 2 Nächte", ar: "3 أيام / 2 ليالي" },
+    price: 250,
+    currency: "EUR",
+    priceLabel: {
+      en: "/ person",
+      ru: "/ человека",
+      de: "/ Person",
+      ar: "/ شخص"
+    },
+    category: "Aswan",
+    popular: true,
+    image: "/photos/abu-simbel-premium-minibus/caption.jpg",
+    rating: 4.9,
+    highlights: [
+      { en: "Abu Simbel Temples (Ramses II & Nefertari)", ru: "Храмы Абу-Симбела (Рамзес II и Нефертари)", de: "Tempel von Abu Simbel (Ramses II. & Nefertari)", ar: "معابد أبو سمبل (رمسيس الثاني ونفرتاري)" },
+      { en: "Premium Minibus (Up to 8 Persons)", ru: "Премиальный минивэн (до 8 человек)", de: "Premium-Minibus (bis 8 Personen)", ar: "حافلة صغيرة فاخرة (حتى 8 أشخاص)" },
+      { en: "High Dam & Philae Temple", ru: "Высотная плотина и храм Филе", de: "Hochdamm & Tempel von Philae", ar: "السد العالي ومعبد فيله" },
+      { en: "Felucca Ride on the Nile", ru: "Прогулка на фелюке по Нилу", de: "Felucca-Fahrt auf dem Nil", ar: "رحلة بالفلكة على النيل" },
+      { en: "2 Nights Accommodation in Aswan", ru: "2 ночи в Асуане", de: "2 Nächte Unterkunft in Assuan", ar: "ليلتان في أسوان" }
+    ],
+    included: [
+      { en: "Premium Minibus Transfer", ru: "Трансфер на премиальном минивэне", de: "Premium-Minibus-Transfer", ar: "نقل بالحافلة الصغيرة الفاخرة" },
+      { en: "Professional Egyptologist Guide", ru: "Профессиональный гид-египтолог", de: "Professioneller Ägyptologe-Führer", ar: "مرشد مصري محترف" },
+      { en: "2 Nights Accommodation with Breakfast", ru: "2 ночи с завтраком", de: "2 Nächte mit Frühstück", ar: "ليلتان مع إفطار" },
+      { en: "Traditional Egyptian Meals", ru: "Традиционные египетские блюда", de: "Traditionelle ägyptische Mahlzeiten", ar: "وجبات مصرية تقليدية" },
+      { en: "All Entrance Fees", ru: "Все входные билеты", de: "Alle Eintrittsgebühren", ar: "جميع رسوم الدخول" }
+    ],
+    gallery: [
+      "/photos/abu-simbel-premium-minibus/caption.jpg",
+      "/photos/abu-simbel-premium-minibus/caption (1).jpg",
+      "/photos/abu-simbel-premium-minibus/caption (2).jpg",
+      "/photos/abu-simbel-premium-minibus/caption (3).jpg",
+      "/photos/abu-simbel-premium-minibus/caption (4).jpg",
+      "/photos/abu-simbel-premium-minibus/caption (5).jpg",
+      "/photos/abu-simbel-premium-minibus/caption (6).jpg",
+      "/photos/abu-simbel-premium-minibus/f1.jpg",
+      "/photos/abu-simbel-premium-minibus/f3.jpg",
+      "/photos/abu-simbel-premium-minibus/f9.jpg",
+      "/photos/abu-simbel-premium-minibus/00.jpg",
+      "/photos/abu-simbel-premium-minibus/09.jpg",
+      "/photos/abu-simbel-premium-minibus/0a.jpg",
+      "/photos/abu-simbel-premium-minibus/17.jpg",
+      "/photos/abu-simbel-premium-minibus/20.jpg",
+      "/photos/abu-simbel-premium-minibus/31.jpg",
+      "/photos/abu-simbel-premium-minibus/97.jpg",
+      "/photos/abu-simbel-premium-minibus/aswan.jpg",
+      "/photos/abu-simbel-premium-minibus/aswan (1).jpg"
+    ]
+  },
+  {
+    id: "71",
+    slug: "abu-simbel-private-vip",
+    name: {
+      en: "Abu Simbel Private VIP Tour – 3 Days / 2 Nights",
+      ru: "Частный VIP тур к Абу-Симбелу – 3 дня / 2 ночи",
+      de: "Abu Simbel Private VIP-Tour – 3 Tage / 2 Nächte",
+      ar: "جولة أبو سمبل الخاصة VIP – 3 أيام / 2 ليالي"
+    },
+    description: {
+      en: "Abu Simbel Private VIP Tour – 3 Days / 2 Nights (Private Car, up to 3 persons). Experience the ultimate luxury and exclusivity on this private 3 Days & 2 Nights tour to Abu Simbel. With your own private car and dedicated guide (max. 3 persons), you will have a personalized program including the breathtaking Abu Simbel Temples at sunrise/sunset, Aswan highlights (Philae Temple, High Dam, Unfinished Obelisk), and a peaceful Nile felucca sail. Premium accommodation and traditional Egyptian meals at renowned restaurants are included. Hotel pickup: 01:00 AM (Day 1) | Return to Hurghada: Evening of Day 3. Price: 800 EUR per car (total for 1-3 persons). Both tours include: Comfortable transportation (premium minibus / private car), Professional Egyptologist guide, 2 nights accommodation in Aswan with breakfast, Traditional Egyptian meals (lunches/dinners as per program), All entrance fees to main sites, Full assistance throughout the trip. Return to your hotel filled with unforgettable memories, stunning photos of the colossal temples, and stories that will stay with you forever.",
+      ru: "Частный VIP тур к Абу-Симбелу – 3 дня / 2 ночи (частный автомобиль, до 3 человек). Испытайте предельную роскошь и эксклюзивность в этом частном туре на 3 дня и 2 ночи к Абу-Симбелу. С собственным автомобилем и выделенным гидом (макс. 3 пассажира), у вас будет персональная программа, включающая захватывающие храмы Абу-Симбела на рассвете/закате, основные достопримечательности Асуана (храм Филе, Высотная плотина, Незаконченный обелиск) и спокойное плавание на фелюке по Нилу. Премиальное проживание и традиционные египетские блюда в известных ресторанах включены. Выезд из отеля: 01:00 (День 1) | Возврат в Хургаду: вечер Дня 3. Цена: 800 евро за автомобиль (всего для 1-3 человек).",
+      de: "Abu Simbel Private VIP-Tour – 3 Tage / 2 Nächte (Privates Auto, bis 3 Personen). Erleben Sie ultimativen Luxus und Exklusivität bei dieser privaten 3-Tage / 2-Nächte Tour nach Abu Simbel. Mit Ihrem eigenen Privatauto und zugewiesenem Guide (max. 3 Personen) haben Sie ein personalisiertes Programm, darunter die atemberaubenden Tempel von Abu Simbel bei Sonnenaufgang/Untergang, Assuan-Highlights (Philae-Tempel, Hochdamm, Unvollendeter Obelisk) und eine friedliche Felucca-Fahrt auf dem Nil. Premium-Unterkunft und traditionelle ägyptische Mahlzeiten in renommierten Restaurants sind inklusive. Abholung: 01:00 Uhr (Tag 1) | Rückkehr nach Hurghada: Abend des 3. Tages. Preis: 800 EUR pro Auto (gesamt für 1-3 Personen).",
+      ar: "جولة أبو سمبل الخاصة VIP – 3 أيام / 2 ليالي (سيارة خاصة، حتى 3 أشخاص). اختبر الفخامة المطلقة والحصرية في هذه الجولة الخاصة لمدة 3 أيام و2 ليالي إلى أبو سمبل. مع سيارتك الخاصة ومرشد مخصص (حد أقصى 3 أشخاص)، سيكون لديك برنامج شخصي يشمل معابد أبو سمبل المذهلة عند شروق/غروب الشمس، وhighlight أسوان (معبد فيله، السد العالي، المسلة غير المكتملة)، و رحلة هادئة على الفلكة على النيل. الإقامة الفاخرة والوجبات المصرية التقليدية في المطاعم مشمولة. الانطلاق من الفندق: 01:00 صباحاً (اليوم 1) | العودة إلى الغردقة: مساء اليوم 3. السعر: 800 يورو للسيارة (المجموع لـ 1-3 أشخاص)."
+    },
+    duration: { en: "3 Days / 2 Nights", ru: "3 дня / 2 ночи", de: "3 Tage / 2 Nächte", ar: "3 أيام / 2 ليالي" },
+    price: 800,
+    currency: "EUR",
+    priceLabel: {
+      en: "/ car (total for 1-3 persons)",
+      ru: "/ автомобиль (всего для 1-3 человек)",
+      de: "/ Auto (gesamt für 1-3 Personen)",
+      ar: "/ سيارة (المجموع لـ 1-3 أشخاص)"
+    },
+    category: "Aswan",
+    popular: true,
+    image: "/photos/abu-simbel-private-vip/Abu-Simbel.webp",
+    rating: 5.0,
+    highlights: [
+      { en: "Private Car (Up to 3 Persons)", ru: "Частный автомобиль (до 3 человек)", de: "Privates Auto (bis 3 Personen)", ar: "سيارة خاصة (حتى 3 أشخاص)" },
+      { en: "Abu Simbel Temples at Sunrise/Sunset", ru: "Храмы Абу-Симбела на рассвете/закате", de: "Tempel von Abu Simbel bei Sonnenaufgang/Untergang", ar: "معابد أبوسمبل عند شروق/غروب الشمس" },
+      { en: "Dedicated Egyptologist Guide", ru: "Выделенный гид-египтолог", de: "Zugewiesener Ägyptologe-Führer", ar: "مرشد مصري مخصص" },
+      { en: "Aswan Highlights (Philae, High Dam, Obelisk)", ru: "Достопримечательности Асуана (Филе, Плотина, Обелиск)", de: "Assuan-Highlights (Philae, Hochdamm, Obelisk)", ar: "_highlight أسوان (فيله، السد العالي، المسلة)" },
+      { en: "Premium Nile Felucca Sail", ru: "Премиальное плавание на фелюке по Нилу", de: "Premium Nil-Felucca-Fahrt", ar: "رحلة فاخرة بالفلكة على النيل" }
+    ],
+    included: [
+      { en: "Private Car Transfer", ru: "Трансфер на частном автомобиле", de: "Privater Auto-Transfer", ar: "نقل بالسيارة الخاصة" },
+      { en: "Dedicated Egyptologist Guide", ru: "Выделенный гид-египтолог", de: "Zugewiesener Ägyptologe-Führer", ar: "مرشد مصري مخصص" },
+      { en: "2 Nights Premium Accommodation", ru: "2 ночи премиального проживания", de: "2 Nächte Premium-Unterkunft", ar: "ليلتان إقامة فاخرة" },
+      { en: "Traditional Egyptian Meals", ru: "Традиционные египетские блюда", de: "Traditionelle ägyptische Mahlzeiten", ar: "وجبات مصرية تقليدية" },
+      { en: "All Entrance Fees", ru: "Все входные билеты", de: "Alle Eintrittsgebühren", ar: "جميع رسوم الدخول" }
+    ],
+    gallery: [
+      "/photos/abu-simbel-private-vip/Abu-Simbel.webp",
+      "/photos/abu-simbel-private-vip/Abu-Simbel-tour-guide.webp",
+      "/photos/abu-simbel-private-vip/A-Grand-View-of-the-Small-Temple.webp",
+      "/photos/abu-simbel-private-vip/Ancient-Echoes-in-the-Passageway.webp",
+      "/photos/abu-simbel-private-vip/Arrival-by-the-Nile.webp",
+      "/photos/abu-simbel-private-vip/Crossing-a-Canal-in-the-Sahara.webp",
+      "/photos/abu-simbel-private-vip/Entry-to-Abu-Simbel-Great-Temple.webp",
+      "/photos/abu-simbel-private-vip/First-Glimpse-of-Abu-Simbel-Temples.webp",
+      "/photos/abu-simbel-private-vip/Front-Entrance-of-the-Temple-of-Hathor.webp",
+      "/photos/abu-simbel-private-vip/Hidden-Abu-simbel.webp",
+      "/photos/abu-simbel-private-vip/In-the-Presence-of-Pharaohs.jpg",
+      "/photos/abu-simbel-private-vip/Nile-Cruise-Docked-by-the-Desert.webp",
+      "/photos/abu-simbel-private-vip/Pharaohs-Beneath-a-Painted-Ceiling.webp",
+      "/photos/abu-simbel-private-vip/Pillars-of-Power-and-Divinity.webp",
+      "/photos/abu-simbel-private-vip/Roadside-Rest-Stop-with-Desert-Truck.webp",
+      "/photos/abu-simbel-private-vip/Silent-Sentinel-in-the-Shadows.webp",
+      "/photos/abu-simbel-private-vip/Standing-Tall-Through-Time.webp",
+      "/photos/abu-simbel-private-vip/Temple-Entrance-Between-Timeless-Titans.webp",
+      "/photos/abu-simbel-private-vip/The-Foot-of-the-Pharaohs.webp",
+      "/photos/abu-simbel-private-vip/The-Hill-That-Hid-a-Temple.webp",
+      "/photos/abu-simbel-private-vip/The-Sanctuary-of-the-Gods-1536x1024.webp",
+      "/photos/abu-simbel-private-vip/Twin-Guardians-of-the-Hall.webp",
+      "/photos/abu-simbel-private-vip/caption (7).jpg",
+      "/photos/abu-simbel-private-vip/caption (8).jpg",
+      "/photos/abu-simbel-private-vip/caption (9).jpg",
+      "/photos/abu-simbel-private-vip/caption (10).jpg",
+      "/photos/abu-simbel-private-vip/caption (11).jpg",
+      "/photos/abu-simbel-private-vip/caption (12).jpg"
+    ]
+  },
+  {
+    id: "72",
+    slug: "aswan-premium-minibus",
+    name: {
+      en: "Aswan Premium Minibus Tour",
+      ru: "Премиум минивэн тур в Асуан",
+      de: "Aswan Premium Minibus Tour",
+      ar: "جولة أسوان بالحافلة الصغيرة الفاخرة"
+    },
+    description: {
+      en: "Aswan Premium Minibus Tour (Minibus, up to 8 persons). Discover the beauty and ancient treasures of Aswan on this comfortable full-day excursion. Traveling in a premium minibus (maximum 8 passengers), you will visit the impressive High Dam, the beautiful Temple of Philae (dedicated to Goddess Isis), and the unfinished Obelisk. Enjoy a scenic view of the Nile and the Nubian culture. A delicious traditional Egyptian lunch at a renowned restaurant is included. Hotel pickup: 01:00 AM | Return: by 11:00 PM. Price: 250 EUR per person. Both tours include: Comfortable transportation (premium minibus / private car), Professional Egyptologist guide, Traditional Egyptian lunch at a renowned restaurant, All entrance fees, Water and full assistance. Return to your hotel filled with unforgettable memories, stunning photos, and stories that will stay with you forever.",
+      ru: "Премиум минивэн тур в Асуан (минивэн, до 8 человек). Откройте для себя красоту и древние сокровища Асуана в этом комфортном дневном путешествии. Путешествуя в премиальном минивэне (макс. 8 пассажиров), вы посетите впечатляющую Высотную плотину, прекрасный храм Филе (посвященный богине Исиде) и Незаконченный обелиск. Насладитесь живописным видом на Нил и нубийскую культуру. Вкусный традиционный египетский обед в известном ресторане включен. Выезд из отеля: 01:00 | Возврат: к 23:00. Цена: 250 евро за человека.",
+      de: "Aswan Premium Minibus Tour (Minibus, bis 8 Personen). Entdecken Sie die Schönheit und die antiken Schätze Assuans auf this komfortvollen ganztägigen Exkursion. Mit einem Premium-Minibus (max. 8 Fahrgäste) besuchen Sie den eindrucksvollen Hochdamm, den schönen Tempel von Philae (gewidmet der Göttin Isis) und den unvollendeten Obelisken. Genießen Sie den malerischen Blick auf den Nil und die nubische Kultur. Ein köstliches traditionelles ägyptisches Mittagessen in einem renommierten Restaurant ist inklusive. Abholung: 01:00 Uhr | Rückkehr: bis 23:00 Uhr. Preis: 250 EUR pro Person.",
+      ar: "جولة أسوان بالحافلة الصغيرة الفاخرة (حافلة صغيرة، حتى 8 أشخاص). اكتشف جمال كنوز أسوان القديمة في هذه الرحلة المريحة ليوم كامل. السفر في حافلة صغيرة فاخرة (حد أقصى 8 ركاب)، ستزور السد العالي المثير للإعجاب، ومعبد فيله الجميل (مكرمة للإلهة إيزيس)، والمسلة غير المكتملة. استمتع بالإطلالة الخلابة على النيل والثقافة النوبية. غداء مصري تقليدي لذيذ في مطعم شهير مشمول. الانطلاق من الفندق: 01:00 صباحاً | العودة: بحلول 11:00 مساءً. السعر: 250 يورو للشخص."
+    },
+    duration: { en: "1 day (01:00 AM – 11:00 PM)", ru: "1 день (01:00–23:00)", de: "1 Tag (01:00–23:00 Uhr)", ar: "يوم واحد (01:00 ص – 11:00 م)" },
+    price: 250,
+    currency: "EUR",
+    priceLabel: {
+      en: "/ person",
+      ru: "/ человека",
+      de: "/ Person",
+      ar: "/ شخص"
+    },
+    category: "Aswan",
+    popular: true,
+    image: "/photos/aswan-premium-minibus/1.jpg",
+    rating: 4.8,
+    highlights: [
+      { en: "Premium Minibus (Up to 8 Persons)", ru: "Премиальный минивэн (до 8 человек)", de: "Premium-Minibus (bis 8 Personen)", ar: "حافلة صغيرة فاخرة (حتى 8 أشخاص)" },
+      { en: "High Dam of Aswan", ru: "Высотная плотина Асуана", de: "Hochdamm von Assuan", ar: "سد أسوان العالي" },
+      { en: "Temple of Philae (Goddess Isis)", ru: "Храм Филе (богиня Исида)", de: "Tempel von Philae (Göttin Isis)", ar: "معبد فيله (الإلهة إيزيس)" },
+      { en: "Unfinished Obelisk", ru: "Незаконченный обелиск", de: "Unvollendeter Obelisk", ar: "المسلة غير المكتملة" },
+      { en: "Traditional Egyptian Lunch", ru: "Традиционный египетский обед", de: "Traditionelles ägyptisches Mittagessen", ar: "غداء مصري تقليدي" }
+    ],
+    included: [
+      { en: "Premium Minibus Transfer", ru: "Трансфер на премиальном минивэне", de: "Premium-Minibus-Transfer", ar: "نقل بالحافلة الصغيرة الفاخرة" },
+      { en: "Professional Egyptologist Guide", ru: "Профессиональный гид-египтолог", de: "Professioneller Ägyptologe-Führer", ar: "مرشد مصري محترف" },
+      { en: "Traditional Egyptian Lunch", ru: "Традиционный египетский обед", de: "Traditionelles ägyptisches Mittagessen", ar: "غداء مصري تقليدي" },
+      { en: "All Entrance Fees", ru: "Все входные билеты", de: "Alle Eintrittsgebühren", ar: "جميع رسوم الدخول" },
+      { en: "Water & Full Assistance", ru: "Вода и полная помощь", de: "Wasser & volle Unterstützung", ar: "مياه ومساعدة كاملة" }
+    ],
+    gallery: [
+      "/photos/aswan-premium-minibus/1.jpg",
+      "/photos/aswan-premium-minibus/2.jpg",
+      "/photos/aswan-premium-minibus/3.jpg",
+      "/photos/aswan-premium-minibus/4.jpg",
+      "/photos/aswan-premium-minibus/5.jpg",
+      "/photos/aswan-premium-minibus/6.jpg",
+      "/photos/aswan-premium-minibus/7.avif",
+      "/photos/aswan-premium-minibus/8.jpg",
+      "/photos/aswan-premium-minibus/9.jpg",
+      "/photos/aswan-premium-minibus/10.jpg",
+      "/photos/aswan-premium-minibus/12.jpg",
+      "/photos/aswan-premium-minibus/13.jpg",
+      "/photos/aswan-premium-minibus/14.jpg",
+      "/photos/aswan-premium-minibus/15.jpg",
+      "/photos/aswan-premium-minibus/16.jpg"
+    ]
+  },
+  {
+    id: "73",
+    slug: "aswan-private-vip",
+    name: {
+      en: "Aswan Private VIP Tour",
+      ru: "Частный VIP тур в Асуан",
+      de: "Aswan Private VIP-Tour",
+      ar: "جولة أسوان الخاصة VIP"
+    },
+    description: {
+      en: "Aswan Private VIP Tour (Private Car, up to 3 persons). Enjoy a luxurious and fully personalized experience in Aswan with a private car and dedicated guide (max. 3 persons). Explore the High Dam, the majestic Philae Temple, the Unfinished Obelisk, and enjoy a relaxing felucca sail on the Nile. You will also have time to discover local Nubian villages. Premium traditional Egyptian lunch at a high-quality restaurant is included. Hotel pickup: 01:00 AM | Return: by 11:00 PM. Price: 800 EUR per car (total for 1-3 persons). Both tours include: Comfortable transportation (premium minibus / private car), Professional Egyptologist guide, Traditional Egyptian lunch at a renowned restaurant, All entrance fees, Water and full assistance. Return to your hotel filled with unforgettable memories, stunning photos, and stories that will stay with you forever.",
+      ru: "Частный VIP тур в Асуан (частный автомобиль, до 3 человек). Насладитесь роскошным и полностью персонализированным опытом в Асуане с частным автомобилем и выделенным гидом (макс. 3 пассажира). Исследуйте Высотную плотину, величественный храм Филе, Незаконченный обелиск и насладитесь расслабляющей прогулкой на фелюке по Нилу. У вас также будет время открыть для себя местные нубийские деревни. Премиальный традиционный египетский обед в ресторане высокого качества включен. Выезд из отеля: 01:00 | Возврат: к 23:00. Цена: 800 евро за автомобиль (всего для 1-3 человек).",
+      de: "Aswan Private VIP-Tour (Privates Auto, bis 3 Personen). Genießen Sie ein luxuriöses und vollständig personalisiertes Erlebnis in Assuan mit einem privaten Auto und zugewiesenem Guide (max. 3 Personen). Erkunden Sie den Hochdamm, den majestätischen Philae-Tempel, den unvollendeten Obelisken und genießen Sie eine entspannte Felucca-Fahrt auf dem Nil. Sie haben auch Zeit, lokale nubische Dörfer zu entdecken. Premium traditionelles ägyptisches Mittagessen in einem Restaurant hoher Qualität ist inklusive. Abholung: 01:00 Uhr | Rückkehr: bis 23:00 Uhr. Preis: 800 EUR pro Auto (gesamt für 1-3 Personen).",
+      ar: "جولة أسوان الخاصة VIP (سيارة خاصة، حتى 3 أشخاص). استمتع بتجربة فاخرة ومخصصة بالكامل في أسوان مع سيارة خاصة ومرشد مخصص (حد أقصى 3 أشخاص). استكشف السد العالي، ومعبد فيله المهيب، والمسلة غير المكتملة، واستمتع برحلة هادئة على الفلكة على النيل. سيكون لديك أيضاً وقت لاكتشاف القرى النوبية المحلية. غداء مصري تقليدي فاخر في مطعم عالي الجودة مشمول. الانطلاق من الفندق: 01:00 صباحاً | العودة: بحلول 11:00 مساءً. السعر: 800 يورو للسيارة (المجموع لـ 1-3 أشخاص)."
+    },
+    duration: { en: "1 day (01:00 AM – 11:00 PM)", ru: "1 день (01:00–23:00)", de: "1 Tag (01:00–23:00 Uhr)", ar: "يوم واحد (01:00 ص – 11:00 م)" },
+    price: 800,
+    currency: "EUR",
+    priceLabel: {
+      en: "/ car (total for 1-3 persons)",
+      ru: "/ автомобиль (всего для 1-3 человек)",
+      de: "/ Auto (gesamt für 1-3 Personen)",
+      ar: "/ سيارة (المجموع لـ 1-3 أشخاص)"
+    },
+    category: "Aswan",
+    popular: true,
+    image: "/photos/aswan-private-vip/ASWAN VIP (1).jpg",
+    rating: 5.0,
+    highlights: [
+      { en: "Private Car (Up to 3 Persons)", ru: "Частный автомобиль (до 3 человек)", de: "Privates Auto (bis 3 Personen)", ar: "سيارة خاصة (حتى 3 أشخاص)" },
+      { en: "High Dam of Aswan", ru: "Высотная плотина Асуана", de: "Hochdamm von Assuan", ar: "سد أسوان العالي" },
+      { en: "Majestic Philae Temple", ru: "Величественный храм Филе", de: "Majestätischer Philae-Tempel", ar: "معبد فيله المهيب" },
+      { en: "Unfinished Obelisk", ru: "Незаконченный обелиск", de: "Unvollendeter Obelisk", ar: "المسلة غير المكتملة" },
+      { en: "Relaxing Felucca Sail on the Nile", ru: "Расслабляющая прогулка на фелюке по Нилу", de: "Entspannte Felucca-Fahrt auf dem Nil", ar: "رحلة مريحة بالفلكة على النيل" }
+    ],
+    included: [
+      { en: "Private Car Transfer", ru: "Трансфер на частном автомобиле", de: "Privater Auto-Transfer", ar: "نقل بالسيارة الخاصة" },
+      { en: "Dedicated Egyptologist Guide", ru: "Выделенный гид-египтолог", de: "Zugewiesener Ägyptologe-Führer", ar: "مرشد مصري مخصص" },
+      { en: "Premium Traditional Egyptian Lunch", ru: "Премиальный традиционный египетский обед", de: "Premium traditionelles ägyptisches Mittagessen", ar: "غداء مصري تقليدي فاخر" },
+      { en: "All Entrance Fees", ru: "Все входные билеты", de: "Alle Eintrittsgebühren", ar: "جميع رسوم الدخول" },
+      { en: "Water & Full Assistance", ru: "Вода и полная помощь", de: "Wasser & volle Unterstützung", ar: "مياه ومساعدة كاملة" }
+    ],
+    gallery: [
+      "/photos/aswan-private-vip/ASWAN VIP (1).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (2).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (3).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (4).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (5).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (6).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (7).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (8).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (9).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (10).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (11).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (12).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (13).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (14).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (1).avif"
+    ]
+  },
+  {
+    id: "75",
+    slug: "dolphin-house-marsa-alam",
+    name: {
+      en: "Dolphin House Marsa Alam – Snorkeling & Dolphin Watching Day Trip",
+      ru: "Дом дельфинов Марса-Алам – снорклинг и наблюдение за дельфинами",
+      de: "Delfinhaus Marsa Alam – Schnorcheln & Delfinbeobachtung",
+      ar: "منزل الدلافين مرسى علم – رحلات سباحة ومراقبة الدلافين"
+    },
+    description: {
+      en: "Enjoy an unforgettable day in the crystal-clear waters of Marsa Alam. This special excursion takes you to the famous Dolphin House – a protected area known for frequent encounters with wild dolphins in their natural habitat. Sail by comfortable boat, snorkel at multiple stunning coral reef sites, and have a great chance to swim alongside playful dolphins. The tour also includes time to relax on beautiful beaches and enjoy the rich marine life of the Red Sea.",
+      ru: "Незабываемый день в кристально чистых водах Марса-Алама. Эта экскурсия доставит вас к знаменитому Дому дельфинов – защищённой зоне, где часто встречаются дикие дельфины в естественной среде обитания. Комфортная лодка, снорклинг на нескольких коралловых рифах и реальный шанс поплавать рядом с игривыми дельфинами. Также включён отдых на красивых пляжах и наслаждение богатой морской жизнью Красного моря.",
+      de: "Genießen Sie einen unvergesslichen Tag in den kristallklaren Gewässern von Marsa Alam. Diese Ausfahrt bringt Sie zum berühmten Delfinhaus – einem Schutzgebiet mit häufigen Begegnungen mit wilden Delfinen in ihrem natürlichen Lebensraum. Segeln Sie mit einem komfortablem Boot, schnorcheln Sie an mehreren atemberaubenden Korallenriffen und haben Sie die Chance, neben verspielten Delfinen zu schwimmen. Die Tour umfasst auch Erholung an wunderschönen Stränden und den Genuss des reichen Meereslebens des Roten Meeres.",
+      ar: "استمتع بيوم لا يُنسى في مياه مرسى العلم الصافية. تأخذك هذه الجولة إلى منزل الدلافين الشهير – منطقة محمية تعرف بلقاءات متكررة مع الدلافين البرية في موطنها الطبيعي. اركب قارب مريح، ومارس السباحة بالزنبرك عند شعاب مرجانية مذهلة، وفرصة رائعة للسباحة بجوار الدلافين المرحة. تتضمن الجولة أيضاً وقتاً للاسترخاء على الشواطئ الجميلة والاستمتاع بالحياة البحرية الغنية للبحر الأحمر."
+    },
+    duration: { en: "14 hours (05:00 – 20:00)", ru: "14 часов (05:00 – 20:00)", de: "14 Stunden (05:00 – 20:00)", ar: "14 ساعة (05:00 – 20:00)" },
+    price: 90,
+    priceLabel: {
+      en: "/ person",
+      ru: "/ чел.",
+      de: "/ Person",
+      ar: "/ شخص"
+    },
+    currency: "EUR",
+    category: "Marsa Alam",
+    popular: true,
+    image: "/photos/dolphin-house-marsa-alam/Dolphin-House-Marsa-Alam-1.webp",
+    rating: 4.8,
+    highlights: [
+      { en: "Dolphin House – Wild Dolphin Encounters", ru: "Дом дельфинов – встречи с дикими дельфинами", de: "Delfinhaus – Begegnungen mit wilden Delfinen", ar: "منزل الدلافين – لقاءات مع الدلافين البرية" },
+      { en: "Snorkeling at Multiple Coral Reef Sites", ru: "Снорклинг на нескольких коралловых рифах", de: "Schnorcheln an mehreren Korallenriffen", ar: "السباحة بالزنبرك في عدة مواقع شعاب مرجانية" },
+      { en: "Comfortable Boat Trip", ru: "Комфортная поездка на лодке", de: "Komfortable Bootsfahrt", ar: "رحلة قارب مريحة" },
+      { en: "Swimming with Playful Dolphins", ru: "Плавание с игривыми дельфинами", de: "Schwimmen mit verspielten Delfinen", ar: "السباحة مع الدلافين المرحة" },
+      { en: "Beautiful Beaches & Rich Marine Life", ru: "Красивые пляжи и богатая морская жизнь", de: "Wunderschöne Strände & reiches Meeresleben", ar: "شواطئ جميلة وحياة بحرية غنية" }
+    ],
+    included: [
+      { en: "Round-trip transportation from Hurghada", ru: "Трансфер из Хургады и обратно", de: "Hin- und Rückfahrt von Hurghada", ar: "نقل ذهاب وعودة من الغردقة" },
+      { en: "Boat trip to Dolphin House", ru: "Лодочная поездка к Дому дельфинов", de: "Bootsfahrt zum Delfinhaus", ar: "رحلة قارب إلى منزل الدلافين" },
+      { en: "Professional guide", ru: "Профессиональный гид", de: "Professioneller Führer", ar: "مرشد محترف" },
+      { en: "Snorkeling equipment (mask, snorkel, fins)", ru: "Оборудование для снорклинга (маска, трубка, ласты)", de: "Schnorchel-Ausrüstung (Maske, Schnorchel, Flossen)", ar: "معدات السباحة بالزنبرك (قناع، أنبوب، زعانف)" },
+      { en: "Lunch on board + soft drinks", ru: "Обед на борту + безалкогольные напитки", de: "Mittagessen an Bord + Softdrinks", ar: "غداء على متن القارب + مشروبات خفيفة" },
+      { en: "Multiple snorkeling stops", ru: "Несколько остановок для снорклинга", de: "Mehrere Schnorchelstops", ar: "عدة توقفات للسباحة بالزنبرك" }
+    ],
+    gallery: [
+      "/photos/dolphin-house-marsa-alam/0df9aa48145c27086e9b902f1d4787c0c1ca635c6121fca7d5eb9496357de555.avif",
+      "/photos/dolphin-house-marsa-alam/264a84432a956e631243ffed392143f3aed0ef065111f2eae69789a97e39c214.avif",
+      "/photos/dolphin-house-marsa-alam/3001b31c5a6c755aee647cd70456da4fc9e8aba96239574ef1f53282cde9de2e.webp",
+      "/photos/dolphin-house-marsa-alam/5b58d7f69d8c40bc59557b1ee3803f84c4275f2f551c9ec3a84a8c40580509f4.webp",
+      "/photos/dolphin-house-marsa-alam/61ec6fe354f35f85f5615ab3b282b0a19f96b14c1ff40091b36353da465510f6.webp",
+      "/photos/dolphin-house-marsa-alam/76f8f35cde522bca54ebf78af061f719aceb1d16a02b64b205d3abae938c9f75.avif",
+      "/photos/dolphin-house-marsa-alam/9ed3a61c788ae957093ede756e456ef3c2b862e01b7c2d742be1f019e012e619.webp",
+      "/photos/dolphin-house-marsa-alam/b245c096c4bec67ba2be5578145eb14de40feef036908816b0535d75d81ffaac.webp",
+      "/photos/dolphin-house-marsa-alam/caption (1).jpg",
+      "/photos/dolphin-house-marsa-alam/caption (2).jpg",
+      "/photos/dolphin-house-marsa-alam/caption.jpg",
+      "/photos/dolphin-house-marsa-alam/d3aaae4b3098e5a27cc2d53827d57da96d84320ca37679ea834c56139be127f3.webp",
+      "/photos/dolphin-house-marsa-alam/daf643b127c4fe0c55337a1cc986323394938a96fcb7ce3a582258ccd8477bff.avif",
+      "/photos/dolphin-house-marsa-alam/dbd670f4c49192eb2556554661bb992028a6554e7db02fe96a54e5781ddd4ada.webp",
+      "/photos/dolphin-house-marsa-alam/Dolphin-House-Marsa-Alam-1.webp",
+      "/photos/dolphin-house-marsa-alam/ee3570a2fc780e28fce762a97292234a071b27a31dc402b3343b3053674220ff.webp"
+    ]
+  },
+  {
+    id: "76",
+    slug: "marsa-alam-abu-dabbab-beach",
+    name: {
+      en: "Marsa Alam Abu Dabbab Beach Day Trip (Minibus / Bus)",
+      ru: "Марса-Алам, пляж Абу-Даббаб (миниавтобус / автобус)",
+      de: "Marsa Alam Abu Dabbab Strand-Tagesausflug (Minibus / Bus)",
+      ar: "رحلة شاطئ أبو دباب مرسى علم (ميكروباص / باص)"
+    },
+    description: {
+      en: "Escape to one of the most beautiful beaches in the Red Sea on this relaxing day trip from Hurghada. Travel comfortably to Marsa Alam and spend a wonderful day at Abu Dabbab Beach – famous for its crystal-clear turquoise water, soft white sand, and excellent snorkeling with sea turtles, dugongs, and colorful coral reefs. You will have plenty of free time to swim, snorkel, relax on the beach, or enjoy water activities. A tasty lunch with drinks is included at a beach restaurant.",
+      ru: "Отдых на одном из красивейших пляжей Красного моря в этой расслабляющей поездке из Хургады. Комфортно доберитесь до Марса-Алама и проведите замечательный день на пляже Абу-Даббаб – известном кристально чистой бирюзовой водой, мягким белым песком и отличным снорклингом с морскими черепахами, дугонгами и разноцветными кораллами. Много свободного времени для купания, снорклинга или отдыха на пляже. Вкусный обед с напитками в пляжном ресторане включён.",
+      de: "Entfliehen Sie an einen der schönsten Strände des Roten Meeres bei diesem entspannten Tagesausflug aus Hurghada. Reisen Sie bequem nach Marsa Alam und verbringen Sie einen wundervollen Tag am Abu-Dabbab-Strand – berühmt für sein kristallklares türkisfarbenes Wasser, seinen weichen weißen Sand und hervorragendes Schnorcheln mit Meeresschildkröten, Dugongs und bunten Korallenriffen. Sie haben viel Freizeit zum Schwimmen, Schnorcheln, Entspannen oder für Wassersport. Ein leckeres Mittagessen mit Getränken ist im Strandrestaurant inklusive.",
+      ar: "هروب إلى أحد أجمل الشواطئ في البحر الأحمر في هذه الرحلة المريحة من الغردقة. سافر براحة إلى مرسى علم واقض يوماً رائعاً على شاطئ أبو دباب – المشهور بمياهه الصافية الزرقاء الرمادية ورماله البيضاء الناعمة والسباحة الممتازة مع السلاحف البحرية والأطوم والشعاب المرجانية الملونة. لديك الكثير من الوقت الحر للسباحة أو الاسترخاء أو الاستمتاع بالأنشطة المائية. غداء لذيذ مع مشروبات مشمول في مطعم على الشاطئ."
+    },
+    duration: { en: "12 hours (06:00 – 19:00)", ru: "12 часов (06:00 – 19:00)", de: "12 Stunden (06:00 – 19:00)", ar: "12 ساعة (06:00 – 19:00)" },
+    price: 75,
+    priceLabel: {
+      en: "/ person",
+      ru: "/ чел.",
+      de: "/ Person",
+      ar: "/ شخص"
+    },
+    currency: "EUR",
+    category: "Marsa Alam",
+    popular: false,
+    image: "/photos/marsa-alam-abu-dabbab-beach/Abu-Dabbab-Beach.webp",
+    rating: 4.7,
+    highlights: [
+      { en: "Abu Dabbab Beach – Crystal-Clear Turquoise Water", ru: "Пляж Абу-Даббаб – кристально чистая бирюзовая вода", de: "Abu-Dabbab-Strand – kristallklares türkisfarbenes Wasser", ar: "شاطئ أبو دباب – مياه صافية زرقاء رمادية" },
+      { en: "Snorkeling with Sea Turtles & Dugongs", ru: "Снорклинг с морскими черепахами и дугонгами", de: "Schnorcheln mit Meeresschildkröten und Dugongs", ar: "السباحة بالزنبرك مع السلاحف البحرية والأطوم" },
+      { en: "Soft White Sand Beach", ru: "Пляж с мягким белым песком", de: "Weißer Sandstrand", ar: "شاطئ رمال بيضاء ناعمة" },
+      { en: "Free Time for Swimming & Relaxing", ru: "Свободное время для купания и отдыха", de: "Freizeit zum Schwimmen und Entspannen", ar: "وقت حر للسباحة والاسترخاء" },
+      { en: "Lunch with Drinks at Beach Restaurant", ru: "Обед с напитками в пляжном ресторане", de: "Mittagessen mit Getränken im Strandrestaurant", ar: "غداء مع مشروبات في مطعم على الشاطئ" }
+    ],
+    included: [
+      { en: "Round-trip comfortable transportation", ru: "Комфортный трансфер в оба направления", de: "Bequeme Hin- und Rückfahrt", ar: "نقل مريح ذهاب وعودة" },
+      { en: "Entrance to Abu Dabbab Beach", ru: "Вход на пляж Абу-Даббаб", de: "Eintritt zum Abu-Dabbab-Strand", ar: "دخول شاطئ أبو دباب" },
+      { en: "Lunch + soft drinks", ru: "Обед + безалкогольные напитки", de: "Mittagessen + Softdrinks", ar: "غداء + مشروبات خفيفة" },
+      { en: "Snorkeling equipment (mask, snorkel, fins)", ru: "Оборудование для снорклинга (маска, трубка, ласты)", de: "Schnorchel-Ausrüstung (Maske, Schnorchel, Flossen)", ar: "معدات السباحة بالزنبرك (قناع، أنبوب، زعانف)" },
+      { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة المرشد" }
+    ],
+    gallery: [
+      "/photos/marsa-alam-abu-dabbab-beach/Abu-Dabbab-Bay-Egypt-tour-magic.webp",
+      "/photos/marsa-alam-abu-dabbab-beach/Abu-Dabbab-Beach (1).webp",
+      "/photos/marsa-alam-abu-dabbab-beach/Abu-Dabbab-Beach-1.webp",
+      "/photos/marsa-alam-abu-dabbab-beach/Abu-Dabbab-Beach-2.webp",
+      "/photos/marsa-alam-abu-dabbab-beach/Abu-Dabbab-Beach.webp",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (1).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (10).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (11).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (12).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (13).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (14).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (15).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (16).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (17).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (2).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (3).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (4).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (5).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (6).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (7).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (8).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (9).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption.jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/WhatsApp-Image-2025-08-26-at-02.37.24_9461c1e7.jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/WhatsApp-Image-2025-08-26-at-02.37.26_2a918f22.jpg"
+    ]
+  },
+  {
+    id: "77",
+    slug: "wadi-el-gemal-national-park",
+    name: {
+      en: "Wadi El Gemal National Park – Full Day Beach & Nature Tour",
+      ru: "Национальный парк Вади-эль-Гемаль – полный день на пляже и природе",
+      de: "Wadi El Gemal Nationalpark – Ganztages-Strand- & Naturausflug",
+      ar: "متنزه وادي الجمال الوطني – جولة كاملة على الشاطئ والطبيعة"
+    },
+    description: {
+      en: "Discover the pristine beauty of Wadi El Gemal National Park (Valley of the Camels), one of the most stunning protected areas on the Red Sea coast. This relaxing and scenic day trip offers crystal-clear waters, untouched beaches, rich marine life, and breathtaking desert landscapes. You will enjoy excellent snorkeling at beautiful coral reefs, relax on white sandy beaches, and have the chance to see sea turtles, colorful fish, and possibly dolphins. The park is famous for its untouched nature and peaceful atmosphere.",
+      ru: "Откройте для себя нетронутую красоту национального парка Вади-эль-Гемаль (Долина верблюдов) – одного из самых потрясающих охраняемых территорий побережья Красного моря. Расслабляющая живописная поездка предлагает кристально чистые воды, нетронутые пляжи, богатую морскую жизнь и захватывающие пейзажи пустыны. Отличный снорклинг на коралловых рифах, отдых на белоснежных пляжах и шанс увидеть морских черепах, ярких рыб и, возможно, дельфинов. Парк славится своей нетронутой природой и спокойной атмосферой.",
+      de: "Entdecken Sie die unberührte Schönheit des Wadi-El-Gemal-Nationalparks (Tal der Kamele), eines der atemberaubendsten Schutzgebiete der Rotmeerküste. Dieser entspannte und malerische Tagesausflug bietet kristallklares Wasser, unberührte Strände, reiches Meeresleben und atemberaubende Wüstenlandschaften. Genießen Sie hervorragendes Schnorcheln an wunderschönen Korallenriffen, entspannen Sie sich an weißsandigen Stränden und haben Sie die Chance, Meeresschildkröte, bunte Fische und vielleicht sogar Delfine zu sehen. Der Park ist berühmt für seine unberührte Natur und friedvolle Atmosphäre.",
+      ar: "اكتشف الجمال البكر لمتنزه وادي الجمال الوطني (وادي الإبل)، أحد أجمل المناطق المحمية على ساحل البحر الأحمر. تقدم هذه الرحلة المريحة والجميلة مياه صافية وشواطئ بكر وحياة بحرية غنية ومناظر طبيعية صحراوية خلابة. استمتع بالسباحة بالزنبرك عند الشعاب المرجانية الجميلة واسترخ على الشواطئ الرملية البيضاء وفرصة لرؤية السلاحف البحرية والسمون الملونة وربما الدلافين. مشهور بطبيعته البكر وأجواءه الهادئة."
+    },
+    duration: { en: "12 hours (06:00 – 19:00)", ru: "12 часов (06:00 – 19:00)", de: "12 Stunden (06:00 – 19:00)", ar: "12 ساعة (06:00 – 19:00)" },
+    price: 75,
+    priceLabel: {
+      en: "/ person",
+      ru: "/ чел.",
+      de: "/ Person",
+      ar: "/ شخص"
+    },
+    currency: "EUR",
+    category: "Marsa Alam",
+    popular: false,
+    image: "/photos/wadi-el-gemal-national-park/Wadi-El-Gemal-National-Park.webp",
+    rating: 4.7,
+    highlights: [
+      { en: "Wadi El Gemal National Park (Valley of the Camels)", ru: "Национальный парк Вади-эль-Гемаль (Долина верблюдов)", de: "Wadi-El-Gemal-Nationalpark (Tal der Kamele)", ar: "متنزه وادي الجمال الوطني (وادي الإبل)" },
+      { en: "Crystal-Clear Waters & Untouched Beaches", ru: "Кристально чистая вода и нетронутые пляжи", de: "Kristallklares Wasser & unberührte Strände", ar: "مياه صافية وشواطئ بكر" },
+      { en: "Snorkeling at Beautiful Coral Reefs", ru: "Снорклинг на красивых коралловых рифах", de: "Schnorcheln an wunderschönen Korallenriffen", ar: "السباحة بالزنبرك عند الشعاب المرجانية الجميلة" },
+      { en: "Sea Turtles, Colorful Fish & Dolphins", ru: "Морские черепахи, яркие рыбы и дельфины", de: "Meeresschildkröte, bunte Fische & Delfine", ar: "سلاحف بحرية وسمون ملون ودلافين" },
+      { en: "Breathtaking Desert Landscapes", ru: "Захватывающие пейзажи пустыни", de: "Atemberaubende Wüstenlandschaften", ar: "مناظر طبيعية صحراوية خلابة" }
+    ],
+    included: [
+      { en: "Round-trip comfortable transportation", ru: "Комфортный трансфер в оба направления", de: "Bequeme Hin- und Rückfahrt", ar: "نقل مريح ذهاب وعودة" },
+      { en: "Entrance fees to Wadi El Gemal National Park", ru: "Входные билеты в национальный парк", de: "Eintrittskarten zum Nationalpark", ar: "رسوم الدخول لمتنزه وادي الجمال الوطني" },
+      { en: "Boat or beach access for snorkeling", ru: "Лодочный или пляжный доступ для снорклинга", de: "Boot- oder Strandzugang zum Schnorcheln", ar: "وصول بالقارب أو الشاطئ للسباحة بالزنبرك" },
+      { en: "Snorkeling equipment (mask, snorkel, fins)", ru: "Оборудование для снорклинга (маска, трубка, ласты)", de: "Schnorchel-Ausrüstung (Maske, Schnorchel, Flossen)", ar: "معدات السباحة بالزنبرك (قناع، أنبوب، زعانف)" },
+      { en: "Lunch + soft drinks", ru: "Обед + безалкогольные напитки", de: "Mittagessen + Softdrinks", ar: "غداء + مشروبات خفيفة" },
+      { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة المرشد" }
+    ],
+    gallery: [
+      "/photos/wadi-el-gemal-national-park/04841f5bcce6dea3.avif",
+      "/photos/wadi-el-gemal-national-park/065baf238f14afe8.avif",
+      "/photos/wadi-el-gemal-national-park/29d52fdbd70ed2a5520aedf9271f3f17b778185593f61451faf4e16278f50867 (1).avif",
+      "/photos/wadi-el-gemal-national-park/29d52fdbd70ed2a5520aedf9271f3f17b778185593f61451faf4e16278f50867.avif",
+      "/photos/wadi-el-gemal-national-park/2cbbf5693defd7bbc845d8653cbad1ff4c378edfec2659852f71966187084660.avif",
+      "/photos/wadi-el-gemal-national-park/38a98a563e119f87bdbd659bfd69d216e9dc3074da7f69c3554da2170917a61a.avif",
+      "/photos/wadi-el-gemal-national-park/3bd908db13584a23ce51a4e06d3fc880b059c6b6d657caf9e7b47ba1c531bccd.avif",
+      "/photos/wadi-el-gemal-national-park/50a29360e27c83e287a1a7ac0b1055b2.jpg",
+      "/photos/wadi-el-gemal-national-park/5c0d8f78761bfa56460b1ee69713975691a6498b5f32d9f5fe88fa9bacf637b7.avif",
+      "/photos/wadi-el-gemal-national-park/63c66a83c8165.webp",
+      "/photos/wadi-el-gemal-national-park/63c66a966b85e.webp",
+      "/photos/wadi-el-gemal-national-park/65d760ef0c76637428b066d3866a1baede8b6cbde9fcc678109f9dc15483cb08.avif",
+      "/photos/wadi-el-gemal-national-park/6a72630a8b88de6e.avif",
+      "/photos/wadi-el-gemal-national-park/6fbc53af6b097459c07af0913a96b5ccbb8ee2a9d6f53c20f6208afc806daed9.webp",
+      "/photos/wadi-el-gemal-national-park/7018d125b059a14d567c58b813888de45b9f48dec9509ab7c7fd33db6b37bc3a.avif",
+      "/photos/wadi-el-gemal-national-park/893f238db0d01d0a90dd71c0ed5282ded80cff9f2812e523e4146bf056703576.webp",
+      "/photos/wadi-el-gemal-national-park/9099975160744f0277025675cbdad4d68e5231919f6e2b162efad05d627c9340.avif",
+      "/photos/wadi-el-gemal-national-park/9f0ea334396eae76395f909bd47e332c2acb67c58ead47ad78ccfeb9d89ba808.avif",
+      "/photos/wadi-el-gemal-national-park/af30ed37b8dec3fe8d142e0b5572e67d9a39ad64dd1fb6a1a6fc56c5ba798766.avif",
+      "/photos/wadi-el-gemal-national-park/af30ed37b8dec3fe8d142e0b5572e67d9a39ad64dd1fb6a1a6fc56c5ba798766.webp",
+      "/photos/wadi-el-gemal-national-park/bf85ca410be532a1.avif",
+      "/photos/wadi-el-gemal-national-park/ca0e4569e9173e0745d6396e333e93818e99f20fe1dc2ab394dc5d66ffdb51b0.webp",
+      "/photos/wadi-el-gemal-national-park/caption.jpg",
+      "/photos/wadi-el-gemal-national-park/dd52bcaf945d9d8cb8659f2ccbd3463d.jpg",
+      "/photos/wadi-el-gemal-national-park/e558c3faa2cb73c40163fc2b0164ae455a73a56beb214a03d4b9f86189234bb6.webp",
+      "/photos/wadi-el-gemal-national-park/fe171706e8c60423a37bdab37e590d71.jpg",
+      "/photos/wadi-el-gemal-national-park/Sunset-at-Wadi-al-Gemal.webp",
+      "/photos/wadi-el-gemal-national-park/videoframe_1574.png",
+      "/photos/wadi-el-gemal-national-park/videoframe_3136.png",
+      "/photos/wadi-el-gemal-national-park/Wadi-El-Gemal-National-Park.jpg",
+      "/photos/wadi-el-gemal-national-park/Wadi-El-Gemal-National-Park.webp",
+      "/photos/wadi-el-gemal-national-park/wadi-el-gemal-park.jpg",
+      "/photos/wadi-el-gemal-national-park/wadi-el-gemal-park.webp",
+      "/photos/wadi-el-gemal-national-park/wadi-elgemal-national-park.jpg"
+    ]
+  },
+  {
+    id: "78",
+    slug: "horse-riding-safari",
+    name: {
+      en: "Horse Riding Safari Adventure from Hurghada",
+      ru: "Конная сафари-поездка из Хургады",
+      de: "Pferdereit-Safari-Abenteuer von Hurghada",
+      ar: "مغامرة ركوب الخيول في الصحراء من الغردقة"
+    },
+    description: {
+      en: "Experience the magic of the Egyptian desert on horseback with this exciting Horse Riding Safari. Ride beautiful Arabian horses through golden sand dunes, enjoy breathtaking desert landscapes, and feel the freedom of the Sahara. Includes professional riding instructions for all levels, a visit to a traditional Bedouin camp with tea and snacks.",
+      ru: "Испытайте магию египетской пустыни верхом на лошади в этой захватывающей конной сафари-поездке. Ездите на красивых арабских лошадях по золотым песчаным дюнам, наслаждайтесь захватывающими пейзажами пустыни и почувствуйте свободу Сахары. Профессиональная инструкция для всех уровней, посещение традиционного бедуинского лагеря с чаем и закусками.",
+      de: "Erleben Sie den Zauber der ägyptischen Wüste zu Pferd mit diesem aufregenden Pferdereit-Safari. Reiten Sie schöne arabische Pferde durch goldene Sanddünen, genießen Sie atemberaubende Wüstenlandschaften und spüren Sie die Freiheit der Sahara. Professionelle Reitanfänge für alle Niveaus, Besuch eines traditionellen Beduinenlagers mit Tee und Snacks.",
+      ar: "استشعر سحر الصحراء المصرية على ظهر الحصان مع هذه المغامرة المثيرة. اركب خيلاً عربية جميلة عبر الكثبان الرملية الذهبية واستمتع بالمناظر الطبيعية الخلابة وشعر بحرية الصحراء. تتضمن تعليمات ركوب احترافية لجميع المستويات وزيارة لمعسكر بدوي تقليدي مع شاي ووجبات خفيفة."
+    },
+    duration: { en: "3 – 4 hours (morning or afternoon)", ru: "3 – 4 часа (утро или вечер)", de: "3 – 4 Stunden (Vormittag oder Nachmittag)", ar: "3 – 4 ساعات (صباحاً أو بعد الظهر)" },
+    price: 40,
+    priceLabel: {
+      en: "/ person",
+      ru: "/ чел.",
+      de: "/ Person",
+      ar: "/ شخص"
+    },
+    currency: "EUR",
+    category: "Desert Safari",
+    popular: true,
+    image: "/photos/horse-riding-safari/caption.jpg",
+    rating: 4.8,
+    highlights: [
+      { en: "Arabian Horse Ride Through Golden Dunes", ru: "Поездка на арабской лошади по золотым дюнам", de: "Arabisches Pferd durch goldene Dünen", ar: "ركوب حصان عربي عبر الكثبان الذهبية" },
+      { en: "Professional Riding Instructions (all levels)", ru: "Профессиональная инструкция (все уровни)", de: "Professionelle Reitanfänge (alle Niveaus)", ar: "تعليمات ركوب احترافية (جميع المستويات)" },
+      { en: "Traditional Bedouin Camp Visit", ru: "Посещение традиционного бедуинского лагеря", de: "Besuch eines traditionellen Beduinenlagers", ar: "زيارة معسكر بدوي تقليدي" },
+      { en: "Breathtaking Desert Landscapes", ru: "Захватывающие пейзажи пустыни", de: "Atemberaubende Wüstenlandschaften", ar: "مناظر طبيعية صحراوية خلابة" },
+      { en: "Bedouin Tea & Light Snacks", ru: "Бедуинский чай и лёгкие закуски", de: "Beduinentee & leichte Snacks", ar: "شاي بدوي ووجبات خفيفة" }
+    ],
+    included: [
+      { en: "Round-trip transportation", ru: "Трансфер в оба направления", de: "Hin- und Rückfahrt", ar: "نقل ذهاب وعودة" },
+      { en: "Horse riding session with guide/instructor", ru: "Сеанс верховой езды с гидом/инструктором", de: "Pferdereit-Sitzung mit Führer/Instruktor", ar: "جلسة ركوب خيول مع مرشد/مدرّب" },
+      { en: "Helmet and safety equipment", ru: "Шлем и средства безопасности", de: "Helm und Sicherheitsausrüstung", ar: "خوذة ومعدات الأمان" },
+      { en: "Bedouin tea and light snacks", ru: "Бедуинский чай и лёгкие закуски", de: "Beduinentee und leichte Snacks", ar: "شاي بدوي ووجبات خفيفة" },
+      { en: "Hotel pickup and drop-off", ru: "Трансфер от отеля и обратно", de: "Hotelabholung und Rückfahrt", ar: "pickp من وإلى الفندق" }
+    ],
+    gallery: [
+      "/photos/horse-riding-safari/39.jpg",
+      "/photos/horse-riding-safari/5d.jpg",
+      "/photos/horse-riding-safari/5e.jpg",
+      "/photos/horse-riding-safari/6c.jpg",
+      "/photos/horse-riding-safari/72.jpg",
+      "/photos/horse-riding-safari/76.jpg",
+      "/photos/horse-riding-safari/a0.jpg",
+      "/photos/horse-riding-safari/a3.jpg",
+      "/photos/horse-riding-safari/ae.jpg",
+      "/photos/horse-riding-safari/af.jpg",
+      "/photos/horse-riding-safari/b1.jpg",
+      "/photos/horse-riding-safari/caption.jpg",
+      "/photos/horse-riding-safari/d9.jpg",
+      "/photos/horse-riding-safari/da.jpg",
+      "/photos/horse-riding-safari/db.jpg",
+      "/photos/horse-riding-safari/de.jpg",
+      "/photos/horse-riding-safari/e9.jpg",
+      "/photos/horse-riding-safari/ea.jpg",
+      "/photos/horse-riding-safari/ed.jpg"
+    ]
+  },
+  {
+    id: "79",
+    slug: "quad-adventure-mini-desert-safari",
+    name: {
+      en: "Quad Adventure Mini Desert Safari from Hurghada",
+      ru: "Квадроцикл мини-сафари из Хургады",
+      de: "Quad-Abenteuer Mini-Wüstensafari von Hurghada",
+      ar: "مغامرة دراجات رباعية صحراوية مصغرة من الغردقة"
+    },
+    description: {
+      en: "Experience the thrill of the Egyptian desert on this exciting Mini Desert Safari! Drive your own Quad Bike (ATV) through golden sand dunes, enjoy stunning desert landscapes, and feel the real adrenaline of the Sahara. Includes a short camel ride, visit to a traditional Bedouin village, and oriental tea with light snacks.",
+      ru: "Испытайте адреналин египетской пустыни в этой захватывающей мини-сафари-поездке! Управляйте собственным квадроциклом (ATV) по золотым песчаным дюнам, наслаждайтесь потрясающими пейзажами пустыни и почувствуйте настоящий адреналин Сахары. Включает короткую поездку на верблюде, посещение традиционного бедуинского посёлка и восточный чай с лёгкими закусками.",
+      de: "Erleben Sie den Nervenkitzel der ägyptischen Wüste bei dieser aufregenden Mini-Wüstensafari! Fahren Sie Ihr eigenes Quad-Bike (ATV) durch goldene Sanddünen, genießen Sie atemberaubende Wüstenlandschaften und spüren Sie den echten Adrenalin der Sahara. Kurze Kamelfahrt, Besuch eines traditionellen Beduinen Dorfs und orientalischer Tee mit leichten Snacks.",
+      ar: "استشعر إثارة الصحراء المصرية في هذه المغامرة المثيرة! قُد دراجتك الرباعية (ATV) عبر الكثبان الرملية الذهبية واستمتع بالمناظر الطبيعية الخلابة وشعر بال-adrenaline الحقيقي للصحراء. تتضمن رحلة قصيرة على الجمل وزيارة لقرية بدوية تقليدية وشاي شرقي مع وجبات خفيفة."
+    },
+    duration: { en: "2.5 – 3.5 hours (morning or afternoon)", ru: "2.5 – 3.5 часа (утро или вечер)", de: "2,5 – 3,5 Stunden (Vormittag oder Nachmittag)", ar: "2.5 – 3.5 ساعات (صباحاً أو بعد الظهر)" },
+    price: 30,
+    priceLabel: {
+      en: "/ person",
+      ru: "/ чел.",
+      de: "/ Person",
+      ar: "/ شخص"
+    },
+    currency: "EUR",
+    category: "Desert Safari",
+    popular: true,
+    image: "/photos/quad-adventure-mini-desert-safari/hurghada-desert-safari.jpg",
+    rating: 4.7,
+    highlights: [
+      { en: "Quad Bike (ATV) Ride Through Golden Dunes", ru: "Поездка на квадроцикле (ATV) по золотым дюнам", de: "Quad-Bike (ATV) durch goldene Dünen", ar: "ركوب دراجة رباعية (ATV) عبر الكثبان الذهبية" },
+      { en: "Short Camel Ride", ru: "Короткая поездка на верблюде", de: "Kurze Kamelfahrt", ar: "رحلة قصيرة على الجمل" },
+      { en: "Visit to Traditional Bedouin Village", ru: "Посещение традиционного бедуинского посёлка", de: "Besuch eines traditionellen Beduinen Dorfs", ar: "زيارة قرية بدوية تقليدية" },
+      { en: "Oriental Tea & Light Snacks", ru: "Восточный чай и лёгкие закуски", de: "Orientalischer Tee & leichte Snacks", ar: "شاي شرقي ووجبات خفيفة" },
+      { en: "Professional Safety Briefing", ru: "Профессиональный инструктаж по безопасности", de: "Professionelle Sicherheitsunterweisung", ar: "إرشادات أمان احترافية" }
+    ],
+    included: [
+      { en: "Quad bike rental with fuel", ru: "Аренда квадроцикла с топливом", de: "Quad-Bike-Miete mit Kraftstoff", ar: "تأجير دراجة رباعية مع وقود" },
+      { en: "Helmet and safety equipment", ru: "Шлем и средства безопасности", de: "Helm und Sicherheitsausrüstung", ar: "خوذة ومعدات الأمان" },
+      { en: "Experienced guide / instructor", ru: "Опытный гид / инструктор", de: "Erfahrener Führer / Instructor", ar: "مرشد / درّب م经验丰富" },
+      { en: "Camel ride + Bedouin tea", ru: "Поездка на верблюде + бедуинский чай", de: "Kamelfahrt + Beduinentee", ar: "رحلة على الجمل + شاي بدوي" },
+      { en: "Hotel pickup and drop-off", ru: "Трансфер от отеля и обратно", de: "Hotelabholung und Rückfahrt", ar: "pickp من وإلى الفندق" }
+    ],
+    gallery: [
+      "/photos/quad-adventure-mini-desert-safari/26.jpg",
+      "/photos/quad-adventure-mini-desert-safari/58.jpg",
+      "/photos/quad-adventure-mini-desert-safari/59.jpg",
+      "/photos/quad-adventure-mini-desert-safari/5b.jpg",
+      "/photos/quad-adventure-mini-desert-safari/5c.jpg",
+      "/photos/quad-adventure-mini-desert-safari/6f.jpg",
+      "/photos/quad-adventure-mini-desert-safari/85.jpg",
+      "/photos/quad-adventure-mini-desert-safari/be.jpg",
+      "/photos/quad-adventure-mini-desert-safari/c1.jpg",
+      "/photos/quad-adventure-mini-desert-safari/caption (1).jpg",
+      "/photos/quad-adventure-mini-desert-safari/caption (10).jpg",
+      "/photos/quad-adventure-mini-desert-safari/caption (2).jpg",
+      "/photos/quad-adventure-mini-desert-safari/caption (3).jpg",
+      "/photos/quad-adventure-mini-desert-safari/caption (4).jpg",
+      "/photos/quad-adventure-mini-desert-safari/caption (5).jpg",
+      "/photos/quad-adventure-mini-desert-safari/caption (6).jpg",
+      "/photos/quad-adventure-mini-desert-safari/caption (7).jpg",
+      "/photos/quad-adventure-mini-desert-safari/caption (8).jpg",
+      "/photos/quad-adventure-mini-desert-safari/caption (9).jpg",
+      "/photos/quad-adventure-mini-desert-safari/caption.jpg",
+      "/photos/quad-adventure-mini-desert-safari/df.jpg",
+      "/photos/quad-adventure-mini-desert-safari/hurghada-desert-safari.jpg"
+    ]
+  },
+  {
+    id: "80",
+    slug: "city-tour-hurghada",
+    name: {
+      en: "Hurghada City Tour – Discover the Real Hurghada",
+      ru: "Городской тур Хургада – откройте настоящую Хургаду",
+      de: "Hurghada Stadtrundfahrt – Entdecken Sie das echte Hurghada",
+      ar: "جولة مدينة الغردقة – اكتشف الغردقة الحقيقية"
+    },
+    description: {
+      en: "Get to know the authentic side of Hurghada beyond the resorts with this enjoyable and informative City Tour. Explore the old town El Dahar – the historical heart of Hurghada. Walk through the lively local market and bazaar (souvenirs, spices, clothes, and handicrafts). Visit the beautiful Hurghada Marina and promenade with yachts. Enjoy a scenic drive along the coastline and new modern areas. Photo stops at panoramic viewpoints.\n\nImportant note:\n10 euro from inside the city's hotels\n15 euro from Makadi and neighboring hotels\n20 euro from Safaga Hotels\n\nIdeal for those who want to experience local Egyptian life, shop for souvenirs, and understand the real Hurghada.\n\nReturn to your hotel filled with unforgettable memories, great photos, and stories that will stay with you forever.",
+      ru: "Познакомьтесь с подлинной стороной Хургады за пределами курортов во время этого интересного и познавательного городского тура. Исследуйте старый город Эль-Дахар – историческое сердце Хургады. Прогуляйтесь по оживленному местному рынку и базару (сувениры, специи, одежда и ремесла). Посетите красивую набережную Хургады с яхтами. Насладитесь живописной поездкой вдоль побережья и новых современных районов. Фотоостановки на панорамных смотровых площадках.\n\nВажная заметка:\n10 евро из отелей внутри города\n15 евро из Макади и соседних отелей\n20 евро из отелей Сафага\n\nИдеально для тех, кто хочет познакомиться с египетской жизнью, купить сувениры и узнать настоящую Хургаду.\n\nВернитесь в отель с незабываемыми воспоминаниями, потрясающими фотографиями и историями, которые останутся с вами навсегда.",
+      de: "Lernen Sie die authentische Seite von Hurghada abseits der Resorts mit dieser angenehmen und informativen Stadtrundfahrt kennen. Erkunden Sie die Altstadt El Dahar – das historische Herz von Hurghada. Spazieren Sie durch den lebhaften lokalen Markt und Basar (Souvenirs, Gewürze, Kleidung und Handwerkskunst). Besuchen Sie die wunderschöne Hurghada Marina und Promenade mit Jachten. Genießen Sie eine malerische Fahrt entlang der Küste und der neuen modernen Bereiche. Fotostopps an Panorama-Aussichtspunkten.\n\nWichtiger Hinweis:\n10 Euro aus Hotels in der Stadt\n15 Euro aus Makadi und benachbarten Hotels\n20 Euro aus Safaga Hotels\n\nIdeal für alle, die das ägyptische Leben erleben, Souvenirs kaufen und das echte Hurghada kennenlernen möchten.\n\nKehren Sie mit unvergesslichen Erinnerungen, tollen Fotos und Geschichten, die Sie nie vergessen werden, in Ihr Hotel zurück.",
+      ar: "تعرّف على الجانب الأصيل من الغردقة خلف المنتجعات مع هذه الجولة المدينة الممتعة والتعليمية. استكشف البلدة القديمة الداهر – القلب التاريخي للغردقة. مشِّ عبر السوق المحلي النابض بالحياة والبازار (الهدايا التذكارية، التوابل، الملابس والحرف اليدوية). زُر رصيف الغردقة الجميل والواجهة البحرية مع اليخوت. استمتع بقيادة مشاهدة على طول الساحل والمناطق الحديثة. محطات تصوير في مناطق المشاهدة البانورامية.\n\nملاحظة هامة:\n10 يورو من فنادق داخل المدينة\n15 يورو من فنادق ماكادي والمنطقة المجاورة\n20 يورو من فنادق سفاجا\n\nمثالي للذين يريدون تجربة الحياة المصرية المحلية، وشراء الهدايا التذكارية، والتعرف على الغردقة الحقيقية.\n\n عُد إلى فندقك مليئاً بالذكريات التي لا تُنسى، والصور الرائعة، والقصص التي ستبقى معك إلى الأبد."
+    },
+    duration: { en: "3–4 hours", ru: "3–4 часа", de: "3–4 Stunden", ar: "3–4 ساعات" },
+    price: 0,
+    currency: "EUR",
+    priceLabel: {
+      en: "Ask for price",
+      ru: "Уточните цену",
+      de: "Preis auf Anfrage",
+      ar: "اسأل عن السعر"
+    },
+    category: "Entertainment",
+    popular: false,
+    image: "/photos/city-tour-hurghada/city-tour-1.jpg",
+    rating: 4.6,
+    highlights: [
+      { en: "El Dahar Old Town", ru: "Старый город Эль-Дахар", de: "Altstadt El Dahar", ar: "البلدة القديمة الداهر" },
+      { en: "Local Market & Bazaar", ru: "Местный рынок и базар", de: "Lokaler Markt & Basar", ar: "السوق المحلي والبازار" },
+      { en: "Hurghada Marina & Promenade", ru: "Набережная Хургады", de: "Hurghada Marina & Promenade", ar: "رصيف الغردقة والواجهة البحرية" },
+      { en: "Coastal Scenic Drive", ru: "Живописная поездка вдоль побережья", de: "Malerische Küstenfahrt", ar: "قيادة مشاهدة على طول الساحل" },
+      { en: "Panoramic Photo Stops", ru: "Панорамные фотоостановки", de: "Panorama-Fotostopps", ar: "محطات تصوير بانورامية" }
+    ],
+    included: [
+      { en: "Hotel Pickup & Drop-off", ru: "Трансфер из отеля и обратно", de: "Hotel-Abholung & Rücktransfer", ar: "التوصيل من الفندق والعودة" },
+      { en: "Air-Conditioned Transport", ru: "Транспорт с кондиционером", de: "Klimatisiertes Transportmittel", ar: "نقل مكيف" },
+      { en: "Professional Local Guide", ru: "Профессиональный местный гид", de: "Professioneller lokaler Guide", ar: "مرشد محترف محلي" },
+      { en: "Soft Drinks", ru: "Безалкогольные напитки", de: "Erfrischungsgetränke", ar: "مشروبات خفيفة" }
+    ],
+    gallery: [
+      "/photos/city-tour-hurghada/city-tour-1.jpg",
+      "/photos/city-tour-hurghada/city-tour-2.jpg",
+      "/photos/city-tour-hurghada/city-tour-3.jpg",
+      "/photos/city-tour-hurghada/city-tour-4.jpg",
+      "/photos/city-tour-hurghada/city-tour-5.jpg",
+      "/photos/city-tour-hurghada/city-tour-6.jpg",
+      "/photos/city-tour-hurghada/city-tour-7.jpg",
+      "/photos/city-tour-hurghada/city-tour-8.jpg",
+      "/photos/city-tour-hurghada/city-tour-9.jpg",
+      "/photos/city-tour-hurghada/city-tour-10.jpg",
+      "/photos/city-tour-hurghada/city-tour-11.jpg",
+      "/photos/city-tour-hurghada/city-tour-12.jpg",
+      "/photos/city-tour-hurghada/city-tour-13.jpg",
+      "/photos/city-tour-hurghada/city-tour-14.jpg",
+      "/photos/city-tour-hurghada/city-tour-15.jpg",
+      "/photos/city-tour-hurghada/city-tour-16.jpg",
+      "/photos/city-tour-hurghada/city-tour-17.jpg",
+      "/photos/city-tour-hurghada/city-tour-18.jpg",
+      "/photos/city-tour-hurghada/city-tour-19.jpg",
+      "/photos/city-tour-hurghada/city-tour-20.jpg",
+      "/photos/city-tour-hurghada/city-tour-21.jpg",
+      "/photos/city-tour-hurghada/city-tour-22.jpg",
+      "/photos/city-tour-hurghada/city-tour-23.jpg",
+      "/photos/city-tour-hurghada/city-tour-24.jpg"
+    ]
+  },
+  {
+    id: "81",
+    slug: "grand-aquarium-hurghada",
+    name: {
+      en: "Grand Aquarium Hurghada – Underwater World Adventure",
+      ru: "Гранд Аквариум Хургада – Подводное приключение",
+      de: "Grand Aquarium Hurghada – Unterwasserwelt-Abenteuer",
+      ar: "المتحف المائي الكبير الغردقة – مغامرة عالم تحت الماء"
+    },
+    description: {
+      en: "Discover the magic of the Red Sea without getting wet at the impressive Grand Aquarium Hurghada! This modern aquarium is one of the largest in the Middle East and offers a spectacular journey through the marine life of Egypt.\n\nHighlights:\n• Walk through a long underwater tunnel with sharks, rays, and thousands of colorful fish swimming above and around you\n• See turtles, moray eels, and many exotic species\n• Interactive displays and educational zones\n• Beautiful photo opportunities\n\nPerfect for families with children, couples, and anyone who wants to enjoy the underwater world comfortably and safely.\n\nReturn to your hotel filled with unforgettable memories, stunning photos, and stories that will stay with you forever.",
+      ru: "Откройте для себя магию Красного моря, не намокая, в впечатляющем Гранд Аквариуме Хургада! Этот современный аквариум — один из крупнейших на Ближнем Востоке и предлагает захватывающее путешествие по морской жизни Египта.\n\nДостопримечательности:\n• Прогулка по длинному подводному тоннелю с акулами, скатами и тысячами разноцветных рыб\n• Черепахи, мурены и многие экзотические виды\n• Интерактивные экспозиции и образовательные зоны\n• Прекрасные возможности для фото\n\nИдеально для семей с детьми, пар и всех, кто хочет насладиться подводным миром комфортно и безопасно.\n\nВернитесь в отель с незабываемыми воспоминаниями, потрясающими фотографиями и историями, которые останутся с вами навсегда.",
+      de: "Entdecken Sie die Magie des Roten Meeres, ohne nass zu werden, im beeindruckenden Grand Aquarium Hurghada! Dieses moderne Aquarium ist eines der größten im Nahen Osten und bietet eine spektakuläre Reise durch das Meeresleben Ägyptens.\n\nHöhepunkte:\n• Gehen Sie durch einen langen Unterwassertunnel mit Haien, Rochen und Tausenden bunter Fische\n• Sehen Sie Schildkröten, Muränen und viele exotische Arten\n• Interaktive Ausstellungen und Bildungszonen\n• Wunderschöne Fotomöglichkeiten\n\nPerfekt für Familien mit Kindern, Paare und alle, die die Unterwasserwelt bequem und sicher genießen möchten.\n\nKehren Sie mit unvergesslichen Erinnerungen, tollen Fotos und Geschichten, die Sie nie vergessen werden, in Ihr Hotel zurück.",
+      ar: "اكتشف سحر البحر الأحمر دون أن تبتل في المتحف المائي الكبير الغردقة المذهل! يعتبر هذا المتحف المائي الحديث من الأكبر في الشرق الأوسط ويوفر رحلة مذهلة عبر الحياة البحرية في مصر.\n\nأبرز ما يميزه:\n• مشي عبر نفق تحت الماء طويل مع القرش والشفاح وآلاف الأسماك الملونة\n• سلحفاث ونervals وأنواع استوائية كثيرة\n• عروض تفاعلية ومناطق تعليمية\n• فرص تصوير جميلة\n\nمثالي للعائلات والأزواج وكل من يريد الاستمتاع بعالم تحت الماء براحة وأمان.\n\n عُد إلى فندقك مليئاً بالذكريات التي لا تُنسى، والصور المذهلة، والقصص التي ستبقى معك إلى الأبد."
+    },
+    duration: { en: "3–4 hours", ru: "3–4 часа", de: "3–4 Stunden", ar: "3–4 ساعات" },
+    price: 45,
+    currency: "EUR",
+    category: "Entertainment",
+    popular: false,
+    image: "/photos/grand-aquarium-hurghada/aquarium-1.jpg",
+    rating: 4.7,
+    highlights: [
+      { en: "Underwater Tunnel with Sharks & Rays", ru: "Подводный тоннель с акулами и скатами", de: "Unterwassertunnel mit Haien und Rochen", ar: "نفق تحت الماء مع القرش والشفاح" },
+      { en: "Turtles, Moray Eels & Exotic Species", ru: "Черепахи, мурены и экзотические виды", de: "Schildkröten, Muränen & exotische Arten", ar: "سلحفاث ونervals وأنواع استوائية" },
+      { en: "Interactive Displays & Educational Zones", ru: "Интерактивные экспозиции и образовательные зоны", de: "Interaktive Ausstellungen & Bildungszonen", ar: "عروض تفاعلية ومناطق تعليمية" },
+      { en: "Beautiful Photo Opportunities", ru: "Прекрасные возможности для фото", de: "Wunderschöne Fotomöglichkeiten", ar: "فرص تصوير جميلة" }
+    ],
+    included: [
+      { en: "Hotel Pickup & Drop-off", ru: "Трансфер из отеля и обратно", de: "Hotel-Abholung & Rücktransfer", ar: "التوصيل من الفندق والعودة" },
+      { en: "Entrance Ticket to Grand Aquarium", ru: "Билет в Гранд Аквариум", de: "Eintrittskarte für das Grand Aquarium", ar: "تذكرة دخول المتحف المائي الكبير" },
+      { en: "Professional Guide", ru: "Профессиональный гид", de: "Professioneller Guide", ar: "مرشد محترف" },
+      { en: "Soft Drinks", ru: "Безалкогольные напитки", de: "Erfrischungsgetränke", ar: "مشروبات خفيفة" }
+    ],
+    gallery: [
+      "/photos/grand-aquarium-hurghada/aquarium-1.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-2.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-3.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-4.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-5.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-6.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-7.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-8.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-9.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-10.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-11.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-12.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-13.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-14.jpg"
+    ]
+  },
+  {
+    id: "82",
+    slug: "hurghada-museum-tour",
+    name: {
+      en: "Hurghada Museum – History & Culture Day Trip",
+      ru: "Музей Хургады – Экскурсия по истории и культуре",
+      de: "Hurghada Museum – Geschichte & Kultur Tagesausflug",
+      ar: "متحف الغردقة – رحلة تاريخ وثقافة"
+    },
+    description: {
+      en: "Discover the rich history and heritage of the Red Sea region at the modern Hurghada Museum. This impressive museum showcases artifacts from ancient Egypt, Greco-Roman times, and Islamic periods, all beautifully displayed in a contemporary setting.\n\nHighlights:\n• Large collection of ancient Egyptian statues, jewelry, and daily life objects\n• Exhibits about the Red Sea's history and marine heritage\n• Beautifully designed halls with great photo opportunities\n• Short guided explanation of the most important pieces\n\nIdeal for families, culture lovers, and anyone who wants to learn more about Egypt's history without traveling far from the beach.\n\nReturn to your hotel filled with unforgettable memories, great photos, and new knowledge about ancient Egypt.",
+      ru: "Откройте для себя богатую историю и наследие региона Красного моря в современном музее Хургады. Этот впечатляющий музей демонстрирует артефакты из Древнего Египта, греко-римского и исламского периодов, все красиво представленные в современном оформлении.\n\nДостопримечательности:\n• Богатая коллекция древнеегипетских статуй, украшений и предметов быта\n• Экспозиции об истории Красного моря и его морском наследии\n• Красиво оформленные залы с возможностями для фото\n• Краткое описание самых важных экспонатов с гидом\n\nИдеально для семей, любителей культуры и всех, кто хочет узнать больше об истории Египта, не уезжая далеко от пляжа.\n\nВернитесь в отель с незабываемыми воспоминаниями, хорошими фотографиями и новыми знаниями о Древнем Египте.",
+      de: "Entdecken Sie die reiche Geschichte und das Erbe der Region des Roten Meeres im modernen Hurghada Museum. Dieses beeindruckende Museum präsentiert Artefakte aus dem alten Ägypten, der griechisch-römischen Zeit und islamischen Epochen, alle wunderschön in einem zeitgenössischen Rahmen dargestellt.\n\nHöhepunkte:\n• Große Sammlung altägyptischer Statuen, Schmuck und Alltagsgegenstände\n• Ausstellungen über die Geschichte und das maritime Erbe des Roten Meeres\n• Wunderschön gestaltete Säle mit tollen Fotomöglichkeiten\n• Kurze geführte Erklärung der wichtigsten Stücke\n\nPerfekt für Familien, Kulturliebhaber und alle, die mehr über die Geschichte Ägyptens erfahren möchten, ohne weit vom Strand entfernt zu sein.\n\nKehren Sie mit unvergesslichen Erinnerungen, tollen Fotos und neuem Wissen über das alte Ägypten in Ihr Hotel zurück.",
+      ar: "اكتشف التاريخ الغني والتراث لمنطقة البحر الأحمر في المتحف الحديث للغردقة. يعرض هذا المتحف المذهل القطع الأثرية من مصر القديمة والعصور اليونانية الرومانية والعصور الإسلامية، جميعها معروض بشكل جميل في بيئة معاصرة.\n\nأبرز ما يميزه:\n• مجموعة كبيرة من التماثيل المصرية القديمة والمجوهرات وأدوات الحياة اليومية\n• معارض عن تاريخ البحر الأحمر وتراثه البحري\n• قاعات مصممة بشكل جميل مع فرص تصوير رائعة\n• شرح قصير من مرشد لأهم القطع\n\nمثالي للعائلات ومحبي الثقافة ومن يريد معرفة المزيد عن تاريخ مصر دون السفر بعيداً عن الشاطئ.\n\n عُد إلى فندقك مليئاً بالذكريات التي لا تُنسى، والصور الجيدة، والمعرفة الجديدة عن مصر القديمة."
+    },
+    duration: { en: "3–4 hours", ru: "3–4 часа", de: "3–4 Stunden", ar: "3–4 ساعات" },
+    price: 35,
+    currency: "EUR",
+    category: "Entertainment",
+    popular: false,
+    image: "/photos/hurghada-museum/museum-1.jpg",
+    rating: 4.6,
+    highlights: [
+      { en: "Ancient Egyptian Statues & Jewelry", ru: "Древнеегипетские статуи и украшения", de: "Altägyptische Statuen & Schmuck", ar: "تماثيل ومجوهرات مصر القديمة" },
+      { en: "Red Sea History & Marine Heritage", ru: "История Красного моря и морское наследие", de: "Geschichte & maritimes Erbe des Roten Meeres", ar: "تاريخ البحر الأحمر وتراثه البحري" },
+      { en: "Beautifully Designed Halls", ru: "Красиво оформленные залы", de: "Wunderschön gestaltete Säle", ar: "قاعات مصممة بشكل جميل" },
+      { en: "Guided Explanation of Key Pieces", ru: "Экскурсия к важнейшим экспонатам", de: "Geführte Erklärung der Hauptstücke", ar: "شرح مرشد لأهم القطع" }
+    ],
+    included: [
+      { en: "Hotel Pickup & Drop-off", ru: "Трансфер из отеля и обратно", de: "Hotel-Abholung & Rücktransfer", ar: "التوصيل من الفندق والعودة" },
+      { en: "Entrance Ticket to Hurghada Museum", ru: "Билет в Музей Хургады", de: "Eintrittskarte für das Hurghada Museum", ar: "تذكرة دخول متحف الغردقة" },
+      { en: "Professional Guide", ru: "Профессиональный гид", de: "Professioneller Guide", ar: "مرشد محترف" },
+      { en: "Soft Drinks", ru: "Безалкогольные напитки", de: "Erfrischungsgetränke", ar: "مشروبات خفيفة" }
+    ],
+    gallery: [
+      "/photos/hurghada-museum/museum-1.jpg",
+      "/photos/hurghada-museum/museum-2.jpg",
+      "/photos/hurghada-museum/museum-3.jpg",
+      "/photos/hurghada-museum/museum-4.jpg",
+      "/photos/hurghada-museum/museum-5.jpg",
+      "/photos/hurghada-museum/museum-6.jpg",
+      "/photos/hurghada-museum/museum-7.jpg",
+      "/photos/hurghada-museum/museum-8.jpg",
+      "/photos/hurghada-museum/museum-9.jpg",
+      "/photos/hurghada-museum/museum-10.jpg",
+      "/photos/hurghada-museum/museum-11.jpg",
+      "/photos/hurghada-museum/museum-12.jpg",
+      "/photos/hurghada-museum/museum-13.jpg",
+      "/photos/hurghada-museum/museum-14.jpg",
+      "/photos/hurghada-museum/museum-15.jpg",
+      "/photos/hurghada-museum/museum-16.jpg",
+      "/photos/hurghada-museum/museum-17.jpg",
+      "/photos/hurghada-museum/museum-18.jpg",
+      "/photos/hurghada-museum/museum-19.jpg",
+      "/photos/hurghada-museum/museum-20.jpg",
+      "/photos/hurghada-museum/museum-21.jpg"
+    ]
+  },
+  {
+    id: "83",
+    slug: "la-tenda-lights-bedouin-dinner",
+    name: {
+      en: "La Tenda Lights – Magical Bedouin Night (Dinner & Show)",
+      ru: "La Tenda Lights – Волшебная бедуинская ночь (ужин и шоу)",
+      de: "La Tenda Lights – Magischer Beduinennacht (Dinner & Show)",
+      ar: "لا تنتا لايتز – ليلة بدوية ساحرة (عشاء وعرض)"
+    },
+    description: {
+      en: "Step into a magical world under the stars at La Tenda Lights, one of the most entertaining evening experiences in Hurghada.\n\nEnjoy an authentic Bedouin-style evening in a beautifully decorated tent with thousands of colorful lights creating a fairy-tale atmosphere.\n\nProgram Includes:\n• Warm welcome with traditional drinks\n• Rich Bedouin dinner buffet (grilled meats, oriental dishes, salads, desserts)\n• Live entertainment: belly dancing, folkloric music, fire show\n• Camel rides and photo opportunities\n• Fun and relaxed desert atmosphere\n\nPerfect for families, couples, and groups who want a memorable, fun, and photogenic night in the desert.\n\nReturn to your hotel filled with unforgettable memories, beautiful photos under the lights, and stories that will stay with you forever.",
+      ru: "Окажитесь в волшебном мире под звездами в La Tenda Lights — одном из самых развлекательных вечерних мероприятий в Хургаде.\n\nНаслаждайтесь аутентичным бедуинским вечером в красиво украшенной палатке с тысячами разноцветных огней, создающих сказочную атмосферу.\n\nПрограмма включает:\n• Традиционный прием с напитками\n• Щедрый бедуинский шведский стол (мясо на гриле, восточные блюда, салаты, десерты)\n• Живые развлечения: танец живота, фольклорная музыка, огненное шоу\n• Верблюжьи прогулки и возможности для фото\n• Веселая и расслабленная атмосфера пустыни\n\nИдеально для семей, пар и групп, которые хотят запоминающуюся, веселую и фотогеничную ночь в пустыне.\n\nВернитесь в отель с незабываемыми воспоминаниями, красивыми фотографиями под огнями и историями, которые останутся с вами навсегда.",
+      de: "Tauchen Sie ein in eine magische Welt unter den Sternen bei La Tenda Lights, einem der unterhaltsamsten Abenderlebnisse in Hurghada.\n\nGenießen Sie einen authentischen Beduinenabend in einem wunderschön geschmückten Zelt mit Tausenden bunter Lichter, die eine Märchenatmosphäre schaffen.\n\nProgramm beinhaltet:\n• Warmer Empfang mit traditionellen Getränken\n• Reichhaltiges Beduinen-Buffet (Grillfleisch, orientalische Gerichte, Salate, Desserts)\n• Live-Unterhaltung: Bauchtanz, Folkloremusik, Feuershow\n• Kamelritte und Fotomöglichkeiten\n• Lustige und entspannte Wüstenatmosphäre\n\nPerfekt für Familien, Paare und Gruppen, die eine unvergessliche, lustige und fotogene Nacht in der Wüste suchen.\n\nKehren Sie mit unvergesslichen Erinnerungen, schönen Fotos unter den Lichtern und Geschichten, die Sie nie vergessen werden, in Ihr Hotel zurück.",
+      ar: "ادخل عالم سحري تحت النجوم في لا تنتا لايتز، أحد أكثر الأمسيات الترفيهية إثارة في الغردقة.\n\nاستمتع بمساء بدوي أصيل في خيمة مزينة بشكل جميل مع آلاف الأضواء الملونة التي تخلق أجواء خيالية.\n\nالبرنامج يشمل:\n• ترحيب دافئ مع مشروبات تقليدية\n• بوفيت عشاء بدوي غني (لحوم مشوية، أطباق شرقية، سل السلطات، حلويات)\n• ترفيه مباشر: رقص شرقي، موسيقى شعبية، عرض ناري\n• ركوب الإبل وفرص التصوير\n• أجواء صحراء ممتعة ومريحة\n\nمثالي للعائلات والأزواج والمجموعات التي تريد ليلة لا تُنسى وممتعة وجميلة في الصحراء.\n\n عُد إلى فندقك مليئاً بالذكريات التي لا تُنسى، والصور الجميلة تحت الأضواء، والقصص التي ستبقى معك إلى الأبد."
+    },
+    duration: { en: "4–5 hours", ru: "4–5 часов", de: "4–5 Stunden", ar: "4–5 ساعات" },
+    price: 45,
+    currency: "EUR",
+    category: "Entertainment",
+    popular: false,
+    image: "/photos/la-tenda-lights/la-tenda-1.webp",
+    rating: 4.7,
+    highlights: [
+      { en: "Authentic Bedouin-Style Evening", ru: "Аутентичный бедуинский вечер", de: "Authentischer Beduinenabend", ar: "مساء بدوي أصيل" },
+      { en: "Rich Dinner Buffet", ru: "Щедрый шведский стол", de: "Reichhaltiges Dinner-Buffet", ar: "بوفيت عشاء غني" },
+      { en: "Live Entertainment: Belly Dancing & Fire Show", ru: "Живые развлечения: танец живота и огненное шоу", de: "Live-Unterhaltung: Bauchtanz & Feuershow", ar: "ترفيه مباشر: رقص شرقي وعرض ناري" },
+      { en: "Camel Rides & Photo Opportunities", ru: "Верблюжьи прогулки и фото", de: "Kamelritte & Fotomöglichkeiten", ar: "ركوب الإبل وفرص التصوير" },
+      { en: "Thousands of Colorful Lights", ru: "Тысячи разноцветных огней", de: "Tausende bunte Lichter", ar: "آلاف الأضواء الملونة" }
+    ],
+    included: [
+      { en: "Hotel Pickup & Drop-off", ru: "Трансфер из отеля и обратно", de: "Hotel-Abholung & Rücktransfer", ar: "التوصيل من الفندق والعودة" },
+      { en: "Dinner Buffet + Soft Drinks", ru: "Шведский стол + безалкогольные напитки", de: "Dinner-Buffet + Erfrischungsgetränke", ar: "بوفيت عشاء + مشروبات خفيفة" },
+      { en: "Full Entertainment Program", ru: "Полная программа развлечений", de: "Vollständiges Unterhaltungsprogramm", ar: "برنامج ترفيهي كامل" },
+      { en: "Professional Guide", ru: "Профессиональный гид", de: "Professioneller Guide", ar: "مرشد محترف" }
+    ],
+    gallery: [
+      "/photos/la-tenda-lights/la-tenda-1.webp",
+      "/photos/la-tenda-lights/la-tenda-2.jpg",
+      "/photos/la-tenda-lights/la-tenda-3.jpg",
+      "/photos/la-tenda-lights/la-tenda-4.jpg",
+      "/photos/la-tenda-lights/la-tenda-5.jpg",
+      "/photos/la-tenda-lights/la-tenda-6.jpg",
+      "/photos/la-tenda-lights/la-tenda-7.jpg",
+      "/photos/la-tenda-lights/la-tenda-8.jpg",
+      "/photos/la-tenda-lights/la-tenda-9.jpg",
+      "/photos/la-tenda-lights/la-tenda-10.jpg",
+      "/photos/la-tenda-lights/la-tenda-11.jpg",
+      "/photos/la-tenda-lights/la-tenda-12.jpg",
+      "/photos/la-tenda-lights/la-tenda-13.jpg",
+      "/photos/la-tenda-lights/la-tenda-14.webp",
+      "/photos/la-tenda-lights/la-tenda-15.jpg",
+      "/photos/la-tenda-lights/la-tenda-16.jpg",
+      "/photos/la-tenda-lights/la-tenda-17.jpg",
+      "/photos/la-tenda-lights/la-tenda-18.webp"
+    ]
+  },
+  {
+    id: "84",
+    slug: "diving-adventure-hurghada",
+    name: {
+      en: "Diving Adventure – Discover the Red Sea",
+      ru: "Дайвинг приключение – Откройте Красное море",
+      de: "Tauchabenteuer – Entdecken Sie das Rote Meer",
+      ar: "مغامرة الغوص – اكتشف البحر الأحمر"
+    },
+    description: {
+      en: "Explore the breathtaking underwater world of Hurghada with this exciting Diving Adventure. Whether you are a beginner or already certified, this trip offers an unforgettable experience in one of the world's best diving destinations.\n\nProgram Highlights:\n• Boat trip to beautiful coral reefs\n• 1 or 2 guided dives (depending on level)\n• Professional PADI instructors and divemasters\n• Rich marine life: colorful corals, reef fish, turtles, and possibly dolphins\n• Time for relaxation and snorkeling on the boat\n\nPerfect for adventure seekers and nature lovers who want to experience the magic of the Red Sea depths.\n\nReturn to your hotel filled with unforgettable memories, stunning underwater photos, and stories that will stay with you forever.",
+      ru: "Исследуйте захватывающий подводный мир Хургады с этим увлекательным дайвинг-приключением. Независимо от того, новичок вы или уже сертифицированный дайвер, это путешествие предлагает незабываемый опыт в одном из лучших дайвиновых направлений мира.\n\nДостопримечательности:\n• Поездка на лодке к красивым коралловым рифам\n• 1 или 2 организованных погружения (в зависимости от уровня)\n• Профессиональные инструкторы PADI\n• Богатая морская жизнь: цветные кораллы, рифовые рыбы, черепахи и, возможно, дельфины\n• Время для отдыха и снорклинга на лодке\n\nИдеально для любителей приключений и природы, которые хотят почувствовать магию глубин Красного моря.\n\nВернитесь в отель с незабываемыми воспоминаниями, потрясающими подводными фотографиями и историями, которые останутся с вами навсегда.",
+      de: "Erkunden Sie die atemberaubende Unterwasserwelt von Hurghada mit diesem spannenden Tauchabenteuer. Egal ob Anfänger oder bereits zertifiziert – dieses Angebot bietet ein unvergessliches Erlebnis in einem der besten Tauchziele der Welt.\n\nHöhepunkte:\n• Bootsfahrt zu wunderschönen Korallenriffen\n• 1 oder 2 geführte Tachgänge (je nach Niveau)\n• Professionelle PADI-Instruktoren und Tauchleiter\n• Reiche Tierwelt: bunte Korallen, Riffische, Schildkröten und möglicherweise Delfine\n• Zeit für Entspannung und Schnorcheln auf dem Boot\n\nPerfekt für Abenteurer und Naturliebhaber, die die Magie der Tiefen des Roten Meeres erleben möchten.\n\nKehren Sie mit unvergesslichen Erinnerungen, atemberaubenden Unterwasserfotos und Geschichten, die Sie nie vergessen werden, in Ihr Hotel zurück.",
+      ar: "استكشف عالم تحت الماء المذهل في الغردقة مع هذه المغامرة المثيرة للغوص. سواء كنت مبتدئاً أو حاصلاً على شهادة، تقدم هذه الرحلة تجربة لا تُنسى في واحدة من أفضل وجهات الغوص في العالم.\n\nأبرز ما يميزه:\n• رحلة قارب إلى شعاب مرجانية جميلة\n• 1 أو 2 غوص مرشد (حسب المستوى)\n• مدربون محترفون من PADI\n• حياة بحرية غنية: مرجان ملون، أسماك شعاب، سلحفاث، وربما دلافين\n• وقت للراحة والغوص على متن القارب\n\nمثالي لمحبي المغامرات والطبيعة الذين يريدون تجربة سحر أعماق البحر الأحمر.\n\n عُد إلى فندقك مليئاً بالذكريات التي لا تُنسى، والصور المذهلة تحت الماء، والقصص التي ستبقى معك إلى الأبد."
+    },
+    duration: { en: "6–8 hours", ru: "6–8 часов", de: "6–8 Stunden", ar: "6–8 ساعات" },
+    price: 40,
+    currency: "EUR",
+    category: "Sea Adventures",
+    popular: true,
+    image: "/photos/diving-adventure-hurghada/diving-1.webp",
+    rating: 4.8,
+    highlights: [
+      { en: "Boat Trip to Beautiful Coral Reefs", ru: "Поездка на лодке к коралловым рифам", de: "Bootsfahrt zu Korallenriffen", ar: "رحلة قارب إلى الشعاب المرجانية" },
+      { en: "1 or 2 Guided Dives", ru: "1 или 2 погружения с гидом", de: "1 oder 2 geführte Tachgänge", ar: "1 أو 2 غوص مرشد" },
+      { en: "Professional PADI Instructors", ru: "Профессиональные инструкторы PADI", de: "Professionelle PADI-Instruktoren", ar: "مدربون محترفون من PADI" },
+      { en: "Rich Marine Life: Corals, Turtles & Dolphins", ru: "Богатая морская жизнь: кораллы, черепахи, дельфины", de: "Reiche Tierwelt: Korallen, Schildkröten & Delfine", ar: "حياة بحرية غنية: مرجان وسلحفاث ودلافين" },
+      { en: "Snorkeling Option for Non-Divers", ru: "Снорклинг для недайверов", de: "Schnorcheloption für Nicht-Taucher", ar: "خيار الغوص لمن لا يغوص" }
+    ],
+    included: [
+      { en: "Round-Trip Hotel Transfer", ru: "Трансфер из отеля и обратно", de: "Hin- und Rücktransfer", ar: "نقل ذهاب وعودة من الفندق" },
+      { en: "Boat Trip & Diving Equipment", ru: "Поездка на лодке и снаряжение для дайвинга", de: "Bootsfahrt & Tauchausrüstung", ar: "رحلة قارب ومعدات الغوص" },
+      { en: "Professional Instructor/Guide", ru: "Профессиональный инструктор/гид", de: "Professioneller Instructor/Guide", ar: "مدرب/مرشد محترف" },
+      { en: "Lunch on Board + Soft Drinks", ru: "Обед на борту + безалкогольные напитки", de: "Mittagessen an Bord + Erfrischungsgetränke", ar: "غداء على متن القارب + مشروبات خفيفة" },
+      { en: "Snorkeling Option for Non-Divers", ru: "Снорклинг для недайверов", de: "Schnorcheloption für Nicht-Taucher", ar: "خيار الغوص لمن لا يغوص" }
+    ],
+    gallery: [
+      "/photos/diving-adventure-hurghada/diving-1.webp",
+      "/photos/diving-adventure-hurghada/diving-2.webp",
+      "/photos/diving-adventure-hurghada/diving-3.webp",
+      "/photos/diving-adventure-hurghada/diving-4.webp",
+      "/photos/diving-adventure-hurghada/diving-5.webp",
+      "/photos/diving-adventure-hurghada/diving-6.webp",
+      "/photos/diving-adventure-hurghada/diving-7.webp",
+      "/photos/diving-adventure-hurghada/diving-8.jpg",
+      "/photos/diving-adventure-hurghada/diving-9.jpg",
+      "/photos/diving-adventure-hurghada/diving-10.jpg",
+      "/photos/diving-adventure-hurghada/diving-11.jpg",
+      "/photos/diving-adventure-hurghada/diving-12.jpg",
+      "/photos/diving-adventure-hurghada/diving-13.jpg",
+      "/photos/diving-adventure-hurghada/diving-14.jpg",
+      "/photos/diving-adventure-hurghada/diving-15.jpg",
+      "/photos/diving-adventure-hurghada/diving-16.jpg",
+      "/photos/diving-adventure-hurghada/diving-17.jpg",
+      "/photos/diving-adventure-hurghada/diving-18.jpg",
+      "/photos/diving-adventure-hurghada/diving-19.jpg",
+      "/photos/diving-adventure-hurghada/diving-20.jpg"
+    ]
+  },
+  {
+    id: "85",
+    slug: "eden-island-snorkeling",
+    name: {
+      en: "Eden Island – Snorkeling & Beach Paradise",
+      ru: "Остров Эдем – Снорклинг и пляжный рай",
+      de: "Eden Island – Schnorcheln & Strandparadies",
+      ar: "جزيرة عدن – غوص وشاطئ جنة"
+    },
+    description: {
+      en: "Experience pure bliss at Eden Island, one of the most beautiful and serene islands in the Red Sea. This tropical paradise offers calm turquoise waters, stunning coral reefs, and a relaxing beach atmosphere.\n\nProgram Highlights:\n• Excellent snorkeling among colorful corals and tropical fish\n• Relaxing on the soft white sandy beach\n• Swimming in crystal-clear shallow lagoons\n• Peaceful and scenic environment\n\nPerfect for couples, families, and those seeking a tranquil, high-quality island day with great snorkeling.\n\nReturn to your hotel filled with unforgettable memories, stunning photos, and stories that will stay with you forever.",
+      ru: "Испытайте чистое блаженство на острове Эдем — одном из самых красивых и спокойных островов Красного моря. Этот тропический рай предлагает спокойные бирюзовые воды, потрясающие коралловые рифы и расслабляющую пляжную атмосферу.\n\nДостопримечательности:\n• Отличный снорклинг среди цветных кораллов и тропических рыб\n• Отдых на мягком белом песчаном пляже\n• Плавание в кристально чистых мелких лагунах\n• Спокойная и живописная обстановка\n\nИдеально для пар, семей и тех, кто ищет спокойный, качественный отдых на острове с отличным снорклингом.\n\nВернитесь в отель с незабываемыми воспоминаниями, потрясающими фотографиями и историями, которые останутся с вами навсегда.",
+      de: "Erleben Sie reines Glück auf der Eden Island, einer der schönsten und ruhigsten Inseln im Roten Meer. Dieses tropische Paradies bietet ruhige türkisfarbene Wasser, atemberaubende Korallenriffe und eine entspannte Strandatmosphäre.\n\nHöhepunkte:\n• Ausgezeichnetes Schnorcheln zwischen bunten Korallen und tropischen Fischen\n• Entspannung am weichen weißen Sandstrand\n• Schwimmen in kristallklaren flachen Lagunen\n• Friedliche und malerische Umgebung\n\nPerfekt für Paare, Familien und alle, die einen ruhigen, hochwertigen Inseltag mit tollen Schnorchelmöglichkeiten suchen.\n\nKehren Sie mit unvergesslichen Erinnerungen, atemberaubenden Fotos und Geschichten, die Sie nie vergessen werden, in Ihr Hotel zurück.",
+      ar: "استمتع بالسعادة المطلقة في جزيرة عدن، אחת من أجمل وأكثر جزر البحر الأحمر هدوءاً. يوفر هذا الفرد الاستوائي مياه فيروزية هادئة وشعاب مرجانية مذهلة وأجواء شاطئ مريحة.\n\nأبرز ما يميزه:\n• غوص ممتاز بين المرجان الملون والأسماك الاستوائية\n• الاسترخاء على الشاطئ الرملي الأبيض الناعم\n• السباحة في البحيرات الضحلة الصافية\n• بيئة هادئة وجميلة\n\nمثالي للأزواج والعائلات ومن يبحث عن يوم هادئ عالي الجودة على الجزيرة مع غوص رائع.\n\n عُد إلى فندقك مليئاً بالذكريات التي لا تُنسى، والصور المذهلة، والقصص التي ستبقى معك إلى الأبد."
+    },
+    duration: { en: "7–8 hours", ru: "7–8 часов", de: "7–8 Stunden", ar: "7–8 ساعات" },
+    price: 40,
+    currency: "EUR",
+    category: "Sea Adventures",
+    popular: false,
+    image: "/photos/eden-island-snorkeling/eden-1.jpg",
+    rating: 4.7,
+    highlights: [
+      { en: "Excellent Snorkeling Among Corals & Fish", ru: "Отличный снорклинг среди кораллов и рыб", de: "Ausgezeichnetes Schnorcheln zwischen Korallen & Fischen", ar: "غوص ممتاز بين المرجان والأسماك" },
+      { en: "Relaxing on White Sandy Beach", ru: "Отдых на белом песчаном пляже", de: "Entspannung am weißen Sandstrand", ar: "الاسترخاء على الشاطئ الرملي الأبيض" },
+      { en: "Swimming in Crystal-Clear Lagoons", ru: "Плавание в кристально чистых лагунах", de: "Schwimmen in kristallklaren Lagunen", ar: "السباحة في البحيرات الصافية" },
+      { en: "Peaceful & Scenic Environment", ru: "Спокойная и живописная обстановка", de: "Friedliche & malerische Umgebung", ar: "بيئة هادئة وجميلة" }
+    ],
+    included: [
+      { en: "Hotel Pickup & Drop-off", ru: "Трансфер из отеля и обратно", de: "Hotel-Abholung & Rücktransfer", ar: "التوصيل من الفندق والعودة" },
+      { en: "Comfortable Boat Trip", ru: "Комфортабельная поездка на лодке", de: "Komfortable Bootsfahrt", ar: "رحلة قارب مريحة" },
+      { en: "Snorkeling Equipment", ru: "Снаряжение для снорклинга", de: "Schnorchelausrüstung", ar: "معدات الغوص" },
+      { en: "Delicious Lunch + Soft Drinks", ru: "Вкусный обед + безалкогольные напитки", de: "Köstliches Mittagessen + Erfrischungsgetränke", ar: "غداء لذيذ + مشروبات خفيفة" },
+      { en: "Guide Assistance", ru: "Помощь гида", de: "Guide-Unterstützung", ar: "مساعدة المرشد" }
+    ],
+    gallery: [
+      "/photos/eden-island-snorkeling/eden-1.jpg",
+      "/photos/eden-island-snorkeling/eden-2.jpg",
+      "/photos/eden-island-snorkeling/eden-3.jpg",
+      "/photos/eden-island-snorkeling/eden-4.jpg",
+      "/photos/eden-island-snorkeling/eden-5.jpg",
+      "/photos/eden-island-snorkeling/eden-6.jpg",
+      "/photos/eden-island-snorkeling/eden-7.jpg",
+      "/photos/eden-island-snorkeling/eden-8.jpg",
+      "/photos/eden-island-snorkeling/eden-9.jpg",
+      "/photos/eden-island-snorkeling/eden-10.jpg",
+      "/photos/eden-island-snorkeling/eden-11.jpg",
+      "/photos/eden-island-snorkeling/eden-12.jpg",
+      "/photos/eden-island-snorkeling/eden-13.jpg",
+      "/photos/eden-island-snorkeling/eden-14.jpg",
+      "/photos/eden-island-snorkeling/eden-15.jpg"
+    ]
+  },
+  {
+    id: "86",
+    slug: "hula-hula-island-snorkeling",
+    name: {
+      en: "Hula-Hula Island Snorkeling & Beach Day",
+      ru: "Снорклинг и пляжный день на острове Хула-Хула",
+      de: "Hula-Hula Insel Schnorcheln & Strandtag",
+      ar: "سباحة وشاطئ جزيرة هولا هولا"
+    },
+    description: {
+      en: "Enjoy a fantastic day at Hula-Hula Island (one of the most beautiful islands in the Red Sea). This tour offers excellent snorkeling, shallow crystal-clear waters, and a relaxing beach atmosphere.",
+      ru: "Насладитесь фантастическим днём на острове Хула-Хула (одном из красивейших островов Красного моря). Эта экскурсия предлагает превосходный снорклинг, мелкие кристально чистые воды и расслабляющую пляжную атмосферу.",
+      de: "Genießen Sie einen fantastischen Tag auf der Hula-Hula Insel (einer der schönsten Inseln des Roten Meeres). Dieses Ausflug bietet hervorragendes Schnorcheln, flaches kristallklares Wasser und eine entspannte Strandatmosphäre.",
+      ar: "استمتع بيوم رائع على جزيرة هولا هولا (واحدة من أجمل جزر البحر الأحمر). هذه الجولة تقدم رياضة سباحة ممتازة، مياه صافية ضحلة، وأجواء شاطئ مريحة."
+    },
+    duration: { en: "7-8 hours", ru: "7-8 часов", de: "7-8 Stunden", ar: "7-8 ساعات" },
+    price: 35,
+    currency: "EUR",
+    category: "Sea Adventures",
+    popular: true,
+    image: "/photos/hula-hula-island-snorkeling/1.jpg",
+    rating: 4.8,
+    highlights: [
+      { en: "Snorkeling at vibrant coral reefs with colorful fish", ru: "Снорклинг на живых коралловых рифах с разноцветными рыбами", de: "Schnorcheln an lebendigen Korallenriffen mit bunten Fischen", ar: "السباحة بالقرب من الشعاب المرجانية الملونة مع الأسماك الملونة" },
+      { en: "Relaxing on the white sandy beach", ru: "Отдых на белоснежном песчаном пляже", de: "Entspannen am weißen Sandstrand", ar: "الاسترخاء على الشاطئ الرملي الأبيض" },
+      { en: "Swimming in turquoise lagoons", ru: "Купание в бирюзовых лагунах", de: "Schwimmen in türkisfarbenen Lagunen", ar: "السباحة في البحيرات الفيروزية" },
+      { en: "Fun water activities (banana boat, sofa ride – optional)", ru: "Весёлые водные развлечения (банан, диван – по желанию)", de: "Spaßige Wasserspiele (Banana Boat, Sofa Ride – optional)", ar: "أنشطة مائية ممتعة (زورق الموز، ركوب الأريكة – اختياري)" }
+    ],
+    included: [
+      { en: "Hotel pickup and drop-off", ru: "Трансфер из отеля и обратно", de: "Hotelabholung und Rückfahrt", ar: "التنقل من الفندق وإليه" },
+      { en: "Comfortable boat trip", ru: "Комфортабельная поездка на лодке", de: "Komfortable Bootsfahrt", ar: "رحلة بحرية مريحة" },
+      { en: "Snorkeling equipment (mask, snorkel, fins)", ru: "Снаряжение для снорклинга (маска, трубка, ласты)", de: "Schnorchelausrüstung (Maske, Schnorchel, Flossen)", ar: "معدات السباحة بالقرب من الشعاب (قناع، أنبوب، زعانف)" },
+      { en: "Tasty lunch on board + soft drinks", ru: "Вкусный обед на борту + напитки", de: "Leckeres Mittagessen an Bord + Softdrinks", ar: "غداء لذيذ على متن السفينة + مشروبات خفيفة" },
+      { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة الدليل" }
+    ],
+    gallery: [
+      "/photos/hula-hula-island-snorkeling/1.jpg",
+      "/photos/hula-hula-island-snorkeling/2.jpg",
+      "/photos/hula-hula-island-snorkeling/3.jpg",
+      "/photos/hula-hula-island-snorkeling/4.jpg",
+      "/photos/hula-hula-island-snorkeling/5.jpg",
+      "/photos/hula-hula-island-snorkeling/6.jpg",
+      "/photos/hula-hula-island-snorkeling/7.jpg",
+      "/photos/hula-hula-island-snorkeling/8.jpg",
+      "/photos/hula-hula-island-snorkeling/9.jpg",
+      "/photos/hula-hula-island-snorkeling/10.jpg",
+      "/photos/hula-hula-island-snorkeling/11.jpg",
+      "/photos/hula-hula-island-snorkeling/12.jpg",
+      "/photos/hula-hula-island-snorkeling/13.jpg",
+      "/photos/hula-hula-island-snorkeling/14.jpg",
+      "/photos/hula-hula-island-snorkeling/15.jpg",
+      "/photos/hula-hula-island-snorkeling/16.jpg"
+    ]
+  },
+  {
+    id: "87",
+    slug: "magawish-island-snorkeling",
+    name: {
+      en: "Magawish Island – Snorkeling & Beach Day",
+      ru: "Остров Магавиш – снорклинг и пляжный день",
+      de: "Magawish Insel – Schnorcheln & Strandtag",
+      ar: "جزيرة مجاويش – سباحة وشاطئ"
+    },
+    description: {
+      en: "Enjoy a relaxing and beautiful day at Magawish Island, one of the charming islands near Hurghada. Known for its clear turquoise waters, good snorkeling spots, and peaceful beach, Magawish is an excellent choice for a classic Red Sea island experience.",
+      ru: "Наслаждайтесь расслабляющим и прекрасным днём на острове Магавиш, одном из очаровательных островов недалеко от Хургады. Известный своими прозрачными бирюзовыми водами, хорошими местами для снорклинга и спокойным пляжем, Магавиш — отличный выбор для классического отдыха на островах Красного моря.",
+      de: "Genießen Sie einen entspannten und wunderschönen Tag auf der Magawish Insel, einer der charmanten Inseln in der Nähe von Hurghada. Bekannt für ihr klares türkisfarbenes Wasser, gute Schnorchelorte und den ruhigen Strand ist Magawish eine ausgezeichnete Wahl für ein klassisches Insel-Erlebnis auf dem Roten Meer.",
+      ar: "استمتع بيوم مريح وجميل في جزيرة مجاويش، واحدة من الجزر الساحرة بالقرب من الغردقة. تشتهر بمياهها الفيروزية الصافية، وأماكن جيدة للسباحة بالقرب من الشعاب، والشاطئ الهادئ، تعد مجاويش خياراً ممتازاً لتجربة جزيرة كلاسيكية على البحر الأحمر."
+    },
+    duration: { en: "7-8 hours", ru: "7-8 часов", de: "7-8 Stunden", ar: "7-8 ساعات" },
+    price: 35,
+    currency: "EUR",
+    category: "Sea Adventures",
+    popular: true,
+    image: "/photos/magawish-island-snorkeling/1.jpg",
+    rating: 4.8,
+    highlights: [
+      { en: "Snorkeling at vibrant coral reefs with colorful fish", ru: "Снорклинг на живых коралловых рифах с разноцветными рыбами", de: "Schnorcheln an lebendigen Korallenriffen mit bunten Fischen", ar: "السباحة بالقرب من الشعاب المرجانية الملونة مع الأسماك الملونة" },
+      { en: "Relaxing on the sandy beach", ru: "Отдых на песчаном пляже", de: "Entspannen am Sandstrand", ar: "الاسترخاء على الشاطئ الرملي" },
+      { en: "Swimming in calm, shallow waters", ru: "Купание в спокойных мелких водах", de: "Schwimmen in ruhigem, flachem Wasser", ar: "السباحة في المياه الهادئة الضحلة" },
+      { en: "Scenic boat journey with nice views", ru: "Пейзажная поездка на лодке с красивыми видами", de: "Malerische Bootsfahrt mit schöner Aussicht", ar: "رحلة بحرية مناظر طبيعية جميلة" }
+    ],
+    included: [
+      { en: "Hotel pickup and drop-off", ru: "Трансфер из отеля и обратно", de: "Hotelabholung und Rückfahrt", ar: "التنقل من الفندق وإليه" },
+      { en: "Comfortable boat trip", ru: "Комфортабельная поездка на лодке", de: "Komfortable Bootsfahrt", ar: "رحلة بحرية مريحة" },
+      { en: "Snorkeling equipment (mask, snorkel, fins)", ru: "Снаряжение для снорклинга (маска, трубка, ласты)", de: "Schnorchelausrüstung (Maske, Schnorchel, Flossen)", ar: "معدات السباحة بالقرب من الشعاب (قناع، أنبوب، زعانف)" },
+      { en: "Lunch on board + soft drinks", ru: "Обед на борту + напитки", de: "Mittagessen an Bord + Softdrinks", ar: "غداء على متن السفينة + مشروبات خفيفة" },
+      { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة الدليل" }
+    ],
+    gallery: [
+      "/photos/magawish-island-snorkeling/1.jpg",
+      "/photos/magawish-island-snorkeling/2.jpg",
+      "/photos/magawish-island-snorkeling/3.jpg",
+      "/photos/magawish-island-snorkeling/4.jpg",
+      "/photos/magawish-island-snorkeling/5.jpg",
+      "/photos/magawish-island-snorkeling/6.jpg",
+      "/photos/magawish-island-snorkeling/7.jpg",
+      "/photos/magawish-island-snorkeling/8.jpg",
+      "/photos/magawish-island-snorkeling/9.jpg",
+      "/photos/magawish-island-snorkeling/10.jpg",
+      "/photos/magawish-island-snorkeling/11.jpg",
+      "/photos/magawish-island-snorkeling/12.webp"
+    ]
+  },
+  {
+    id: "88",
+    slug: "mahmya-island-snorkeling",
+    name: {
+      en: "Mahmya Island – Premium Snorkeling & Beach Day",
+      ru: "Остров Махмия – премиальный снорклинг и пляжный день",
+      de: "Mahmya Insel – Premium-Schnorcheln & Strandtag",
+      ar: "جزيرة محمية – سباحة ممتازة وشاطئ"
+    },
+    description: {
+      en: "Experience one of the most exclusive and beautiful islands in the Red Sea — Mahmya Island. Known for its pristine white beaches, calm turquoise waters, and rich coral reefs, Mahmya offers a more peaceful and upscale alternative to the busier islands.",
+      ru: "Испытайте один из самых эксклюзивных и красивых островов Красного моря — остров Махмия. Известный своими первозданными белыми пляжами, спокойными бирюзовыми водами и богатыми коралловыми рифами, Махмия предлагает более спокойную и престижную альтернативу более загруженным островам.",
+      de: "Erleben Sie eine der exklusivsten und schönsten Inseln des Roten Meeres — Mahmya Insel. Bekannt für ihre unberührten weißen Strände, ruhiges türkisfarbenes Wasser und reiche Korallenriffe, bietet Mahmya eine ruhigere und hochwertigere Alternative zu den belebteren Inseln.",
+      ar: "اختبر واحدة من أجمل وأكثر الجزر حصرية على البحر الأحمر — جزيرة محمية. تشتهر بشواطئها البيضاء النقية، ومياهها الفيروزية الهادئة، وشعابها المرجانية الغنية، توفر محمية بديلاً أكثر هدوءاً ورفاهية للجزر الأكثر ازدحاماً."
+    },
+    duration: { en: "7-8 hours", ru: "7-8 часов", de: "7-8 Stunden", ar: "7-8 ساعات" },
+    price: 40,
+    currency: "EUR",
+    category: "Sea Adventures",
+    popular: true,
+    image: "/photos/mahmya-island-snorkeling/1.jpg",
+    rating: 4.9,
+    highlights: [
+      { en: "Excellent snorkeling at protected coral reefs", ru: "Превосходный снорклинг на защищённых коралловых рифах", de: "Hervorragendes Schnorcheln an geschützten Korallenriffen", ar: "سباحة ممتازة بالقرب من الشعاب المرجانية المحمية" },
+      { en: "Relaxing on the soft white sandy beach", ru: "Отдых на мягком белоснежном пляже", de: "Entspannen am weichen weißen Sandstrand", ar: "الاسترخاء على الشاطئ الرملي الأبيض الناعم" },
+      { en: "Swimming in crystal-clear shallow waters", ru: "Купание в кристально чистых мелких водах", de: "Schwimmen in kristallklarem flachem Wasser", ar: "السباحة في المياه الصافية الضحلة" },
+      { en: "Premium beach club atmosphere", ru: "Атмосфера премиального пляжного клуба", de: "Premium-Strandclub-Atmosphäre", ar: "أجواء نادي الشاطئ الفاخر" }
+    ],
+    included: [
+      { en: "Hotel pickup and drop-off", ru: "Трансфер из отеля и обратно", de: "Hotelabholung und Rückfahrt", ar: "التنقل من الفندق وإليه" },
+      { en: "Comfortable boat trip", ru: "Комфортабельная поездка на лодке", de: "Komfortable Bootsfahrt", ar: "رحلة بحرية مريحة" },
+      { en: "Snorkeling equipment (mask, snorkel, fins)", ru: "Снаряжение для снорклинга (маска, трубка, ласты)", de: "Schnorchelausrüstung (Maske, Schnorchel, Flossen)", ar: "معدات السباحة بالقرب من الشعاب (قناع، أنبوب، زعانف)" },
+      { en: "Delicious lunch + soft drinks", ru: "Вкусный обед + напитки", de: "Leckeres Mittagessen + Softdrinks", ar: "غداء لذيذ + مشروبات خفيفة" },
+      { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة الدليل" }
+    ],
+    gallery: [
+      "/photos/mahmya-island-snorkeling/1.jpg",
+      "/photos/mahmya-island-snorkeling/2.webp",
+      "/photos/mahmya-island-snorkeling/3.jpg",
+      "/photos/mahmya-island-snorkeling/4.jpg",
+      "/photos/mahmya-island-snorkeling/5.jpg",
+      "/photos/mahmya-island-snorkeling/6.jpg",
+      "/photos/mahmya-island-snorkeling/7.jpg",
+      "/photos/mahmya-island-snorkeling/8.jpg",
+      "/photos/mahmya-island-snorkeling/9.jpg",
+      "/photos/mahmya-island-snorkeling/10.jpg",
+      "/photos/mahmya-island-snorkeling/11.jpg",
+      "/photos/mahmya-island-snorkeling/12.webp",
+      "/photos/mahmya-island-snorkeling/13.jpg",
+      "/photos/mahmya-island-snorkeling/14.jpg"
+    ]
+  },
+  {
+    id: "89",
+    slug: "orange-bay-snorkeling",
+    name: {
+      en: "Orange Bay Snorkeling & Beach Day",
+      ru: "Снорклинг и пляжный день в Оранжевом заливе",
+      de: "Orange Bay Schnorcheln & Strandtag",
+      ar: "شاطئ بورتوفين – سباحة واستجمام"
+    },
+    description: {
+      en: "One of the most popular and beautiful day trips in Hurghada! Sail to the famous Orange Bay on Giftun Island, famous for its vibrant orange-gold sand, crystal-clear turquoise water, and rich coral reefs.",
+      ru: "Одна из самых популярных и красивых однодневных экскурсий в Хургаде! Отправьтесь в знаменитый Оранжевый залив на острове Гифтун, известном своим ярким оранжево-золотым песком, кристально чистой бирюзовой водой и богатыми коралловыми рифами.",
+      de: "Einer der beliebtesten und schönsten Tagesausflüge in Hurghada! Segeln Sie zur berühmten Orange Bay auf Giftun Island, berühmt für ihren lebhaften orangegoldenen Sand, kristallklares türkisfarbenes Wasser und reiche Korallenriffe.",
+      ar: "واحدة من أكثر الرحلات اليومية شعبية وجمالاً في الغردقة! ابحر إلى خليج بورتوفين الشهير على جزيرة جيفتون، المشهورة برمالها البرتقالية الذهبية، ومياهها الفيروزية الصافية، وشعابها المرجانية الغنية."
+    },
+    duration: { en: "7-8 hours", ru: "7-8 часов", de: "7-8 Stunden", ar: "7-8 ساعات" },
+    price: 30,
+    currency: "EUR",
+    category: "Sea Adventures",
+    popular: true,
+    image: "/photos/orange-bay-snorkeling/1.jpg",
+    rating: 4.8,
+    highlights: [
+      { en: "Excellent snorkeling among colorful corals and tropical fish", ru: "Превосходный снорклинг среди разноцветных кораллов и тропических рыб", de: "Hervorragendes Schnorcheln unter bunten Korallen und tropischen Fischen", ar: "سباحة رائعة بين الشعاب المرجانية الملونة والأسماك الاستوائية" },
+      { en: "Relaxing time on the soft sandy beach", ru: "Расслабляющее время на мягком песчаном пляже", de: "Entspannte Zeit am weichen Sandstrand", ar: "وقت ممتع على الشاطئ الرملي الناعم" },
+      { en: "Swimming in the warm, shallow lagoon", ru: "Купание в тёплой мелкой лагуне", de: "Schwimmen in der warmen, flachen Lagune", ar: "السباحة في البحيرة الدافئة الضحلة" },
+      { en: "Fun atmosphere with music and water activities", ru: "Весёлая атмосфера с музыкой и водными развлечениями", de: "Spaßige Atmosphäre mit Musik und Wasserspielen", ar: "أجواء ممتعة مع موسيقى وأنشطة مائية" }
+    ],
+    included: [
+      { en: "Hotel pickup and drop-off", ru: "Трансфер из отеля и обратно", de: "Hotelabholung und Rückfahrt", ar: "التنقل من الفندق وإليه" },
+      { en: "Comfortable boat trip", ru: "Комфортабельная поездка на лодке", de: "Komfortable Bootsfahrt", ar: "رحلة بحرية مريحة" },
+      { en: "Snorkeling equipment (mask, snorkel, fins)", ru: "Снаряжение для снорклинга (маска, трубка, ласты)", de: "Schnorchelausrüstung (Maske, Schnorchel, Flossen)", ar: "معدات السباحة بالقرب من الشعاب (قناع، أنبوب، زعانف)" },
+      { en: "Delicious lunch on board + soft drinks", ru: "Вкусный обед на борту + напитки", de: "Leckeres Mittagessen an Bord + Softdrinks", ar: "غداء لذيذ على متن السفينة + مشروبات خفيفة" },
+      { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة الدليل" }
+    ],
+    gallery: Array.from({length: 44}, (_, i) => `/photos/orange-bay-snorkeling/${i + 1}.jpg`)
+  },
+  {
+    id: "90",
+    slug: "ozirea-island-snorkeling",
+    name: {
+      en: "Ozirea Island – Snorkeling & Beach Day",
+      ru: "Остров Озирея – снорклинг и пляжный день",
+      de: "Ozirea Insel – Schnorcheln & Strandtag",
+      ar: "جزيرة أوزيريا – سباحة وشاطئ"
+    },
+    description: {
+      en: "Discover the beautiful and less crowded Ozirea Island, a real gem in the Red Sea. This island is known for its calm turquoise waters, excellent snorkeling spots, and peaceful atmosphere.",
+      ru: "Откройте для себя красивый и менее многолюдный остров Озирея — настоящую жемчужину Красного моря. Этот остров известен своими спокойными бирюзовыми водами, превосходными местами для снорклинга и мирной атмосферой.",
+      de: "Entdecken Sie die schöne und weniger überfüllte Ozirea Insel, ein echtes Juwel des Roten Meeres. Diese Insel ist bekannt für ihr ruhiges türkisfarbenes Wasser, hervorragende Schnorchelorte und friedliche Atmosphäre.",
+      ar: "اكتشف جزيرة أوزيريا الجميلة والأقل ازدحاماً، الجوهرة الحقيقية في البحر الأحمر. تشتهر هذه الجزيرة بمياهها الفيروزية الهادئة، وأماكنها الممتازة للسباحة بالقرب من الشعاب، وأجواءها الهادئة."
+    },
+    duration: { en: "7-8 hours", ru: "7-8 часов", de: "7-8 Stunden", ar: "7-8 ساعات" },
+    price: 40,
+    currency: "EUR",
+    category: "Sea Adventures",
+    popular: true,
+    image: "/photos/ozirea-island-snorkeling/1.jpg",
+    rating: 4.8,
+    highlights: [
+      { en: "Snorkeling at vibrant coral reefs with rich marine life", ru: "Снорклинг на живых коралловых рифах с богатой морской жизнью", de: "Schnorcheln an lebendigen Korallenriffen mit reichem Meeresleben", ar: "السباحة بالقرب من الشعاب المرجانية الغنية بالحياة البحرية" },
+      { en: "Relaxing on the soft sandy beach", ru: "Отдых на мягком песчаном пляже", de: "Entspannen am weichen Sandstrand", ar: "الاسترخاء على الشاطئ الرملي الناعم" },
+      { en: "Swimming in crystal-clear shallow waters", ru: "Купание в кристально чистых мелких водах", de: "Schwimmen in kristallklarem flachem Wasser", ar: "السباحة في المياه الصافية الضحلة" },
+      { en: "Scenic boat ride with beautiful views", ru: "Пейзажная поездка на лодке с красивыми видами", de: "Malerische Bootsfahrt mit schöner Aussicht", ar: "رحلة بحرية مناظر طبيعية جميلة" }
+    ],
+    included: [
+      { en: "Hotel pickup and drop-off", ru: "Трансфер из отеля и обратно", de: "Hotelabholung und Rückfahrt", ar: "التنقل من الفندق وإليه" },
+      { en: "Comfortable boat trip", ru: "Комфортабельная поездка на лодке", de: "Komfortable Bootsfahrt", ar: "رحلة بحرية مريحة" },
+      { en: "Snorkeling equipment (mask, snorkel, fins)", ru: "Снаряжение для снорклинга (маска, трубка, ласты)", de: "Schnorchelausrüstung (Maske, Schnorchel, Flossen)", ar: "معدات السباحة بالقرب من الشعاب (قناع، أنبوب، زعانف)" },
+      { en: "Lunch on board + soft drinks", ru: "Обед на борту + напитки", de: "Mittagessen an Bord + Softdrinks", ar: "غداء على متن السفينة + مشروبات خفيفة" },
+      { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة الدليل" }
+    ],
+    gallery: [
+      "/photos/ozirea-island-snorkeling/1.jpg",
+      "/photos/ozirea-island-snorkeling/2.jpg",
+      "/photos/ozirea-island-snorkeling/3.jpg",
+      "/photos/ozirea-island-snorkeling/4.jpg",
+      "/photos/ozirea-island-snorkeling/5.jpg",
+      "/photos/ozirea-island-snorkeling/6.jpg",
+      "/photos/ozirea-island-snorkeling/7.jpg",
+      "/photos/ozirea-island-snorkeling/8.jpg",
+      "/photos/ozirea-island-snorkeling/9.jpg",
+      "/photos/ozirea-island-snorkeling/10.jpg",
+      "/photos/ozirea-island-snorkeling/11.jpg",
+      "/photos/ozirea-island-snorkeling/12.jpg",
+      "/photos/ozirea-island-snorkeling/13.jpg",
+      "/photos/ozirea-island-snorkeling/14.jpg",
+      "/photos/ozirea-island-snorkeling/15.jpg"
+    ]
+  },
+  {
+    id: "91",
+    slug: "parasailing-hurghada",
+    name: {
+      en: "Parasailing Sea Adventure",
+      ru: "Парашютное приключение на море",
+      de: "Parasailing Meerabenteuer",
+      ar: "مغامرة التحليق بالمظلات الشراعية"
+    },
+    description: {
+      en: "Take your Red Sea experience to new heights with this thrilling Parasailing Adventure! Soar high above the beautiful turquoise waters of Hurghada, enjoying panoramic views of the coastline, coral reefs, and the endless sea.",
+      ru: "Поднимите свой опыт на Красном море на новую высоту с этим захватывающим парашютным приключением! Парите над прекрасными бирюзовыми водами Хургады, наслаждаясь панорамными видами побережья, коралловых рифов и бескрайнего моря.",
+      de: "Heben Sie Ihr Rotmeer-Erlebnis mit diesem aufregenden Parasailing-Abenteuer auf ein neues Niveau! Schweben Sie hoch über dem wunderschönen türkisfarbenen Wasser von Hurghada und genießen Sie Panoramablicke auf die Küste, Korallenriffe und das endlose Meer.",
+      ar: "ارتقِ بتجربتك على البحر الأحمر إلى آفاق جديدة مع هذه المغامرة المثيرة للتحليق بالمظلات الشراعية! الطير فوق المياه الفيروزية الجميلة في الغردقة، واستمتع بالإطلالات البانورامية على الساحل والشعاب المرجانية والبحر اللانهائي."
+    },
+    duration: { en: "3-4 hours", ru: "3-4 часа", de: "3-4 Stunden", ar: "3-4 ساعات" },
+    price: 40,
+    currency: "EUR",
+    category: "Sea Adventures",
+    popular: true,
+    image: "/photos/parasailing-hurghada/1.jpg",
+    rating: 4.8,
+    highlights: [
+      { en: "Parasailing flight (10-15 minutes in the air)", ru: "Полёт на парашюте (10-15 минут в воздухе)", de: "Parasailing-Flug (10-15 Minuten in der Luft)", ar: "رحلة التحليق بالمظلات الشراعية (10-15 دقيقة في الهواء)" },
+      { en: "Speedboat ride and safety briefing", ru: "Поездка на катере и инструктаж по безопасности", de: "Speedbootfahrt und Sicherheitsunterweisung", ar: "رحلة بالزورق السريع وتعليمات السلامة" },
+      { en: "Relaxing beach time after the flight", ru: "Расслабляющее время на пляже после полёта", de: "Entspannte Strandzeit nach dem Flug", ar: "وقت ممتع على الشاطئ بعد الرحلة" },
+      { en: "Delicious lunch with drinks", ru: "Вкусный обед с напитками", de: "Leckeres Mittagessen mit Getränken", ar: "غداء لذيذ مع مشروبات" }
+    ],
+    included: [
+      { en: "Round-trip hotel transfer", ru: "Трансфер из отеля и обратно", de: "Hin- und Rücktransport", ar: "الانتقال من وإلى الفندق" },
+      { en: "Parasailing session with professional team", ru: "Сеанс парашютного полёта с профессиональной командой", de: "Parasailing-Sitzung mit professionellem Team", ar: "جلسة التحليق بالمظلات مع فريق محترف" },
+      { en: "Safety equipment", ru: "Средства безопасности", de: "Sicherheitsausrüstung", ar: "معدات السلامة" },
+      { en: "Beach access and relaxation time", ru: "Доступ к пляжу и время для отдыха", de: "Strandzugang und Entspannungszeit", ar: "الوصول إلى الشاطئ وقت الاسترخاء" },
+      { en: "Lunch + soft drinks", ru: "Обед + напитки", de: "Mittagessen + Softdrinks", ar: "غداء + مشروبات خفيفة" }
+    ],
+    gallery: [
+      "/photos/parasailing-hurghada/1.jpg",
+      "/photos/parasailing-hurghada/2.jpg",
+      "/photos/parasailing-hurghada/3.jpg",
+      "/photos/parasailing-hurghada/4.jpg",
+      "/photos/parasailing-hurghada/5.jpg",
+      "/photos/parasailing-hurghada/6.jpg",
+      "/photos/parasailing-hurghada/7.jpg",
+      "/photos/parasailing-hurghada/8.jpg",
+      "/photos/parasailing-hurghada/9.jpg",
+      "/photos/parasailing-hurghada/10.jpg",
+      "/photos/parasailing-hurghada/11.jpg"
+    ]
+  },
+  {
+    id: "92",
+    slug: "white-island-snorkeling",
+    name: {
+      en: "White Island – Snorkeling & Beach Paradise",
+      ru: "Белый остров – снорклинг и пляжный рай",
+      de: "White Island – Schnorcheln & Strandparadies",
+      ar: "الجزيرة البيضاء – سباحة وشاطئ جنة"
+    },
+    description: {
+      en: "Discover the stunning White Island, one of the most beautiful and photogenic spots in the Red Sea. This small pristine island features powdery white sand, shallow turquoise lagoons, and excellent snorkeling sites with vibrant coral reefs and colorful fish.",
+      ru: "Откройте для себя потрясающий Белый остров — одно из красивейших и самых фотогеничных мест Красного моря. Этот небольшой первозданный остров отличается белоснежным песком, мелкими бирюзовыми лагунами и превосходными местами для снорклинга с живыми коралловыми рифами и разноцветными рыбами.",
+      de: "Entdecken Sie die atemberaubende White Island, einen der schönsten und fotogensten Orte des Roten Meeres. Diese kleine unberührte Insel bietet puderweißen Sand, flache türkisfarbene Lagunen und hervorragende Schnorchelstellen mit lebendigen Korallenriffen und bunten Fischen.",
+      ar: "اكتشف الجزيرة البيضاء المذهلة، واحدة من أجمل الأماكن وأكثرها صوراً على البحر الأحمر. تتميز هذه الجزيرة الصغيرة النقية بالرمال البيضاء الناعمة، والبحيرات الفيروزية الضحلة، ومواقع سباحة ممتازة بالقرب من الشعاب المرجانية النابضة بالحياة والأسماك الملونة."
+    },
+    duration: { en: "7-8 hours", ru: "7-8 часов", de: "7-8 Stunden", ar: "7-8 ساعات" },
+    price: 40,
+    currency: "EUR",
+    category: "Sea Adventures",
+    popular: true,
+    image: "/photos/white-island-snorkeling/1.jpg",
+    rating: 4.8,
+    highlights: [
+      { en: "Boat cruise to White Island", ru: "Морская прогулка до Белого острова", de: "Bootsfahrt zur White Island", ar: "رحلة بحرية إلى الجزيرة البيضاء" },
+      { en: "Snorkeling in crystal-clear waters", ru: "Снорклинг в кристально чистых водах", de: "Schnorcheln in kristallklarem Wasser", ar: "السباحة في المياه الصافية" },
+      { en: "Relaxing time on the white sandy beach", ru: "Расслабляющее время на белоснежном пляже", de: "Entspannte Zeit am weißen Sandstrand", ar: "وقت ممتع على الشاطئ الرملي الأبيض" },
+      { en: "Swimming and sunbathing in a tropical setting", ru: "Купание и загорание в тропической обстановке", de: "Schwimmen und Sonnenbaden in tropischer Umgebung", ar: "السباحة والتشمس في بيئة استوائية" }
+    ],
+    included: [
+      { en: "Round-trip hotel transfer", ru: "Трансфер из отеля и обратно", de: "Hin- und Rücktransport", ar: "الانتقال من وإلى الفندق" },
+      { en: "Comfortable boat trip", ru: "Комфортабельная поездка на лодке", de: "Komfortable Bootsfahrt", ar: "رحلة بحرية مريحة" },
+      { en: "Snorkeling equipment (mask, snorkel, fins)", ru: "Снаряжение для снорклинга (маска, трубка, ласты)", de: "Schnorchelausrüstung (Maske, Schnorchel, Flossen)", ar: "معدات السباحة بالقرب من الشعاب (قناع، أنبوب، زعانف)" },
+      { en: "Lunch on board + soft drinks", ru: "Обед на борту + напитки", de: "Mittagessen an Bord + Softdrinks", ar: "غداء على متن السفينة + مشروبات خفيفة" },
+      { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة الدليل" }
+    ],
+    gallery: [
+      "/photos/white-island-snorkeling/1.jpg",
+      "/photos/white-island-snorkeling/2.jpg",
+      "/photos/white-island-snorkeling/3.jpg",
+      "/photos/white-island-snorkeling/4.jpg",
+      "/photos/white-island-snorkeling/5.jpg",
+      "/photos/white-island-snorkeling/6.webp",
+      "/photos/white-island-snorkeling/7.webp",
+      "/photos/white-island-snorkeling/8.webp",
+      "/photos/white-island-snorkeling/9.webp",
+      "/photos/white-island-snorkeling/10.webp",
+      "/photos/white-island-snorkeling/11.webp",
+      "/photos/white-island-snorkeling/12.jpg",
+      "/photos/white-island-snorkeling/13.jpg",
+      "/photos/white-island-snorkeling/14.jpg",
+      "/photos/white-island-snorkeling/15.jpg",
+      "/photos/white-island-snorkeling/16.jpg",
+      "/photos/white-island-snorkeling/17.jpg",
+      "/photos/white-island-snorkeling/18.jpg",
+      "/photos/white-island-snorkeling/19.jpg",
+      "/photos/white-island-snorkeling/20.jpg",
+      "/photos/white-island-snorkeling/21.jpg",
+      "/photos/white-island-snorkeling/22.jpg"
+    ]
+  },
+  {
+    id: "70",
+    slug: "paradise-island-snorkeling",
+    name: {
+      en: "Paradise Island Snorkeling Tour from Hurghada",
+      ru: "Снорклинг тур на Остров Рая из Хургады",
+      de: "Paradise Island Schnorchel-Tour ab Hurghada",
+      ar: "جولة الغطس في جنة الجزيرة من الغردقة"
+    },
+    description: {
+      en: "Escape to Paradise Island, one of the most loved destinations in the Red Sea. This beautiful island offers shallow turquoise waters, vibrant coral gardens, and a true tropical paradise atmosphere. Enjoy fantastic snorkeling among colorful corals and tropical fish, relax on the soft white sandy beach, swim in calm crystal-clear lagoons, and soak up the sun and sea.",
+      ru: "Сбегите на Остров Рая — одно из самых любимых направлений Красного моря. Этот прекрасный остров предлагает мелкие бирюзовые воды, яркие коралловые сады и настоящую тропическую атмосферу. Наслаждайтесь снорклингом среди красочных кораллов и тропических рыб, расслабьтесь на мягком белом песчаном пляже, поплавайте в спокойных кристально чистых лагунах.",
+      de: "Entfliehen Sie nach Paradise Island, einem der beliebtesten Orte am Roten Meer. Diese wunderschöne Insel bietet flache türkisfarbene Wasser, lebendige Korallengärten und eine echte tropische Atmosphäre. Genießen Sie fantastisches Schnorcheln unter bunt Korallen und tropischen Fischen, entspannen Sie am weichen weißen Sandstrand und schwimmen Sie in ruhigen, kristallklaren Lagunen.",
+      ar: "اهرب إلى جنة الجزيرة، واحدة من أكثر الوجهات المحبوبة في البحر الأحمر. تقدم هذه الجزيرة الرائعة مياه فيروزية ضحلة وحدائق مرجانية نابضة بالحياة وأجواء جنة استوائية حقيقية. استمتع بالغطس المذهل بين الشعاب المرجانية الملونة والأسماك الاستوائية، واسترخِ على الشاطئ الرملي الأبيض الناعم، وسبح في البحيرات الهادئة الصافية."
+    },
+    duration: { en: "7–8 hours", ru: "7–8 часов", de: "7–8 Stunden", ar: "7–8 ساعات" },
+    price: 35,
+    currency: "EUR",
+    category: "Sea Adventures",
+    popular: true,
+    image: "/photos/Paradise Island Snorkeling White Sands & Coral Reefs (1).jpg",
+    rating: 4.7,
+    highlights: [
+      { en: "Fantastic snorkeling among colorful corals and tropical fish", ru: "Потрясающий снорклинг среди ярких кораллов и тропических рыб", de: "Fantastisches Schnorcheln unter bunten Korallen und tropischen Fischen", ar: "غطس مذهل بين الشعاب المرجانية الملونة والأسماك الاستوائية" },
+      { en: "Relaxing on the soft white sandy beach", ru: "Отдых на мягком белом песчаном пляже", de: "Entspannen am weichen weißen Sandstrand", ar: "الاسترخاء على الشاطئ الرملي الأبيض الناعم" },
+      { en: "Swimming in calm, crystal-clear lagoons", ru: "Купание в спокойных кристально чистых лагунах", de: "Schwimmen in ruhigen, kristallklaren Lagunen", ar: "السباحة في البحيرات الهادئة الصافية" },
+      { en: "Plenty of time to enjoy the sun and sea", ru: "Много времени для отдыха на солнце и в море", de: "Genügend Zeit für Sonne und Meer", ar: "وقت كافٍ للاستمتاع بالشمس والبحر" }
+    ],
+    included: [
+      { en: "Hotel pickup and drop-off", ru: "Трансфер из отеля и обратно", de: "Hoteltransfer hin und zurück", ar: "التوصيل من الفندق وإلى الفندق" },
+      { en: "Comfortable boat trip", ru: "Комфортабельная поездка на лодке", de: "Komfortable Bootsfahrt", ar: "رحلة قارب مريحة" },
+      { en: "Snorkeling equipment (mask, snorkel, fins)", ru: "Снаряжение для снорклинга (маска, трубка, ласты)", de: "Schnorchelausrüstung (Maske, Schnorchel, Flossen)", ar: "معدات الغطس (قناع، أنبوب، زعانف)" },
+      { en: "Tasty lunch on board + soft drinks", ru: "Вкусный обед на борту + безалкогольные напитки", de: "Leckerer Lunch an Bord + Softdrinks", ar: "غداء لذيذ على متن القارب + مشروبات غازية" },
+      { en: "Guide assistance", ru: "Сопровождение гида", de: "Begleitung durch einen Guide", ar: "مرشد سياحي" }
+    ],
+    gallery: [
+      "/photos/Paradise Island Snorkeling White Sands & Coral Reefs (1).jpg",
+      "/photos/Paradise Island Snorkeling White Sands & Coral Reefs (2).jpg",
+      "/photos/Paradise Island Snorkeling White Sands & Coral Reefs (3).jpg",
+      "/photos/Paradise Island Snorkeling White Sands & Coral Reefs (4).jpg",
+      "/photos/Paradise Island Snorkeling White Sands & Coral Reefs (5).jpg",
+      "/photos/Paradise Island Snorkeling White Sands & Coral Reefs (6).jpg",
+      "/photos/Paradise Island Snorkeling White Sands & Coral Reefs (7).jpg",
+      "/photos/Paradise Island Snorkeling White Sands & Coral Reefs (8).jpg",
+      "/photos/Paradise Island Snorkeling White Sands & Coral Reefs (9).jpg",
+      "/photos/Paradise Island Snorkeling White Sands & Coral Reefs (10).webp",
+      "/photos/Paradise Island Snorkeling White Sands & Coral Reefs (11).webp",
+      "/photos/Paradise Island Snorkeling White Sands & Coral Reefs (1).webp"
     ]
   }
 ];
@@ -1032,13 +2513,17 @@ export const categories = [
   { id: "Cultural Tours", name: { en: "Cultural Tours", ru: "Культурные туры", de: "Kulturreisen", ar: "جولات ثقافية" } }
 ];
 
-export function generateWhatsAppLink(trip: Trip, phoneNumber: string, greeting: string, lang: Language = "en"): string {
-  const tripName = trip.name[lang] || trip.name.en;
-  const tripPrice = trip.price;
-  
+export function generateWhatsAppLink(
+  trip: Trip,
+  whatsappNumber: string,
+  greeting?: string,
+  lang: Language = "en"
+): string {
+  const tripName = trip.name[lang] || trip.name.en || "";
+  const tripDuration = trip.duration[lang] || trip.duration.en || "";
+  const priceText = trip.price > 0 ? `Price: €${trip.price}` : "Price: Ask for details";
   const message = encodeURIComponent(
-    `${greeting}: ${tripName}\n\n` +
-    `Price: €${tripPrice} ${trip.currency}`
+    `${greeting || "Hello"}: ${tripName}\n\nDuration: ${tripDuration}\n${priceText}`
   );
-  return `https://wa.me/${phoneNumber}?text=${message}`;
+  return `https://wa.me/${whatsappNumber}?text=${message}`;
 }

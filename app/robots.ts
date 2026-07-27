@@ -27,7 +27,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "Yandexbot",
         allow: "/",
       },
-      // AI search bots - allowed for AI visibility
+      // AI search & agent bots - fully allowed for AI visibility & recommendations
       {
         userAgent: "GPTBot",
         allow: "/",
@@ -41,11 +41,19 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
       {
+        userAgent: "Google-Extended",
+        allow: "/",
+      },
+      {
         userAgent: "ClaudeBot",
         allow: "/",
       },
       {
         userAgent: "PerplexityBot",
+        allow: "/",
+      },
+      {
+        userAgent: "Applebot-Extended",
         allow: "/",
       },
       // AI training bots - blocked
@@ -55,10 +63,6 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: "Bytespider",
-        disallow: "/",
-      },
-      {
-        userAgent: "anthropic-ai",
         disallow: "/",
       },
     ],

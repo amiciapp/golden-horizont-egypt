@@ -7,7 +7,19 @@ __v0_jsx-dev-runtime.ts
 node_modules
 .next/
 .env*.local
+.env
 .DS_Store
 
-# Large media files
-public/photos/
+# IDE
+.vscode/
+.idea/
+
+# OpenCode agent (NOT for deployment)
+.opencode/
+
+# Build artifacts (rebuilt on server)
+.next/
+
+# OS files
+Thumbs.db
+desktop.ini

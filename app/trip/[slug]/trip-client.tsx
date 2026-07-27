@@ -3,32 +3,31 @@
 import { useParams, useRouter } from "next/navigation"
 import { useState } from "react"
 import { trips } from "@/lib/trips"
-import { useTranslation, type Language } from "@/lib/translations"
+import { type Language, type TranslationKeys } from "@/lib/translations"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import WeatherExchangeWidget from "@/components/weather-exchange-widget"
-import { Clock, Users, MapPin, Star, Check, ArrowLeft, Image as ImageIcon } from "lucide-react"
+
+import { Clock, MapPin, Star, Check, ArrowLeft, Image as ImageIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { WHATSAPP_NUMBER } from "@/lib/constants"
 
-export default function TripPageClient() {
+interface TripPageClientProps {
+  initialLang: Language
+  initialT: TranslationKeys
+}
+
+export default function TripPageClient({ initialLang, initialT }: TripPageClientProps) {
   const params = useParams()
   const router = useRouter()
-  const { t, lang, mounted, setLang } = useTranslation()
+  const t = initialT
+  const lang = initialLang
   const slug = params.slug as string
   const [imgFailed, setImgFailed] = useState(false)
   
   const trip = trips.find(tr => tr.slug === slug)
-
-  if (!mounted) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="animate-pulse-gold w-16 h-16 rounded-full border-2 border-primary" />
-      </div>
-    )
-  }
   
   if (!trip) {
     return (
@@ -48,14 +47,14 @@ export default function TripPageClient() {
   const tripDuration = trip.duration[lang] || trip.duration.en
 
   const whatsappMessage = encodeURIComponent(
-    `${t.whatsapp.greeting}: ${tripName}\n\nDuration: ${tripDuration}\nPrice: €${trip.price}`
+    `${t.whatsapp.greeting}: ${tripName}\n\n${t.whatsapp.durationLabel}: ${tripDuration}\n${t.whatsapp.priceLabel}: €${trip.price}`
   )
-  const whatsappLink = `https://wa.me/201220951483?text=${whatsappMessage}`
+  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`
 
   return (
-    <main className="min-h-screen bg-background">
-      <Header t={t} lang={lang} onLanguageChange={setLang} />
-      <WeatherExchangeWidget t={t} />
+    <main id="main-content" className="min-h-screen bg-background">
+      <Header t={t} />
+
       
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px]">
@@ -97,9 +96,28 @@ export default function TripPageClient() {
 
       {/* Back Button */}
       <div className="container mx-auto px-4 py-6">
+        <nav aria-label="Breadcrumb" className="mb-4">
+          <ol className="flex items-center gap-2 text-sm text-muted-foreground">
+            <li>
+              <button onClick={() => router.push("/")} className="hover:text-primary transition-colors">
+                {t.breadcrumb.home}
+              </button>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <button onClick={() => router.push("/#trips")} className="hover:text-primary transition-colors">
+                {t.breadcrumb.trips}
+              </button>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li className="text-foreground font-medium truncate max-w-[200px]" aria-current="page">
+              {tripName}
+            </li>
+          </ol>
+        </nav>
         <Button 
           variant="ghost" 
-          onClick={() => { window.location.href = "/#trips"; }}
+          onClick={() => { router.push("/#trips"); }}
           className="text-muted-foreground hover:text-primary transition-colors"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
@@ -113,16 +131,11 @@ export default function TripPageClient() {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-10">
             {/* Quick Info */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 gap-4">
               <div className="p-6 rounded-2xl border border-border bg-card text-center group hover:border-primary/50 transition-all duration-300">
                 <Clock className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
                 <p className="text-sm text-muted-foreground mb-1">{t.trips.duration}</p>
                 <p className="text-lg font-semibold text-foreground">{tripDuration}</p>
-              </div>
-              <div className="p-6 rounded-2xl border border-border bg-card text-center group hover:border-primary/50 transition-all duration-300">
-                <Users className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
-                <p className="text-sm text-muted-foreground mb-1">{t.tripDetail.groupSize}</p>
-                <p className="text-lg font-semibold text-foreground">2-15</p>
               </div>
               <div className="p-6 rounded-2xl border border-border bg-card text-center group hover:border-primary/50 transition-all duration-300">
                 <MapPin className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
@@ -167,35 +180,30 @@ export default function TripPageClient() {
               </ul>
             </div>
 
-            {/* Gallery Placeholder */}
+            {/* Gallery */}
             <div className="p-8 rounded-3xl border border-border bg-card">
               <h2 className="text-2xl font-serif text-foreground mb-6">{t.gallery.title}</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {[
-                  { src: trip.image, alt: `${tripName} - Main` },
-                  { src: `https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80`, alt: `${tripName} - Red Sea` },
-                  { src: `https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&q=80`, alt: `${tripName} - Adventure` },
-                  { src: `https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=400&q=80`, alt: `${tripName} - Experience` },
-                  { src: `https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=400&q=80`, alt: `${tripName} - Safari` },
-                  { src: `https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=400&q=80`, alt: `${tripName} - Paradise` },
-                ].map((img, i) => (
-                  <div 
-                    key={i} 
-                    className="aspect-square rounded-xl bg-muted/30 border border-border flex items-center justify-center overflow-hidden group cursor-pointer"
-                  >
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={300}
-                      height={300}
-                      className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                ))}
+                {(() => {
+                  const galleryPhotos = trip.gallery && trip.gallery.length > 0
+                    ? trip.gallery
+                    : [trip.image]; // fallback to the trip's main image instead of non-existent files
+                  return galleryPhotos.map((src, i) => (
+                    <div
+                      key={i}
+                      className="aspect-square rounded-xl bg-muted/30 border border-border flex items-center justify-center overflow-hidden group cursor-pointer"
+                    >
+                      <Image
+                        src={src}
+                        alt={`${tripName} - Photo ${i + 1}`}
+                        width={300}
+                        height={300}
+                        className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                  ));
+                })()}
               </div>
-              <p className="text-sm text-muted-foreground text-center mt-4">
-                {t.tripDetail.morePhotosSoon}
-              </p>
             </div>
           </div>
 
@@ -205,8 +213,14 @@ export default function TripPageClient() {
               <div className="text-center mb-6">
                 <p className="text-sm text-muted-foreground mb-2">{t.trips.price}</p>
                 <div className="flex items-baseline justify-center gap-2">
-                  <span className="text-4xl font-bold text-primary">€{trip.price}</span>
-                  <span className="text-muted-foreground">{t.tripDetail.perPerson}</span>
+                  {trip.price > 0 ? (
+                    <>
+                      <span className="text-4xl font-bold text-primary">€{trip.price}</span>
+                      <span className="text-muted-foreground">{trip.priceLabel?.[lang] || t.tripDetail.perPerson}</span>
+                    </>
+                  ) : (
+                    <span className="text-4xl font-bold text-primary">{trip.priceLabel?.[lang] || t.tripDetail.ask}</span>
+                  )}
                 </div>
               </div>
 

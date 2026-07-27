@@ -1,0 +1,70 @@
+{
+  "brand": "Golden Horizont Egypt",
+  "version": "1.0.0",
+  "updated": "2026-07-14",
+  "colors": {
+    "primary": {
+      "golden-amber": "#C9922E",
+      "deep-gold": "#A67B1F",
+      "light-gold": "#E8B84A"
+    },
+    "secondary": {
+      "deep-teal": "#1A2E3B",
+      "ocean-blue": "#2A5F7A",
+      "sandy-beige": "#F5E6C8"
+    },
+    "neutral": {
+      "rich-black": "#141414",
+      "dark-gray": "#1F1F1F",
+      "medium-gray": "#3A3A3A",
+      "muted-gray": "#7A7A7A",
+      "light-gray": "#E8E8E8",
+      "off-white": "#F2F0ED",
+      "pure-white": "#FFFFFF"
+    },
+    "semantic": {
+      "success": "#2ECC71",
+      "warning": "#F39C12",
+      "error": "#E74C3C",
+      "info": "#3498DB"
+    }
+  },
+  "typography": {
+    "font-family": {
+      "heading": "Playfair Display, Georgia, Times New Roman, serif",
+      "body": "Inter, system-ui, -apple-system, sans-serif",
+      "accent": "Playfair Display, serif"
+    },
+    "scale": {
+      "hero": { "size": "64px", "mobile": "36px", "weight": 700 },
+      "h1": { "size": "48px", "mobile": "32px", "weight": 700 },
+      "h2": { "size": "36px", "mobile": "28px", "weight": 600 },
+      "h3": { "size": "24px", "mobile": "20px", "weight": 600 },
+      "body-lg": { "size": "18px", "mobile": "16px", "weight": 400 },
+      "body": { "size": "16px", "mobile": "16px", "weight": 400 },
+      "small": { "size": "14px", "mobile": "14px", "weight": 400 },
+      "caption": { "size": "12px", "mobile": "12px", "weight": 400 }
+    }
+  },
+  "spacing": {
+    "xs": "4px",
+    "sm": "8px",
+    "md": "16px",
+    "lg": "24px",
+    "xl": "32px",
+    "2xl": "48px",
+    "3xl": "64px"
+  },
+  "border-radius": {
+    "button": "8px",
+    "card": "12px",
+    "image": "8px",
+    "modal": "16px",
+    "pill": "9999px"
+  },
+  "shadows": {
+    "subtle": "0 2px 8px rgba(0, 0, 0, 0.1)",
+    "card-hover": "0 8px 24px rgba(0, 0, 0, 0.15)",
+    "modal": "0 16px 48px rgba(0, 0, 0, 0.2)"
+  }
+}

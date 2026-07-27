@@ -1,0 +1,54 @@
+/* Golden Horizont Egypt - Design Tokens */
+/* Auto-generated from brand-guidelines.md */
+
+:root {
+  /* Primary Colors */
+  --brand-golden-amber: #C9922E;
+  --brand-deep-gold: #A67B1F;
+  --brand-light-gold: #E8B84A;
+
+  /* Secondary Colors */
+  --brand-deep-teal: #1A2E3B;
+  --brand-ocean-blue: #2A5F7A;
+  --brand-sandy-beige: #F5E6C8;
+
+  /* Neutral Colors */
+  --brand-rich-black: #141414;
+  --brand-dark-gray: #1F1F1F;
+  --brand-medium-gray: #3A3A3A;
+  --brand-muted-gray: #7A7A7A;
+  --brand-light-gray: #E8E8E8;
+  --brand-off-white: #F2F0ED;
+  --brand-pure-white: #FFFFFF;
+
+  /* Semantic Colors */
+  --brand-success: #2ECC71;
+  --brand-warning: #F39C12;
+  --brand-error: #E74C3C;
+  --brand-info: #3498DB;
+
+  /* Typography */
+  --brand-font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --brand-font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --brand-spacing-xs: 4px;
+  --brand-spacing-sm: 8px;
+  --brand-spacing-md: 16px;
+  --brand-spacing-lg: 24px;
+  --brand-spacing-xl: 32px;
+  --brand-spacing-2xl: 48px;
+  --brand-spacing-3xl: 64px;
+
+  /* Border Radius */
+  --brand-radius-button: 8px;
+  --brand-radius-card: 12px;
+  --brand-radius-image: 8px;
+  --brand-radius-modal: 16px;
+  --brand-radius-pill: 9999px;
+
+  /* Shadows */
+  --brand-shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --brand-shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --brand-shadow-modal: 0 16px 48px rgba(0, 0, 0, 0.2);
+}

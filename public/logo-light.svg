@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8B84A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C9922E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A67B1F;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2A5F7A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A2E3B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="120" fill="#F2F0ED" rx="8"/>
+  
+  <!-- Sun -->
+  <circle cx="60" cy="30" r="18" fill="url(#goldGradient)"/>
+  
+  <!-- Horizon Line -->
+  <line x1="20" y1="68" x2="100" y2="68" stroke="url(#tealGradient)" stroke-width="2"/>
+  
+  <!-- Pyramid -->
+  <polygon points="60,68 20,68 40,30" fill="url(#tealGradient)" opacity="0.9"/>
+  <polygon points="60,68 100,68 80,30" fill="url(#tealGradient)" opacity="0.7"/>
+  
+  <!-- Text: GOLDEN HORIZONT -->
+  <text x="130" y="50" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="600" fill="#141414" letter-spacing="2">GOLDEN HORIZONT</text>
+  
+  <!-- Text: EGYPT -->
+  <text x="130" y="75" font-family="'Inter', Arial, sans-serif" font-size="12" font-weight="400" fill="#1A2E3B" letter-spacing="4">EGYPT</text>
+  
+  <!-- Decorative line under EGYPT -->
+  <line x1="130" y1="85" x2="200" y2="85" stroke="#1A2E3B" stroke-width="1" opacity="0.5"/>
+</svg>

@@ -1,0 +1,20 @@
+import type { Language } from "./translations";
+
+export interface Trip {
+  id: string;
+  slug: string;
+  name: Record<string, string>;
+  description: Record<string, string>;
+  duration: Record<string, string>;
+  price: number;
+  currency: string;
+  category: string;
+  popular: boolean;
+  image: string;
+  rating: number;
+  highlights: Record<string, string>[];
+  included: Record<string, string>[];
+  gallery?: string[];
+}
+// Note: Backup content truncated for brevity since this is just a stub string. 
+// A full backup script is better.

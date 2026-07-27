@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Horizont Egypt — Logo System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0a0a;
+      font-family: 'Inter', sans-serif;
+      color: #ffffff;
+      padding: 60px 40px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #C9922E;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #7A7A7A;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 60px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #7A7A7A;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #3A3A3A;
+    }
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .logo-card {
+      background: #141414;
+      border-radius: 12px;
+      padding: 48px 32px;
+      border: 1px solid #1F1F1F;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .logo-card:hover {
+      border-color: #C9922E;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(201, 146, 46, 0.15);
+    }
+
+    .logo-card.light {
+      background: #F2F0ED;
+      border-color: #E8E8E8;
+    }
+
+    .logo-card.light:hover {
+      border-color: #C9922E;
+      box-shadow: 0 8px 32px rgba(201, 146, 46, 0.2);
+    }
+
+    .logo-card-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #7A7A7A;
+      margin-bottom: 32px;
+    }
+
+    .logo-card.light .logo-card-label {
+      color: #3A3A3A;
+    }
+
+    .logo-card img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .logo-card .icon-preview {
+      width: 64px;
+      height: 64px;
+    }
+
+    .logo-card .favicon-preview {
+      width: 32px;
+      height: 32px;
+    }
+
+    .logo-card-description {
+      font-size: 13px;
+      color: #7A7A7A;
+      margin-top: 24px;
+      line-height: 1.5;
+    }
+
+    .logo-card.light .logo-card-description {
+      color: #3A3A3A;
+    }
+
+    .color-palette {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .color-swatch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .color-swatch-box {
+      width: 64px;
+      height: 64px;
+      border-radius: 8px;
+      border: 2px solid #3A3A3A;
+    }
+
+    .color-swatch-label {
+      font-size: 11px;
+      color: #7A7A7A;
+      text-align: center;
+    }
+
+    .color-swatch-hex {
+      font-size: 12px;
+      font-weight: 500;
+      color: #FFFFFF;
+    }
+
+    .specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+
+    .spec-item {
+      background: #141414;
+      border-radius: 8px;
+      padding: 24px;
+      border: 1px solid #1F1F1F;
+    }
+
+    .spec-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #7A7A7A;
+      margin-bottom: 8px;
+    }
+
+    .spec-value {
+      font-size: 24px;
+      font-weight: 600;
+      color: #C9922E;
+    }
+
+    .spec-unit {
+      font-size: 14px;
+      font-weight: 400;
+      color: #7A7A7A;
+      margin-left: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Golden Horizont Egypt</h1>
+    <p class="subtitle">Logo System & Brand Identity</p>
+
+    <!-- Logo Variants -->
+    <div class="section">
+      <h2 class="section-title">Logo Variants</h2>
+      <div class="logo-grid">
+        <!-- Primary Logo - Dark -->
+        <div class="logo-card">
+          <span class="logo-card-label">Primary — Dark</span>
+          <img src="logo.svg" alt="Golden Horizont Egypt Logo" style="max-width: 320px;">
+          <p class="logo-card-description">Default version for dark backgrounds. Use on Rich Black (#141414) or Dark Gray (#1F1F1F).</p>
+        </div>
+
+        <!-- Primary Logo - Light -->
+        <div class="logo-card light">
+          <span class="logo-card-label">Primary — Light</span>
+          <img src="logo-light.svg" alt="Golden Horizont Egypt Logo Light" style="max-width: 320px;">
+          <p class="logo-card-description">Version for light backgrounds. Use on Off White (#F2F0ED) or White (#FFFFFF).</p>
+        </div>
+
+        <!-- Icon Only - Dark -->
+        <div class="logo-card">
+          <span class="logo-card-label">Icon — Dark</span>
+          <img src="logo-icon.svg" alt="Golden Horizont Egypt Icon" class="icon-preview">
+          <p class="logo-card-description">Social media profiles, app icons, small spaces. Minimum size: 28px.</p>
+        </div>
+
+        <!-- Icon Only - Light -->
+        <div class="logo-card light">
+          <span class="logo-card-label">Icon — Light</span>
+          <img src="logo-icon.svg" alt="Golden Horizont Egypt Icon Light" class="icon-preview" style="filter: invert(1);">
+          <p class="logo-card-description">Light version for small spaces on light backgrounds.</p>
+        </div>
+
+        <!-- Favicon -->
+        <div class="logo-card">
+          <span class="logo-card-label">Favicon</span>
+          <img src="favicon.svg" alt="Golden Horizont Egypt Favicon" class="favicon-preview">
+          <p class="logo-card-description">Browser tabs, bookmarks, saved to home screen. 32x32px.</p>
+        </div>
+
+        <!-- Monogram -->
+        <div class="logo-card">
+          <span class="logo-card-label">Monogram</span>
+          <div style="width: 64px; height: 64px; border: 2px solid #C9922E; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;">
+            <span style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: #C9922E; letter-spacing: 1px;">GHE</span>
+            <div style="position: absolute; top: -8px; left: 50%; transform: translateX(-50%); width: 10px; height: 10px; background: #C9922E; border-radius: 50%;"></div>
+          </div>
+          <p class="logo-card-description">Compact monogram for watermarks, stamps, and decorative use.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color Palette -->
+    <div class="section">
+      <h2 class="section-title">Brand Colors</h2>
+      <div class="color-palette">
+        <div class="color-swatch">
+          <div class="color-swatch-box" style="background: #C9922E;"></div>
+          <span class="color-swatch-label">Golden Amber</span>
+          <span class="color-swatch-hex">#C9922E</span>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-box" style="background: #A67B1F;"></div>
+          <span class="color-swatch-label">Deep Gold</span>
+          <span class="color-swatch-hex">#A67B1F</span>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-box" style="background: #E8B84A;"></div>
+          <span class="color-swatch-label">Light Gold</span>
+          <span class="color-swatch-hex">#E8B84A</span>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-box" style="background: #1A2E3B;"></div>
+          <span class="color-swatch-label">Deep Teal</span>
+          <span class="color-swatch-hex">#1A2E3B</span>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-box" style="background: #141414;"></div>
+          <span class="color-swatch-label">Rich Black</span>
+          <span class="color-swatch-hex">#141414</span>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-box" style="background: #F2F0ED;"></div>
+          <span class="color-swatch-label">Off White</span>
+          <span class="color-swatch-hex">#F2F0ED</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specifications -->
+    <div class="section">
+      <h2 class="section-title">Specifications</h2>
+      <div class="specs">
+        <div class="spec-item">
+          <div class="spec-label">Minimum Width</div>
+          <div class="spec-value">140<span class="spec-unit">px</span></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Icon Minimum</div>
+          <div class="spec-value">28<span class="spec-unit">px</span></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Clear Space</div>
+          <div class="spec-value">1x<span class="spec-unit">sun height</span></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Border Radius</div>
+          <div class="spec-value">8<span class="spec-unit">px</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
