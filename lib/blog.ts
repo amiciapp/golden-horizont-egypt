@@ -310,7 +310,7 @@ export const blogPosts: BlogPost[] = [
     category: "Hurghada",
     readingTime: 6,
     publishedAt: "2026-07-27",
-    image: "/photos/city-tour-hurghada/1.jpg",
+    image: "/photos/city-tour-hurghada/city-tour-1.jpg",
     title: {
       en: "Top 10 Things To Do In Hurghada: The Ultimate 2026 Checklist",
       ru: "Топ-10 развлечений в Хургаде: главный чек-лист на 2026 год",
