@@ -844,7 +844,7 @@ export const trips: Trip[] = [
     },
     category: "Cairo",
     popular: true,
-    image: "/photos/diving-adventure-hurghada/diving-1.webp",
+    image: "/photos/cairo-premium-minibus/Khan-El-Khalili-Bazaar.jpg",
     rating: 4.9,
     highlights: [
       { en: "Private Car (Up to 3 Persons)", ru: "Частный автомобиль (до 3 человек)", de: "Privates Auto (bis 3 Personen)", ar: "سيارة خاصة (حتى 3 أشخاص)" },
@@ -1514,7 +1514,7 @@ export const trips: Trip[] = [
     currency: "EUR",
     category: "Entertainment",
     popular: false,
-    image: "/photos/diving-adventure-hurghada/diving-1.webp",
+    image: "/photos/hurghada-museum/museum-1.jpg",
     rating: 4.6,
     highlights: [
       { en: "Ancient Egyptian Statues & Jewelry", ru: "Древнеегипетские статуи и украшения", de: "Altägyptische Statuen & Schmuck", ar: "تماثيل ومجوهرات مصر القديمة" },
@@ -1563,7 +1563,7 @@ export const trips: Trip[] = [
     currency: "EUR",
     category: "Entertainment",
     popular: false,
-    image: "/photos/diving-adventure-hurghada/diving-1.webp",
+    image: "/photos/la-tenda-lights/la-tenda-1.webp",
     rating: 4.7,
     highlights: [
       { en: "Authentic Bedouin-Style Evening", ru: "Аутентичный бедуинский вечер", de: "Authentischer Beduinenabend", ar: "مساء بدوي أصيل" },
