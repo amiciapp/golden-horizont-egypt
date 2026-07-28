@@ -1491,7 +1491,20 @@ export const trips: Trip[] = [
       { en: "Delicious lunch on board + soft drinks", ru: "Вкусный обед на борту + напитки", de: "Leckeres Mittagessen an Bord + Softdrinks", ar: "غداء لذيذ على متن السفينة + مشروبات خفيفة" },
       { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة الدليل" }
     ],
-    gallery: Array.from({length: 44}, (_, i) => `/photos/orange-bay-snorkeling/${i + 1}.jpg`)
+    gallery: [
+      "/photos/orange-bay-snorkeling/1.jpg",
+      "/photos/orange-bay-snorkeling/2.jpg",
+      "/photos/orange-bay-snorkeling/10.jpg",
+      "/photos/orange-bay-snorkeling/11.jpg",
+      "/photos/orange-bay-snorkeling/12.jpg",
+      "/photos/orange-bay-snorkeling/13.jpg",
+      "/photos/orange-bay-snorkeling/14.jpg",
+      "/photos/orange-bay-snorkeling/15.jpg",
+      "/photos/orange-bay-snorkeling/16.jpg",
+      "/photos/orange-bay-snorkeling/17.jpg",
+      "/photos/orange-bay-snorkeling/18.jpg",
+      "/photos/orange-bay-snorkeling/19.jpg"
+    ]
   },
   {
     id: "90",
