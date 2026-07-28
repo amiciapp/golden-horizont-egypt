@@ -311,19 +311,9 @@ export default async function RootLayout({
       </head>
       <body className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-transparent text-foreground relative`} suppressHydrationWarning>
         <a href="#main-content" className="skip-to-content">Skip to content</a>
-        {/* Global Background Video */}
+        {/* Global Background */}
         <div className="fixed inset-0 -z-50 pointer-events-none">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="none"
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/api/video" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-background/80" />
+          <div className="absolute inset-0 bg-background" />
         </div>
 
         
