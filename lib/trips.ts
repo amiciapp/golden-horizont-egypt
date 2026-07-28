@@ -244,7 +244,7 @@ export const trips: Trip[] = [
     currency: "EUR",
     category: "Sea Adventures",
     popular: true,
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/10/ELITE8-scaled.jpg",
+    image: "/photos/elite-vip-yacht/2.webp",
     rating: 4.9,
     highlights: [
       { en: "Private cruise along the stunning coastline", ru: "Частный круиз вдоль живописного побережья", de: "Private Kreuzfahrt entlang der atemberaubenden Küste", ar: "رحلة خاصة على طول الساحل الخلاب" },
