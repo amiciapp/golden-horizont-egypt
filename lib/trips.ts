@@ -39,7 +39,7 @@ export const trips: Trip[] = [
     currency: "EUR",
     category: "Sea Adventures",
     popular: true,
-    image: "/photos/diving-adventure-hurghada/diving-1.webp",
+    image: "/photos/nefertari-makadi-hurghada/1.jpg",
     rating: 4.8,
     highlights: [
       { en: "Air-Conditioned Submarine Deck", ru: "Подводная лодка с кондиционером", de: "Klimatisiertes U-Boot-Deck", ar: "سطح غواصة مكيف" },
@@ -54,7 +54,18 @@ export const trips: Trip[] = [
       { en: "Dinner & Drinks", ru: "Ужин и напитки", de: "Abendessen & Getränke", ar: "العشاء والمشروبات" }
     ],
     gallery: [
-      "/photos/diving-adventure-hurghada/diving-1.webp"
+      "/photos/nefertari-makadi-hurghada/1.jpg",
+      "/photos/nefertari-makadi-hurghada/2.jpg",
+      "/photos/nefertari-makadi-hurghada/3.jpg",
+      "/photos/nefertari-makadi-hurghada/4.jpg",
+      "/photos/nefertari-makadi-hurghada/5.jpg",
+      "/photos/nefertari-makadi-hurghada/6.jpg",
+      "/photos/nefertari-makadi-hurghada/7.jpg",
+      "/photos/nefertari-makadi-hurghada/8.jpg",
+      "/photos/nefertari-makadi-hurghada/9.jpg",
+      "/photos/nefertari-makadi-hurghada/10.jpg",
+      "/photos/nefertari-makadi-hurghada/11.jpg",
+      "/photos/nefertari-makadi-hurghada/12.jpg"
     ]
   },
   {
@@ -77,7 +88,7 @@ export const trips: Trip[] = [
     currency: "EUR",
     category: "Cairo",
     popular: true,
-    image: "/photos/cairo-golden-bus/166744703.webp",
+    image: "/photos/cairo-emc-marsa-alam/1.jpg",
     rating: 4.8,
     highlights: [
       { en: "Large Group Bus (Up to 50 Seats)", ru: "Большой автобус (до 50 мест)", de: "Großgruppenbus (bis 50 Sitze)", ar: "حافلة كبيرة للمجموعات (حتى 50 مقعداً)" },
@@ -93,7 +104,18 @@ export const trips: Trip[] = [
       { en: "Lunch at Restaurant", ru: "Обед в ресторане", de: "Mittagessen im Restaurant", ar: "غداء في مطعم" }
     ],
     gallery: [
-      "/photos/cairo-golden-bus/689691961.webp"
+      "/photos/cairo-emc-marsa-alam/1.jpg",
+      "/photos/cairo-emc-marsa-alam/2.jpg",
+      "/photos/cairo-emc-marsa-alam/3.jpg",
+      "/photos/cairo-emc-marsa-alam/4.jpg",
+      "/photos/cairo-emc-marsa-alam/5.jpg",
+      "/photos/cairo-emc-marsa-alam/6.jpg",
+      "/photos/cairo-emc-marsa-alam/7.jpg",
+      "/photos/cairo-emc-marsa-alam/8.jpg",
+      "/photos/cairo-emc-marsa-alam/9.jpg",
+      "/photos/cairo-emc-marsa-alam/10.jpg",
+      "/photos/cairo-emc-marsa-alam/11.jpg",
+      "/photos/cairo-emc-marsa-alam/12.jpg"
     ]
   },
   {
@@ -132,7 +154,18 @@ export const trips: Trip[] = [
       { en: "Lunch at Local Restaurant", ru: "Обед в ресторане", de: "Mittagessen im Restaurant", ar: "غداء في مطعم محلي" }
     ],
     gallery: [
-      "/photos/cairo-golden-bus/689691961.webp"
+      "/photos/cairo-classic-bus/unnamed.webp",
+      "/photos/cairo-classic-bus/unnamed (1).webp",
+      "/photos/cairo-classic-bus/unnamed (2).webp",
+      "/photos/cairo-classic-bus/unnamed (3).webp",
+      "/photos/cairo-classic-bus/unnamed (4).webp",
+      "/photos/cairo-classic-bus/unnamed (5).webp",
+      "/photos/cairo-classic-bus/unnamed (6).webp",
+      "/photos/cairo-classic-bus/unnamed (7).webp",
+      "/photos/cairo-classic-bus/unnamed (8).webp",
+      "/photos/cairo-classic-bus/unnamed (9).webp",
+      "/photos/cairo-classic-bus/unnamed (11).webp",
+      "/photos/cairo-classic-bus/unnamed (12).webp",
     ]
   },
   {
@@ -177,7 +210,18 @@ export const trips: Trip[] = [
       { en: "Lunch at Restaurant", ru: "Обед в ресторане", de: "Mittagessen im Restaurant", ar: "غداء في مطعم" }
     ],
     gallery: [
-      "/photos/cairo-premium-minibus/videoframe_779.webp"
+      "/photos/cairo-private-car-gem/166744703.webp",
+      "/photos/cairo-private-car-gem/166744737.webp",
+      "/photos/cairo-private-car-gem/166744777.webp",
+      "/photos/cairo-private-car-gem/166744862.webp",
+      "/photos/cairo-private-car-gem/613799415.webp",
+      "/photos/cairo-private-car-gem/613799423.webp",
+      "/photos/cairo-private-car-gem/613799488.webp",
+      "/photos/cairo-private-car-gem/613799552.webp",
+      "/photos/cairo-private-car-gem/613799594.webp",
+      "/photos/cairo-private-car-gem/616157994.webp",
+      "/photos/cairo-private-car-gem/616158145.webp",
+      "/photos/cairo-private-car-gem/689691961.webp",
     ]
   },
   {
@@ -218,7 +262,18 @@ export const trips: Trip[] = [
       { en: "Dedicated crew and safety equipment", ru: "Персональный экипаж и средства безопасности", de: "Dedicated Besatzung und Sicherheitsausrüstung", ar: "طاقم مخصص ومعدات السلامة" }
     ],
     gallery: [
-      "/photos/elite-vip-yacht/9.jpg"
+      "/photos/elite-vip-yacht/2.webp",
+      "/photos/elite-vip-yacht/3.webp",
+      "/photos/elite-vip-yacht/4.webp",
+      "/photos/elite-vip-yacht/5.webp",
+      "/photos/elite-vip-yacht/6.webp",
+      "/photos/elite-vip-yacht/7.webp",
+      "/photos/elite-vip-yacht/8.webp",
+      "/photos/elite-vip-yacht/9.jpg",
+      "/photos/elite-vip-yacht/10.webp",
+      "/photos/elite-vip-yacht/14.webp",
+      "/photos/elite-vip-yacht/15.webp",
+      "/photos/elite-vip-yacht/17.webp",
     ]
   },
   {
@@ -265,6 +320,18 @@ export const trips: Trip[] = [
       { en: "Hotel pickup and drop-off", ru: "Трансфер от отеля и обратно", de: "Hotelabholung und Rückfahrt", ar: "pickup من وإلى الفندق" }
     ],
     gallery: [
+      "/photos/super-safari/af.jpg",
+      "/photos/super-safari/b0.jpg",
+      "/photos/super-safari/cd.jpg",
+      "/photos/super-safari/1b.jpg",
+      "/photos/super-safari/b1.jpg",
+      "/photos/super-safari/b2.jpg",
+      "/photos/super-safari/b4.jpg",
+      "/photos/super-safari/b6.jpg",
+      "/photos/super-safari/a8.jpg",
+      "/photos/super-safari/a9.jpg",
+      "/photos/super-safari/12.jpg",
+      "/photos/super-safari/14.jpg",
     ]
   },
 
@@ -310,7 +377,18 @@ export const trips: Trip[] = [
       { en: "Lunch at Restaurant", ru: "Обед в ресторане", de: "Mittagessen im Restaurant", ar: "غداء في مطعم" }
     ],
     gallery: [
-      "/photos/cairo-private-vip/689691961.webp"
+      "/photos/cairo-private-vip/166744703.webp",
+      "/photos/cairo-private-vip/166744737.webp",
+      "/photos/cairo-private-vip/166744777.webp",
+      "/photos/cairo-private-vip/166744862.webp",
+      "/photos/cairo-private-vip/613799415.webp",
+      "/photos/cairo-private-vip/613799423.webp",
+      "/photos/cairo-private-vip/613799488.webp",
+      "/photos/cairo-private-vip/613799552.webp",
+      "/photos/cairo-private-vip/613799594.webp",
+      "/photos/cairo-private-vip/616157994.webp",
+      "/photos/cairo-private-vip/616158145.webp",
+      "/photos/cairo-private-vip/689691961.webp",
     ]
   },
   {
@@ -357,6 +435,18 @@ export const trips: Trip[] = [
       { en: "Professional assistance", ru: "Профессиональная помощь", de: "Professionelle Hilfe", ar: "مساعدة مهنية" }
     ],
     gallery: [
+      "/photos/luxor-hot-air-balloon-premium-minibus/339793097.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092430.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092518.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092585.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092615.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092673.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092768.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/340092809.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/395369751.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/395369956.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/395370087.webp",
+      "/photos/luxor-hot-air-balloon-premium-minibus/473125605.webp",
     ]
   },
   {
@@ -403,6 +493,18 @@ export const trips: Trip[] = [
       { en: "Bottled water during the tour", ru: "Бутилированная вода", de: "Flaschenwasser während der Tour", ar: "مياه معبأة أثناء الجولة" }
     ],
     gallery: [
+      "/photos/luxor-private-vip/473125693.webp",
+      "/photos/luxor-private-vip/473125755.webp",
+      "/photos/luxor-private-vip/473125812.webp",
+      "/photos/luxor-private-vip/473125870.webp",
+      "/photos/luxor-private-vip/473125924.webp",
+      "/photos/luxor-private-vip/473125984.webp",
+      "/photos/luxor-private-vip/473126042.webp",
+      "/photos/luxor-private-vip/473126115.webp",
+      "/photos/luxor-private-vip/473126185.webp",
+      "/photos/luxor-private-vip/473126264.webp",
+      "/photos/luxor-private-vip/473126329.webp",
+      "/photos/luxor-private-vip/473126402.webp",
     ]
   },
   {
@@ -442,6 +544,16 @@ export const trips: Trip[] = [
       { en: "Water and full assistance", ru: "Вода и полная помощь", de: "Wasser und vollständige Hilfe", ar: "مياه ومساعدة كاملة" }
     ],
     gallery: [
+      "/photos/abydos-dendera-premium-minibus/1.jpg",
+      "/photos/abydos-dendera-premium-minibus/2.jpg",
+      "/photos/abydos-dendera-premium-minibus/3.jpg",
+      "/photos/abydos-dendera-premium-minibus/4.jpg",
+      "/photos/abydos-dendera-premium-minibus/5.webp",
+      "/photos/abydos-dendera-premium-minibus/6.jpg",
+      "/photos/abydos-dendera-premium-minibus/7.jpg",
+      "/photos/abydos-dendera-premium-minibus/8.jpg",
+      "/photos/abydos-dendera-premium-minibus/9.jpg",
+      "/photos/abydos-dendera-premium-minibus/1890a4883044e85df337c2c80fbd5798.jpg",
     ]
   },
   {
@@ -488,7 +600,18 @@ export const trips: Trip[] = [
       { en: "Water and full assistance", ru: "Вода и полная помощь", de: "Wasser und vollständige Hilfe", ar: "مياه ومساعدة كاملة" }
     ],
     gallery: [
-      "/photos/abydos-dendera-private-car/Luxor-Dendera-Abydos-Tour-1-webp.webp"
+      "/photos/abydos-dendera-private-car/abydos-lake-with-egypt-tour-magic.webp",
+      "/photos/abydos-dendera-private-car/explore-abydos-temple-with-egypt-tour-magic.webp",
+      "/photos/abydos-dendera-private-car/1c.jpg",
+      "/photos/abydos-dendera-private-car/1e.jpg",
+      "/photos/abydos-dendera-private-car/images (1).jpg",
+      "/photos/abydos-dendera-private-car/Luxor-Dendera-Abydos-Tour-1-webp.webp",
+      "/photos/abydos-dendera-private-car/images (2).jpg",
+      "/photos/abydos-dendera-private-car/dendera-and-abydos-temples-on-a-private-tour-from-hurghada-3.webp",
+      "/photos/abydos-dendera-private-car/images (3).jpg",
+      "/photos/abydos-dendera-private-car/9c.jpg",
+      "/photos/abydos-dendera-private-car/23.jpg",
+      "/photos/abydos-dendera-private-car/68.jpg",
     ]
   },
   {
@@ -527,7 +650,18 @@ export const trips: Trip[] = [
       { en: "Lunch at Restaurant", ru: "Обед в ресторане", de: "Mittagessen im Restaurant", ar: "غداء في مطعم" }
     ],
     gallery: [
-      "/photos/cairo-classic-bus/unnamed.webp"
+      "/photos/cairo-golden-bus/166744703.webp",
+      "/photos/cairo-golden-bus/166744737.webp",
+      "/photos/cairo-golden-bus/166744777.webp",
+      "/photos/cairo-golden-bus/166744862.webp",
+      "/photos/cairo-golden-bus/613799415.webp",
+      "/photos/cairo-golden-bus/613799423.webp",
+      "/photos/cairo-golden-bus/613799488.webp",
+      "/photos/cairo-golden-bus/613799552.webp",
+      "/photos/cairo-golden-bus/613799594.webp",
+      "/photos/cairo-golden-bus/616157994.webp",
+      "/photos/cairo-golden-bus/616158145.webp",
+      "/photos/cairo-golden-bus/689691961.webp",
     ]
   },
   {
@@ -568,6 +702,18 @@ export const trips: Trip[] = [
       { en: "Water and full assistance", ru: "Вода и полная помощь", de: "Wasser und vollständige Hilfe", ar: "مياه ومساعدة كاملة" }
     ],
     gallery: [
+      "/photos/luxor-golden-bus/129871954.webp",
+      "/photos/luxor-golden-bus/129871970.webp",
+      "/photos/luxor-golden-bus/129871986.webp",
+      "/photos/luxor-golden-bus/129872007.webp",
+      "/photos/luxor-golden-bus/129872024.webp",
+      "/photos/luxor-golden-bus/129872115.webp",
+      "/photos/luxor-golden-bus/129872187.webp",
+      "/photos/luxor-golden-bus/129872254.webp",
+      "/photos/luxor-golden-bus/129872351.webp",
+      "/photos/luxor-golden-bus/129872557.webp",
+      "/photos/luxor-golden-bus/129872643.webp",
+      "/photos/luxor-golden-bus/129873146.webp",
     ]
   },
   {
@@ -608,6 +754,18 @@ export const trips: Trip[] = [
       { en: "Water and full assistance", ru: "Вода и полная помощь", de: "Wasser und vollständige Hilfe", ar: "مياه ومساعدة كاملة" }
     ],
     gallery: [
+      "/photos/luxor-premium-minibus/129873760.webp",
+      "/photos/luxor-premium-minibus/129873832.webp",
+      "/photos/luxor-premium-minibus/129874042.webp",
+      "/photos/luxor-premium-minibus/131819904.webp",
+      "/photos/luxor-premium-minibus/131819935.webp",
+      "/photos/luxor-premium-minibus/131820022.webp",
+      "/photos/luxor-premium-minibus/131820073.webp",
+      "/photos/luxor-premium-minibus/131820094.webp",
+      "/photos/luxor-premium-minibus/131820117.webp",
+      "/photos/luxor-premium-minibus/131820141.webp",
+      "/photos/luxor-premium-minibus/131820190.webp",
+      "/photos/luxor-premium-minibus/134331068.webp",
     ]
   },
   {
@@ -646,7 +804,18 @@ export const trips: Trip[] = [
       { en: "Professional Guide", ru: "Профессиональный гид", de: "Professioneller Guide", ar: "مرشد محترف" }
     ],
     gallery: [
-      "/photos/dolphin-house-snorkeling/dolphin-house-12.webp"
+      "/photos/dolphin-house-snorkeling/dolphin-house-1.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-2.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-3.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-4.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-5.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-6.jpg",
+      "/photos/dolphin-house-snorkeling/dolphin-house-7.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-8.jpg",
+      "/photos/dolphin-house-snorkeling/dolphin-house-9.jpg",
+      "/photos/dolphin-house-snorkeling/dolphin-house-10.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-11.webp",
+      "/photos/dolphin-house-snorkeling/dolphin-house-12.webp",
     ]
   },
   {
@@ -691,6 +860,18 @@ export const trips: Trip[] = [
       { en: "Premium Lunch at Restaurant", ru: "Премиальный обед в ресторане", de: "Premium-Mittagessen im Restaurant", ar: "غداء فاخر في مطعم" }
     ],
     gallery: [
+      "/photos/cairo-premium-minibus/Khan-El-Khalili-Bazaar.jpg",
+      "/photos/cairo-premium-minibus/Khan-El-Khalili-Bazaar (1).jpg",
+      "/photos/cairo-premium-minibus/48d7b836b54d594a579781b18850a6a0.jpg",
+      "/photos/cairo-premium-minibus/pressemitteilung_auf_website_tutankhamun_golden-mask_ckenneth-garrett_300dpi.webp",
+      "/photos/cairo-premium-minibus/675bc4cd2f8e0118d4b3c7dd52e4fdb2.jpg",
+      "/photos/cairo-premium-minibus/videoframe_779.webp",
+      "/photos/cairo-premium-minibus/videoframe_2558.webp",
+      "/photos/cairo-premium-minibus/videoframe_2842.webp",
+      "/photos/cairo-premium-minibus/videoframe_4988.webp",
+      "/photos/cairo-premium-minibus/videoframe_5461.webp",
+      "/photos/cairo-premium-minibus/videoframe_6387.webp",
+      "/photos/cairo-premium-minibus/1260566.jpeg.webp",
     ]
   },
   {
@@ -736,7 +917,18 @@ export const trips: Trip[] = [
       { en: "All Entrance Fees", ru: "Все входные билеты", de: "Alle Eintrittsgebühren", ar: "جميع رسوم الدخول" }
     ],
     gallery: [
-      "/photos/abu-simbel-premium-minibus/caption (3).jpg"
+      "/photos/abu-simbel-premium-minibus/00.jpg",
+      "/photos/abu-simbel-premium-minibus/0a.jpg",
+      "/photos/abu-simbel-premium-minibus/aswan.jpg",
+      "/photos/abu-simbel-premium-minibus/aswan (1).jpg",
+      "/photos/abu-simbel-premium-minibus/caption (1).jpg",
+      "/photos/abu-simbel-premium-minibus/caption (2).jpg",
+      "/photos/abu-simbel-premium-minibus/caption (3).jpg",
+      "/photos/abu-simbel-premium-minibus/09.jpg",
+      "/photos/abu-simbel-premium-minibus/17.jpg",
+      "/photos/abu-simbel-premium-minibus/20.jpg",
+      "/photos/abu-simbel-premium-minibus/31.jpg",
+      "/photos/abu-simbel-premium-minibus/97.jpg",
     ]
   },
   {
@@ -782,7 +974,18 @@ export const trips: Trip[] = [
       { en: "All Entrance Fees", ru: "Все входные билеты", de: "Alle Eintrittsgebühren", ar: "جميع رسوم الدخول" }
     ],
     gallery: [
-      "/photos/abu-simbel-private-vip/Temple-Entrance-Between-Timeless-Titans.webp"
+      "/photos/abu-simbel-private-vip/A-Grand-View-of-the-Small-Temple.webp",
+      "/photos/abu-simbel-private-vip/Abu-Simbel-tour-guide.webp",
+      "/photos/abu-simbel-private-vip/Abu-Simbel.webp",
+      "/photos/abu-simbel-private-vip/Ancient-Echoes-in-the-Passageway.webp",
+      "/photos/abu-simbel-private-vip/Arrival-by-the-Nile.webp",
+      "/photos/abu-simbel-private-vip/Crossing-a-Canal-in-the-Sahara.webp",
+      "/photos/abu-simbel-private-vip/Entry-to-Abu-Simbel-Great-Temple.webp",
+      "/photos/abu-simbel-private-vip/First-Glimpse-of-Abu-Simbel-Temples.webp",
+      "/photos/abu-simbel-private-vip/Nile-Cruise-Docked-by-the-Desert.webp",
+      "/photos/abu-simbel-private-vip/Silent-Sentinel-in-the-Shadows.webp",
+      "/photos/abu-simbel-private-vip/Standing-Tall-Through-Time.webp",
+      "/photos/abu-simbel-private-vip/Temple-Entrance-Between-Timeless-Titans.webp",
     ]
   },
   {
@@ -828,6 +1031,18 @@ export const trips: Trip[] = [
       { en: "Water & Full Assistance", ru: "Вода и полная помощь", de: "Wasser & volle Unterstützung", ar: "مياه ومساعدة كاملة" }
     ],
     gallery: [
+      "/photos/aswan-premium-minibus/1.jpg",
+      "/photos/aswan-premium-minibus/2.jpg",
+      "/photos/aswan-premium-minibus/3.jpg",
+      "/photos/aswan-premium-minibus/4.jpg",
+      "/photos/aswan-premium-minibus/5.jpg",
+      "/photos/aswan-premium-minibus/6.jpg",
+      "/photos/aswan-premium-minibus/10.jpg",
+      "/photos/aswan-premium-minibus/12.jpg",
+      "/photos/aswan-premium-minibus/13.jpg",
+      "/photos/aswan-premium-minibus/14.jpg",
+      "/photos/aswan-premium-minibus/15.jpg",
+      "/photos/aswan-premium-minibus/16.jpg",
     ]
   },
   {
@@ -873,7 +1088,18 @@ export const trips: Trip[] = [
       { en: "Water & Full Assistance", ru: "Вода и полная помощь", de: "Wasser & volle Unterstützung", ar: "مياه ومساعدة كاملة" }
     ],
     gallery: [
-      "/photos/aswan-private-vip/ASWAN VIP (8).jpg"
+      "/photos/aswan-private-vip/ASWAN VIP (2).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (3).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (4).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (5).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (6).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (7).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (8).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (10).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (11).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (12).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (13).jpg",
+      "/photos/aswan-private-vip/ASWAN VIP (14).jpg",
     ]
   },
   {
@@ -920,7 +1146,18 @@ export const trips: Trip[] = [
       { en: "Multiple snorkeling stops", ru: "Несколько остановок для снорклинга", de: "Mehrere Schnorchelstops", ar: "عدة توقفات للسباحة بالزنبرك" }
     ],
     gallery: [
-      "/photos/dolphin-house-marsa-alam/ee3570a2fc780e28fce762a97292234a071b27a31dc402b3343b3053674220ff.webp"
+      "/photos/dolphin-house-marsa-alam/caption.jpg",
+      "/photos/dolphin-house-marsa-alam/caption (1).jpg",
+      "/photos/dolphin-house-marsa-alam/Dolphin-House-Marsa-Alam-1.webp",
+      "/photos/dolphin-house-marsa-alam/caption (2).jpg",
+      "/photos/dolphin-house-marsa-alam/d3aaae4b3098e5a27cc2d53827d57da96d84320ca37679ea834c56139be127f3.webp",
+      "/photos/dolphin-house-marsa-alam/5b58d7f69d8c40bc59557b1ee3803f84c4275f2f551c9ec3a84a8c40580509f4.webp",
+      "/photos/dolphin-house-marsa-alam/9ed3a61c788ae957093ede756e456ef3c2b862e01b7c2d742be1f019e012e619.webp",
+      "/photos/dolphin-house-marsa-alam/61ec6fe354f35f85f5615ab3b282b0a19f96b14c1ff40091b36353da465510f6.webp",
+      "/photos/dolphin-house-marsa-alam/b245c096c4bec67ba2be5578145eb14de40feef036908816b0535d75d81ffaac.webp",
+      "/photos/dolphin-house-marsa-alam/dbd670f4c49192eb2556554661bb992028a6554e7db02fe96a54e5781ddd4ada.webp",
+      "/photos/dolphin-house-marsa-alam/3001b31c5a6c755aee647cd70456da4fc9e8aba96239574ef1f53282cde9de2e.webp",
+      "/photos/dolphin-house-marsa-alam/ee3570a2fc780e28fce762a97292234a071b27a31dc402b3343b3053674220ff.webp",
     ]
   },
   {
@@ -966,7 +1203,18 @@ export const trips: Trip[] = [
       { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة المرشد" }
     ],
     gallery: [
-      "/photos/marsa-alam-abu-dabbab-beach/caption (15).jpg"
+      "/photos/marsa-alam-abu-dabbab-beach/Abu-Dabbab-Bay-Egypt-tour-magic.webp",
+      "/photos/marsa-alam-abu-dabbab-beach/Abu-Dabbab-Beach.webp",
+      "/photos/marsa-alam-abu-dabbab-beach/Abu-Dabbab-Beach (1).webp",
+      "/photos/marsa-alam-abu-dabbab-beach/Abu-Dabbab-Beach-1.webp",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (1).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/Abu-Dabbab-Beach-2.webp",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (10).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (11).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (12).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (13).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (14).jpg",
+      "/photos/marsa-alam-abu-dabbab-beach/caption (15).jpg",
     ]
   },
   {
@@ -1013,7 +1261,18 @@ export const trips: Trip[] = [
       { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة المرشد" }
     ],
     gallery: [
-      "/photos/wadi-el-gemal-national-park/wadi-el-gemal-park.webp"
+      "/photos/wadi-el-gemal-national-park/ca0e4569e9173e0745d6396e333e93818e99f20fe1dc2ab394dc5d66ffdb51b0.webp",
+      "/photos/wadi-el-gemal-national-park/Sunset-at-Wadi-al-Gemal.webp",
+      "/photos/wadi-el-gemal-national-park/Wadi-El-Gemal-National-Park.webp",
+      "/photos/wadi-el-gemal-national-park/wadi-el-gemal-park.webp",
+      "/photos/wadi-el-gemal-national-park/6fbc53af6b097459c07af0913a96b5ccbb8ee2a9d6f53c20f6208afc806daed9.webp",
+      "/photos/wadi-el-gemal-national-park/af30ed37b8dec3fe8d142e0b5572e67d9a39ad64dd1fb6a1a6fc56c5ba798766.webp",
+      "/photos/wadi-el-gemal-national-park/63c66a83c8165.webp",
+      "/photos/wadi-el-gemal-national-park/63c66a966b85e.webp",
+      "/photos/wadi-el-gemal-national-park/e558c3faa2cb73c40163fc2b0164ae455a73a56beb214a03d4b9f86189234bb6.webp",
+      "/photos/wadi-el-gemal-national-park/893f238db0d01d0a90dd71c0ed5282ded80cff9f2812e523e4146bf056703576.webp",
+      "/photos/wadi-el-gemal-national-park/videoframe_1574.webp",
+      "/photos/wadi-el-gemal-national-park/videoframe_3136.webp",
     ]
   },
   {
@@ -1059,7 +1318,18 @@ export const trips: Trip[] = [
       { en: "Hotel pickup and drop-off", ru: "Трансфер от отеля и обратно", de: "Hotelabholung und Rückfahrt", ar: "pickp من وإلى الفندق" }
     ],
     gallery: [
-      "/photos/horse-riding-safari/caption.jpg"
+      "/photos/horse-riding-safari/a0.jpg",
+      "/photos/horse-riding-safari/ae.jpg",
+      "/photos/horse-riding-safari/af.jpg",
+      "/photos/horse-riding-safari/caption.jpg",
+      "/photos/horse-riding-safari/b1.jpg",
+      "/photos/horse-riding-safari/a3.jpg",
+      "/photos/horse-riding-safari/5d.jpg",
+      "/photos/horse-riding-safari/5e.jpg",
+      "/photos/horse-riding-safari/6c.jpg",
+      "/photos/horse-riding-safari/39.jpg",
+      "/photos/horse-riding-safari/72.jpg",
+      "/photos/horse-riding-safari/76.jpg",
     ]
   },
   {
@@ -1105,7 +1375,18 @@ export const trips: Trip[] = [
       { en: "Hotel pickup and drop-off", ru: "Трансфер от отеля и обратно", de: "Hotelabholung und Rückfahrt", ar: "pickp من وإلى الفندق" }
     ],
     gallery: [
-      "/photos/quad-adventure-mini-desert-safari/caption (2).jpg"
+      "/photos/quad-adventure-mini-desert-safari/be.jpg",
+      "/photos/quad-adventure-mini-desert-safari/c1.jpg",
+      "/photos/quad-adventure-mini-desert-safari/caption (1).jpg",
+      "/photos/quad-adventure-mini-desert-safari/caption (2).jpg",
+      "/photos/quad-adventure-mini-desert-safari/5b.jpg",
+      "/photos/quad-adventure-mini-desert-safari/5c.jpg",
+      "/photos/quad-adventure-mini-desert-safari/6f.jpg",
+      "/photos/quad-adventure-mini-desert-safari/caption (10).jpg",
+      "/photos/quad-adventure-mini-desert-safari/26.jpg",
+      "/photos/quad-adventure-mini-desert-safari/58.jpg",
+      "/photos/quad-adventure-mini-desert-safari/59.jpg",
+      "/photos/quad-adventure-mini-desert-safari/85.jpg",
     ]
   },
   {
@@ -1150,6 +1431,18 @@ export const trips: Trip[] = [
       { en: "Soft Drinks", ru: "Безалкогольные напитки", de: "Erfrischungsgetränke", ar: "مشروبات خفيفة" }
     ],
     gallery: [
+      "/photos/city-tour-hurghada/city-tour-1.jpg",
+      "/photos/city-tour-hurghada/city-tour-2.jpg",
+      "/photos/city-tour-hurghada/city-tour-10.jpg",
+      "/photos/city-tour-hurghada/city-tour-11.jpg",
+      "/photos/city-tour-hurghada/city-tour-12.jpg",
+      "/photos/city-tour-hurghada/city-tour-13.jpg",
+      "/photos/city-tour-hurghada/city-tour-14.jpg",
+      "/photos/city-tour-hurghada/city-tour-15.jpg",
+      "/photos/city-tour-hurghada/city-tour-16.jpg",
+      "/photos/city-tour-hurghada/city-tour-17.jpg",
+      "/photos/city-tour-hurghada/city-tour-18.jpg",
+      "/photos/city-tour-hurghada/city-tour-19.jpg",
     ]
   },
   {
@@ -1187,6 +1480,18 @@ export const trips: Trip[] = [
       { en: "Soft Drinks", ru: "Безалкогольные напитки", de: "Erfrischungsgetränke", ar: "مشروبات خفيفة" }
     ],
     gallery: [
+      "/photos/grand-aquarium-hurghada/aquarium-1.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-2.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-3.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-4.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-5.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-6.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-7.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-10.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-11.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-12.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-13.jpg",
+      "/photos/grand-aquarium-hurghada/aquarium-14.jpg",
     ]
   },
   {
@@ -1224,6 +1529,18 @@ export const trips: Trip[] = [
       { en: "Soft Drinks", ru: "Безалкогольные напитки", de: "Erfrischungsgetränke", ar: "مشروبات خفيفة" }
     ],
     gallery: [
+      "/photos/hurghada-museum/museum-1.jpg",
+      "/photos/hurghada-museum/museum-2.jpg",
+      "/photos/hurghada-museum/museum-10.jpg",
+      "/photos/hurghada-museum/museum-11.jpg",
+      "/photos/hurghada-museum/museum-12.jpg",
+      "/photos/hurghada-museum/museum-13.jpg",
+      "/photos/hurghada-museum/museum-14.jpg",
+      "/photos/hurghada-museum/museum-15.jpg",
+      "/photos/hurghada-museum/museum-16.jpg",
+      "/photos/hurghada-museum/museum-17.jpg",
+      "/photos/hurghada-museum/museum-18.jpg",
+      "/photos/hurghada-museum/museum-19.jpg",
     ]
   },
   {
@@ -1262,6 +1579,18 @@ export const trips: Trip[] = [
       { en: "Professional Guide", ru: "Профессиональный гид", de: "Professioneller Guide", ar: "مرشد محترف" }
     ],
     gallery: [
+      "/photos/la-tenda-lights/la-tenda-1.webp",
+      "/photos/la-tenda-lights/la-tenda-2.jpg",
+      "/photos/la-tenda-lights/la-tenda-5.jpg",
+      "/photos/la-tenda-lights/la-tenda-10.jpg",
+      "/photos/la-tenda-lights/la-tenda-11.jpg",
+      "/photos/la-tenda-lights/la-tenda-12.jpg",
+      "/photos/la-tenda-lights/la-tenda-13.jpg",
+      "/photos/la-tenda-lights/la-tenda-14.webp",
+      "/photos/la-tenda-lights/la-tenda-15.jpg",
+      "/photos/la-tenda-lights/la-tenda-16.jpg",
+      "/photos/la-tenda-lights/la-tenda-17.jpg",
+      "/photos/la-tenda-lights/la-tenda-18.webp",
     ]
   },
   {
@@ -1301,6 +1630,18 @@ export const trips: Trip[] = [
       { en: "Snorkeling Option for Non-Divers", ru: "Снорклинг для недайверов", de: "Schnorcheloption für Nicht-Taucher", ar: "خيار الغوص لمن لا يغوص" }
     ],
     gallery: [
+      "/photos/diving-adventure-hurghada/diving-1.webp",
+      "/photos/diving-adventure-hurghada/diving-2.webp",
+      "/photos/diving-adventure-hurghada/diving-3.webp",
+      "/photos/diving-adventure-hurghada/diving-4.webp",
+      "/photos/diving-adventure-hurghada/diving-5.webp",
+      "/photos/diving-adventure-hurghada/diving-6.webp",
+      "/photos/diving-adventure-hurghada/diving-7.webp",
+      "/photos/diving-adventure-hurghada/diving-10.jpg",
+      "/photos/diving-adventure-hurghada/diving-14.jpg",
+      "/photos/diving-adventure-hurghada/diving-15.jpg",
+      "/photos/diving-adventure-hurghada/diving-16.jpg",
+      "/photos/diving-adventure-hurghada/diving-17.jpg",
     ]
   },
   {
@@ -1339,6 +1680,18 @@ export const trips: Trip[] = [
       { en: "Guide Assistance", ru: "Помощь гида", de: "Guide-Unterstützung", ar: "مساعدة المرشد" }
     ],
     gallery: [
+      "/photos/eden-island-snorkeling/eden-1.jpg",
+      "/photos/eden-island-snorkeling/eden-2.jpg",
+      "/photos/eden-island-snorkeling/eden-3.jpg",
+      "/photos/eden-island-snorkeling/eden-4.jpg",
+      "/photos/eden-island-snorkeling/eden-5.jpg",
+      "/photos/eden-island-snorkeling/eden-6.jpg",
+      "/photos/eden-island-snorkeling/eden-10.jpg",
+      "/photos/eden-island-snorkeling/eden-11.jpg",
+      "/photos/eden-island-snorkeling/eden-12.jpg",
+      "/photos/eden-island-snorkeling/eden-13.jpg",
+      "/photos/eden-island-snorkeling/eden-14.jpg",
+      "/photos/eden-island-snorkeling/eden-15.jpg",
     ]
   },
   {
@@ -1377,6 +1730,18 @@ export const trips: Trip[] = [
       { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة الدليل" }
     ],
     gallery: [
+      "/photos/hula-hula-island-snorkeling/1.jpg",
+      "/photos/hula-hula-island-snorkeling/2.jpg",
+      "/photos/hula-hula-island-snorkeling/3.jpg",
+      "/photos/hula-hula-island-snorkeling/4.jpg",
+      "/photos/hula-hula-island-snorkeling/5.jpg",
+      "/photos/hula-hula-island-snorkeling/10.jpg",
+      "/photos/hula-hula-island-snorkeling/11.jpg",
+      "/photos/hula-hula-island-snorkeling/12.jpg",
+      "/photos/hula-hula-island-snorkeling/13.jpg",
+      "/photos/hula-hula-island-snorkeling/14.jpg",
+      "/photos/hula-hula-island-snorkeling/15.jpg",
+      "/photos/hula-hula-island-snorkeling/16.jpg",
     ]
   },
   {
@@ -1415,7 +1780,18 @@ export const trips: Trip[] = [
       { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة الدليل" }
     ],
     gallery: [
-      "/photos/magawish-island-snorkeling/12.webp"
+      "/photos/magawish-island-snorkeling/1.jpg",
+      "/photos/magawish-island-snorkeling/2.jpg",
+      "/photos/magawish-island-snorkeling/3.jpg",
+      "/photos/magawish-island-snorkeling/4.jpg",
+      "/photos/magawish-island-snorkeling/5.jpg",
+      "/photos/magawish-island-snorkeling/6.jpg",
+      "/photos/magawish-island-snorkeling/7.jpg",
+      "/photos/magawish-island-snorkeling/8.jpg",
+      "/photos/magawish-island-snorkeling/9.jpg",
+      "/photos/magawish-island-snorkeling/10.jpg",
+      "/photos/magawish-island-snorkeling/11.jpg",
+      "/photos/magawish-island-snorkeling/12.webp",
     ]
   },
   {
@@ -1454,6 +1830,18 @@ export const trips: Trip[] = [
       { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة الدليل" }
     ],
     gallery: [
+      "/photos/mahmya-island-snorkeling/1.jpg",
+      "/photos/mahmya-island-snorkeling/2.webp",
+      "/photos/mahmya-island-snorkeling/3.jpg",
+      "/photos/mahmya-island-snorkeling/4.jpg",
+      "/photos/mahmya-island-snorkeling/5.jpg",
+      "/photos/mahmya-island-snorkeling/6.jpg",
+      "/photos/mahmya-island-snorkeling/7.jpg",
+      "/photos/mahmya-island-snorkeling/10.jpg",
+      "/photos/mahmya-island-snorkeling/11.jpg",
+      "/photos/mahmya-island-snorkeling/12.webp",
+      "/photos/mahmya-island-snorkeling/13.jpg",
+      "/photos/mahmya-island-snorkeling/14.jpg",
     ]
   },
   {
@@ -1503,7 +1891,7 @@ export const trips: Trip[] = [
       "/photos/orange-bay-snorkeling/16.jpg",
       "/photos/orange-bay-snorkeling/17.jpg",
       "/photos/orange-bay-snorkeling/18.jpg",
-      "/photos/orange-bay-snorkeling/19.jpg"
+      "/photos/orange-bay-snorkeling/19.jpg",
     ]
   },
   {
@@ -1542,6 +1930,18 @@ export const trips: Trip[] = [
       { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة الدليل" }
     ],
     gallery: [
+      "/photos/ozirea-island-snorkeling/1.jpg",
+      "/photos/ozirea-island-snorkeling/2.jpg",
+      "/photos/ozirea-island-snorkeling/3.jpg",
+      "/photos/ozirea-island-snorkeling/4.jpg",
+      "/photos/ozirea-island-snorkeling/5.jpg",
+      "/photos/ozirea-island-snorkeling/6.jpg",
+      "/photos/ozirea-island-snorkeling/10.jpg",
+      "/photos/ozirea-island-snorkeling/11.jpg",
+      "/photos/ozirea-island-snorkeling/12.jpg",
+      "/photos/ozirea-island-snorkeling/13.jpg",
+      "/photos/ozirea-island-snorkeling/14.jpg",
+      "/photos/ozirea-island-snorkeling/15.jpg",
     ]
   },
   {
@@ -1580,7 +1980,17 @@ export const trips: Trip[] = [
       { en: "Lunch + soft drinks", ru: "Обед + напитки", de: "Mittagessen + Softdrinks", ar: "غداء + مشروبات خفيفة" }
     ],
     gallery: [
-      "/photos/parasailing-hurghada/11.jpg"
+      "/photos/parasailing-hurghada/1.jpg",
+      "/photos/parasailing-hurghada/2.jpg",
+      "/photos/parasailing-hurghada/3.jpg",
+      "/photos/parasailing-hurghada/4.jpg",
+      "/photos/parasailing-hurghada/5.jpg",
+      "/photos/parasailing-hurghada/6.jpg",
+      "/photos/parasailing-hurghada/7.jpg",
+      "/photos/parasailing-hurghada/8.jpg",
+      "/photos/parasailing-hurghada/9.jpg",
+      "/photos/parasailing-hurghada/10.jpg",
+      "/photos/parasailing-hurghada/11.jpg",
     ]
   },
   {
@@ -1619,6 +2029,18 @@ export const trips: Trip[] = [
       { en: "Guide assistance", ru: "Помощь гида", de: "Führerhilfe", ar: "مساعدة الدليل" }
     ],
     gallery: [
+      "/photos/white-island-snorkeling/1.jpg",
+      "/photos/white-island-snorkeling/6.webp",
+      "/photos/white-island-snorkeling/7.webp",
+      "/photos/white-island-snorkeling/8.webp",
+      "/photos/white-island-snorkeling/9.webp",
+      "/photos/white-island-snorkeling/10.webp",
+      "/photos/white-island-snorkeling/11.webp",
+      "/photos/white-island-snorkeling/14.jpg",
+      "/photos/white-island-snorkeling/16.jpg",
+      "/photos/white-island-snorkeling/17.jpg",
+      "/photos/white-island-snorkeling/18.jpg",
+      "/photos/white-island-snorkeling/19.jpg",
     ]
   },
   {
@@ -1657,7 +2079,18 @@ export const trips: Trip[] = [
       { en: "Guide assistance", ru: "Сопровождение гида", de: "Begleitung durch einen Guide", ar: "مرشد سياحي" }
     ],
     gallery: [
-      "/photos/white-island-snorkeling/9.webp"
+      "/photos/eden-island-snorkeling/eden-1.jpg",
+      "/photos/eden-island-snorkeling/eden-2.jpg",
+      "/photos/eden-island-snorkeling/eden-3.jpg",
+      "/photos/eden-island-snorkeling/eden-4.jpg",
+      "/photos/eden-island-snorkeling/eden-5.jpg",
+      "/photos/eden-island-snorkeling/eden-6.jpg",
+      "/photos/eden-island-snorkeling/eden-10.jpg",
+      "/photos/eden-island-snorkeling/eden-11.jpg",
+      "/photos/eden-island-snorkeling/eden-12.jpg",
+      "/photos/eden-island-snorkeling/eden-13.jpg",
+      "/photos/eden-island-snorkeling/eden-14.jpg",
+      "/photos/eden-island-snorkeling/eden-15.jpg",
     ]
   }
 ];
