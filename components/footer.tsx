@@ -23,7 +23,7 @@ export default function Footer({ t }: FooterProps) {
     { href: "/blog", label: (t.footer as any).blog || "Blog" },
     { href: "/about", label: t.nav.about },
     { href: "/#reviews", label: t.nav.reviews },
-    { href: "/#contact", label: t.nav.contact },
+    { href: "/#find-us", label: t.nav.contact },
   ];
 
   const ft = t.footer as any;

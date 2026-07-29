@@ -77,7 +77,7 @@ export default function MapSection({ t }: MapSectionProps) {
         <Reveal className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary animate-line-draw" />
-            <span className="text-primary text-sm uppercase tracking-[0.3em]">
+            <span id="find-us" className="text-primary text-sm uppercase tracking-[0.3em]">
               {t.map.findUs}
             </span>
             <div className="w-16 h-px bg-gradient-to-l from-transparent to-primary animate-line-draw" />

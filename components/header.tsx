@@ -88,7 +88,7 @@ export default function Header({ t }: HeaderProps) {
     { href: "/#gallery", label: t.nav.gallery },
     { href: "/blog", label: t.nav.blog || "Blog" },
     { href: "/about", label: t.nav.about },
-    { href: "/#contact", label: t.nav.contact },
+    { href: "/#find-us", label: t.nav.contact },
   ];
 
   return (
