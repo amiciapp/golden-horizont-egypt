@@ -244,7 +244,7 @@ export default function ReviewsSection({ t }: ReviewsSectionProps) {
             </span>
             <div className="w-16 h-px bg-gradient-to-l from-transparent to-primary animate-line-draw" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-4">
+          <h2 id="guest-say" className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-4">
             {t.reviews.title}
           </h2>
           <p className="text-foreground/60 max-w-2xl mx-auto">

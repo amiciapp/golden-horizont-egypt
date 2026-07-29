@@ -22,7 +22,7 @@ export default function Footer({ t }: FooterProps) {
     { href: "/#gallery", label: t.nav.gallery },
     { href: "/blog", label: (t.footer as any).blog || "Blog" },
     { href: "/about", label: t.nav.about },
-    { href: "/#reviews", label: t.nav.reviews },
+    { href: "/#guest-say", label: t.nav.reviews },
     { href: "/#find-us", label: t.nav.contact },
   ];
 
