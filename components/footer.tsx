@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { MapPin, Phone, Mail, ChevronUp } from "lucide-react";
 import { type TranslationKeys } from "@/lib/translations";
@@ -12,6 +13,7 @@ interface FooterProps {
 }
 
 export default function Footer({ t }: FooterProps) {
+  const router = useRouter();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -146,12 +148,30 @@ export default function Footer({ t }: FooterProps) {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-foreground/60 hover:text-primary transition-colors duration-300 text-sm"
-                  >
-                    {link.label}
-                  </Link>
+                  {link.href.startsWith("/#") ? (
+                    <button
+                      onClick={() => {
+                        const id = link.href.slice(2);
+                        const pathParts = window.location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+                        const isHome = pathParts.length <= 1;
+                        if (isHome) {
+                          const el = document.getElementById(id);
+                          if (el) { el.scrollIntoView({ behavior: "smooth" }); return; }
+                        }
+                        window.location.href = link.href;
+                      }}
+                      className="text-foreground/60 hover:text-primary transition-colors duration-300 text-sm"
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-foreground/60 hover:text-primary transition-colors duration-300 text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

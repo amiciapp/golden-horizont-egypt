@@ -22,10 +22,15 @@ export default function Header({ t }: HeaderProps) {
 
   const navigate = useCallback((href: string) => {
     setIsMobileMenuOpen(false);
-    if (href.startsWith("/#") && window.location.pathname === "/") {
+    if (href.startsWith("/#")) {
       const id = href.slice(2);
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+      const pathParts = window.location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+      const isHome = pathParts.length <= 1;
+      if (isHome) {
+        const el = document.getElementById(id);
+        if (el) { el.scrollIntoView({ behavior: "smooth" }); return; }
+      }
+      window.location.href = href;
     } else {
       router.push(href);
     }
