@@ -30,10 +30,10 @@ export default function Footer({ t }: FooterProps) {
   const trips = [
     { name: ft.paradiseIsland || "Paradise Island Snorkeling", slug: "/trip/paradise-island-snorkeling" },
     { name: ft.superSafari || "Super Safari Adventure", slug: "/trip/super-safari" },
-    { name: ft.dolphinWatching || "Dolphin Watching Tour", slug: "/trip/dolphin-world-trip" },
-    { name: ft.luxorTrip || "Luxor Day Trip", slug: "/trip/luxor-bus-trip" },
+    { name: ft.dolphinWatching || "Dolphin Watching Tour", slug: "/trip/dolphin-house-snorkeling" },
+    { name: ft.luxorTrip || "Luxor Day Trip", slug: "/trip/luxor-golden-bus" },
     { name: ft.cairoPyramids || "Cairo & Pyramids", slug: "/trip/cairo-bus-trip" },
-    { name: ft.divingAdventure || "Diving Adventure", slug: "/trip/diving-trip" },
+    { name: ft.divingAdventure || "Diving Adventure", slug: "/trip/diving-adventure-hurghada" },
   ];
 
   const socialLinks = [
