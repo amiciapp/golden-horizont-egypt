@@ -353,6 +353,7 @@ export default function ReviewsSection({ t }: ReviewsSectionProps) {
             { name: "TripAdvisor", color: "#00AF87" },
             { name: "Google Reviews", color: "#4285F4" },
             { name: "GetYourGuide", color: "#F6871F" },
+            { name: "Booking", color: "#003580" },
           ]).map((badge, i) => (
             <div
               key={badge.name}
