@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
     category: "Hurghada",
     readingTime: 7,
     publishedAt: "2026-07-01",
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/10/ELITE8-scaled.jpg",
+    image: "/photos/city-tour-hurghada/city-tour-1.jpg",
     title: {
       en: "15 Best Things To Do in Hurghada (2026 Complete Guide)",
       ru: "15 лучших занятий в Хургаде (полный гид 2026)",
@@ -98,7 +98,7 @@ export const blogPosts: BlogPost[] = [
     category: "Marsa Alam",
     readingTime: 6,
     publishedAt: "2026-07-08",
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/09/96a29fd2-0b31-4717-85e5-06f3f9f98463.webp",
+    image: "/photos/dolphin-house-marsa-alam/3001b31c5a6c755aee647cd70456da4fc9e8aba96239574ef1f53282cde9de2e.webp",
     title: {
       en: "Marsa Alam Dive Sites Guide: Top Spots for 2026",
       ru: "Гид по дайв-сайтам Марса-Алам: лучшие места 2026",
@@ -152,7 +152,7 @@ export const blogPosts: BlogPost[] = [
     category: "Cairo",
     readingTime: 5,
     publishedAt: "2026-07-14",
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/11/download-3.jpg",
+    image: "/photos/cairo-golden-bus/166744703.webp",
     title: {
       en: "Cairo Pyramids Day Trip From Hurghada: The Complete 2026 Guide",
       ru: "Однодневная поездка к пирамидам Каира из Хургады: полный гид 2026",
@@ -238,7 +238,7 @@ export const blogPosts: BlogPost[] = [
     category: "Luxor",
     readingTime: 6,
     publishedAt: "2026-07-15",
-    image: "https://goldenhorizontegypt.com/wp-content/uploads/2025/11/Ramses_II_in_Luxor_Temple.jpg",
+    image: "/photos/luxor-golden-bus/129871954.webp",
     title: {
       en: "Luxor in One Day: The Complete 2026 Itinerary From Hurghada",
       ru: "Луксор за один день: полный маршрут из Хургады 2026",
