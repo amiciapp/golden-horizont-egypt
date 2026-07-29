@@ -108,7 +108,7 @@ export function AIConcierge() {
       {/* Chat Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-24 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-primary to-gold-dark text-primary-foreground shadow-xl shadow-primary/30 flex items-center justify-center cursor-pointer"
+        className="fixed bottom-24 left-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-primary to-gold-dark text-primary-foreground shadow-xl shadow-primary/30 flex items-center justify-center cursor-pointer"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         aria-label={isOpen ? "Close chat" : "Open AI travel concierge"}
@@ -134,7 +134,7 @@ export function AIConcierge() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-[140px] right-6 z-50 w-[380px] max-w-[calc(100vw-2rem)] h-[520px] max-h-[calc(100vh-10rem)] rounded-2xl border border-border/50 bg-card/95 backdrop-blur-2xl shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-[140px] left-6 z-50 w-[380px] max-w-[calc(100vw-2rem)] h-[520px] max-h-[calc(100vh-10rem)] rounded-2xl border border-border/50 bg-card/95 backdrop-blur-2xl shadow-2xl flex flex-col overflow-hidden"
             role="dialog"
             aria-label="AI Travel Concierge"
           >
