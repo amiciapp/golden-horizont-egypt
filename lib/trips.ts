@@ -2044,7 +2044,7 @@ export const trips: Trip[] = [
     ]
   },
   {
-    id: "93",
+    id: "94",
     slug: "paradise-island-snorkeling",
     name: {
       en: "Paradise Island Snorkeling Tour from Hurghada",
