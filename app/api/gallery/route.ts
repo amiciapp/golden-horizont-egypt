@@ -68,8 +68,8 @@ export async function GET() {
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
 
-    // Return up to 24 photos for a full gallery grid
-    const selected = shuffled.slice(0, 24);
+    // Return exactly 16 photos (4 cols × 4 rows)
+    const selected = shuffled.slice(0, 16);
 
     return NextResponse.json({ photos: selected });
   } catch (error) {

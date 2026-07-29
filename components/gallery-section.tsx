@@ -143,7 +143,7 @@ export default function GallerySection({ t }: GallerySectionProps) {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {galleryImages.map((image, index) => (
+          {galleryImages.slice(0, 16).map((image, index) => (
             <div
               key={index}
               className={cn(
