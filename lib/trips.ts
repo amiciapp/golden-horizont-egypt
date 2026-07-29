@@ -2103,8 +2103,7 @@ export const categories = [
   { id: "Marsa Alam", name: { en: "Marsa Alam", ru: "Марса-Алам", de: "Marsa Alam", ar: "مرسى علم" } },
   { id: "Sea Adventures", name: { en: "Sea Adventures", ru: "Морские приключения", de: "Meeresabenteuer", ar: "مغامرات البحر" } },
   { id: "Desert Safari", name: { en: "Desert Safari", ru: "Сафари по пустыне", de: "Wüstensafari", ar: "سفاري الصحراء" } },
-  { id: "Entertainment", name: { en: "Entertainment", ru: "Развлечения", de: "Unterhaltung", ar: "ترفيه" } },
-  { id: "Cultural Tours", name: { en: "Cultural Tours", ru: "Культурные туры", de: "Kulturreisen", ar: "جولات ثقافية" } }
+  { id: "Entertainment", name: { en: "Entertainment", ru: "Развлечения", de: "Unterhaltung", ar: "ترفيه" } }
 ];
 
 export function generateWhatsAppLink(
