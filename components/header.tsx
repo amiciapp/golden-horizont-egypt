@@ -22,7 +22,13 @@ export default function Header({ t }: HeaderProps) {
 
   const navigate = useCallback((href: string) => {
     setIsMobileMenuOpen(false);
-    router.push(href);
+    if (href.startsWith("/#") && window.location.pathname === "/") {
+      const id = href.slice(2);
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push(href);
+    }
   }, [router]);
 
   useEffect(() => {
