@@ -2063,7 +2063,7 @@ export const trips: Trip[] = [
     currency: "EUR",
     category: "Sea Adventures",
     popular: true,
-    image: "/photos/white-island-snorkeling/1.jpg",
+    image: "/photos/paradise-island-snorkeling/00.webp",
     rating: 4.7,
     highlights: [
       { en: "Fantastic snorkeling among colorful corals and tropical fish", ru: "Потрясающий снорклинг среди ярких кораллов и тропических рыб", de: "Fantastisches Schnorcheln unter bunten Korallen und tropischen Fischen", ar: "غطس مذهل بين الشعاب المرجانية الملونة والأسماك الاستوائية" },
@@ -2079,18 +2079,17 @@ export const trips: Trip[] = [
       { en: "Guide assistance", ru: "Сопровождение гида", de: "Begleitung durch einen Guide", ar: "مرشد سياحي" }
     ],
     gallery: [
-      "/photos/eden-island-snorkeling/00.webp",
-      "/photos/eden-island-snorkeling/01.jpeg",
-      "/photos/eden-island-snorkeling/02.webp",
-      "/photos/eden-island-snorkeling/03.webp",
-      "/photos/eden-island-snorkeling/04.jpg",
-      "/photos/eden-island-snorkeling/05.webp",
-      "/photos/eden-island-snorkeling/06.webp",
-      "/photos/eden-island-snorkeling/07.webp",
-      "/photos/eden-island-snorkeling/08.jpg",
-      "/photos/eden-island-snorkeling/09.webp",
-      "/photos/eden-island-snorkeling/10.jpg",
-      "/photos/eden-island-snorkeling/11.webp",
+      "/photos/paradise-island-snorkeling/00.webp",
+      "/photos/paradise-island-snorkeling/01.webp",
+      "/photos/paradise-island-snorkeling/02.webp",
+      "/photos/paradise-island-snorkeling/03.webp",
+      "/photos/paradise-island-snorkeling/04.webp",
+      "/photos/paradise-island-snorkeling/05.webp",
+      "/photos/paradise-island-snorkeling/06.webp",
+      "/photos/paradise-island-snorkeling/07.webp",
+      "/photos/paradise-island-snorkeling/08.webp",
+      "/photos/paradise-island-snorkeling/09.webp",
+      "/photos/paradise-island-snorkeling/10.webp",
     ]
   }
 ];
