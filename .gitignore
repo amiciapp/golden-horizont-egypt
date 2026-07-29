@@ -23,3 +23,5 @@ node_modules
 # OS files
 Thumbs.db
 desktop.ini
+
+.vercel
