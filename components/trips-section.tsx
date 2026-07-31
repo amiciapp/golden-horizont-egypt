@@ -61,6 +61,7 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
   useEffect(() => {
     const interval = setInterval(() => {
       const visible = visibleTripsRef.current;
+      if (visible.size === 0) return;
       setSlideIndex((prev) => {
         const next = { ...prev };
         for (const trip of trips) {
@@ -83,10 +84,10 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
     setFailedImages(prev => new Set(prev).add(`${tripId}:${src}`));
   }, []);
 
-  const handleBooking = (trip: Trip) => {
+  const handleBooking = useCallback((trip: Trip) => {
     const whatsappUrl = generateWhatsAppLink(trip, WHATSAPP_NUMBER, t.whatsapp.greeting, lang);
     window.open(whatsappUrl, "_blank");
-  };
+  }, [t, lang]);
 
   return (
     <section
