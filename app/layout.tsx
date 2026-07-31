@@ -1,10 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import { CookieConsent } from '@/components/cookie-consent'
 import { LanguageSync } from '@/components/language-sync'
-import { AIConcierge } from '@/components/ai-concierge'
-import { MouseEffects } from '@/components/mouse-effects'
+import { DeferredWidgets } from '@/components/deferred-widgets'
 import BackgroundVideo from '@/components/background-video'
 import { WHATSAPP_NUMBER } from '@/lib/constants'
 import './globals.css'
@@ -305,10 +303,8 @@ export default async function RootLayout({
 
         
         {children}
-        <CookieConsent />
         <LanguageSync />
-        <AIConcierge />
-        <MouseEffects />
+        <DeferredWidgets />
         <Analytics />
       </body>
     </html>
