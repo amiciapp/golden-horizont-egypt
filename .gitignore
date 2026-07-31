@@ -25,3 +25,6 @@ Thumbs.db
 desktop.ini
 
 .vercel
+
+# Private files — NEVER commit
+ALIONA HOSTINGER.JPG
