@@ -18,14 +18,8 @@ interface TripsSectionProps {
 export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
-  const [slideIndex, setSlideIndex] = useState<Record<string, number>>({});
   const [visibleTrips, setVisibleTrips] = useState<Set<string>>(new Set());
-  const visibleTripsRef = useRef<Set<string>>(new Set());
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    visibleTripsRef.current = visibleTrips;
-  }, [visibleTrips]);
 
   const filteredTrips =
     activeCategory === "all"
@@ -57,28 +51,6 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, [activeCategory]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const visible = visibleTripsRef.current;
-      if (visible.size === 0) return;
-      setSlideIndex((prev) => {
-        const next = { ...prev };
-        for (const trip of trips) {
-          if (
-            visible.has(trip.id) &&
-            trip.gallery &&
-            trip.gallery.length > 1
-          ) {
-            const current = next[trip.id] || 0;
-            next[trip.id] = (current + 1) % trip.gallery.length;
-          }
-        }
-        return next;
-      });
-    }, 3500);
-    return () => clearInterval(interval);
-  }, []);
 
   const handleImageError = useCallback((tripId: string, src: string) => {
     setFailedImages(prev => new Set(prev).add(`${tripId}:${src}`));
@@ -149,7 +121,6 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
               trip={trip}
               t={t}
               lang={lang}
-              slide={slideIndex[trip.id] || 0}
               isVisible={visibleTrips.has(trip.id)}
               failedImages={failedImages}
               onError={handleImageError}
@@ -188,7 +159,6 @@ interface TripCardProps {
   trip: Trip;
   t: TranslationKeys;
   lang: Language;
-  slide: number;
   isVisible: boolean;
   failedImages: Set<string>;
   onError: (tripId: string, src: string) => void;
@@ -199,7 +169,6 @@ const TripCard = memo(function TripCard({
   trip,
   t,
   lang,
-  slide,
   isVisible,
   failedImages,
   onError,
@@ -211,6 +180,15 @@ const TripCard = memo(function TripCard({
 
   const images = trip.gallery && trip.gallery.length > 1 ? trip.gallery : [trip.image];
   const validImages = images.filter((src) => !failedImages.has(`${trip.id}:${src}`));
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    if (!isVisible || validImages.length < 2) return;
+    const interval = setInterval(() => {
+      setSlide((current) => (current + 1) % validImages.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [isVisible, validImages.length]);
 
   return (
     <div
