@@ -19,8 +19,13 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
   const [slideIndex, setSlideIndex] = useState<Record<string, number>>({});
+  const [visibleTrips, setVisibleTrips] = useState<Set<string>>(new Set());
+  const visibleTripsRef = useRef<Set<string>>(new Set());
   const sectionRef = useRef<HTMLElement>(null);
 
+  useEffect(() => {
+    visibleTripsRef.current = visibleTrips;
+  }, [visibleTrips]);
 
   const filteredTrips =
     activeCategory === "all"
@@ -28,11 +33,42 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
       : trips.filter((trip) => trip.category === activeCategory);
 
   useEffect(() => {
+    const elements =
+      sectionRef.current?.querySelectorAll<HTMLElement>("[data-trip-id]") ?? [];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        setVisibleTrips((prev) => {
+          let next = prev;
+          for (const entry of entries) {
+            const id = entry.target.getAttribute("data-trip-id");
+            if (!id) continue;
+            if (entry.isIntersecting) {
+              if (!next.has(id)) next = new Set(next).add(id);
+            } else if (next.has(id)) {
+              next = new Set(next);
+              next.delete(id);
+            }
+          }
+          return next;
+        });
+      },
+      { rootMargin: "200px 0px" }
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [activeCategory]);
+
+  useEffect(() => {
     const interval = setInterval(() => {
-      setSlideIndex(prev => {
+      const visible = visibleTripsRef.current;
+      setSlideIndex((prev) => {
         const next = { ...prev };
         for (const trip of trips) {
-          if (trip.gallery && trip.gallery.length > 1) {
+          if (
+            visible.has(trip.id) &&
+            trip.gallery &&
+            trip.gallery.length > 1
+          ) {
             const current = next[trip.id] || 0;
             next[trip.id] = (current + 1) % trip.gallery.length;
           }
@@ -135,6 +171,7 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
                           tripName={tripName}
                           slideIndex={slideIndex}
                           images={validImages}
+                          visible={visibleTrips.has(trip.id)}
                           onError={(src) => handleImageError(trip.id, src)}
                         />
                       );
@@ -247,11 +284,12 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
   );
 }
 
-function SlideshowImages({ trip, tripName, slideIndex, images, onError }: {
+function SlideshowImages({ trip, tripName, slideIndex, images, visible, onError }: {
   trip: Trip;
   tripName: string;
   slideIndex: Record<string, number>;
   images: string[];
+  visible: boolean;
   onError: (src: string) => void;
 }) {
   const currentIdx = (slideIndex[trip.id] || 0) % images.length;
@@ -259,7 +297,9 @@ function SlideshowImages({ trip, tripName, slideIndex, images, onError }: {
 
   // Render only the active slide plus the upcoming one (for a smooth crossfade),
   // instead of every gallery image hidden with opacity-0.
-  const activeIdxes = images.length > 1 ? [currentIdx, nextIdx] : [0];
+  // Offscreen cards only render the current slide lazily so their whole gallery
+  // isn't eager-loaded while the page is being audited/scrolled.
+  const activeIdxes = images.length > 1 && visible ? [currentIdx, nextIdx] : [0];
 
   return (
     <div className="absolute inset-0 bg-muted">
@@ -276,7 +316,7 @@ function SlideshowImages({ trip, tripName, slideIndex, images, onError }: {
               : "opacity-0 z-0"
           )}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-          loading={idx === currentIdx ? "eager" : "lazy"}
+          loading={visible && idx === currentIdx ? "eager" : "lazy"}
           onError={() => onError(images[idx])}
         />
       ))}
