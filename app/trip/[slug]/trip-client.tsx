@@ -1,6 +1,7 @@
 "use client"
 
 import { useParams, useRouter } from "next/navigation"
+import Link from "next/link"
 import { useState } from "react"
 import { trips } from "@/lib/trips"
 import { type Language, type TranslationKeys } from "@/lib/translations"
@@ -99,15 +100,15 @@ export default function TripPageClient({ initialLang, initialT }: TripPageClient
         <nav aria-label="Breadcrumb" className="mb-4">
           <ol className="flex items-center gap-2 text-sm text-muted-foreground">
             <li>
-              <button onClick={() => router.push("/")} className="hover:text-primary transition-colors">
+              <Link href={`/${lang}`} className="hover:text-primary transition-colors">
                 {t.breadcrumb.home}
-              </button>
+              </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <button onClick={() => router.push("/#trips")} className="hover:text-primary transition-colors">
+              <Link href={`/${lang}/#trips`} className="hover:text-primary transition-colors">
                 {t.breadcrumb.trips}
-              </button>
+              </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li className="text-foreground font-medium truncate max-w-[200px]" aria-current="page">
@@ -117,11 +118,13 @@ export default function TripPageClient({ initialLang, initialT }: TripPageClient
         </nav>
         <Button 
           variant="ghost" 
-          onClick={() => { router.push("/#trips"); }}
+          asChild
           className="text-muted-foreground hover:text-primary transition-colors"
         >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          {t.tripDetail.backToTrips}
+          <Link href={`/${lang}/#trips`}>
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            {t.tripDetail.backToTrips}
+          </Link>
         </Button>
       </div>
 

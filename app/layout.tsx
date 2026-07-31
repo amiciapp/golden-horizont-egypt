@@ -5,6 +5,7 @@ import { CookieConsent } from '@/components/cookie-consent'
 import { LanguageSync } from '@/components/language-sync'
 import { AIConcierge } from '@/components/ai-concierge'
 import { MouseEffects } from '@/components/mouse-effects'
+import BackgroundVideo from '@/components/background-video'
 import { WHATSAPP_NUMBER } from '@/lib/constants'
 import './globals.css'
 
@@ -298,15 +299,7 @@ export default async function RootLayout({
         <a href="#main-content" className="skip-to-content">Skip to content</a>
         {/* Global Background Video */}
         <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/photo.mp4" type="video/mp4" />
-          </video>
+          <BackgroundVideo />
           <div className="absolute inset-0 bg-background/70" />
         </div>
 

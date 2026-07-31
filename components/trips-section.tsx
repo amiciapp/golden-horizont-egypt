@@ -247,34 +247,31 @@ function SlideshowImages({ trip, tripName, slideIndex, onError }: {
 }) {
   const images = trip.gallery && trip.gallery.length > 1 ? trip.gallery : [trip.image];
   const currentIdx = slideIndex[trip.id] || 0;
+  const nextIdx = (currentIdx + 1) % images.length;
+
+  // Render only the active slide plus the upcoming one (for a smooth crossfade),
+  // instead of every gallery image hidden with opacity-0.
+  const activeIdxes = images.length > 1 ? [currentIdx, nextIdx] : [0];
 
   return (
     <div className="absolute inset-0 bg-muted">
-      {images.length > 1 ? (
-        images.map((img, idx) => (
-          <Image
-            key={`${img}-${idx}`}
-            src={img}
-            alt={`${tripName} - ${idx + 1}`}
-            fill
-            className={cn(
-              "object-cover transition-opacity duration-1000",
-              idx === currentIdx ? "opacity-100 z-10 group-hover:scale-110 transition-transform" : "opacity-0 z-0"
-            )}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-            onError={onError}
-          />
-        ))
-      ) : (
+      {activeIdxes.map((idx) => (
         <Image
-          src={trip.image}
-          alt={tripName}
+          key={`${idx}-${images[idx]}`}
+          src={images[idx]}
+          alt={`${tripName} - ${idx + 1}`}
           fill
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
+          className={cn(
+            "object-cover transition-opacity duration-1000",
+            idx === currentIdx
+              ? "opacity-100 z-10 group-hover:scale-110 transition-transform"
+              : "opacity-0 z-0"
+          )}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          loading={idx === currentIdx ? "eager" : "lazy"}
           onError={onError}
         />
-      )}
+      ))}
     </div>
   );
 }

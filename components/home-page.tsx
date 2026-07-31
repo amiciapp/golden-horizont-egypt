@@ -28,6 +28,14 @@ export default function HomePage({ initialLang, initialT }: HomePageProps) {
     setLoading(false);
   }, []);
 
+  useEffect(() => {
+    if (sessionStorage.getItem("gh_loaded")) {
+      setLoading(false);
+    } else {
+      sessionStorage.setItem("gh_loaded", "1");
+    }
+  }, []);
+
   return (
     <>
       {/* Loading Screen overlays content but doesn't block SEO rendering */}

@@ -75,47 +75,75 @@ export default async function TripPage({ params }: { params: Promise<{ slug: str
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "TouristTrip",
-    "@id": canonicalUrl,
-    name: name,
-    description: description,
-    image: trip.image,
-    url: canonicalUrl,
-    touristType: [trip.category],
-    itinerary: {
-      "@type": "ItemList",
-      itemListElement: trip.highlights.map((h, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        name: h[lang] || h.en,
-      })),
-    },
-    offers: {
-      "@type": "Offer",
-      price: trip.price,
-      priceCurrency: "EUR",
-      availability: "https://schema.org/InStock",
-      validFrom: `${new Date().getFullYear()}-01-01`,
-      url: canonicalUrl,
-      seller: {
-        "@type": "TravelAgency",
-        name: "Golden Horizont Egypt",
-        url: "https://goldenhorizontegypt.com",
+    "@graph": [
+      {
+        "@type": "TouristTrip",
+        "@id": canonicalUrl,
+        name: name,
+        description: description,
+        image: trip.image,
+        url: canonicalUrl,
+        touristType: [trip.category],
+        itinerary: {
+          "@type": "ItemList",
+          itemListElement: trip.highlights.map((h, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: h[lang] || h.en,
+          })),
+        },
+        offers: {
+          "@type": "Offer",
+          price: trip.price,
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+          validFrom: `${new Date().getFullYear()}-01-01`,
+          url: canonicalUrl,
+          seller: {
+            "@type": "TravelAgency",
+            name: "Golden Horizont Egypt",
+            url: "https://goldenhorizontegypt.com",
+          },
+        },
+        provider: {
+          "@type": "TravelAgency",
+          "@id": `${SITE_URL}/#organization`,
+          name: "Golden Horizont Egypt",
+          url: SITE_URL,
+          telephone: `+${WHATSAPP_NUMBER}`,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Sheraton Street",
+            addressLocality: "Hurghada",
+            addressCountry: "EG",
+          },
+        },
       },
-    },
-    provider: {
-      "@type": "TravelAgency",
-      "@id": `${SITE_URL}/#organization`,
-      name: "Golden Horizont Egypt",
-      url: SITE_URL,
-      telephone: `+${WHATSAPP_NUMBER}`,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Sheraton Street",
-        addressLocality: "Hurghada",
-        addressCountry: "EG",
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: t.nav.home,
+            item: `${SITE_URL}/${lang}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: t.nav.trips,
+            item: `${SITE_URL}/${lang}/#trips`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: name,
+            item: canonicalUrl,
+          },
+        ],
       },
-    },
+    ],
   }
 
   return (
