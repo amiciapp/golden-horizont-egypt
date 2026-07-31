@@ -189,12 +189,6 @@ const jsonLd = {
         'https://t.me/GoldenHorizontEgypt'
       ],
       priceRange: '€€',
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        reviewCount: '500',
-        bestRating: '5'
-      },
       makesOffer: [
         { '@type': 'Offer', itemOffered: { '@type': 'TouristTrip', name: 'Cairo Pyramids Tours' } },
         { '@type': 'Offer', itemOffered: { '@type': 'TouristTrip', name: 'Luxor Day Trips' } },
