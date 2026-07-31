@@ -24,6 +24,39 @@ const nextConfig = {
   turbopack: {
     root: import.meta.dirname,
   },
+  redirects: async () => [
+    // Legacy WordPress URLs — 301 to closest live equivalent
+    {
+      source: '/my-account-2',
+      destination: '/en',
+      permanent: true,
+    },
+    {
+      source: '/my-account-2/',
+      destination: '/en',
+      permanent: true,
+    },
+    {
+      source: '/my-account-2/:path*',
+      destination: '/en',
+      permanent: true,
+    },
+    {
+      source: '/ro/introducing-this-amazing-tour',
+      destination: '/en',
+      permanent: true,
+    },
+    {
+      source: '/ro/introducing-this-amazing-tour/',
+      destination: '/en',
+      permanent: true,
+    },
+    {
+      source: '/ro/tag/:path*',
+      destination: '/en/blog',
+      permanent: true,
+    },
+  ],
   headers: async () => [
     {
       source: '/(.*)',

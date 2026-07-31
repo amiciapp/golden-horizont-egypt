@@ -9,19 +9,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Main pages — one entry per locale
   const mainPages: MetadataRoute.Sitemap = locales.flatMap((locale) => [
     {
-      url: locale === 'en' ? baseUrl : `${baseUrl}/${locale}`,
+      url: `${baseUrl}/${locale}`,
       lastModified: new Date(),
       changeFrequency: "daily" as const,
       priority: 1,
     },
     {
-      url: locale === 'en' ? `${baseUrl}/about` : `${baseUrl}/${locale}/about`,
+      url: `${baseUrl}/${locale}/about`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
     {
-      url: locale === 'en' ? `${baseUrl}/blog` : `${baseUrl}/${locale}/blog`,
+      url: `${baseUrl}/${locale}/blog`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
@@ -31,13 +31,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Legal pages (English only is fine)
   const legalPages: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}/privacy-policy`,
+      url: `${baseUrl}/en/privacy-policy`,
       lastModified: new Date(),
       changeFrequency: "yearly" as const,
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/terms`,
+      url: `${baseUrl}/en/terms`,
       lastModified: new Date(),
       changeFrequency: "yearly" as const,
       priority: 0.3,
@@ -47,9 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Trip pages — one entry per locale per trip, with images
   const tripPages: MetadataRoute.Sitemap = locales.flatMap((locale) =>
     trips.map((trip) => ({
-      url: locale === 'en'
-        ? `${baseUrl}/trip/${trip.slug}`
-        : `${baseUrl}/${locale}/trip/${trip.slug}`,
+      url: `${baseUrl}/${locale}/trip/${trip.slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.85,
@@ -59,13 +57,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
-  // Blog post pages
-  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.publishedAt),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }))
+  // Blog post pages — one entry per blog locale
+  const blogLocales = ['en', 'ru', 'de', 'ar']
+  const blogPages: MetadataRoute.Sitemap = blogLocales.flatMap((locale) =>
+    blogPosts.map((post) => ({
+      url: `${baseUrl}/${locale}/blog/${post.slug}`,
+      lastModified: new Date(post.publishedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }))
+  )
 
   return [...mainPages, ...legalPages, ...tripPages, ...blogPages]
 }

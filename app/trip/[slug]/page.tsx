@@ -21,8 +21,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   const title = `${name} | Golden Horizont Egypt`
 
+  const canonicalUrl = localeUrl(lang, `/trip/${trip.slug}`)
+
   const languages: Record<string, string> = {
-    'x-default': `${SITE_URL}/trip/${trip.slug}`,
+    'x-default': localeUrl('en', `/trip/${trip.slug}`),
   }
   for (const locale of LOCALES) {
     languages[locale] = localeUrl(locale, `/trip/${trip.slug}`)
@@ -34,6 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title,
       description,
+      url: canonicalUrl,
       images: [{ 
         url: trip.image.startsWith('http') ? trip.image : `${SITE_URL}${trip.image}`,
         width: 1200, 
@@ -47,7 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       images: [trip.image.startsWith('http') ? trip.image : `${SITE_URL}${trip.image}`],
     },
     alternates: {
-      canonical: `${SITE_URL}/trip/${trip.slug}`,
+      canonical: canonicalUrl,
       languages,
     },
   }
@@ -68,14 +71,16 @@ export default async function TripPage({ params }: { params: Promise<{ slug: str
   const name = trip.name[lang] || trip.name.en
   const description = trip.description[lang] || trip.description.en
 
+  const canonicalUrl = localeUrl(lang, `/trip/${trip.slug}`)
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "TouristTrip",
-    "@id": `https://goldenhorizontegypt.com/trip/${trip.slug}`,
+    "@id": canonicalUrl,
     name: name,
     description: description,
     image: trip.image,
-    url: `https://goldenhorizontegypt.com/trip/${trip.slug}`,
+    url: canonicalUrl,
     touristType: [trip.category],
     itinerary: {
       "@type": "ItemList",
@@ -91,7 +96,7 @@ export default async function TripPage({ params }: { params: Promise<{ slug: str
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       validFrom: `${new Date().getFullYear()}-01-01`,
-      url: `https://goldenhorizontegypt.com/trip/${trip.slug}`,
+      url: canonicalUrl,
       seller: {
         "@type": "TravelAgency",
         name: "Golden Horizont Egypt",

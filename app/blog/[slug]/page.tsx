@@ -1,7 +1,7 @@
 import { blogPosts, getRelatedPosts, getBlogPost } from "@/lib/blog"
 import type { Metadata } from "next"
 import { headers } from "next/headers"
-import { SITE_URL } from "@/lib/constants"
+import { SITE_URL, localeUrl } from "@/lib/constants"
 import { type Language } from "@/lib/translations"
 import BlogPostClient from "./blog-post-client"
 
@@ -27,11 +27,13 @@ export async function generateMetadata({
   const title = post.title[lang] || post.title.en
   const description = post.excerpt[lang] || post.excerpt.en
 
+  const canonicalUrl = localeUrl(lang, `/blog/${slug}`)
+
   const languages: Record<string, string> = {
-    'x-default': `${SITE_URL}/blog/${slug}`,
+    'x-default': localeUrl('en', `/blog/${slug}`),
   }
   for (const locale of BLOG_LOCALES) {
-    languages[locale] = locale === 'en' ? `${SITE_URL}/blog/${slug}` : `${SITE_URL}/${locale}/blog/${slug}`
+    languages[locale] = localeUrl(locale, `/blog/${slug}`)
   }
 
   return {
@@ -42,6 +44,7 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime: post.publishedAt,
+      url: canonicalUrl,
       images: [{ url: post.image, width: 1200, height: 630, alt: title }],
     },
     twitter: {
@@ -51,7 +54,7 @@ export async function generateMetadata({
       images: [post.image],
     },
     alternates: {
-      canonical: `${SITE_URL}/blog/${slug}`,
+      canonical: canonicalUrl,
       languages,
     },
   }
@@ -69,12 +72,14 @@ export default async function BlogPostPage({
   const headersList = await headers()
   const lang = (headersList.get('x-next-locale') || 'en') as Language
 
+  const canonicalUrl = localeUrl(lang, `/blog/${slug}`)
+
   // Article JSON-LD for Google News / rich results
   const jsonLd = post
     ? {
         "@context": "https://schema.org",
         "@type": "Article",
-        "@id": `https://goldenhorizontegypt.com/blog/${slug}`,
+        "@id": canonicalUrl,
         headline: post.title[lang] || post.title.en,
         description: post.excerpt[lang] || post.excerpt.en,
         image: post.image,
@@ -83,20 +88,20 @@ export default async function BlogPostPage({
         author: {
           "@type": "Organization",
           name: "Golden Horizont Egypt",
-          url: "https://goldenhorizontegypt.com",
+          url: SITE_URL,
         },
         publisher: {
           "@type": "Organization",
-          "@id": "https://goldenhorizontegypt.com/#organization",
+          "@id": `${SITE_URL}/#organization`,
           name: "Golden Horizont Egypt",
           logo: {
             "@type": "ImageObject",
-            url: "https://goldenhorizontegypt.com/logo.png",
+            url: `${SITE_URL}/logo.png`,
           },
         },
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `https://goldenhorizontegypt.com/blog/${slug}`,
+          "@id": canonicalUrl,
         },
       }
     : null

@@ -5,5 +5,5 @@ export const SITE_NAME = "Golden Horizont Egypt"
 export const LOCALES = ['en', 'ru', 'de', 'pl', 'uk', 'cs', 'nl', 'it', 'fr', 'es', 'ar', 'zh', 'pt', 'sv', 'da', 'fi', 'no', 'hu', 'ro', 'tr'] as const
 
 export function localeUrl(locale: string, path: string): string {
-  return locale === 'en' ? `${SITE_URL}${path}` : `${SITE_URL}/${locale}${path}`
+  return `${SITE_URL}/${locale}${path}`
 }

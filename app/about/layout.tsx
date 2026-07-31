@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Golden Horizont Egypt',
     description: 'Golden Horizont Egypt is a premier travel agency in Hurghada offering 31+ unique tours across Egypt since 2015.',
-    url: 'https://goldenhorizontegypt.com/about',
+    url: 'https://goldenhorizontegypt.com/en/about',
   },
   alternates: {
-    canonical: 'https://goldenhorizontegypt.com/about',
+    canonical: 'https://goldenhorizontegypt.com/en/about',
   },
 }
 

@@ -1,7 +1,7 @@
 import { headers } from "next/headers"
 import type { Metadata } from "next"
 import { getTranslations, type Language } from "@/lib/translations"
-import { SITE_URL, LOCALES, localeUrl } from "@/lib/constants"
+import { LOCALES, localeUrl } from "@/lib/constants"
 import AboutClient from "@/app/about/about-client"
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -12,8 +12,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = t.nav.about
   const description = t.about.heroDescription
 
+  const canonicalUrl = localeUrl(lang, '/about')
+
   const languages: Record<string, string> = {
-    'x-default': `${SITE_URL}/about`,
+    'x-default': localeUrl('en', '/about'),
   }
   for (const locale of LOCALES) {
     languages[locale] = localeUrl(locale, '/about')
@@ -23,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title,
     description,
     alternates: {
-      canonical: `${SITE_URL}/about`,
+      canonical: canonicalUrl,
       languages,
     },
   }

@@ -106,7 +106,7 @@ export default function AboutClient({ initialLang, initialT }: AboutClientProps)
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'AboutPage',
-            '@id': 'https://goldenhorizontegypt.com/about',
+            '@id': 'https://goldenhorizontegypt.com/en/about',
             name: 'About Golden Horizont Egypt',
             description: 'Golden Horizont Egypt is a premier travel agency in Hurghada offering 31+ unique tours across Egypt since 2015. Specializing in Red Sea snorkeling, diving, desert safaris, and historical tours.',
             mainEntity: {

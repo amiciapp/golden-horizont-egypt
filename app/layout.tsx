@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const lang = headersList.get('x-next-locale') || 'en';
   
   const siteUrl = 'https://goldenhorizontegypt.com';
-  const urlWithLang = lang === 'en' ? siteUrl : `${siteUrl}/${lang}`;
+  const urlWithLang = `${siteUrl}/${lang}`;
 
   return {
     metadataBase: new URL(siteUrl),
@@ -36,15 +36,6 @@ export async function generateMetadata(): Promise<Metadata> {
       template: '%s | Golden Horizont Egypt'
     },
     description: 'Discover the magic of Egypt with Golden Horizont Egypt. Premium tours to Cairo, Luxor, Aswan, and the Red Sea. Snorkeling, diving, desert safaris, historical tours, and exclusive excursions across Egypt. Book your adventure today!',
-    keywords: [
-      'Hurghada tours', 'Red Sea excursions', 'Egypt tours', 'snorkeling Hurghada', 
-      'diving Red Sea', 'Giftun Island', 'Orange Bay', 'Mahmya Island', 'dolphin watching',
-      'desert safari Egypt', 'quad bike Hurghada', 'Luxor day trip', 'Cairo pyramids tour',
-      'boat trips Hurghada', 'water sports Egypt', 'submarine Hurghada', 'parasailing',
-      'Bedouin dinner', 'sunset cruise', 'private yacht Hurghada', 'fishing trip Red Sea',
-      'Хургада туры', 'экскурсии Египет', 'Красное море', 'Hurghada Ausflüge', 
-      'wycieczki Hurghada', 'رحلات الغردقة', '洪加达旅游'
-    ],
     authors: [{ name: 'Golden Horizont Egypt' }],
     creator: 'Golden Horizont Egypt',
     publisher: 'Golden Horizont Egypt',
@@ -79,7 +70,7 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: {
       canonical: urlWithLang,
       languages: {
-        'en': siteUrl,
+        'en': `${siteUrl}/en`,
         'ru': `${siteUrl}/ru`,
         'de': `${siteUrl}/de`,
         'pl': `${siteUrl}/pl`,
@@ -99,7 +90,7 @@ export async function generateMetadata(): Promise<Metadata> {
         'no': `${siteUrl}/no`,
         'hu': `${siteUrl}/hu`,
         'ro': `${siteUrl}/ro`,
-        'x-default': siteUrl,
+        'x-default': `${siteUrl}/en`,
       },
     },
     robots: {
@@ -226,7 +217,7 @@ const jsonLd = {
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://goldenhorizontegypt.com' },
         { '@type': 'ListItem', position: 2, name: 'Trips', item: 'https://goldenhorizontegypt.com/#trips' },
-        { '@type': 'ListItem', position: 3, name: 'About', item: 'https://goldenhorizontegypt.com/about' }
+        { '@type': 'ListItem', position: 3, name: 'About', item: 'https://goldenhorizontegypt.com/en/about' }
       ]
     },
     {
