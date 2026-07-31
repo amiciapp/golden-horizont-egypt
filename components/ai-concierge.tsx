@@ -13,8 +13,8 @@ interface ChatMessage {
   suggestions?: string[]
 }
 
-export function AIConcierge() {
-  const [isOpen, setIsOpen] = useState(false)
+export function AIConcierge({ initialOpen = false }: { initialOpen?: boolean }) {
+  const [isOpen, setIsOpen] = useState(initialOpen)
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)

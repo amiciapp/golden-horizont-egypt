@@ -21,6 +21,7 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
   const [slideIndex, setSlideIndex] = useState<Record<string, number>>({});
   const sectionRef = useRef<HTMLElement>(null);
 
+
   const filteredTrips =
     activeCategory === "all"
       ? trips
@@ -42,8 +43,8 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
     return () => clearInterval(interval);
   }, []);
 
-  const handleImageError = useCallback((tripId: string) => {
-    setFailedImages(prev => new Set(prev).add(tripId));
+  const handleImageError = useCallback((tripId: string, src: string) => {
+    setFailedImages(prev => new Set(prev).add(`${tripId}:${src}`));
   }, []);
 
   const handleBooking = (trip: Trip) => {
@@ -119,18 +120,25 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
                 {/* Image */}
                 <Link href={`/trip/${trip.slug}`} className="block">
                   <div className="relative h-48 overflow-hidden bg-muted">
-                    {failedImages.has(trip.id) ? (
-                      <div className="absolute inset-0 flex items-center justify-center text-foreground/30">
-                        <ImageIcon className="w-12 h-12" />
-                      </div>
-                    ) : (
-                      <SlideshowImages
-                        trip={trip}
-                        tripName={tripName}
-                        slideIndex={slideIndex}
-                        onError={() => handleImageError(trip.id)}
-                      />
-                    )}
+                    {(() => {
+                      const images = trip.gallery && trip.gallery.length > 1 ? trip.gallery : [trip.image];
+                      const validImages = images.filter(
+                        (src) => !failedImages.has(`${trip.id}:${src}`)
+                      );
+                      return validImages.length === 0 ? (
+                        <div className="absolute inset-0 flex items-center justify-center text-foreground/30">
+                          <ImageIcon className="w-12 h-12" />
+                        </div>
+                      ) : (
+                        <SlideshowImages
+                          trip={trip}
+                          tripName={tripName}
+                          slideIndex={slideIndex}
+                          images={validImages}
+                          onError={(src) => handleImageError(trip.id, src)}
+                        />
+                      );
+                    })()}
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
 
                     {/* Popular Badge */}
@@ -239,14 +247,14 @@ export default function TripsSection({ t, lang = "en" }: TripsSectionProps) {
   );
 }
 
-function SlideshowImages({ trip, tripName, slideIndex, onError }: {
+function SlideshowImages({ trip, tripName, slideIndex, images, onError }: {
   trip: Trip;
   tripName: string;
   slideIndex: Record<string, number>;
-  onError: () => void;
+  images: string[];
+  onError: (src: string) => void;
 }) {
-  const images = trip.gallery && trip.gallery.length > 1 ? trip.gallery : [trip.image];
-  const currentIdx = slideIndex[trip.id] || 0;
+  const currentIdx = (slideIndex[trip.id] || 0) % images.length;
   const nextIdx = (currentIdx + 1) % images.length;
 
   // Render only the active slide plus the upcoming one (for a smooth crossfade),
@@ -269,7 +277,7 @@ function SlideshowImages({ trip, tripName, slideIndex, onError }: {
           )}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           loading={idx === currentIdx ? "eager" : "lazy"}
-          onError={onError}
+          onError={() => onError(images[idx])}
         />
       ))}
     </div>
