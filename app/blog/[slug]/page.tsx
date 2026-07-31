@@ -1,6 +1,11 @@
 import { blogPosts, getRelatedPosts, getBlogPost } from "@/lib/blog"
 import type { Metadata } from "next"
+import { headers } from "next/headers"
+import { SITE_URL } from "@/lib/constants"
+import { type Language } from "@/lib/translations"
 import BlogPostClient from "./blog-post-client"
+
+const BLOG_LOCALES = ['en', 'ru', 'de', 'ar'] as const
 
 export async function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }))
@@ -16,24 +21,38 @@ export async function generateMetadata({
 
   if (!post) return { title: "Post Not Found" }
 
+  const headersList = await headers()
+  const lang = (headersList.get('x-next-locale') || 'en') as Language
+
+  const title = post.title[lang] || post.title.en
+  const description = post.excerpt[lang] || post.excerpt.en
+
+  const languages: Record<string, string> = {
+    'x-default': `${SITE_URL}/blog/${slug}`,
+  }
+  for (const locale of BLOG_LOCALES) {
+    languages[locale] = locale === 'en' ? `${SITE_URL}/blog/${slug}` : `${SITE_URL}/${locale}/blog/${slug}`
+  }
+
   return {
-    title: post.title.en,
-    description: post.excerpt.en,
+    title,
+    description,
     openGraph: {
-      title: post.title.en,
-      description: post.excerpt.en,
+      title,
+      description,
       type: "article",
       publishedTime: post.publishedAt,
-      images: [{ url: post.image, width: 1200, height: 630, alt: post.title.en }],
+      images: [{ url: post.image, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title.en,
-      description: post.excerpt.en,
+      title,
+      description,
       images: [post.image],
     },
     alternates: {
-      canonical: `https://goldenhorizontegypt.com/blog/${slug}`,
+      canonical: `${SITE_URL}/blog/${slug}`,
+      languages,
     },
   }
 }
@@ -47,14 +66,17 @@ export default async function BlogPostPage({
   const post = getBlogPost(slug)
   const related = getRelatedPosts(slug, 3)
 
+  const headersList = await headers()
+  const lang = (headersList.get('x-next-locale') || 'en') as Language
+
   // Article JSON-LD for Google News / rich results
   const jsonLd = post
     ? {
         "@context": "https://schema.org",
         "@type": "Article",
         "@id": `https://goldenhorizontegypt.com/blog/${slug}`,
-        headline: post.title.en,
-        description: post.excerpt.en,
+        headline: post.title[lang] || post.title.en,
+        description: post.excerpt[lang] || post.excerpt.en,
         image: post.image,
         datePublished: post.publishedAt,
         dateModified: post.publishedAt,

@@ -2,7 +2,7 @@ import { trips } from "@/lib/trips"
 import type { Metadata } from "next"
 import { headers } from "next/headers"
 import { getTranslations, type Language } from "@/lib/translations"
-import { WHATSAPP_NUMBER, SITE_URL } from "@/lib/constants"
+import { WHATSAPP_NUMBER, SITE_URL, LOCALES, localeUrl } from "@/lib/constants"
 import TripPageClient from "./trip-client"
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -20,6 +20,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const description = trip.description[lang] || trip.description.en
 
   const title = `${name} | Golden Horizont Egypt`
+
+  const languages: Record<string, string> = {
+    'x-default': `${SITE_URL}/trip/${trip.slug}`,
+  }
+  for (const locale of LOCALES) {
+    languages[locale] = localeUrl(locale, `/trip/${trip.slug}`)
+  }
 
   return {
     title: name,
@@ -41,6 +48,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     alternates: {
       canonical: `${SITE_URL}/trip/${trip.slug}`,
+      languages,
     },
   }
 }
@@ -89,13 +97,6 @@ export default async function TripPage({ params }: { params: Promise<{ slug: str
         name: "Golden Horizont Egypt",
         url: "https://goldenhorizontegypt.com",
       },
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: trip.rating,
-      bestRating: "5",
-      worstRating: "1",
-      reviewCount: "47",
     },
     provider: {
       "@type": "TravelAgency",
