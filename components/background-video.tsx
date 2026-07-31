@@ -37,7 +37,7 @@ export default function BackgroundVideo() {
       aria-hidden="true"
       className="absolute inset-0 w-full h-full object-cover"
     >
-      <source src="/photo.mp4" type="video/mp4" />
+      <source src="/photo.mp4?v=2" type="video/mp4" />
     </video>
   );
 }
