@@ -40,7 +40,7 @@ function getLocale(request: NextRequest): string {
   return defaultLocale
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
   // Ignore static files, api, images
