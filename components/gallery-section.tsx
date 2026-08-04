@@ -29,6 +29,10 @@ export default function GallerySection({ t }: GallerySectionProps) {
   const [galleryImages, setGalleryImages] = useState<GalleryImage[]>([]);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(4);
+  const [isPaused, setIsPaused] = useState(false);
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -53,6 +57,34 @@ export default function GallerySection({ t }: GallerySectionProps) {
     loadPhotos();
     return () => abortController.abort();
   }, []);
+
+  useEffect(() => {
+    const updateVisibleCount = () => {
+      const width = window.innerWidth;
+      if (width < 640) setVisibleCount(1);
+      else if (width < 1024) setVisibleCount(2);
+      else setVisibleCount(4);
+    };
+    updateVisibleCount();
+    window.addEventListener("resize", updateVisibleCount);
+    return () => window.removeEventListener("resize", updateVisibleCount);
+  }, []);
+
+  const pageCount = Math.max(1, Math.ceil(Math.min(galleryImages.length, 16) / visibleCount));
+
+  useEffect(() => {
+    setCurrentPage((p) => Math.min(p, pageCount - 1));
+  }, [pageCount]);
+
+  useEffect(() => {
+    if (isPaused || pageCount <= 1) return;
+    autoplayRef.current = setInterval(() => {
+      setCurrentPage((p) => (p + 1) % pageCount);
+    }, 4500);
+    return () => {
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
+    };
+  }, [isPaused, pageCount]);
 
   const lightboxRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
@@ -141,28 +173,72 @@ export default function GallerySection({ t }: GallerySectionProps) {
           </p>
         </Reveal>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {galleryImages.slice(0, 16).map((image, index) => (
-            <div
-              key={index}
-              className={cn(
-                "relative overflow-hidden rounded-lg cursor-pointer group card-shine aspect-square",
-                "animate-scale-in"
-              )}
-              style={{ animationDelay: `${index * 0.1}s` }}
-              onClick={(e) => openLightbox(index, e.currentTarget as HTMLDivElement)}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                sizes="(max-width: 768px) 50vw, 25vw"
-              />
-            </div>
-          ))}
+        {/* Gallery Carousel */}
+        <div
+          className="overflow-hidden rounded-lg"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div
+            className="flex transition-transform duration-700 ease-out"
+            style={{ transform: `translateX(-${currentPage * 100}%)` }}
+          >
+            {galleryImages.slice(0, 16).map((image, index) => (
+              <div
+                key={index}
+                className="shrink-0 px-1.5"
+                style={{ width: `${100 / pageCount}%` }}
+              >
+                <div
+                  className="relative overflow-hidden rounded-lg cursor-pointer group card-shine aspect-square h-full animate-scale-in"
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                  onClick={(e) => openLightbox(index, e.currentTarget as HTMLDivElement)}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* Carousel Controls */}
+        {pageCount > 1 && (
+          <div className="flex items-center justify-center gap-4 mt-6">
+            <button
+              onClick={() => setCurrentPage((p) => (p - 1 + pageCount) % pageCount)}
+              className="p-2 rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-all"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <div className="flex gap-2">
+              {Array.from({ length: pageCount }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentPage(i)}
+                  className={cn(
+                    "w-2 h-2 rounded-full transition-all",
+                    i === currentPage ? "bg-primary w-6" : "bg-foreground/30 hover:bg-foreground/50"
+                  )}
+                  aria-label={`Go to page ${i + 1}`}
+                />
+              ))}
+            </div>
+            <button
+              onClick={() => setCurrentPage((p) => (p + 1) % pageCount)}
+              className="p-2 rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-all"
+              aria-label="Next"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Lightbox */}
