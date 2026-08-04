@@ -187,10 +187,10 @@ export default function GallerySection({ t }: GallerySectionProps) {
               <div
                 key={index}
                 className="shrink-0 px-1.5"
-                style={{ width: `${100 / pageCount}%` }}
+                style={{ width: `${100 / visibleCount}%` }}
               >
                 <div
-                  className="relative overflow-hidden rounded-lg cursor-pointer group card-shine aspect-square h-full animate-scale-in"
+                  className="relative overflow-hidden rounded-lg cursor-pointer group card-shine aspect-square animate-scale-in"
                   style={{ animationDelay: `${index * 0.05}s` }}
                   onClick={(e) => openLightbox(index, e.currentTarget as HTMLDivElement)}
                 >
