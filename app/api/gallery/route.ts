@@ -57,8 +57,8 @@ export async function GET() {
       }
     }
 
-    // Seed by current hour — stable within an hour for caching
-    const seed = new Date().getHours() + 1;
+    // Seed by timestamp — a different set every time the site opens
+    const seed = Date.now();
     const rng = seededRandom(seed);
 
     // Fisher-Yates shuffle
@@ -71,7 +71,10 @@ export async function GET() {
     // Return exactly 16 photos (4 cols × 4 rows)
     const selected = shuffled.slice(0, 16);
 
-    return NextResponse.json({ photos: selected });
+    return NextResponse.json(
+      { photos: selected },
+      { headers: { 'Cache-Control': 'no-store' } }
+    );
   } catch (error) {
     console.error('Error reading photos directory:', error);
     return NextResponse.json({ photos: [] });
